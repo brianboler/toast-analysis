@@ -1,0 +1,526 @@
+/* =============================================================================
+   Task 20 — regulatory section (#loophole) styles.
+   Companion to sections/loophole.html and js/map.js. Extends main.css tokens.
+
+   Choropleth palette: dataviz-skill categorical slots (blue / aqua / yellow /
+   red), validated with scripts/validate_palette.js against BOTH site surfaces:
+     dark  (#0d0f12): #3987e5 #199e70 #c98500 #e66767  — all checks pass
+     light (#faf9f6): #2a78d6 #1baf7a #eda100 #e34948  — CVD pass; aqua/yellow
+       sit below 3:1 on light (validator WARN) → relief rule satisfied by the
+       always-visible legend labels and the matrix table view.
+   Class semantics (derived from data/states.json — see legend in the HTML):
+     icasino  = blue   · allowed = aqua · contested = yellow · redzone = red
+   The timeline reuses the same validated hues: regulation = blue,
+   litigation = yellow, enforcement = red (each event also carries a text
+   category label — never color alone).
+   ========================================================================== */
+
+#loophole {
+  /* dark-first, mirroring main.css */
+  --lp-cat-icasino:   #3987e5;
+  --lp-cat-allowed:   #199e70;
+  --lp-cat-contested: #c98500;
+  --lp-cat-redzone:   #e66767;
+  --lp-map-hover-mix: #ffffff;
+}
+@media (prefers-color-scheme: light) {
+  #loophole {
+    --lp-cat-icasino:   #2a78d6;
+    --lp-cat-allowed:   #1baf7a;
+    --lp-cat-contested: #eda100;
+    --lp-cat-redzone:   #e34948;
+    --lp-map-hover-mix: #17191d;
+  }
+}
+
+/* ---- Section rhythm -------------------------------------------------------- */
+.lp-block { margin-top: clamp(2.5rem, 5vw, 4rem); }
+.lp-block > h3 { margin-bottom: 0.6rem; }
+.lp-fineprint {
+  font-size: var(--step--1);
+  color: var(--muted);
+  max-width: var(--measure);
+  margin-top: 1.1rem;
+}
+
+/* ---- Doctrine cards -------------------------------------------------------- */
+.lp-doctrine-grid { margin-top: 1.4rem; }
+.lp-doctrine { border-top: 3px solid var(--border-strong); }
+.lp-doctrine[data-cat="allowed"]   { border-top-color: var(--lp-cat-allowed); }
+.lp-doctrine[data-cat="contested"] { border-top-color: var(--lp-cat-contested); }
+.lp-doctrine[data-cat="redzone"]   { border-top-color: var(--lp-cat-redzone); }
+.lp-doctrine h4 {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0.15rem 0 0.5rem;
+}
+.lp-doctrine p:last-child { margin-bottom: 0; font-size: var(--step--1); }
+
+/* ---- Legend ---------------------------------------------------------------- */
+.lp-legend {
+  list-style: none;
+  margin: 1.4rem 0 1.2rem;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+.lp-legend__item { display: flex; gap: 0.6rem; align-items: flex-start; }
+.lp-swatch {
+  flex: none;
+  width: 0.95rem; height: 0.95rem;
+  border-radius: 3px;
+  margin-top: 0.2rem;
+  border: 1px solid color-mix(in srgb, var(--text) 18%, transparent);
+}
+.lp-swatch[data-cat="icasino"]   { background: var(--lp-cat-icasino); }
+.lp-swatch[data-cat="allowed"]   { background: var(--lp-cat-allowed); }
+.lp-swatch[data-cat="contested"] { background: var(--lp-cat-contested); }
+.lp-swatch[data-cat="redzone"]   { background: var(--lp-cat-redzone); }
+.lp-legend__body { display: block; font-size: var(--step--1); line-height: 1.45; }
+.lp-legend__body strong { display: inline-block; }
+.lp-legend__count {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-left: 0.45ch;
+  white-space: nowrap;
+}
+.lp-legend__body small { display: block; color: var(--muted); margin-top: 0.15rem; }
+
+/* ---- Map layout ------------------------------------------------------------ */
+.lp-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(19rem, 23rem);
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  align-items: start;
+}
+.lp-map-wrap { min-width: 0; }
+.lp-map-wrap svg { min-width: 36rem; display: block; }
+
+/* Fill classes — set by map.js as data-cat on each [data-state] target.
+   main.css already gives [data-state] the neutral fill + the bg-colored
+   0.75px stroke that acts as the surface gap between fills. */
+.lp-map [data-cat="icasino"]   { fill: var(--lp-cat-icasino); }
+.lp-map [data-cat="allowed"]   { fill: var(--lp-cat-allowed); }
+.lp-map [data-cat="contested"] { fill: var(--lp-cat-contested); }
+.lp-map [data-cat="redzone"]   { fill: var(--lp-cat-redzone); }
+
+/* separator lines around AK/HI (original SVG style block was stripped) */
+.lp-map .separator1 { stroke: var(--border); stroke-width: 2; fill: none; }
+
+/* hover lift + keyboard focus: SVG paths don't take box-shadow, so use
+   fill mixing + a text-colored stroke instead of the global focus ring */
+.lp-map [data-state] { cursor: pointer; }
+.lp-map [data-state]:hover {
+  fill: color-mix(in srgb, var(--lp-cat-neutral, var(--surface-2)) 78%, var(--lp-map-hover-mix));
+}
+.lp-map [data-cat="icasino"]:hover   { fill: color-mix(in srgb, var(--lp-cat-icasino) 78%, var(--lp-map-hover-mix)); }
+.lp-map [data-cat="allowed"]:hover   { fill: color-mix(in srgb, var(--lp-cat-allowed) 78%, var(--lp-map-hover-mix)); }
+.lp-map [data-cat="contested"]:hover { fill: color-mix(in srgb, var(--lp-cat-contested) 78%, var(--lp-map-hover-mix)); }
+.lp-map [data-cat="redzone"]:hover   { fill: color-mix(in srgb, var(--lp-cat-redzone) 78%, var(--lp-map-hover-mix)); }
+.lp-map [data-state]:focus {
+  outline: none;            /* suppress Chrome's UA bounding-box ring on click */
+  box-shadow: none;
+}
+.lp-map [data-state]:focus-visible {
+  outline: 2px solid var(--accent);   /* keyboard focus: explicit accent ring   */
+  outline-offset: 2px;
+  box-shadow: none;
+  stroke: var(--text);
+  stroke-width: 1.6;
+}
+.lp-map [data-state].is-selected {
+  stroke: var(--text);
+  stroke-width: 1.4;
+}
+
+/* ---- Tooltip (hover layer) ------------------------------------------------- */
+.lp-tooltip {
+  position: fixed;
+  z-index: 70;
+  pointer-events: none;
+  max-width: 16rem;
+  padding: 0.45rem 0.65rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  font-size: var(--step--1);
+  line-height: 1.35;
+}
+.lp-tooltip strong { display: block; }
+.lp-tooltip .lp-tooltip__cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45ch;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+/* ---- Side panel (state inspector) ------------------------------------------ */
+.lp-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem 1.15rem;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: calc(var(--nav-h) + 1rem);
+  max-height: calc(100vh - var(--nav-h) - 2rem);
+  overflow-y: auto;
+}
+.lp-panel__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.lp-panel__close {
+  font: 600 0.72rem var(--font-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  cursor: pointer;
+}
+.lp-panel__close:hover { color: var(--text); background: var(--surface-2); }
+.lp-panel__placeholder { font-size: var(--step--1); color: var(--muted); margin: 0; }
+.lp-state-detail__name { margin: 0 0 0.5rem; font-size: var(--step-1); }
+.lp-state-code {
+  font-family: var(--font-mono);
+  font-size: 0.72em;
+  font-weight: 500;
+  color: var(--faint);
+  vertical-align: 0.08em;
+}
+.lp-chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0 0 0.8rem; }
+.lp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45ch;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.16rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  white-space: nowrap;
+}
+.lp-chip::before {
+  content: "";
+  width: 0.5rem; height: 0.5rem;
+  border-radius: 50%;
+  background: var(--border-strong);
+}
+.lp-chip[data-cat="icasino"]::before   { background: var(--lp-cat-icasino); }
+.lp-chip[data-cat="allowed"]::before   { background: var(--lp-cat-allowed); }
+.lp-chip[data-cat="contested"]::before { background: var(--lp-cat-contested); }
+.lp-chip[data-cat="redzone"]::before   { background: var(--lp-cat-redzone); }
+.lp-risk {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.16rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.lp-risk--low    { color: var(--muted); border-color: var(--border-strong); }
+.lp-risk--medium { color: var(--warn-fg); border-color: color-mix(in srgb, var(--warn) 55%, transparent); background: color-mix(in srgb, var(--warn) 12%, transparent); }
+.lp-risk--high   { color: var(--danger-fg); border-color: color-mix(in srgb, var(--danger) 55%, transparent); background: color-mix(in srgb, var(--danger) 12%, transparent); }
+
+.lp-kv { margin: 0 0 0.85rem; }
+.lp-kv div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: var(--step--1);
+}
+.lp-kv dt {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding-top: 0.15em;
+  flex: none;
+}
+.lp-kv dd { margin: 0; text-align: right; font-weight: 550; }
+.lp-notes { font-size: var(--step--1); color: var(--muted); }
+.lp-sources { font-size: var(--step--1); margin: 0; display: flex; flex-wrap: wrap; gap: 0.35rem 0.6rem; align-items: baseline; }
+.lp-sources__label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.lp-factref {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
+}
+
+/* ---- Blackjack callout ------------------------------------------------------ */
+.lp-callout {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-left: 3px solid var(--danger);
+  max-width: 52rem;
+}
+.lp-callout h3 { margin-top: 0.2rem; }
+.lp-callout p:last-child { margin-bottom: 0; }
+
+/* ---- Operator exclusion matrix ---------------------------------------------- */
+.lp-matrix-wrap {
+  margin-top: 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  max-height: 34rem;
+  overflow: auto;
+  /* This is a two-axis scroll container (overflow:auto + max-height) holding a
+     52rem-min table. Chrome leaks such a container's scroll-content width into
+     ancestors' scrollWidth, widening the body on narrow viewports even though
+     the table scrolls internally. `contain` isolates it so the overflow stays
+     put and body scrollWidth == clientWidth without leaning on overflow:hidden. */
+  contain: paint;
+}
+.lp-matrix-table { min-width: 52rem; }
+.lp-matrix-table caption {
+  caption-side: top;
+  padding: 0.75rem 0.9rem 0.35rem;
+  font-size: var(--step--1);
+}
+.lp-matrix-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--surface);
+}
+.lp-matrix-table tbody th[scope="row"] {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--bg);
+  font-weight: 550;
+  white-space: nowrap;
+}
+.lp-matrix-table tbody tr:hover th[scope="row"] { background: var(--surface); }
+.lp-cell { font-family: var(--font-mono); font-size: 0.78rem; white-space: nowrap; }
+.lp-cell--ok    { color: var(--faint); }
+.lp-cell--out   { color: var(--danger-fg); font-weight: 700; }
+.lp-cell--cards { color: var(--warn-fg); }
+.lp-cell--bc    { color: var(--warn-fg); }
+.lp-footnotes {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  max-width: 52rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.lp-footnotes li { font-size: var(--step--1); color: var(--muted); line-height: 1.55; }
+
+/* ---- Prosecutor's memo ------------------------------------------------------ */
+.lp-disclaimer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--warn-fg);
+  background: color-mix(in srgb, var(--warn) 9%, transparent);
+  border: 1px solid color-mix(in srgb, var(--warn) 40%, transparent);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.9rem;
+  max-width: 52rem;
+}
+.lp-memo-list {
+  list-style: none;
+  counter-reset: memo;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 52rem;
+}
+.lp-memo-list > li {
+  counter-increment: memo;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.3rem 1.1rem 3.4rem;
+}
+.lp-memo-list > li::before {
+  content: counter(memo, decimal-leading-zero);
+  position: absolute;
+  left: 1.1rem;
+  top: 1.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-bright);
+}
+.lp-memo-list h4 { margin: 0 0 0.45rem; font-size: var(--step-0); font-weight: 650; line-height: 1.3; }
+.lp-memo-list p { font-size: var(--step--1); margin-bottom: 0.7rem; }
+.lp-defense {
+  margin: 0 !important;
+  padding: 0.6rem 0.85rem;
+  border-left: 2px solid var(--accent-line);
+  background: var(--accent-tint);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.lp-defense strong { color: var(--accent-bright); }
+
+/* ---- Gray-zone clock --------------------------------------------------------- */
+.lp-clock-legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  margin: 1rem 0 0.6rem;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.lp-clock-legend li { display: inline-flex; align-items: center; gap: 0.5ch; }
+.lp-ev__dot {
+  display: inline-block;
+  width: 0.6rem; height: 0.6rem;
+  border-radius: 50%;
+  background: var(--border-strong);
+  flex: none;
+}
+.lp-ev__dot[data-cat="regulation"],  .lp-ev--regulation  .lp-ev__dot { background: var(--lp-cat-icasino); }
+.lp-ev__dot[data-cat="litigation"],  .lp-ev--litigation  .lp-ev__dot { background: var(--lp-cat-contested); }
+.lp-ev__dot[data-cat="enforcement"], .lp-ev--enforcement .lp-ev__dot { background: var(--lp-cat-redzone); }
+
+.lp-clock-wrap {
+  /* Belt-and-braces containment: the strip is ~78rem+ wide and must scroll
+     inside THIS box, never push the body — explicit here so it no longer
+     depends on main.css's .chart-wrap rule being co-present. */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  padding-bottom: 0.5rem;
+}
+.lp-clock-strip {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 1.1rem 0 0;
+  display: flex;
+  gap: 0.9rem;
+  min-width: 78rem;
+  border-top: 2px solid var(--border-strong);
+}
+.lp-ev {
+  flex: 1 1 0;
+  min-width: 9.5rem;
+  position: relative;
+  padding-top: 0.35rem;
+}
+.lp-ev .lp-ev__dot {
+  position: absolute;
+  top: -1.45rem;
+  left: 0;
+  outline: 3px solid var(--bg);   /* surface ring so dots read against the rail */
+}
+.lp-ev__date {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--text);
+}
+.lp-ev__cat {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0.1rem 0 0.15rem;
+}
+.lp-ev--regulation  .lp-ev__cat { color: var(--lp-cat-icasino); }
+.lp-ev--litigation  .lp-ev__cat { color: var(--lp-cat-contested); }
+.lp-ev--enforcement .lp-ev__cat { color: var(--lp-cat-redzone); }
+.lp-ev__title { display: block; font-weight: 650; font-size: var(--step--1); line-height: 1.3; }
+.lp-ev__text { font-size: 0.78rem; color: var(--muted); margin: 0.25rem 0 0; line-height: 1.5; }
+.lp-path-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  padding: 0.12rem 0.45rem;
+  border-radius: 3px;
+  margin: 0.1rem 0 0.2rem;
+  border: 1px solid transparent;
+}
+.lp-path-badge--enf {
+  color: var(--danger-fg);
+  border-color: color-mix(in srgb, var(--danger) 55%, transparent);
+  background: color-mix(in srgb, var(--danger) 10%, transparent);
+}
+.lp-path-badge--reg {
+  color: var(--accent-bright);
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+  background: var(--accent-tint);
+}
+
+/* ---- India sub-section -------------------------------------------------------- */
+.lp-india {
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+  padding: 1.2rem 1.4rem;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--tier-d);
+  border-radius: var(--radius);
+  background: var(--surface);
+  max-width: 52rem;
+}
+.lp-india h4 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.7rem;
+  font-size: var(--step-0);
+  font-weight: 650;
+}
+.lp-india p { font-size: var(--step--1); }
+.lp-india p:last-child { margin-bottom: 0; }
+
+/* ---- Small screens -------------------------------------------------------------- */
+@media (max-width: 56rem) {
+  .lp-map-layout { grid-template-columns: 1fr; }
+  .lp-panel { position: static; max-height: none; }
+  .lp-memo-list > li { padding-left: 1.3rem; padding-top: 2.4rem; }
+  .lp-memo-list > li::before { top: 0.95rem; left: 1.3rem; }
+}

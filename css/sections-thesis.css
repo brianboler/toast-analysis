@@ -1,0 +1,330 @@
+/* =============================================================================
+   sections-thesis.css — component styles for #economics, #thesis, #sources
+   (Task 22). Built entirely on main.css's design tokens (--bg, --surface,
+   --tier-*, --font-*, --radius, etc.) so light/dark theming is automatic —
+   no new colors are introduced. Loaded after main.css by the controller.
+   ========================================================================== */
+
+/* ---- Shared sub-heading rhythm inside these three sections ---------------- */
+.subsection { margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+.subsection__title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.subsection__lede { color: var(--muted); max-width: var(--measure); }
+
+/* ---- Rake-mechanics flow diagram ------------------------------------------- */
+.rake-flow-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1.5rem 0; }
+.rake-flow { display: block; width: 100%; min-width: 32rem; height: auto; }
+.rake-flow .node rect {
+  fill: var(--surface);
+  stroke: var(--border-strong);
+  stroke-width: 1;
+}
+.rake-flow .node--rake rect { fill: var(--tier-c-bg); stroke: var(--tier-c); }
+.rake-flow .node--payout rect { fill: var(--accent-tint); stroke: var(--accent-line); }
+.rake-flow .node text {
+  fill: var(--text);
+  font-family: var(--font-text);
+  font-size: 13px;
+}
+.rake-flow .node .node__figure {
+  fill: var(--text);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 17px;
+}
+.rake-flow .arrow path { stroke: var(--faint); stroke-width: 1.5; fill: none; }
+.rake-flow .arrow polygon { fill: var(--faint); }
+.rake-flow-caption {
+  font-size: var(--step--1);
+  color: var(--muted);
+  max-width: var(--measure);
+  margin-top: 0.5rem;
+}
+
+/* ---- Evidence panel (for/against, honest ledger) --------------------------- */
+.evidence-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: clamp(0.9rem, 2.5vw, 1.4rem);
+  margin: 1.25rem 0 1.5rem;
+}
+.evidence-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(1rem, 2.5vw, 1.4rem);
+}
+.evidence-col > h4 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.evidence-col--against { border-left: 3px solid var(--danger); }
+.evidence-col--against > h4 { color: var(--danger-fg); }
+.evidence-col--for { border-left: 3px solid var(--accent); }
+.evidence-col--for > h4 { color: var(--accent-bright); }
+.evidence-col ul { margin: 0; padding-left: 1.1rem; }
+.evidence-col li { margin-bottom: 0.6rem; }
+.evidence-col li:last-child { margin-bottom: 0; }
+.evidence-net {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-strong);
+  color: var(--muted);
+}
+
+/* ---- Per-hand model ---------------------------------------------------- */
+.model-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(1rem, 2.5vw, 1.4rem);
+  margin: 1rem 0 1.5rem;
+}
+.model-box pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  white-space: pre-wrap;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ---- Platform-gatekeeper callout -------------------------------------- */
+.callout {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--danger);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  margin: 1.5rem 0;
+}
+.callout__title {
+  margin: 0 0 0.75rem;
+  color: var(--danger-fg);
+}
+.callout blockquote {
+  margin: 0.75rem 0;
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--border-strong);
+  font-style: italic;
+  color: var(--text);
+}
+.callout blockquote cite {
+  display: block;
+  margin-top: 0.35rem;
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--faint);
+}
+
+/* ---- Thesis case cards (Bull / Base / Bear) ---------------------------- */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: clamp(1rem, 3vw, 1.6rem);
+  margin: 1.5rem 0 2rem;
+  align-items: start;
+}
+.case-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: clamp(1.1rem, 3vw, 1.5rem);
+  box-shadow: var(--shadow);
+}
+.case-card--bull { border-top-color: var(--accent); }
+.case-card--base { border-top-color: var(--tier-b); }
+.case-card--bear { border-top-color: var(--danger); }
+.case-card__kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.case-card--bull .case-card__kicker { color: var(--accent-bright); }
+.case-card--bear .case-card__kicker { color: var(--danger-fg); }
+.case-card h3 { margin-top: 0.15rem; }
+.case-card__story { color: var(--muted); font-size: var(--step--1); }
+.case-card table.data { font-size: 0.78rem; min-width: 26rem; }
+.case-card__outcome {
+  margin: 1.1rem 0;
+  padding: 0.9rem 1rem;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+}
+.case-card__outcome .stat--big { font-size: var(--step-2); }
+.falsified {
+  display: block;
+  color: var(--faint);
+  font-size: 0.85em;
+  margin-top: 0.15rem;
+}
+
+/* "What must be true" disclosure inside each case card — same look as the
+   founder question bank below, scoped standalone so it works without the
+   .founder-bank wrapper. */
+.founder-bank__group {
+  margin-top: 1.1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.2rem 1rem;
+}
+.founder-bank__group summary {
+  cursor: pointer;
+  padding: 0.75rem 0;
+  font-family: var(--font-text);
+  font-weight: 650;
+  font-size: var(--step--1);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.founder-bank__group summary::-webkit-details-marker { display: none; }
+.founder-bank__group summary::after {
+  content: "\2193";
+  color: var(--faint);
+  font-family: var(--font-mono);
+  transition: transform 0.15s ease;
+  flex: none;
+}
+.founder-bank__group[open] summary::after { transform: rotate(180deg); }
+.founder-bank__group summary .count {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.founder-bank__group ol { margin: 0 0 0.9rem; padding-left: 1.15rem; }
+.founder-bank__group li { margin-bottom: 0.6rem; font-size: var(--step--1); }
+.founder-bank__group li:last-child { margin-bottom: 0; }
+@media print {
+  .founder-bank__group summary::after { display: none; }
+}
+
+/* Stretch scenario — deliberately subordinated: smaller, dashed, tucked
+   below the bull card's outcome, never blended into the headline number. */
+.stretch-box {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.stretch-box__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4ch;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tier-c-fg);
+  margin-bottom: 0.4rem;
+}
+
+/* ---- Ranked risk table + blind-spots list ------------------------------- */
+table.data td.rank, table.data th.rank { font-family: var(--font-mono); color: var(--faint); width: 2.5rem; }
+.blindspots { margin: 1rem 0 0; padding: 0; list-style: none; display: grid; gap: 1rem; }
+.blindspots li {
+  padding: 0.9rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.blindspots li > strong { display: block; margin-bottom: 0.3rem; }
+
+/* ---- Founder diligence question bank (native <details>, printable) ----- */
+.founder-bank { margin-top: 1.5rem; display: grid; gap: 0.75rem; }
+.founder-bank details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.2rem 1rem;
+}
+.founder-bank summary {
+  cursor: pointer;
+  padding: 0.85rem 0;
+  font-family: var(--font-text);
+  font-weight: 650;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.founder-bank summary::-webkit-details-marker { display: none; }
+.founder-bank summary::after {
+  content: "\2193";
+  color: var(--faint);
+  font-family: var(--font-mono);
+  transition: transform 0.15s ease;
+  flex: none;
+}
+.founder-bank details[open] summary::after { transform: rotate(180deg); }
+.founder-bank summary .count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.founder-bank ol {
+  margin: 0 0 1rem;
+  padding-left: 1.3rem;
+}
+.founder-bank li { margin-bottom: 0.85rem; font-size: var(--step--1); }
+.founder-bank li:last-child { margin-bottom: 0.5rem; }
+
+/* Print: force every question open regardless of interaction state, and
+   drop the disclosure caret — this is the artifact a partner prints and
+   takes into a founder meeting. */
+@media print {
+  .founder-bank details { border: 1px solid #999; break-inside: avoid; }
+  .founder-bank summary::after { display: none; }
+  .cite, .cite-wrap .cite { display: none; }
+}
+
+/* ---- Sources: tier legend + methodology ---------------------------------- */
+.tier-legend-grid { margin-top: 1.5rem; }
+.methodology-list { margin: 1rem 0 0; padding-left: 1.2rem; }
+.methodology-list li { margin-bottom: 0.6rem; }
+.fact-ledger-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin: 1.75rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.fact-ledger-cta a {
+  font-family: var(--font-mono);
+  font-weight: 650;
+}
+.disclaimer-line {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  color: var(--faint);
+  font-size: var(--step--1);
+}
+
+@media (max-width: 40rem) {
+  .case-card table.data { font-size: 0.72rem; }
+}

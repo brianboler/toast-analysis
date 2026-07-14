@@ -1,0 +1,590 @@
+/* =============================================================================
+   Toast research site — design system
+   Direction: premium editorial-meets-trading-desk. Dark-first, full light
+   support. One saturated accent (felt green) used sparingly. Fraunces (display
+   serif) + Inter (text) self-hosted; a system monospace stack carries every
+   number and label — the serif-headline / mono-figure contrast is the signature.
+   Every themed token is redefined for prefers-color-scheme: light.
+   ========================================================================== */
+
+/* ---- Self-hosted fonts (variable, latin subset, no runtime fetch) --------- */
+@font-face {
+  font-family: "Fraunces";
+  src: url("../assets/fonts/fraunces-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../assets/fonts/inter-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- Tokens (dark-first) --------------------------------------------------- */
+:root {
+  color-scheme: dark;
+
+  /* surfaces & ink */
+  --bg: #0d0f12;
+  --bg-2: #101318;
+  --surface: #16191f;
+  --surface-2: #1c2027;
+  --border: #262b33;
+  --border-strong: #333a44;
+  --text: #e8e6e1;
+  --muted: #9aa0a8;
+  --faint: #868c94;   /* AA: 5.66:1 on --bg, 5.19:1 on --surface, 4.82:1 on --surface-2 */
+
+  /* accent (felt green) — spend it sparingly */
+  --accent: #35c07d;
+  --accent-bright: #46d18d;     /* text/links on dark */
+  --accent-ink: #06110b;        /* text ON accent fills */
+  --accent-tint: #10241a;       /* low-alpha accent wash */
+  --accent-line: #1f5e42;
+
+  /* signal colors */
+  --warn: #e0a83c;
+  --warn-fg: #e8b453;
+  --danger: #d4604f;
+  --danger-fg: #e2705f;
+
+  /* tier system — A best evidence … D weakest. AA-verified both themes. */
+  --tier-a: #35c07d; --tier-a-fg: #3ad389; --tier-a-bg: #14251d;
+  --tier-b: #5b9dd9; --tier-b-fg: #6fb3ec; --tier-b-bg: #152231;
+  --tier-c: #e0a83c; --tier-c-fg: #e8b453; --tier-c-bg: #2a2213;
+  --tier-d: #a08bd0; --tier-d-fg: #b9a6e6; --tier-d-bg: #201d2e;
+  /* Ink for the solid-fill .tier-badge pill. Dark-theme tiers are light-toned,
+     so the label needs near-black to clear AA (6.5–9:1). See light block for
+     the inverse. Was inheriting --text (near-white), which failed at ~1.7–2.4. */
+  --tier-badge-ink: #0d0f12;
+
+  /* type */
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-text: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, "JetBrains Mono", "Roboto Mono", Menlo, Consolas, monospace;
+
+  /* fluid type scale (major-third-ish, clamped) */
+  --step--1: clamp(0.82rem, 0.79rem + 0.15vw, 0.9rem);
+  --step-0:  clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1:  clamp(1.2rem, 1.12rem + 0.4vw, 1.45rem);
+  --step-2:  clamp(1.5rem, 1.35rem + 0.7vw, 1.95rem);
+  --step-3:  clamp(1.9rem, 1.65rem + 1.2vw, 2.75rem);
+  --step-4:  clamp(2.4rem, 1.95rem + 2.2vw, 4rem);
+  --step-5:  clamp(3rem, 2.2rem + 4vw, 5.75rem);
+
+  /* space & shape */
+  --max-w: 72rem;
+  --measure: 42rem;          /* readable prose column */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --nav-h: 3.5rem;
+  --gutter: clamp(1.1rem, 4vw, 2rem);
+  --section-y: clamp(3.5rem, 7vw, 6.5rem);
+
+  --shadow: 0 1px 0 rgba(255,255,255,0.02), 0 18px 40px -24px rgba(0,0,0,0.7);
+  --ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+}
+
+/* ---- Light theme: redefine EVERY themed token ----------------------------- */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+
+    --bg: #faf9f6;
+    --bg-2: #f2f0ea;
+    --surface: #ffffff;
+    --surface-2: #f6f4ef;
+    --border: #e4e0d7;
+    --border-strong: #d3cec3;
+    --text: #17191d;
+    --muted: #5c6470;
+    --faint: #6b7079;   /* AA: 4.73:1 on --bg, 4.98:1 on --surface, 4.53:1 on --surface-2 */
+
+    --accent: #128a54;
+    --accent-bright: #0f7a4a;    /* link text on light */
+    --accent-ink: #ffffff;
+    --accent-tint: #e6f4ec;
+    --accent-line: #b7e0cb;
+
+    --warn: #b07d1e;
+    --warn-fg: #8a5600;
+    --danger: #c34a37;
+    --danger-fg: #b23a29;
+
+    --tier-a: #128a54; --tier-a-fg: #0e7a48; --tier-a-bg: #e6f4ec;
+    --tier-b: #2f6fa8; --tier-b-fg: #215d92; --tier-b-bg: #e6eff8;
+    --tier-c: #a06a12; --tier-c-fg: #8a5600; --tier-c-bg: #f6ecd8;
+    --tier-d: #6a54a3; --tier-d-fg: #5a4593; --tier-d-bg: #eee9f6;
+    /* Light-theme tiers are dark-toned, so the pill label flips to white
+       (4.4–6.2:1). (tier-A green sits in the black/white dead-zone at ~4.4.) */
+    --tier-badge-ink: #ffffff;
+
+    --shadow: 0 1px 2px rgba(20,22,28,0.04), 0 20px 40px -28px rgba(20,22,28,0.28);
+    --ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+  }
+}
+
+/* ---- Reset / base --------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  font-feature-settings: "kern", "liga", "cv05";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;              /* body never scrolls sideways */
+}
+
+img, svg { max-width: 100%; height: auto; }
+:target { scroll-margin-top: calc(var(--nav-h) + 1.5rem); }
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+a { color: var(--accent-bright); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-color: var(--accent); }
+
+/* ---- Type ----------------------------------------------------------------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+h1 { font-size: var(--step-5); font-weight: 600; letter-spacing: -0.02em; }
+h2 { font-size: var(--step-3); }
+h3 { font-size: var(--step-1); font-family: var(--font-text); font-weight: 650; letter-spacing: -0.005em; line-height: 1.25; }
+p { margin: 0 0 1.1em; max-width: var(--measure); }
+strong, b { font-weight: 650; }
+small { font-size: var(--step--1); }
+
+/* Mono utility label — the trading-desk voice for eyebrows, tickers, meta */
+.mono, .eyebrow, .kicker {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* ---- Layout / section rhythm ---------------------------------------------- */
+main { display: block; }
+
+section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: var(--section-y) var(--gutter);
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+section:first-of-type { border-top: 0; }
+.section__head { margin-bottom: clamp(1.75rem, 4vw, 3rem); }
+
+/* Section eyebrow encodes real reading order (a VC reads top→bottom) and
+   doubles as a trading-desk line-item index. */
+.section__index {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.14em;
+  color: var(--accent-bright);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6ch;
+  margin-bottom: 0.9rem;
+}
+.section__index::before {
+  content: "";
+  width: 1.6rem; height: 1px; background: var(--accent-line);
+}
+.standfirst {
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 46rem;
+  margin: 0;
+  font-weight: 400;
+}
+.standfirst--placeholder { font-style: italic; }
+
+/* ---- Sticky nav ("desk tape") + scroll-progress rail ---------------------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.nav__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  height: var(--nav-h);
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  text-decoration: none;
+  flex: none;
+}
+.nav__brand img { width: 1.4rem; height: 1.4rem; }
+.nav__brand span { color: var(--accent-bright); }
+
+/* The intermediate <nav aria-label="Sections"> wrapper is a flex item of
+   .nav__inner. Without min-width:0 it keeps its full intrinsic (content)
+   width, so the .nav__links scroller inside it never engages and the whole
+   row pushes the body wider than the viewport on narrow screens. Letting the
+   wrapper shrink hands the overflow to .nav__links, which scrolls internally. */
+.nav__inner > nav { min-width: 0; }
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  min-width: 0;
+}
+.nav__links::-webkit-scrollbar { display: none; }
+.nav__link {
+  display: inline-block;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.nav__link:hover { color: var(--text); background: var(--surface); }
+.nav__link.is-active,
+.nav__link[aria-current="true"] { color: var(--accent-ink); background: var(--accent); }
+
+/* Progress rail — works with zero JS via scroll timeline; Task 17 may enhance. */
+.progress { height: 2px; background: transparent; overflow: hidden; }
+.progress__bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-line), var(--accent));
+  transform-origin: left center;
+  transform: scaleX(var(--progress, 0));
+  will-change: transform;
+}
+@supports (animation-timeline: scroll()) {
+  .progress__bar {
+    transform: scaleX(0);
+    animation: progressGrow linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+@keyframes progressGrow { to { transform: scaleX(1); } }
+
+/* ---- Hero ----------------------------------------------------------------- */
+.hero { padding-top: clamp(3.5rem, 9vw, 7rem); border-top: 0; }
+.hero__lede {
+  font-size: var(--step-1);
+  color: var(--muted);
+  max-width: 40rem;
+  margin-top: 1.25rem;
+}
+
+/* ---- Cards ---------------------------------------------------------------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(1.1rem, 3vw, 1.6rem);
+  box-shadow: var(--shadow);
+}
+.card--flush { box-shadow: none; }
+.card__label { margin-bottom: 0.5rem; }
+.grid {
+  display: grid;
+  gap: clamp(0.9rem, 2.5vw, 1.4rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+/* ---- Stats (live-quote treatment) ----------------------------------------- */
+.stat {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.stat--big {
+  display: block;
+  font-size: var(--step-4);
+  line-height: 1;
+  color: var(--text);
+  background: linear-gradient(180deg, currentColor, currentColor) left 100% / var(--u, 0%) 2px no-repeat;
+}
+.stat__label { display: block; margin-top: 0.5rem; }
+.stat--up { color: var(--accent-bright); }
+.stat--down { color: var(--danger-fg); }
+/* The citation link inherits .cite's 0.7em, which balloons to ~44px on a 64px
+   hero stat (spilling its [n] into the neighbouring column) and ~24px on the
+   34px gap figures. Pin the marker to a small fixed size so it stays a true,
+   proportionate superscript at any stat size. */
+.stat--big .cite,
+.gap-figure .cite { font-size: 0.85rem; }
+
+/* ---- Tables (trading-desk figures) ---------------------------------------- */
+.chart-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.chart-wrap table, table.data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--step--1);
+  min-width: 34rem;
+}
+table.data caption { text-align: left; color: var(--muted); margin-bottom: 0.6rem; }
+table.data th, table.data td {
+  text-align: left;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: baseline;
+}
+table.data thead th {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+  border-bottom-color: var(--border-strong);
+}
+table.data td.num, table.data th.num {
+  text-align: right;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+table.data tbody tr:hover { background: var(--surface); }
+
+/* ---- Tier badges ---------------------------------------------------------- */
+.tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4ch;
+  color: var(--tier-badge-ink);   /* AA label ink for the solid tier fill (see token) */
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.tier-badge::before {
+  content: "";
+  width: 0.45rem; height: 0.45rem; border-radius: 50%;
+  background: currentColor;
+}
+.tier-A { color: var(--tier-a-fg); background: var(--tier-a-bg); border-color: color-mix(in srgb, var(--tier-a) 45%, transparent); }
+.tier-B { color: var(--tier-b-fg); background: var(--tier-b-bg); border-color: color-mix(in srgb, var(--tier-b) 45%, transparent); }
+.tier-C { color: var(--tier-c-fg); background: var(--tier-c-bg); border-color: color-mix(in srgb, var(--tier-c) 45%, transparent); }
+.tier-D { color: var(--tier-d-fg); background: var(--tier-d-bg); border-color: color-mix(in srgb, var(--tier-d) 45%, transparent); }
+/* per-company qualifier used on Tier-C market figures (see brief) */
+.tier-C.is-percompany::after { content: " per company"; font-weight: 400; opacity: 0.85; text-transform: none; letter-spacing: 0; }
+/* symmetric "our estimate" qualifier on Tier-D figures (mirrors is-percompany) */
+.tier-D.is-ourestimate::after { content: " our estimate"; font-weight: 400; opacity: 0.85; text-transform: none; letter-spacing: 0; }
+/* On large stat figures the qualifier inherits the number's font-size and
+   balloons (e.g. a 34px gap figure). Pin it to a small subordinate size so it
+   reads as a provenance note, not part of the figure. Prose stays body-size. */
+.gap-figure.is-percompany::after, .gap-figure.is-ourestimate::after,
+.stat--big.is-percompany::after, .stat--big.is-ourestimate::after { font-size: 0.8rem; opacity: 0.7; }
+
+/* ---- Citations (skeleton for Task 17's engine) ---------------------------- */
+.cite {
+  font-family: var(--font-mono);
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  text-decoration: none;
+  color: var(--accent-bright);
+  cursor: help;
+  position: relative;
+  padding: 0 0.15em;
+  border-radius: 3px;
+}
+.cite:hover, .cite:focus-visible { background: var(--accent-tint); }
+/* Wrapper holding the .cite anchor and its .cite-card as SIBLINGS (a card
+   with links may not nest inside an <a>). Positioning context for the card. */
+.cite-wrap { position: relative; }
+.cite-wrap:hover .cite { background: var(--accent-tint); }
+.cite-missing {
+  background: color-mix(in srgb, var(--danger) 16%, transparent);
+  outline: 1px dashed var(--danger);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+.cite-card {
+  /* Hidden by default; shown on hover/focus-within (below). Kept in normal
+     layout (not display:none) so JS can measure it for edge-aware flipping
+     before it is ever shown — see positionCard() in app.js. */
+  position: absolute;
+  z-index: 60;                 /* above sticky nav (50) and any chart canvas */
+  left: 0;
+  top: 1.4em;
+  width: min(22rem, 88vw);
+  padding: 0.85rem 1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  font-family: var(--font-text);
+  font-size: var(--step--1);
+  line-height: 1.5;
+  color: var(--text);
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.14s ease, transform 0.14s ease, visibility 0.14s;
+}
+/* Edge-aware: flip to right-aligned when the card would overflow the right
+   viewport edge (toggled by JS after measuring — a plain L/R flip, no
+   attempt at perfect placement, per the design brief). */
+.cite-card.is-flipped { left: auto; right: 0; }
+.cite-wrap:hover .cite-card,
+.cite-wrap:focus-within .cite-card,
+.cite-card.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+
+/* Internal source-card typography — plain tags from app.js's hoverCard(),
+   dressed to feel native to the editorial system rather than default-browser. */
+.cite-card b { display: block; font-weight: 650; margin-bottom: 0.4rem; }
+.cite-card .tier-badge { margin-bottom: 0.55rem; }
+.cite-card q {
+  display: block;
+  margin: 0 0 0.55rem;
+  padding-left: 0.65rem;
+  border-left: 2px solid var(--accent-line);
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--text);
+  quotes: none;
+}
+.cite-card small { display: block; color: var(--muted); font-family: var(--font-mono); font-size: 0.7rem; }
+.cite-card a {
+  display: inline-block;
+  margin: 0.5rem 0.75rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+.cite-card__src { font-weight: 650; }
+.cite-card__meta { color: var(--muted); font-family: var(--font-mono); font-size: 0.72rem; margin-top: 0.25rem; }
+
+/* ---- Auto-generated bibliography (#sources) -------------------------------- */
+.bibliography {
+  margin: 1.5rem 0 0;
+  padding-left: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: var(--measure);
+}
+.bibliography li {
+  padding-left: 0.35rem;
+  font-size: var(--step--1);
+  color: var(--muted);
+  line-height: 1.55;
+}
+.bibliography li::marker {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--faint);
+}
+.bibliography li > a {
+  color: var(--accent-bright);
+  font-weight: 600;
+}
+.bibliography .tier-badge { margin-left: 0.5ch; vertical-align: 1px; }
+.bibliography small { display: block; margin-top: 0.15rem; color: var(--faint); }
+
+/* ---- Footer --------------------------------------------------------------- */
+.footer {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2.5rem var(--gutter) 4rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+}
+.footer__sep { color: var(--faint); }
+
+/* ---- Focus, a11y, motion -------------------------------------------------- */
+:focus-visible { outline: none; box-shadow: var(--ring); border-radius: var(--radius-sm); }
+a:focus-visible, .nav__link:focus-visible, .cite:focus-visible { border-radius: 999px; }
+
+.skip-link {
+  position: absolute; left: 0.75rem; top: -3rem;
+  /* --accent-bright, not --accent: in light theme --accent alone contrasts
+     only 4.38:1 against --accent-ink text (fails WCAG AA 4.5:1 for this
+     small mono text). --accent-bright is already the token calibrated for
+     accent-on-light legibility (~5.4:1 here) and in dark theme it is
+     brighter still, so contrast only improves there too. */
+  background: var(--accent-bright); color: var(--accent-ink);
+  padding: 0.5rem 0.9rem; border-radius: var(--radius-sm);
+  font-family: var(--font-mono); font-size: 0.8rem; z-index: 100;
+  transition: top 0.15s ease;
+}
+.skip-link:focus { top: 0.75rem; }
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .progress__bar { animation: none; transform: scaleX(var(--progress, 0)); }
+}
+
+/* ---- US choropleth base map ----------------------------------------------- */
+.us-map { width: 100%; height: auto; display: block; }
+.us-map [data-state] { fill: var(--surface-2); stroke: var(--bg); stroke-width: 0.75; transition: fill 0.2s ease; }
+.us-map .borders { stroke: var(--bg); }
+
+/* ---- Small screens -------------------------------------------------------- */
+@media (max-width: 40rem) {
+  .nav__brand span { display: none; }        /* keep just the mark + wordmark short */
+  .standfirst { font-size: var(--step-0); }
+}

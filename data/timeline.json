@@ -1,0 +1,110 @@
+[
+  {
+    "date": "2006-10",
+    "event": "Congress enacts UIGEA (31 U.S.C. Sec. 5361-5367), criminalizing the acceptance of payments connected to unlawful internet gambling; it does not exempt games of skill and targets the payment rails.",
+    "category": "regulation",
+    "factId": "wse-uigea-2006"
+  },
+  {
+    "date": "2011-04",
+    "event": "'Black Friday': DOJ unseals United States v. Scheinberg, indicting PokerStars, Full Tilt and Absolute Poker (11 defendants) for UIGEA violations, bank fraud and money laundering; ~$3B forfeiture sought.",
+    "category": "enforcement",
+    "factId": "wse-black-friday-2011"
+  },
+  {
+    "date": "2012-07",
+    "event": "Government dismisses civil complaints against PokerStars and Full Tilt after settlement (no admission of wrongdoing); individual defendants face prison terms of ~3 months to 3 years.",
+    "category": "litigation",
+    "factId": "wse-black-friday-settlement"
+  },
+  {
+    "date": "2015-11",
+    "event": "NY AG Schneiderman issues cease-and-desist letters to DraftKings and FanDuel, calling DFS a scheme to evade gambling law and ordering them to stop accepting NY wagers.",
+    "category": "enforcement",
+    "factId": "wse-schneiderman-cease-desist"
+  },
+  {
+    "date": "2016-08",
+    "event": "Gov. Cuomo signs a law legalizing and regulating interactive/daily fantasy sports in New York as a game of skill (15% GGR tax; $50k registration) - the DFS gray-to-regulated playbook completes.",
+    "category": "regulation",
+    "factId": "wse-ny-dfs-legalized-2016"
+  },
+  {
+    "date": "2023-10",
+    "event": "India's 28% GST on the full face value of online real-money gaming deposits takes effect, applied regardless of skill vs. chance - first major erosion of India's skill/chance line.",
+    "category": "regulation",
+    "factId": "wse-india-2023-gst"
+  },
+  {
+    "date": "2023-11",
+    "event": "A federal grand jury (New Jersey federal prosecutors) is revealed to be probing AviaGames' covert bot use in Skillz's 2021-filed patent suit (N.D. Cal., No. 5:21-cv-02436, asserting U.S. Patents 9,649,564 and 9,479,602); Judge Freeman delays trial to Feb 2024.",
+    "category": "enforcement",
+    "factId": "wse-aviagames-doj-grand-jury"
+  },
+  {
+    "date": "2023-11",
+    "event": "Consumer class action Pandolfi v. AviaGames (No. 5:23-cv-05971) filed, alleging bots in supposed human-vs-human skill contests and asserting RICO claims against founders and investors.",
+    "category": "litigation",
+    "factId": "wse-pandolfi-aviagames-rico"
+  },
+  {
+    "date": "2024-02",
+    "event": "N.D. Cal. jury finds AviaGames willfully infringed Skillz's patent and awards $42.9M; willfulness opens the door to treble damages.",
+    "category": "litigation",
+    "factId": "wse-skillz-aviagames-verdict"
+  },
+  {
+    "date": "2024-03",
+    "event": "Skillz sues rival Papaya Gaming (S.D.N.Y., before Judge Denise Cote) over the same bot-in-skill-games theory.",
+    "category": "litigation",
+    "factId": "wse-skillz-papaya-suit"
+  },
+  {
+    "date": "2024-04",
+    "event": "Skillz and AviaGames settle for around $80M ($50M cash plus royalties), ending the patent and unfair-competition litigation.",
+    "category": "litigation",
+    "factId": "wse-skillz-aviagames-settlement"
+  },
+  {
+    "date": "2025-06",
+    "event": "NY AG Letitia James stops 26 online sweepstakes casino platforms via cease-and-desist letters - the live gray-to-enforcement counterexample for workaround real-money models.",
+    "category": "enforcement",
+    "factId": "wse-ny-sweepstakes-26-platforms"
+  },
+  {
+    "date": "2025-08",
+    "event": "India's Promotion and Regulation of Online Gaming Act, 2025 receives assent, banning all 'online money games' - including games of skill - and criminalizing enabling/advertising/financing them.",
+    "category": "regulation",
+    "factId": "wse-india-2025-skill-erased"
+  },
+  {
+    "date": "2025-10",
+    "event": "S.D.N.Y. rules it 'undisputed' that Papaya Gaming used bots from 2019 to at least 2023 in Solitaire Cash, denying summary judgment - a second operator judicially found deploying non-genuine opponents.",
+    "category": "litigation",
+    "factId": "wse-papaya-undisputed-bots"
+  },
+  {
+    "date": "2025-12",
+    "event": "Multi-state sweepstakes-casino crackdown crystallizes: California (AB 831, extending liability to vendors, signed Oct. 2025) and New York (SB 5935, signed Dec. 5, 2025) enact bans, joined by CT, MT and NJ; AZ/MI send 100+ C&D letters.",
+    "category": "enforcement",
+    "factId": "wse-sweepstakes-multistate-2025"
+  },
+  {
+    "date": "2026-01",
+    "event": "Papaya Gaming's $15M consumer class-action settlement (Barcelo v. Papaya) reaches its claim-filing deadline (final-approval hearing Mar 2026).",
+    "category": "litigation",
+    "factId": "wse-papaya-barcelo-settlement"
+  },
+  {
+    "date": "2026-04",
+    "event": "S.D.N.Y. jury awards Skillz $420M against Papaya Gaming for false advertising (reportedly the largest Lanham Act award in U.S. history) - misrepresenting bot opponents as real players now carries nine-figure exposure.",
+    "category": "litigation",
+    "factId": "wse-skillz-papaya-verdict"
+  },
+  {
+    "date": "2026-04",
+    "event": "A divided Third Circuit holds the CFTC has exclusive jurisdiction over Kalshi's sports event contracts as 'swaps' preempting state gambling law - regulatory reclassification as a third path for workaround models (district courts remain split).",
+    "category": "litigation",
+    "factId": "wse-kalshi-3rd-circuit"
+  }
+]

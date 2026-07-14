@@ -1,0 +1,89 @@
+/* =============================================================================
+   site/css/sections-core.css
+   Task 18 — section-specific styles for #hero, #tldr, #mandate. Extends the
+   tokens/utilities in main.css; no new tokens introduced here.
+   ========================================================================== */
+
+/* ---- Hero stat strip ------------------------------------------------------- */
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  margin-top: clamp(2.25rem, 5vw, 3.5rem);
+  padding-top: clamp(1.5rem, 4vw, 2.25rem);
+  border-top: 1px solid var(--border);
+}
+.hero__stat { display: flex; flex-direction: column; }
+.hero__stat .stat--big { --u: 0%; }
+.hero__stat .stat__label {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  line-height: 1.4;
+  max-width: 16rem;
+}
+
+/* app.js tags any tier-C/D fact with a `tier-C`/`tier-D` class on the SAME
+   element that carries data-fact-id (main.css ~L390-393) so the "per
+   company" / "our estimate" qualifier can render inline. That's fine on
+   plain prose citations, but if a hero `.stat--big` number ever cites a
+   tier-C/D fact, `.tier-C`/`.tier-D` sit later in main.css's cascade and win
+   on identical specificity, stomping the big number's own background/color
+   (main.css ~L328-334) with a small badge fill. Pin the intended
+   .stat--big treatment back on top whenever a tier class lands on it. */
+.hero .stat--big.tier-C,
+.hero .stat--big.tier-D {
+  background: linear-gradient(180deg, currentColor, currentColor) left 100% / var(--u, 0%) 2px no-repeat;
+  color: var(--text);
+  border-color: transparent;
+}
+
+@media (max-width: 40rem) {
+  .hero__stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---- TL;DR verdict callout -------------------------------------------------- */
+.tldr__verdict {
+  margin-top: 1.75rem;
+  padding: 1.1rem 1.3rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent-line);
+  border-radius: var(--radius-sm);
+  max-width: none;
+}
+.tldr__verdict strong { color: var(--accent-bright); }
+
+/* ---- Mandate quotes --------------------------------------------------------- */
+.mandate__quotes {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.4rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  margin: clamp(1.5rem, 3vw, 2rem) 0;
+}
+.mandate__quote {
+  margin: 0;
+  padding: clamp(1rem, 2.5vw, 1.3rem);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.mandate__quote blockquote {
+  margin: 0;
+  padding-left: 0.7rem;
+  border-left: 2px solid var(--accent-line);
+}
+.mandate__quote blockquote p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--step-0);
+  line-height: 1.45;
+  color: var(--text);
+  max-width: none;
+}
+.mandate__quote figcaption {
+  margin-top: 0.65rem;
+  color: var(--muted);
+}

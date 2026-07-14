@@ -1,0 +1,137 @@
+[
+  {
+    "company": "Skillz",
+    "date": "2020-09",
+    "round": "SPAC merger",
+    "amountUSD": 849000000,
+    "lead": "Flying Eagle Acquisition Corp.",
+    "factId": "wsc-skillz-spac-merger-2020",
+    "tier": "B"
+  },
+  {
+    "company": "Dream11 (Dream Sports)",
+    "date": "2021-03",
+    "round": "Growth round",
+    "amountUSD": 400000000,
+    "lead": "TCV, D1 Capital Partners, Falcon Edge",
+    "factId": "wsc-dreamsports-round-2021-03",
+    "tier": "B"
+  },
+  {
+    "company": "WinZO",
+    "date": "2021-07",
+    "round": "Series C",
+    "amountUSD": 65000000,
+    "lead": "Griffin Gaming Partners",
+    "factId": "wsc-winzo-series-c-2021",
+    "tier": "B"
+  },
+  {
+    "company": "AviaGames",
+    "date": "2021-08",
+    "round": "Series B",
+    "amountUSD": 40000000,
+    "lead": "ACME Capital, Washington Harbour Partners, Powerhouse Capital",
+    "factId": "wsc-aviagames-series-b-2021",
+    "tier": "B"
+  },
+  {
+    "company": "Zupee",
+    "date": "2021-08",
+    "round": "Series B",
+    "amountUSD": 30000000,
+    "lead": "WestCap Group, Tomales Bay Capital",
+    "factId": "wsc-zupee-series-b-2021",
+    "tier": "B"
+  },
+  {
+    "company": "MPL",
+    "date": "2021-09",
+    "round": "Series E",
+    "amountUSD": 150000000,
+    "lead": "Legatum Capital",
+    "factId": "wsc-mpl-series-e-2021",
+    "tier": "B"
+  },
+  {
+    "company": "Sleeper",
+    "date": "2021-09",
+    "round": "Series C",
+    "amountUSD": 40000000,
+    "lead": "Andreessen Horowitz (a16z)",
+    "factId": "wsc-sleeper-series-c-2021-a16z",
+    "tier": "B"
+  },
+  {
+    "company": "Dream11 (Dream Sports)",
+    "date": "2021-11",
+    "round": "Growth round",
+    "amountUSD": 840000000,
+    "lead": "Falcon Edge, DST Global, D1 Capital, RedBird Capital, Tiger Global",
+    "factId": "wsc-dreamsports-round-2021-11",
+    "tier": "B"
+  },
+  {
+    "company": "Games24x7",
+    "date": "2022-03",
+    "round": "Growth round",
+    "amountUSD": 75000000,
+    "lead": "Malabar Investment",
+    "factId": "wsc-games24x7-funding-2022",
+    "tier": "B"
+  },
+  {
+    "company": "Underdog",
+    "date": "2022-07",
+    "round": "Series B",
+    "amountUSD": 35000000,
+    "lead": "BlackRock (managed funds), Acies Investment",
+    "factId": "wsc-underdog-series-b-2022",
+    "tier": "B"
+  },
+  {
+    "company": "Triumph Labs",
+    "date": "2023-05",
+    "round": "Seed",
+    "amountUSD": 3900000,
+    "lead": "Flux",
+    "factId": "wsc-triumph-funding-total-14m",
+    "tier": "B"
+  },
+  {
+    "company": "Triumph Labs",
+    "date": "2023-05",
+    "round": "Series A",
+    "amountUSD": 10200000,
+    "lead": "General Catalyst",
+    "factId": "wsc-triumph-funding-total-14m",
+    "tier": "B"
+  },
+  {
+    "company": "Underdog",
+    "date": "2025-03",
+    "round": "Series C",
+    "amountUSD": 70000000,
+    "lead": "Spark Capital",
+    "factId": "wsc-underdog-series-c-2025",
+    "tier": "B"
+  },
+  {
+    "company": "PrizePicks",
+    "date": "2025-09",
+    "round": "Majority-stake acquisition",
+    "amountUSD": 1600000000,
+    "lead": "Allwyn International AG",
+    "factId": "wsc-prizepicks-allwyn-deal-2025",
+    "tier": "B"
+  },
+  {
+    "company": "Toast",
+    "date": "2025-09",
+    "round": "Pre-seed",
+    "amountUSD": 1600000,
+    "lead": "Lightspeed Venture Partners",
+    "factId": "wsa-funding-round",
+    "tier": "C"
+  }
+]

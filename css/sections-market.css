@@ -1,0 +1,190 @@
+/* =============================================================================
+   Toast research — Task 21 section styles
+   Market sizing, competitor landscape, cautionary tales. Consumes the tokens in
+   main.css (surfaces, ink, tier system, accent, mono). Charts are hand-rolled
+   SVG (js/charts.js); this file dresses the marks, chrome, cards, and tables.
+   Every SVG mark colour resolves to a themed token so light/dark swap for free.
+   ========================================================================== */
+
+/* ---- Chart figure scaffold ------------------------------------------------ */
+.chart-fig { margin: clamp(1.4rem, 3.5vw, 2.2rem) 0 0; }
+.chart-fig + .chart-fig { margin-top: clamp(1.8rem, 4vw, 2.6rem); }
+.chart-cap { font-size: var(--step--1); color: var(--muted); line-height: 1.5; margin: 0 0 0.75rem; max-width: 48rem; }
+.chart-cap .chart-title { display: block; font-family: var(--font-text); font-weight: 650; color: var(--text); font-size: var(--step-0); margin-bottom: 0.2rem; }
+.chart-cap b, .chart-cap strong { color: var(--text); font-weight: 600; }
+.chart-src { display: block; margin-top: 0.5rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--faint); letter-spacing: 0.02em; }
+
+.chart-svg { display: block; font-family: var(--font-mono); overflow: visible; }
+
+/* ---- Shared SVG mark classes ---------------------------------------------- */
+.c-cat { fill: var(--text); font-family: var(--font-text); font-size: 11px; font-weight: 500; }
+.c-val { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.c-num { font-variant-numeric: tabular-nums; }
+.c-axis { stroke: var(--border-strong); stroke-width: 1; }
+.c-grid { stroke: var(--border); stroke-width: 1; }
+.c-axis-label { fill: var(--muted); font-size: 11px; }
+.c-axis-title { fill: var(--faint); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+.c-bar { transition: opacity 0.15s ease; }
+.c-bar.is-hot { opacity: 0.82; }
+.bar-A { fill: var(--tier-a); }
+.bar-B { fill: var(--tier-b); }
+.bar-C { fill: var(--tier-c); }
+.bar-D { fill: var(--tier-d); }
+
+/* tier-D pill drawn inside the SVG (mirrors the HTML .tier-badge) */
+.c-dpill { fill: var(--tier-d-bg); stroke: color-mix(in srgb, var(--tier-d) 45%, transparent); stroke-width: 1; }
+.c-dpill-t { fill: var(--tier-d-fg); font-size: 9px; font-weight: 700; letter-spacing: 0.02em; }
+
+/* ---- Line chart (SKLZ) ---------------------------------------------------- */
+.c-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.c-ann { fill: var(--text); font-size: 10.5px; font-weight: 600; }
+.c-ann-sub { fill: var(--muted); font-weight: 400; font-size: 9.5px; }
+.c-ann-dot { fill: var(--accent-bright); stroke: var(--bg); stroke-width: 1.5; }
+.c-cross { stroke: var(--border-strong); stroke-width: 1; stroke-dasharray: 3 3; }
+.c-cross-dot { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
+.c-hit { cursor: crosshair; }
+
+/* ---- TAM/SAM/SOM ---------------------------------------------------------- */
+.tsm-som { fill: var(--tier-d); }
+.tsm-leader { stroke: var(--border-strong); stroke-width: 1; stroke-dasharray: 2 2; }
+
+/* ---- Quadrant ------------------------------------------------------------- */
+.q-spot { fill: var(--accent-tint); }
+.q-hatch-l { stroke: var(--warn); stroke-width: 1.2; }
+.q-mark { cursor: pointer; }
+.q-mark circle, .q-mark path { transition: transform 0.12s ease; transform-box: fill-box; transform-origin: center; }
+.q-dot circle { fill: var(--tier-b); stroke: var(--surface); stroke-width: 2; }
+.q-toast circle { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
+.q-toast-lbl { fill: var(--accent-bright); font-size: 10px; font-weight: 700; }
+.q-house path { fill: url(#q-hatch); stroke: var(--warn); stroke-width: 1.5; }
+.q-mark.is-hot circle, .q-mark.is-hot path { transform: scale(1.14); }
+.q-mark:focus-visible { outline: none; }
+.q-mark:focus-visible circle, .q-mark:focus-visible path { stroke: var(--accent-bright); stroke-width: 2.5; }
+
+/* ---- Funding dot-timeline ------------------------------------------------- */
+.f-mark { cursor: pointer; }
+.f-field circle { fill: var(--tier-b); fill-opacity: 0.85; stroke: var(--surface); stroke-width: 1.5; transition: fill-opacity 0.12s ease; }
+.f-toast circle { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
+.f-mark.is-hot circle { fill-opacity: 1; stroke: var(--accent-bright); stroke-width: 2; }
+.f-lbl { fill: var(--muted); font-size: 10px; font-variant-numeric: tabular-nums; }
+.f-lbl-toast { fill: var(--accent-bright); font-weight: 700; }
+.f-mark:focus-visible { outline: none; }
+.f-mark:focus-visible circle { stroke: var(--accent-bright); stroke-width: 2.5; }
+
+/* ---- Legends -------------------------------------------------------------- */
+.chart-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; margin: 0.7rem 0 0; padding: 0; list-style: none;
+  font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); }
+.legend-item { display: inline-flex; align-items: center; gap: 0.5ch; }
+.legend-swatch { width: 0.8rem; height: 0.8rem; border-radius: 3px; flex: none; }
+.sw-A { background: var(--tier-a); } .sw-B { background: var(--tier-b); }
+.sw-C { background: var(--tier-c); } .sw-D { background: var(--tier-d); }
+.sw-toast { background: var(--accent); }
+.sw-field { background: var(--tier-b); }
+.sw-house { width: 0.72rem; height: 0.72rem; border-radius: 1px; background: transparent;
+  border: 1.5px solid var(--warn); transform: rotate(45deg); }
+.legend-note { color: var(--faint); }
+
+/* ---- Tooltip (shared, fixed) ---------------------------------------------- */
+.chart-tip { position: fixed; z-index: 80; pointer-events: none; max-width: 17rem;
+  background: var(--surface-2); border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow); padding: 0.5rem 0.65rem; font-family: var(--font-text); font-size: 0.75rem;
+  line-height: 1.4; color: var(--text); }
+.chart-tip[hidden] { display: none; }
+.chart-tip b { display: block; font-weight: 650; margin-bottom: 0.15rem; }
+.chart-tip .tt-val { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-weight: 600; color: var(--accent-bright); }
+.chart-tip .tt-meta { display: block; color: var(--muted); font-family: var(--font-mono); font-size: 0.68rem; margin-top: 0.1rem; }
+.chart-tip .tt-flag { display: block; margin-top: 0.3rem; color: var(--warn-fg); font-weight: 600; font-size: 0.68rem; }
+
+/* ---- <details> data-table fallback ---------------------------------------- */
+.chart-data { margin: 0.75rem 0 0; }
+.chart-data > summary { cursor: pointer; font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-bright);
+  letter-spacing: 0.04em; width: max-content; }
+.chart-data > summary:hover { text-decoration: underline; }
+.chart-data[open] > summary { margin-bottom: 0.6rem; }
+
+/* ---- Market: 40-state gap framing ----------------------------------------- */
+.gap-grid { display: grid; gap: clamp(0.7rem, 2vw, 1rem); margin: 1.4rem 0 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); }
+.gap-cell { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; }
+.gap-figure { display: block; font-family: var(--font-mono); font-variant-numeric: tabular-nums;
+  font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.1rem); font-weight: 600; line-height: 1; color: var(--text); letter-spacing: -0.01em; }
+.gap-figure--warn { color: var(--warn-fg); }
+.gap-label { display: block; margin-top: 0.5rem; font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+
+/* methodology footnote */
+.method-note { margin: 1.1rem 0 0; padding: 0.9rem 1.05rem; background: var(--tier-d-bg);
+  border: 1px solid color-mix(in srgb, var(--tier-d) 35%, transparent); border-radius: var(--radius-sm);
+  font-size: 0.82rem; color: var(--muted); line-height: 1.55; max-width: 48rem; }
+.method-note b { color: var(--tier-d-fg); }
+
+/* ---- Analyst disagreement table ------------------------------------------- */
+.analyst-note { margin-top: 0.9rem; font-size: 0.82rem; color: var(--muted); max-width: 48rem; }
+.excluded { color: var(--faint); font-style: italic; }
+
+/* ---- Players: competitor cards -------------------------------------------- */
+.players-grid { display: grid; gap: clamp(0.9rem, 2.5vw, 1.3rem); margin: 1.6rem 0 0;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17.5rem), 1fr)); }
+.player-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 1.05rem 1.1rem 1.15rem; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 0.5rem; }
+.player-card--toast { border-color: var(--accent-line); box-shadow: 0 0 0 1px var(--accent-line), var(--shadow); }
+.player-card--house { border-style: dashed; border-color: color-mix(in srgb, var(--warn) 50%, var(--border)); }
+.pc-name { font-family: var(--font-display); font-size: 1.08rem; font-weight: 600; letter-spacing: -0.01em; margin: 0; line-height: 1.15; }
+.pc-meta { margin: 0; font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--faint); display: flex; flex-wrap: wrap; gap: 0.25rem 0.85rem; }
+.pc-model { margin: 0; font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
+.pc-raise-line { margin: 0; font-size: 0.8rem; color: var(--muted); }
+.pc-raise { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--text); font-weight: 600; }
+.pc-status { margin: 0; font-size: 0.82rem; color: var(--text); line-height: 1.45; }
+.pc-why { margin: 0.15rem 0 0; font-size: 0.84rem; color: var(--text); line-height: 1.5; }
+.pc-why b { color: var(--accent-bright); font-weight: 600; }
+.pc-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.1rem; }
+.pc-tag { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.06em; text-transform: uppercase;
+  font-weight: 600; padding: 0.15rem 0.5rem; border-radius: 999px; border: 1px solid transparent; white-space: nowrap; }
+.pc-tag--house { color: var(--warn-fg); background: color-mix(in srgb, var(--warn) 14%, transparent);
+  border-color: color-mix(in srgb, var(--warn) 45%, transparent); }
+.pc-tag--toast { color: var(--accent-bright); background: var(--accent-tint); border-color: var(--accent-line); }
+.pc-tag--p2p { color: var(--tier-b-fg); background: var(--tier-b-bg); border-color: color-mix(in srgb, var(--tier-b) 45%, transparent); }
+
+/* ---- Cautionary: verdict / thesis ----------------------------------------- */
+.verdict-grid { display: grid; gap: clamp(0.9rem, 2.5vw, 1.4rem); margin: 1.6rem 0 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+.verdict-card { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--danger);
+  border-radius: var(--radius); padding: 1.15rem 1.25rem; box-shadow: var(--shadow); }
+.verdict-card h3 { margin: 0 0 0.2rem; }
+.verdict-kicker { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--danger-fg); margin: 0 0 0.6rem; display: block; }
+.verdict-figures { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; margin: 0.7rem 0 0.9rem; padding: 0.7rem 0 0;
+  border-top: 1px solid var(--border); }
+.verdict-figure { display: flex; flex-direction: column; }
+.verdict-figure .vf-num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-weight: 600;
+  font-size: 1.3rem; color: var(--danger-fg); line-height: 1.1; }
+.verdict-figure .vf-lbl { font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
+.verdict-body { margin: 0; font-size: 0.86rem; color: var(--text); line-height: 1.55; }
+
+.thesis-line { margin: clamp(1.8rem, 4vw, 2.6rem) 0 0; padding: 1.3rem 1.4rem; border-radius: var(--radius);
+  background: var(--surface-2); border: 1px solid var(--border-strong); border-left: 3px solid var(--accent);
+  font-family: var(--font-display); font-size: clamp(1.15rem, 1rem + 0.8vw, 1.5rem); line-height: 1.35; color: var(--text);
+  max-width: none; text-wrap: pretty; }
+.thesis-line b { color: var(--accent-bright); font-weight: 600; }
+
+/* ---- Sub-section headings within a fragment ------------------------------- */
+.sub-head { margin: clamp(2rem, 5vw, 3rem) 0 0; }
+.sub-head h3 { font-size: var(--step-2); font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em; margin: 0 0 0.4rem; }
+.sub-head p { color: var(--muted); margin: 0; max-width: 46rem; }
+.sub-kicker { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent-bright); display: block; margin-bottom: 0.5rem; }
+
+/* ---- Responsive & motion -------------------------------------------------- */
+@media (max-width: 40rem) {
+  .chart-cap { font-size: 0.82rem; }
+  .verdict-figure .vf-num { font-size: 1.15rem; }
+  .thesis-line { padding: 1.05rem 1.1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .c-bar, .q-mark circle, .q-mark path, .f-field circle { transition: none; }
+}
+@media (prefers-contrast: more), (forced-colors: active) {
+  .player-card--house { border-style: dashed; }
+  .q-house path { stroke-width: 2; }
+}

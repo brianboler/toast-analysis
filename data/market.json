@@ -1,0 +1,179 @@
+{
+  "marketBars": [
+    {
+      "label": "US commercial gaming (total, 2025)",
+      "valueUSD": 78720000000,
+      "asOf": "2025",
+      "factId": "wsb-aga-2025-total-revenue",
+      "tier": "A"
+    },
+    {
+      "label": "US iGaming segment (2025)",
+      "valueUSD": 10740000000,
+      "asOf": "2025",
+      "factId": "wsb-aga-2025-igaming-revenue",
+      "tier": "A"
+    },
+    {
+      "label": "Illegal online slots + table games estimate (US, 2025)",
+      "valueUSD": 18600000000,
+      "asOf": "2025",
+      "factId": "wsb-aga-illegal-igaming",
+      "tier": "A"
+    },
+    {
+      "label": "Skillz revenue — 2021 peak",
+      "valueUSD": 384100000,
+      "asOf": "2021",
+      "factId": "wsb-skillz-revenue-2021",
+      "tier": "A"
+    },
+    {
+      "label": "Skillz revenue — 2024 trough",
+      "valueUSD": 95500000,
+      "asOf": "2024",
+      "factId": "wsb-skillz-revenue-2024",
+      "tier": "A"
+    },
+    {
+      "label": "Papaya Gaming revenue (industry-source estimate, unconfirmed)",
+      "valueUSD": 150000000,
+      "asOf": "2021",
+      "factId": "wsb-papaya-revenue-estimate",
+      "tier": "C"
+    },
+    {
+      "label": "Global skill-gaming market (market-research estimate)",
+      "valueUSD": 43100000000,
+      "asOf": "2025",
+      "factId": "wsb-skill-gaming-mill-databridge",
+      "tier": "B"
+    },
+    {
+      "label": "TAM — P2P skill-gaming theoretical ceiling",
+      "valueUSD": 86000000000,
+      "asOf": "2025",
+      "factId": "wsb-tam-p2p-skill-gaming",
+      "tier": "D"
+    },
+    {
+      "label": "SAM — illegal iCasino-style demand proxy",
+      "valueUSD": 18600000000,
+      "asOf": "2025",
+      "factId": "wsb-sam-p2p-skill-gaming",
+      "tier": "D"
+    },
+    {
+      "label": "SOM — realistic 3-5yr obtainable revenue (low)",
+      "valueUSD": 50000000,
+      "asOf": "2025",
+      "factId": "wsb-som-p2p-skill-gaming",
+      "tier": "D"
+    },
+    {
+      "label": "SOM — realistic 3-5yr obtainable revenue (high)",
+      "valueUSD": 400000000,
+      "asOf": "2025",
+      "factId": "wsb-som-p2p-skill-gaming",
+      "tier": "D"
+    }
+  ],
+  "sklzSeries": [
+    { "date": "2020-12", "close": 400.00 },
+    { "date": "2021-01", "close": 552.40 },
+    { "date": "2021-02", "close": 632.20 },
+    { "date": "2021-03", "close": 375.00 },
+    { "date": "2021-04", "close": 350.40 },
+    { "date": "2021-05", "close": 406.20 },
+    { "date": "2021-06", "close": 390.40 },
+    { "date": "2021-07", "close": 281.60 },
+    { "date": "2021-08", "close": 242.00 },
+    { "date": "2021-09", "close": 194.60 },
+    { "date": "2021-10", "close": 223.60 },
+    { "date": "2021-11", "close": 161.20 },
+    { "date": "2021-12", "close": 148.80 },
+    { "date": "2022-01", "close": 75.20 },
+    { "date": "2022-02", "close": 50.20 },
+    { "date": "2022-03", "close": 59.40 },
+    { "date": "2022-04", "close": 41.00 },
+    { "date": "2022-05", "close": 33.40 },
+    { "date": "2022-06", "close": 25.20 },
+    { "date": "2022-07", "close": 31.60 },
+    { "date": "2022-08", "close": 25.00 },
+    { "date": "2022-09", "close": 20.40 },
+    { "date": "2022-10", "close": 19.50 },
+    { "date": "2022-11", "close": 19.64 },
+    { "date": "2022-12", "close": 10.12 },
+    { "date": "2023-01", "close": 18.28 },
+    { "date": "2023-02", "close": 13.34 },
+    { "date": "2023-03", "close": 11.86 },
+    { "date": "2023-04", "close": 12.46 },
+    { "date": "2023-05", "close": 9.78 },
+    { "date": "2023-06", "close": 9.10 },
+    { "date": "2023-07", "close": 10.50 },
+    { "date": "2023-08", "close": 8.18 },
+    { "date": "2023-09", "close": 5.10 },
+    { "date": "2023-10", "close": 6.00 },
+    { "date": "2023-11", "close": 6.30 },
+    { "date": "2023-12", "close": 6.24 },
+    { "date": "2024-01", "close": 5.61 },
+    { "date": "2024-02", "close": 7.18 },
+    { "date": "2024-03", "close": 6.49 },
+    { "date": "2024-04", "close": 6.43 },
+    { "date": "2024-05", "close": 6.83 },
+    { "date": "2024-06", "close": 7.18 },
+    { "date": "2024-07", "close": 6.10 },
+    { "date": "2024-08", "close": 5.90 },
+    { "date": "2024-09", "close": 5.53 },
+    { "date": "2024-10", "close": 5.54 },
+    { "date": "2024-11", "close": 5.70 },
+    { "date": "2024-12", "close": 5.18 },
+    { "date": "2025-01", "close": 6.65 },
+    { "date": "2025-02", "close": 5.88 },
+    { "date": "2025-03", "close": 3.86 },
+    { "date": "2025-04", "close": 5.16 },
+    { "date": "2025-05", "close": 6.29 },
+    { "date": "2025-06", "close": 7.34 },
+    { "date": "2025-07", "close": 6.70 },
+    { "date": "2025-08", "close": 8.82 },
+    { "date": "2025-09", "close": 8.08 },
+    { "date": "2025-10", "close": 6.68 },
+    { "date": "2025-11", "close": 5.59 },
+    { "date": "2025-12", "close": 4.41 },
+    { "date": "2026-01", "close": 3.70 },
+    { "date": "2026-02", "close": 3.36 },
+    { "date": "2026-03", "close": 2.50 },
+    { "date": "2026-04", "close": 7.66 },
+    { "date": "2026-05", "close": 9.37 },
+    { "date": "2026-06", "close": 9.74 },
+    { "date": "2026-07", "close": 8.54 }
+  ],
+  "sklzSeriesFactId": "wsg-sklz-price-series-methodology",
+  "sklzSeriesTier": "D",
+  "tamSamSom": [
+    {
+      "label": "TAM — P2P skill-gaming theoretical ceiling",
+      "valueUSD": 86000000000,
+      "factId": "wsb-tam-p2p-skill-gaming",
+      "tier": "D"
+    },
+    {
+      "label": "SAM — illegal iCasino-style demand proxy",
+      "valueUSD": 18600000000,
+      "factId": "wsb-sam-p2p-skill-gaming",
+      "tier": "D"
+    },
+    {
+      "label": "SOM — realistic 3-5yr obtainable revenue (low)",
+      "valueUSD": 50000000,
+      "factId": "wsb-som-p2p-skill-gaming",
+      "tier": "D"
+    },
+    {
+      "label": "SOM — realistic 3-5yr obtainable revenue (high)",
+      "valueUSD": 400000000,
+      "factId": "wsb-som-p2p-skill-gaming",
+      "tier": "D"
+    }
+  ]
+}

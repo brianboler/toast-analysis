@@ -1,0 +1,1957 @@
+{
+  "checked": 197,
+  "failed": 0,
+  "viaArchive": 6,
+  "viaProxy": 3,
+  "results": [
+    {
+      "url": "http://web.archive.org/web/20250502144830/https://www.sec.gov/Archives/edgar/data/1801661/000162828022003507/ex991_fy21q4-8xkxearningsr.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-skillz-fy2021-results"
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20260121060916/https://www.nysenate.gov/legislation/laws/PEN/225.00",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-ny-penal-225-material-degree"
+      ]
+    },
+    {
+      "url": "https://a16z.com/games-fund-one-building-the-future-of-games/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-a16z-no-direct-rmg-investment"
+      ]
+    },
+    {
+      "url": "https://ag.ny.gov/press-release/2015/ag-schneiderman-issues-cease-and-desist-letters-fanduel-and-draftkings-demanding",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-ny-ag-cease-desist-2015",
+        "wse-schneiderman-cease-desist",
+        "wse-schneiderman-scheme-quote"
+      ]
+    },
+    {
+      "url": "https://ag.ny.gov/press-release/2025/attorney-general-james-stops-illegal-online-sweepstakes-casinos",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-ny-sweepstakes-26-platforms",
+        "wse-sweepstakes-james-quote"
+      ]
+    },
+    {
+      "url": "https://andrewchen.com/gaming-versus-gambling-arpus/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-ltv-poker-vs-casual-arpu"
+      ]
+    },
+    {
+      "url": "https://android-developers.googleblog.com/2024/01/a-new-approach-to-real-money-games-on-google-play.html",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-google-rmg-expansion-jan2024"
+      ]
+    },
+    {
+      "url": "https://apkpure.com/carnival-play-earn-rewards/com.carnival.play",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-android-app-model-difference",
+        "wsa-android-developer-mismatch"
+      ]
+    },
+    {
+      "url": "https://app.fireflies.ai/view/01KXEFTYCK6GEFX2XPP3YFREE5",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "ws0-app-carnival-company-toast-games",
+        "ws0-casino-style-different-consumer",
+        "ws0-competitors-papaya-triumph-skillz",
+        "ws0-future-us-vs-us-vision",
+        "ws0-game-of-skill-vs-dealer-mechanism",
+        "ws0-historical-p2p-low-ltv-casual-games",
+        "ws0-icasino-40-states-blackjack-entry",
+        "ws0-icasino-legal-under-10-states",
+        "ws0-india-pay-rate-dollar-per-hour",
+        "ws0-latency-problem-limits-casino-style",
+        "ws0-matching-engine-differentiator",
+        "ws0-no-competitor-offshore-model",
+        "ws0-no-visible-opponent-live-human",
+        "ws0-positioning-draftkings-mgm-100-hands",
+        "ws0-prediction-market-analogy",
+        "ws0-prosecutor-regulatory-risk",
+        "ws0-site-games-list-playtoast",
+        "ws0-skillz-developer-platform-playbook",
+        "ws0-stake-arbitrage-us-india-hands",
+        "ws0-toast-builds-own-games-not-toolkit",
+        "ws0-toast-offshore-india-blackjack-team",
+        "ws0-triumph-casual-low-stakes",
+        "wsf-toast-per-hand-model"
+      ]
+    },
+    {
+      "url": "https://app.leg.wa.gov/RCW/default.aspx?cite=9.46.240",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-wa-rcw-946240-internet-felony"
+      ]
+    },
+    {
+      "url": "https://apps.apple.com/us/app/carnival-21-hustle-blackjack/id6745267121",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-carnival-app-store-listing"
+      ]
+    },
+    {
+      "url": "https://blog.basistheory.com/skill-games-payments-best-practices",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-mcc-5816-skill-games-virp-tier2"
+      ]
+    },
+    {
+      "url": "https://careers.toasttab.com/india",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-india-job-postings-not-found"
+      ]
+    },
+    {
+      "url": "https://carnivalplay.com/privacy-policy/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-carnival-privacy-effective-date",
+        "wsa-us-hq-address"
+      ]
+    },
+    {
+      "url": "https://carnivalplay.com/terms-of-service/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-age-requirement",
+        "wsa-deposit-withdrawal-rails",
+        "wsa-excluded-states-carnival",
+        "wsa-governing-law-arbitration",
+        "wsa-legal-entity-us",
+        "wsa-matched-real-human-claim",
+        "wsa-no-evidence-paid-india-player-pool",
+        "wsd-carnival-consumer-tos-excluded-states"
+      ]
+    },
+    {
+      "url": "https://casinobeats.com/features/us-online-casino-gambling-legal-tracker/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-igaming-states-2026-list"
+      ]
+    },
+    {
+      "url": "https://codes.findlaw.com/ar/title-5-criminal-offenses/ar-code-sect-5-66-113/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-ar-code-hazard-or-skill"
+      ]
+    },
+    {
+      "url": "https://codes.findlaw.com/ct/title-53-crimes/ct-gen-st-sect-53-278a/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-ct-gambling-definition"
+      ]
+    },
+    {
+      "url": "https://codes.findlaw.com/in/title-35-criminal-law-and-procedure/in-code-sect-35-45-5-1/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-in-card-games-chance-statute"
+      ]
+    },
+    {
+      "url": "https://codes.findlaw.com/la/revised-statutes/la-rev-stat-tit-14-sect-90-3/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-la-gambling-by-computer"
+      ]
+    },
+    {
+      "url": "https://codes.findlaw.com/me/title-17-a-maine-criminal-code/me-rev-st-tit-17-a-sect-952/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-me-contest-of-chance-definition"
+      ]
+    },
+    {
+      "url": "https://content.govdelivery.com/accounts/MIGCB/bulletins/3b9c1eb",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-mgcb-papaya-cease-desist"
+      ]
+    },
+    {
+      "url": "https://deadspin.com/legal-betting/los-angeles-city-attorney-sues-stake-us-partners-for-illegal-gambling/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-stakeus-la-lawsuit-2025"
+      ]
+    },
+    {
+      "url": "https://deadspin.com/legal-betting/louisiana-lawsuit-targets-vgw-wow-vegas-for-44m-in-taxes/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-vgw-louisiana-tax-suit"
+      ]
+    },
+    {
+      "url": "https://deadspin.com/sweepstakes-casinos/reviews/stake-us/ownership/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-stakeus-operator-easygo"
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/app-store/review/guidelines/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-apple-guideline-53-overview",
+        "wsf-apple-guideline-534-real-money-gaming"
+      ]
+    },
+    {
+      "url": "https://developer.apple.com/forums/thread/95279",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-apple-guideline-5-3-4"
+      ]
+    },
+    {
+      "url": "https://docs.skillz.com/docs/legal-skillz/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-skillz-40-states-claim",
+        "wsd-skillz-material-element-8-states"
+      ]
+    },
+    {
+      "url": "https://docs.triumpharcade.com/terms-of-use-triumph-play-for-cash",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-triumph-tos-eligible-locations"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/DraftKings",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-draftkings-founded-2012",
+        "wsc-ftc-blocked-merger-2017"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Dream11",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-dream11-founded-2008",
+        "wsc-india-rmg-ban-impact-dream11"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/FanDuel",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-fanduel-founded-2009"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mobile_Premier_League",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-mpl-business-model",
+        "wsc-mpl-founded-2018"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Promotion_and_Regulation_of_Online_Gaming_Act,_2025",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-india-act-timeline",
+        "wsc-india-rmg-ban-2025",
+        "wsf-india-online-gaming-act-2025"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/United_States_v._Scheinberg",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-black-friday-charges",
+        "wse-black-friday-settlement"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Voodoo_(company)",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-voodoo-founded-2013"
+      ]
+    },
+    {
+      "url": "https://entrackr.com/2021/07/exclusive-winzo-games-raises-65-mn-series-c-round-led-by-griffin-gaming-partners/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-winzo-series-c-2021"
+      ]
+    },
+    {
+      "url": "https://entrackr.com/2021/11/dream11-bags-840-mn-in-a-new-round-at-8-bn-valuation/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-dream11-valuation"
+      ]
+    },
+    {
+      "url": "https://entrackr.com/fintrackr/mpl-turns-operating-cash-flow-positive-with-rs-157-cr-in-fy24-7454050",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-mpl-revenue-fy24"
+      ]
+    },
+    {
+      "url": "https://entrackr.com/news/ed-arrests-winzo-founders-after-rs-505-cr-asset-freeze-in-money-laundering-probe-10817490",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-winzo-founders-arrested-2025"
+      ]
+    },
+    {
+      "url": "https://finviz.com/news/319235/draftkings-investor-day-analyst-sees-tam-growth-potential-eyes-fy28-forecast-updates",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-draftkings-prediction-market-tam"
+      ]
+    },
+    {
+      "url": "https://frontofficesports.com/mobile-premier-league-hits-unicorn-status/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-mpl-valuation"
+      ]
+    },
+    {
+      "url": "https://frontofficesports.com/sleeper-more-than-quadruples-valuation-to-400m/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-sleeper-400m-valuation-2021"
+      ]
+    },
+    {
+      "url": "https://g2g.news/gaming/zupee-raises-30-million-at-pre-valuation-of-500-million/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-zupee-valuation"
+      ]
+    },
+    {
+      "url": "https://gamblingharm.org/papaya-solitaire-cash-app-bots/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-papaya-denials",
+        "wse-papaya-undisputed-bots",
+        "wse-skillz-papaya-suit"
+      ]
+    },
+    {
+      "url": "https://gamesbeat.com/aviagames-raises-40m-to-diversify-mobile-skill-based-gaming/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-aviagames-gmv"
+      ]
+    },
+    {
+      "url": "https://gamesbeat.com/feds-seek-info-on-allegations-aviagames-uses-bots-to-scam-humans-in-skill-games/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-aviagames-bot-allegations",
+        "wsb-aviagames-doj-subpoena",
+        "wsc-skillz-aviagames-doj-probe",
+        "wsg-aviagames-doj-probe"
+      ]
+    },
+    {
+      "url": "https://gamesbeat.com/skillz-ceo-says-company-isnt-done-fighting-bots-in-mobile-gaming/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-aviagames-bot-codenames",
+        "wse-skillz-aviagames-settlement"
+      ]
+    },
+    {
+      "url": "https://gamesbeat.com/skillz-wins-420m-judgment-in-lawsuit-against-papaya-alleging-bot-fraud-in-multiplayer-games/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-skillz-v-papaya-disgorgement-figures"
+      ]
+    },
+    {
+      "url": "https://igamingbusiness.com/legal-compliance/2025-sweepstakes-casinos-year-in-review/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-sweeps-crackdown-2025",
+        "wse-sweepstakes-multistate-2025"
+      ]
+    },
+    {
+      "url": "https://illinoislawreview.org/wp-content/ilr-content/articles/2016/1/Edelman.pdf",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-edelman-any-chance-states",
+        "wsd-edelman-az-tn-ia-statutes",
+        "wsd-edelman-hawaii-gambling-instinct",
+        "wsd-edelman-material-element-mo-ny",
+        "wsd-edelman-montana-louisiana-online-ban",
+        "wsd-edelman-nj-predominant-purpose"
+      ]
+    },
+    {
+      "url": "https://inc42.com/buzz/28-gst-on-online-gaming-from-today-heres-everything-you-need-to-know/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-india-2023-gst"
+      ]
+    },
+    {
+      "url": "https://india.entrepreneur.com/finance/winzo-raises-65-mn-in-series-c-round/376342",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-winzo-series-c"
+      ]
+    },
+    {
+      "url": "https://intercom.help/triumph/en/articles/11427790-game-exclusions-by-state",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-triumph-card-game-exclusions"
+      ]
+    },
+    {
+      "url": "https://intercom.help/triumph/en/articles/9750284-supported-states",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-addressable-states-estimate",
+        "wsd-triumph-supported-36-states"
+      ]
+    },
+    {
+      "url": "https://investors.skillz.com/news/news-details/2022/Skillz-Announces-Q4-2021-and-FY-2021-Results/default.aspx",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-skillz-revenue-2020",
+        "wsb-skillz-revenue-2021",
+        "wsb-som-p2p-skill-gaming"
+      ]
+    },
+    {
+      "url": "https://investors.skillz.com/news/news-details/2023/Skillz-Announces-1-for-20-Reverse-Stock-Split/default.aspx",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-sklz-reverse-split"
+      ]
+    },
+    {
+      "url": "https://investors.skillz.com/news/news-details/2024/Skillz-Reports-2023-Fourth-Quarter-and-Full-Year-2023-Results/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-skillz-fy2023-results"
+      ]
+    },
+    {
+      "url": "https://investors.skillz.com/news/news-details/2024/Skillz-Reports-2023-Fourth-Quarter-and-Full-Year-2023-Results/default.aspx",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-skillz-revenue-2022",
+        "wsb-skillz-revenue-2023"
+      ]
+    },
+    {
+      "url": "https://investors.skillz.com/news/news-details/2025/Skillz-Announces-Preliminary-Third-Quarter-2025-Results/default.aspx",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-skillz-q3-2025-recovery"
+      ]
+    },
+    {
+      "url": "https://investors.skillz.com/news/news-details/2025/Skillz-Reports-2024-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-skillz-pmau-gmv-2024",
+        "wsb-skillz-revenue-2023-restated",
+        "wsb-skillz-revenue-2024"
+      ]
+    },
+    {
+      "url": "https://investors.skillz.com/news/news-details/2026/Skillz-Inc--Completes-Rebrand-to-Firy-Inc--Class-A-Common-Stock-Now-Trading-on-New-York-Stock-Exchange-Under-FIRY-Ticker-Symbol/default.aspx",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-skillz-rebrand-firy-2026",
+        "wsf-firy-rebrand-2026"
+      ]
+    },
+    {
+      "url": "https://investors.skillz.com/news/news-details/2026/Skillz-Reports-2025-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-skillz-fy2025-results",
+        "wsf-skillz-implied-take-rate-trend",
+        "wsf-skillz-restated-figures",
+        "wsf-skillz-sm-pct-revenue-trend"
+      ]
+    },
+    {
+      "url": "https://itunes.apple.com/lookup?id=6745267121",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-carnival-app-ios-metadata",
+        "wsa-carnival-content-rating",
+        "wsa-carnival-no-apple-iap"
+      ]
+    },
+    {
+      "url": "https://itunes.apple.com/lookup?id=6745267121&country=us",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-carnival-app-store-listing"
+      ]
+    },
+    {
+      "url": "https://kleinmoynihan.com/games-of-skill-v-games-of-chance-the-legal-analysis/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-doctrine-majority-predominance"
+      ]
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB831",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-ca-ab831-supplier-reach"
+      ]
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=330.",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-ca-penal-330-twenty-one"
+      ]
+    },
+    {
+      "url": "https://liftoff.ai/2025-casual-gaming-apps-report/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-ltv-cpi-casino-vs-casual"
+      ]
+    },
+    {
+      "url": "https://lsip.com/company/toast-studios/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-founding-year",
+        "wsa-lightspeed-investment"
+      ]
+    },
+    {
+      "url": "https://markets.financialcontent.com/ms.intelvalue/article/bizwire-2021-8-11-aviagames-raises-40-million-to-diversify-gaming",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-aviagames-founded-2017",
+        "wsc-aviagames-series-b-2021"
+      ]
+    },
+    {
+      "url": "https://playtoast.com",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-partner-prior-gamersaloon-ember",
+        "wsa-toast-platform-games-catalog"
+      ]
+    },
+    {
+      "url": "https://playtoast.com/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-playtoast-21-hustle-no-dealer"
+      ]
+    },
+    {
+      "url": "https://playtoast.com/about",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-business-model-b2b-platform",
+        "wsa-cto-bio",
+        "wsa-founders-bios"
+      ]
+    },
+    {
+      "url": "https://playtoast.com/terms",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-toast-terms-effective-date",
+        "wsd-toast-tos-no-state-list"
+      ]
+    },
+    {
+      "url": "https://sacra.com/c/underdog-fantasy/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-underdog-founded-2020"
+      ]
+    },
+    {
+      "url": "https://sccgmanagement.com/sccg-articles/2024/6/27/google-pauses-expansion-of-real-money-games-on-play-store-a-strategic-retreat-in-response-to-regulatory-challenges-and-new-revenue-generating-opportunities/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-google-rmg-pause-june2024"
+      ]
+    },
+    {
+      "url": "https://sleeper.com/blog/fantasy-sports-app-sleeper-raises-40-million-series-c/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-sleeper-founded-2015",
+        "wsc-sleeper-series-c-2021-a16z"
+      ]
+    },
+    {
+      "url": "https://sportslitigationalert.com/the-case-of-skillz-platform-inc-v-aviagames-inc/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-skillz-aviagames-case"
+      ]
+    },
+    {
+      "url": "https://startuptalky.com/news/winzo-revenue-profit-report-fy24/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-winzo-gst-impact",
+        "wsb-winzo-revenue-fy24"
+      ]
+    },
+    {
+      "url": "https://stockanalysis.com/stocks/dkng/statistics/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-dkng-ev-revenue",
+        "wsg-dkng-market-cap",
+        "wsg-dkng-ttm-revenue",
+        "wsg-what-multiples-imply"
+      ]
+    },
+    {
+      "url": "https://stockanalysis.com/stocks/firy/statistics/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-firy-current-market-cap",
+        "wsg-firy-ev-revenue",
+        "wsg-firy-ttm-revenue"
+      ]
+    },
+    {
+      "url": "https://stockanalysis.com/stocks/sklz/market-cap/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-skillz-market-cap-trajectory"
+      ]
+    },
+    {
+      "url": "https://stockanalysis.com/stocks/sklz/revenue/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-skillz-revenue-2019"
+      ]
+    },
+    {
+      "url": "https://support.google.com/googleplay/android-developer/answer/16302250?hl=en",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-google-play-age-restriction-2025"
+      ]
+    },
+    {
+      "url": "https://support.google.com/googleplay/android-developer/answer/9877032?hl=en",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-google-play-realmoney-policy",
+        "wsf-google-play-rmg-core-policy",
+        "wsf-google-play-rmg-prohibited"
+      ]
+    },
+    {
+      "url": "https://techcrunch.com/2020/02/14/hq-trivia-shuts-down/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-hq-trivia-shutdown"
+      ]
+    },
+    {
+      "url": "https://techcrunch.com/2021/03/04/papaya-global-raises-100m-more-at-a-1b-valuation-for-tools-to-hire-pay-and-manage-distributed-workforces/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-papaya-not-papaya-global-disambiguation"
+      ]
+    },
+    {
+      "url": "https://techcrunch.com/2021/03/24/indian-fantasy-sports-app-dream-sports-dream-11-raises-400-million/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-dreamsports-round-2021-03"
+      ]
+    },
+    {
+      "url": "https://techcrunch.com/2022/03/30/indias-games24x7-valued-at-2-5-billion-in-new-funding/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-games24x7-business-model",
+        "wsc-games24x7-founded",
+        "wsc-games24x7-funding-2022",
+        "wsg-games24x7-valuation"
+      ]
+    },
+    {
+      "url": "https://techcrunch.com/2023/05/10/triumph-raises-14m-for-an-sdk-to-add-real-money-tournaments-into-games/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-triumph-funding",
+        "wsb-triumph-model",
+        "wsc-triumph-business-model-sdk-rake",
+        "wsc-triumph-founded-2020",
+        "wsc-triumph-funding-total-14m",
+        "wsg-triumph-labs-funding"
+      ]
+    },
+    {
+      "url": "https://tetherstudios.com/games/solitaire-cube",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-skillz-solitaire-cube-realtime-matching"
+      ]
+    },
+    {
+      "url": "https://tfipost.com/2026/05/india-bans-real-money-online-gaming-enforces-new-digital-gaming-law-from-may-1/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-india-online-gaming-act-effective-may2026"
+      ]
+    },
+    {
+      "url": "https://thelogicalindian.com/ed-arrests-winzo-founders-saumya-singh-rathore-paavan-nanda-in-money-laundering-and-gaming-fraud-case/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-winzo-founded-2018"
+      ]
+    },
+    {
+      "url": "https://thetechportal.com/2025/09/02/games24x7-mpl-and-pokerbaazi-start-large-scale-layoffs-amid-indias-ban-on-real-money-gaming-report",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-india-mpl-layoffs"
+      ]
+    },
+    {
+      "url": "https://tmsearch.uspto.gov/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-uspto-trademark-search-gap"
+      ]
+    },
+    {
+      "url": "https://track360.io/blog/us-sports-betting-state-by-state-operator-map-2026",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-sports-betting-states-count-2026"
+      ]
+    },
+    {
+      "url": "https://tracxn.com/d/companies/papaya/__DBIHsCXT9crNSG9Ea-M-8r1iDPFbIa3bHPldf2L9mGE/funding-and-investors",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-papaya-funding-small"
+      ]
+    },
+    {
+      "url": "https://varindia.com/news/gaming-platform-zupee-secures-30-mn-at-over-500-mn-valuation",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-zupee-founded-2018",
+        "wsc-zupee-series-b-2021"
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20250217000027/https://www.sec.gov/Archives/edgar/data/1883685/000188368525000010/dkng-20241231.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-dkng-igaming-hold-volatility",
+        "wsf-dkng-total-revenue-2024"
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20251123064828/https://www.sec.gov/Archives/edgar/data/1801661/000180166125000005/ex991_fy24q4-8xkxearningsr.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-skillz-fy2024-results"
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20260714044847/https://www.sec.gov/Archives/edgar/data/1801661/000110465921016167/tm211844-1_s1.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-skillz-bonus-cash-definition",
+        "wsf-skillz-take-rate-definition"
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20260714044949/https://www.sec.gov/Archives/edgar/data/1801661/000180166124000100/R49.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-skillz-customer-concentration-80pct"
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20260714045820/https://www.macrotrends.net/stocks/charts/SKLZ/skillz/stock-price-history",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-sklz-ath-price",
+        "wsg-sklz-price-series-methodology"
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20260714181249/https://www.newsandsentinel.com/news/2025/12/west-virginias-online-gambling-revenue-hits-record-high-in-2025/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-wv-igaming-2025-ytd"
+      ]
+    },
+    {
+      "url": "https://worldpopulationreview.com/states",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-population-igaming-states-2025",
+        "wsb-population-noncasino-big-states-2025"
+      ]
+    },
+    {
+      "url": "https://www.666casino.com/blog/how-many-blackjack-hands-are-dealt-per-hour/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-blackjack-hands-per-hour-benchmark"
+      ]
+    },
+    {
+      "url": "https://www.888poker.com/magazine/strategy/poke-rake-complete-guide",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-poker-rake-benchmark"
+      ]
+    },
+    {
+      "url": "https://www.actionnetwork.com/education/how-does-prizepicks-pickem-arena-work",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-prizepicks-arena-mechanics-async"
+      ]
+    },
+    {
+      "url": "https://www.animationxpress.com/latest-news/ficci-ey-report-2025-indias-online-gamers-base-expands-to-488-million-in-2024/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-india-ficci-ey-gamer-base",
+        "wsb-india-ficci-ey-transaction-revenue",
+        "wsb-india-gst-offshore-migration"
+      ]
+    },
+    {
+      "url": "https://www.aviagames.com/terms-service",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-avia-tos-card-exclusions",
+        "wsd-avia-tos-prohibited-states"
+      ]
+    },
+    {
+      "url": "https://www.bonus.com/money-skill-games/triumph-arcade/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-triumph-realtime-live-multiplayer"
+      ]
+    },
+    {
+      "url": "https://www.calcalistech.com/ctech/articles/0,7340,L-3914721,00.html",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-papaya-funding",
+        "wsb-papaya-revenue-estimate",
+        "wsc-papaya-games-portfolio",
+        "wsc-papaya-seed-funding-2021"
+      ]
+    },
+    {
+      "url": "https://www.calgaminglaw.com/what-determines-if-a-game-is-one-of-skill-or-chance/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-doctrine-three-tests-states"
+      ]
+    },
+    {
+      "url": "https://www.casino.org/news/chumba-casino-founder-laurence-escalante-quits-vgw-amid-criminal-charges/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-vgw-escalante-resigns-2026",
+        "wsc-vgw-founded-2010"
+      ]
+    },
+    {
+      "url": "https://www.casino.org/news/goldman-sachs-forecasts-massive-market-for-igaming-sports-betting/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-ekg-goldman-2021-forecast"
+      ]
+    },
+    {
+      "url": "https://www.casino.org/news/skillz-mobile-app-lawsuit-against-aviagames-delayed/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-aviagames-trial-delayed"
+      ]
+    },
+    {
+      "url": "https://www.casino.org/news/underdog-valued-at-1-23-billion-following-latest-funding-round/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-underdog-series-c-2025"
+      ]
+    },
+    {
+      "url": "https://www.casinoreports.com/aga-state-states-report-2026/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-nj-mi-pa-share"
+      ]
+    },
+    {
+      "url": "https://www.casinoreports.com/news/aga-state-states-report-2026/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-icasino-revenue-2025",
+        "wsd-icasino-seven-live-2025"
+      ]
+    },
+    {
+      "url": "https://www.casinoreports.com/online-casino-market-data-stats/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-small-states-igaming-ltm"
+      ]
+    },
+    {
+      "url": "https://www.census.gov/newsroom/press-releases/2026/population-growth-slows.html",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-nonicasino-population-estimate",
+        "wsb-tam-p2p-skill-gaming",
+        "wsb-us-population-2025"
+      ]
+    },
+    {
+      "url": "https://www.ciplawyer.com/articles/152131.html",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-analysis-house-liquidity-theory",
+        "wse-aviagames-denial",
+        "wse-aviagames-doj-grand-jury"
+      ]
+    },
+    {
+      "url": "https://www.classaction.org/news/15m-papaya-gaming-settlement-ends-class-action-over-alleged-use-of-bots-in-skill-based-contests",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-papaya-settlement",
+        "wsc-papaya-class-action-settlement-2025",
+        "wse-papaya-barcelo-settlement"
+      ]
+    },
+    {
+      "url": "https://www.classaction.org/news/aviagames-hit-with-class-action-over-alleged-use-of-bots-in-online-skill-based-games",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-pandolfi-aviagames-rico"
+      ]
+    },
+    {
+      "url": "https://www.cooley.com/news/coverage/2021/2021-09-17-mobile-premier-league-becomes-indias-second-gaming-unicorn-with-series-e-round",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-mpl-series-e-2021"
+      ]
+    },
+    {
+      "url": "https://www.crossingbroad.com/news/casino/pennsylvania-online-casino-revenue-december-2025/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-pa-igaming-2025"
+      ]
+    },
+    {
+      "url": "https://www.databridgemarketresearch.com/reports/global-skill-gaming-market",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-skill-gaming-mill-databridge"
+      ]
+    },
+    {
+      "url": "https://www.egr.global/northamerica/news/prizepicks-ditches-against-the-house-pickem-for-peer-to-peer-model/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-prizepicks-arena-pivot-2025"
+      ]
+    },
+    {
+      "url": "https://www.falconebiz.com/company/TOAST-STUDIOS-PRIVATE-LIMITED-U62013KA2024PTC184109",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-india-former-name"
+      ]
+    },
+    {
+      "url": "https://www.firstamendment.com/list-states-skill-gaming-allowed-prohibited/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-walters-florida-skill-wagering",
+        "wsd-walters-no-reliable-list"
+      ]
+    },
+    {
+      "url": "https://www.firstamendment.com/skill-gaming-legal-guide/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-blackjack-any-chance-analysis"
+      ]
+    },
+    {
+      "url": "https://www.fool.com/investing/2022/03/18/skillz-ceo-estimates-one-billion-gamers-market/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-skillz-tam-ceo-claim"
+      ]
+    },
+    {
+      "url": "https://www.forbes.com/sites/dbloom/2021/10/18/scopely-buys-spes-gsn-games-for-1-billion/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-scopely-gsn-acquisition"
+      ]
+    },
+    {
+      "url": "https://www.gamblingandthelaw.com/column/new-york-legalizes-fantasy-sports/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-ny-dfs-legalized-2016"
+      ]
+    },
+    {
+      "url": "https://www.hollywoodreporter.com/business/business-news/griffin-gaming-partners-venture-fund-games-1235102652/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-griffin-gaming-partners-thesis"
+      ]
+    },
+    {
+      "url": "https://www.ifrahlaw.com/ifrah-on-igaming/gambling-on-skill-enforcement-of-gambling-laws-against-skill-games-in-outlier-states/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-ifrah-outlier-states"
+      ]
+    },
+    {
+      "url": "https://www.igamingtoday.com/connecticut-igaming-market-research-report/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-ct-igaming-fy2025"
+      ]
+    },
+    {
+      "url": "https://www.innreg.com/blog/fintech-guide-to-gaming-compliance",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-gaming-msb-aml"
+      ]
+    },
+    {
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/money-services-business-msb-information-center",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-fincen-money-transmitter"
+      ]
+    },
+    {
+      "url": "https://www.jonesday.com/en/practices/experience/2021/10/ballys-to-acquire-gamesys-for-2-7-billion",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-ballys-gamesys-acquisition"
+      ]
+    },
+    {
+      "url": "https://www.junkbondinvestor.com/p/the-skillz-conundrum-between-innovation",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-sklz-peak-valuation",
+        "wsg-sklz-spac-listing-valuation"
+      ]
+    },
+    {
+      "url": "https://www.kslaw.com/news-and-insights/king-spalding-secures-victory-for-skillz-in-california-patent-infringement-suit",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-aviagames-willful-treble",
+        "wse-skillz-aviagames-verdict"
+      ]
+    },
+    {
+      "url": "https://www.law.cornell.edu/uscode/text/31/5362",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-uigea-fantasy-carveout",
+        "wsd-uigea-bet-or-wager-definition",
+        "wsd-uigea-unlawful-internet-gambling"
+      ]
+    },
+    {
+      "url": "https://www.legal500.com/developments/thought-leadership/legal-gamechanger-what-the-online-gaming-act-2025-means-for-indias-gaming-industry/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-analysis-india-labor-vs-wagering",
+        "wse-india-2025-act-definition",
+        "wse-india-2025-bank-ad-ban",
+        "wse-india-2025-penalties",
+        "wsg-india-rmg-ban-act"
+      ]
+    },
+    {
+      "url": "https://www.legitscript.com/regulatory-and-card-brand-compliance/visa-integrity-risk-program/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-visa-virp-tier2-mcc-list"
+      ]
+    },
+    {
+      "url": "https://www.linkedin.com/company/playtoast",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-linkedin-company-profile"
+      ]
+    },
+    {
+      "url": "https://www.macrotrends.net/stocks/charts/SKLZ/skillz/stock-price-history",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-sklz-ath-price",
+        "wsg-sklz-price-series-methodology"
+      ]
+    },
+    {
+      "url": "https://www.maine.gov/governor/mills/news/governor-mills-announces-bill-create-economic-opportunities-wabanaki-nations-become-law-2026",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-maine-ld1164-became-law"
+      ]
+    },
+    {
+      "url": "https://www.medianews4u.com/dream11-to-wind-down-real-money-gaming-operations-amid-new-online-gaming-bill-reports/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-dream11-rmg-winddown"
+      ]
+    },
+    {
+      "url": "https://www.newsandsentinel.com/news/2025/12/west-virginias-online-gambling-revenue-hits-record-high-in-2025/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-wv-igaming-2025-ytd"
+      ]
+    },
+    {
+      "url": "https://www.njoag.gov/new-jersey-division-of-gaming-enforcement-announces-december-2025-total-gaming-revenue-results/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-nj-igaming-2025"
+      ]
+    },
+    {
+      "url": "https://www.nysenate.gov/legislation/laws/PEN/225.00",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "via": "archive",
+      "archiveUrlUsed": "http://web.archive.org/web/20260121060916/https://www.nysenate.gov/legislation/laws/PEN/225.00",
+      "facts": [
+        "wsd-ny-penal-225-material-degree"
+      ]
+    },
+    {
+      "url": "https://www.outlookbusiness.com/in-depth/year-ender-from-unicorns-to-ed-raids-how-real-money-gaming-unravelled-in-2025",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-india-ed-freeze",
+        "wsb-india-rmg-jobs-affected",
+        "wsb-india-rmg-revenue-2024-winzo-ieic",
+        "wsg-india-rmg-graveyard-list"
+      ]
+    },
+    {
+      "url": "https://www.papaya.com/terms-of-use",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-papaya-tos-prohibited-states"
+      ]
+    },
+    {
+      "url": "https://www.paulweiss.com/insights/client-memos/a-divided-third-circuit-holds-that-the-cftc-has-exclusive-jurisdiction-over-sports-related-event-contracts",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-kalshi-3rd-circuit",
+        "wse-kalshi-split"
+      ]
+    },
+    {
+      "url": "https://www.platinumequity.com/news/platinum-equity-to-create-premier-skill-based-game-platform/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-gametaco-acquires-worldwinner-2021",
+        "wsc-worldwinner-founded-1999"
+      ]
+    },
+    {
+      "url": "https://www.pocketgamer.biz/creativity-community-and-cash/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-market-map-toast-only-casino-realtime",
+        "wsc-papaya-founded-tel-aviv"
+      ]
+    },
+    {
+      "url": "https://www.pocketgamer.biz/junglee-games-parent-flutter-records-556m-impairment-over-real-money-gaming-law-in-india/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-flutter-junglee-acquisition",
+        "wsg-flutter-junglee-impairment"
+      ]
+    },
+    {
+      "url": "https://www.pocketgamer.biz/jury-delivers-skillz-a-429-million-victory-in-aviagames-patent-lawsuit/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-aviagames-verdict",
+        "wsc-skillz-v-aviagames-verdict-2024",
+        "wse-aviagames-bots-controlled",
+        "wse-aviagames-shark-robot",
+        "wsf-skillz-v-aviagames-verdict-2024",
+        "wsg-skillz-v-aviagames-verdict"
+      ]
+    },
+    {
+      "url": "https://www.pocketgamer.biz/skillz-files-lawsuit-against-rivals-voodoo-over-alleged-straight-out-lies-bots-and-rigged-tournaments/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-skillz-v-voodoo-lawsuit-2024",
+        "wsc-voodoo-blitz-business-model",
+        "wsg-skillz-v-voodoo-lawsuit"
+      ]
+    },
+    {
+      "url": "https://www.pocketgamer.biz/skillz-is-going-public-with-a-new-initial-public-offering/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-skillz-business-model-developer-platform",
+        "wsc-skillz-founded-2012",
+        "wsc-skillz-spac-merger-2020"
+      ]
+    },
+    {
+      "url": "https://www.pokernews.com/news/2025/04/how-black-friday-changed-poker-forever-48369.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-black-friday-2011",
+        "wse-uigea-2006",
+        "wse-uigea-no-skill-exclusion"
+      ]
+    },
+    {
+      "url": "https://www.prizepicks.com/press-news/allwyn-to-acquire-majority-stake-in-prizepicks-creating-a-new-force-in-global-entertainment",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-prizepicks-allwyn-deal-2025",
+        "wsc-prizepicks-founded-2015"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/commercial-gaming-revenue-hits-78-7-billion-in-2025--driving-record-18-1-billion-in-gaming-taxes-nationwide-302697602.html",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-aga-2025-igaming-revenue",
+        "wsb-aga-2025-sports-betting-revenue",
+        "wsb-aga-2025-tax-total",
+        "wsb-aga-2025-total-revenue",
+        "wsb-aga-2025-traditional-revenue"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/falcon-edge-dst-global-d1-capital-and-redbird-capital-lead-840-million-investment-in-dream-sports-at-8-billion-valuation-301431663.html",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-dreamsports-round-2021-11"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/game-taco-is-now-worldwinner---taking-its-legacy-consumer-brand-with-20-years-of-loyal-players-as-company-name-301951344.html",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-gametaco-worldwinner-rename"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/new-aga-analysis-reveals-illegal-gaming-remains-nearly-a-third-of-the-us-market-302529007.html",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-aga-illegal-handle",
+        "wsb-aga-illegal-igaming",
+        "wsb-aga-illegal-share",
+        "wsb-aga-illegal-sports",
+        "wsb-aga-illegal-total-revenue",
+        "wsb-sam-p2p-skill-gaming"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/sensor-tower-state-of-gaming-gaming-drove-94-billion-in-revenue-in-2025-downloads-reached-52-billion-302696284.html",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-mobile-game-downloads-2025",
+        "wsb-mobile-game-revenue-2025"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/toast-launches-multiplayer-skill-games-with-sparket-302563418.html",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-founders-mpl-background",
+        "wsa-funding-round",
+        "wsa-market-size-quote",
+        "wsa-partner-sparket"
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/underdog-raises-series-b-funding-with-485m-valuation-301593301.html",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-underdog-series-b-2022"
+      ]
+    },
+    {
+      "url": "https://www.pxp.io/mcc-codes/7995-betting-and-casino-gambling",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-mcc-7995-gambling-highrisk"
+      ]
+    },
+    {
+      "url": "https://www.reviewjournal.com/business/vegas-business/innovation/las-vegas-gaming-company-rebrands-in-major-corporate-restructuring-3840058/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-sklz-rebrand-firy"
+      ]
+    },
+    {
+      "url": "https://www.reviewjournal.com/news/civil-courts/las-vegas-gaming-company-awarded-420m-verdict-in-false-advertising-trial-3793454/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-skillz-v-papaya-verdict-2026",
+        "wsg-skillz-v-papaya-verdict"
+      ]
+    },
+    {
+      "url": "https://www.sahmcapital.com/news/content/is-sparket-integration-shaping-a-new-growth-path-for-toast-tost-in-skill-based-gaming-2025-10-06",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-media-name-collision-tost"
+      ]
+    },
+    {
+      "url": "https://www.scstatehouse.gov/code/t16c019.php",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-sc-cards-dice-statute"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1801661/000110465921016167/tm211844-1_s1.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "via": "archive",
+      "archiveUrlUsed": "https://web.archive.org/web/20260714044847/https://www.sec.gov/Archives/edgar/data/1801661/000110465921016167/tm211844-1_s1.htm",
+      "facts": [
+        "wsf-skillz-bonus-cash-definition",
+        "wsf-skillz-take-rate-definition"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1801661/000162828022003507/ex991_fy21q4-8xkxearningsr.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "via": "archive",
+      "archiveUrlUsed": "http://web.archive.org/web/20250502144830/https://www.sec.gov/Archives/edgar/data/1801661/000162828022003507/ex991_fy21q4-8xkxearningsr.htm",
+      "facts": [
+        "wsf-skillz-fy2021-results"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1801661/000180166124000100/R11.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "via": "proxy",
+      "facts": [
+        "wsf-skillz-bonus-cash-first-deposit-revenue-reduction",
+        "wsf-skillz-bonus-cash-limited-time-sm-expense",
+        "wsf-skillz-engagement-marketing-total",
+        "wsf-skillz-revenue-streams-2023"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1801661/000180166124000100/R49.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "via": "archive",
+      "archiveUrlUsed": "https://web.archive.org/web/20260714044949/https://www.sec.gov/Archives/edgar/data/1801661/000180166124000100/R49.htm",
+      "facts": [
+        "wsf-skillz-customer-concentration-80pct"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1801661/000180166125000005/ex991_fy24q4-8xkxearningsr.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "via": "archive",
+      "archiveUrlUsed": "https://web.archive.org/web/20251123064828/https://www.sec.gov/Archives/edgar/data/1801661/000180166125000005/ex991_fy24q4-8xkxearningsr.htm",
+      "facts": [
+        "wsf-skillz-fy2024-results"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1801661/000180166126000020/sklz-20251231.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "via": "proxy",
+      "facts": [
+        "wsf-skillz-apple-payment-fee-policy"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1883685/000188368523000053/dk2023investordayvf.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "via": "proxy",
+      "facts": [
+        "wsf-dkng-cac-payback-investor-day"
+      ]
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/1883685/000188368525000010/dkng-20241231.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "via": "archive",
+      "archiveUrlUsed": "https://web.archive.org/web/20250217000027/https://www.sec.gov/Archives/edgar/data/1883685/000188368525000010/dkng-20241231.htm",
+      "facts": [
+        "wsf-dkng-igaming-hold-volatility",
+        "wsf-dkng-total-revenue-2024"
+      ]
+    },
+    {
+      "url": "https://www.skillz.com/legal/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-skillz-tos-card-exclusions",
+        "wsd-skillz-tos-prohibited-states"
+      ]
+    },
+    {
+      "url": "https://www.skillz.com/news/skillz-reports-record-q2-revenue-and-updates-2021-guidance/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-skillz-q2-2021-revenue-guidance"
+      ]
+    },
+    {
+      "url": "https://www.sportico.com/business/sports-betting/2025/draftkings-igaming-revenue-fourth-quarter-2024-1234828204/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-dkng-igaming-revenue-density",
+        "wsf-dkng-igaming-revenue-vs-sportsbook-q42024"
+      ]
+    },
+    {
+      "url": "https://www.sportsbettingdime.com/news/casino/us-online-casino-revenue-state-breakdown/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-igaming-revenue-per-capita"
+      ]
+    },
+    {
+      "url": "https://www.sportsbettingdime.com/online-casino/us/michigan/revenue/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsb-mi-igaming-2025"
+      ]
+    },
+    {
+      "url": "https://www.sportsline.com/casinos/legal-online-casinos-in-usa/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsd-icasino-eight-states-list",
+        "wsd-nevada-ipoker-only"
+      ]
+    },
+    {
+      "url": "https://www.stocktitan.net/sec-filings/SKLZ/8-k-skillz-inc-reports-material-event-e263699e117f.html",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-firy-segment-financials"
+      ]
+    },
+    {
+      "url": "https://www.storyboard18.com/gaming-news/real-money-gaming-collapse-%E2%82%B93720-crore-vanishes-6500-jobs-lost-since-ban-80919.htm",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsg-india-rmg-collapse-stats"
+      ]
+    },
+    {
+      "url": "https://www.tofler.in/toast-studios-private-limited/company/U58203KA2024PTC184109",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsa-india-directors",
+        "wsa-india-legal-entity"
+      ]
+    },
+    {
+      "url": "https://www.windailyfantasy.com/daily-fantasy-rake/",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsf-dfs-rake-benchmark"
+      ]
+    },
+    {
+      "url": "https://www.yogonet.com/international/news/2025/11/17/116355-papayas-celebrityfueled-push-meets-escalating-legal-challenges-over-skillbased-model",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-papaya-michigan-cease-desist-2024"
+      ]
+    },
+    {
+      "url": "https://www.yogonet.com/international/news/2025/12/24/116795--34india-39s-complete-ban-on-realmoney-skill-gaming-is-unlikely-to-withstand-constitutional-scrutiny-34",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wse-india-2025-skill-erased"
+      ]
+    },
+    {
+      "url": "https://www.yogonet.com/international/news/2026/04/28/118799-skillz-wins-420-million-verdict-against-papaya-gaming-for-false-advertising",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "facts": [
+        "wsc-skillz-v-papaya-verdict-2026",
+        "wse-skillz-papaya-verdict"
+      ]
+    }
+  ]
+}

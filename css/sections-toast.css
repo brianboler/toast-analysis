@@ -1,0 +1,226 @@
+/* =============================================================================
+   Task 19 — "How Toast works" matching-engine diagram + company profile.
+   Extends site/css/main.css's tokens; introduces no new colors — tier colors
+   (--tier-c etc.) are reused deliberately here to *encode* how confirmed each
+   diagram element is: the US-player side and the shared table use the neutral
+   accent/surface palette, while the India counterpart, the direct
+   player-vs-player line, and the money-flow row are rendered in the same
+   amber (--tier-c) used by the tier-C "per company" badges elsewhere on the
+   site — because that IS what they are: the call's mechanic, not a confirmed
+   fact. Color is doing citation work, not decoration.
+   ========================================================================== */
+
+/* ---- Diagram card ---------------------------------------------------------- */
+.diagram {
+  margin-top: 0;
+}
+.diagram__svg-wrap {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+.diagram__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Physical playing-card faces stay a fixed warm ivory in both themes — a
+   real-world object color, not a themed UI surface, so it is intentionally
+   NOT a --surface token. */
+.diagram__svg .card { fill: #f2ece0; stroke: #00000055; stroke-width: 1; }
+.diagram__svg .pip { font-family: var(--font-mono); font-size: 11px; fill: #2a2418; font-weight: 600; }
+
+.diagram__svg .lbl { font-family: var(--font-mono); fill: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+.diagram__svg .lbl--panel { font-size: 15px; fill: var(--text); font-weight: 600; letter-spacing: 0.03em; }
+.diagram__svg .lbl--mono-sm { font-size: 10.5px; }
+.diagram__svg .lbl--tierc { fill: var(--tier-c-fg); }
+
+.diagram__svg .phone { fill: var(--surface-2); stroke: var(--border-strong); stroke-width: 1.5; }
+.diagram__svg .screen { fill: var(--bg-2); stroke: var(--border); }
+.diagram__svg .stake { font-family: var(--font-mono); font-weight: 700; font-size: 30px; fill: var(--text); }
+.diagram__svg .stake--tierc { fill: var(--tier-c-fg); }
+
+.diagram__svg .btn { fill: var(--accent); }
+.diagram__svg .btn-lbl { font-family: var(--font-mono); font-weight: 700; font-size: 13px; fill: var(--accent-ink); }
+.diagram__svg .tap-ring { fill: none; stroke: var(--accent); stroke-width: 2; opacity: 0; }
+.diagram__svg .tap-ring.is-visible { animation: diagTapPulse 1.6s ease-out infinite; }
+
+.diagram__svg .table { fill: var(--bg-2); stroke: var(--border-strong); stroke-width: 1.5; }
+.diagram__svg .dealer-head, .diagram__svg .dealer-body { fill: var(--surface-2); stroke: var(--border-strong); }
+
+.diagram__svg .matched-pill rect { fill: var(--tier-c-bg); stroke: var(--tier-c); }
+.diagram__svg .pill-lbl { font-family: var(--font-mono); font-weight: 700; font-size: 11px; fill: var(--tier-c-fg); }
+
+.diagram__svg .engine-hub__core { fill: var(--accent-bright); }
+.diagram__svg .engine-hub__ring { fill: none; stroke: var(--accent); stroke-width: 1.5; opacity: 0; }
+.diagram__svg .engine-hub__ring.is-visible { animation: diagHubPulse 1.6s ease-out infinite; }
+.diagram__svg .engine-hub__ring--outer.is-visible { animation-delay: 0.5s; }
+
+.diagram__svg .connector { fill: none; stroke: var(--border-strong); stroke-width: 1.75; stroke-dasharray: 4 4; }
+.diagram__svg .connector--tierc { stroke: var(--tier-c); }
+
+.diagram__svg .p2p-line { fill: none; stroke: var(--tier-c); stroke-width: 2; stroke-dasharray: 3 5; }
+.diagram__svg .p2p-badge rect { fill: var(--tier-c-bg); stroke: var(--tier-c); }
+.diagram__svg .p2p-badge-lbl { font-family: var(--font-mono); font-weight: 700; font-size: 11.5px; fill: var(--tier-c-fg); letter-spacing: 0.03em; }
+
+.diagram__svg .money-line { fill: none; stroke: var(--border-strong); stroke-width: 2; }
+.diagram__svg .money-line--tierc { stroke: var(--tier-c); }
+.diagram__svg .pot { fill: var(--accent-tint); stroke: var(--accent-line); stroke-width: 1.5; }
+.diagram__svg .pot-lbl { font-family: var(--font-mono); font-weight: 700; font-size: 12px; fill: var(--accent-bright); }
+.diagram__svg .payout-box { fill: var(--accent-tint); stroke: var(--accent-line); }
+.diagram__svg .rake-box { fill: var(--tier-c-bg); stroke: var(--tier-c); }
+.diagram__svg .box-lbl { font-family: var(--font-mono); font-weight: 600; font-size: 10.5px; fill: var(--text); }
+
+/* Progressive reveal — toggled by js/diagram.js via data-min / data-max
+   (the inclusive step range in which an element is shown). Untouched
+   elements (no .reveal class) are always visible: the phones, the table,
+   the panel labels, the stake readouts — the constant scaffolding. */
+.diagram__svg .reveal { opacity: 0; transition: opacity 0.3s ease; }
+.diagram__svg .reveal.is-visible { opacity: 1; }
+
+/* India panel: dim/unmatched until the matching engine pairs it (step 2+). */
+.diagram__svg .dim-target { opacity: 0.32; transition: opacity 0.3s ease, filter 0.3s ease; filter: grayscale(1); }
+.diagram__svg .dim-target.is-undimmed { opacity: 1; filter: none; }
+
+@keyframes diagTapPulse {
+  0% { opacity: 0.7; stroke-width: 2; }
+  100% { opacity: 0; stroke-width: 0.5; }
+}
+@keyframes diagHubPulse {
+  0% { opacity: 0.65; }
+  100% { opacity: 0; }
+}
+
+/* ---- Stepper controls ------------------------------------------------------ */
+.diagram__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.diagram__btn {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.diagram__btn:hover:not(:disabled) { background: var(--accent-tint); border-color: var(--accent-line); color: var(--accent-bright); }
+.diagram__btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.diagram__count { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); min-width: 6.5rem; text-align: center; }
+.diagram__dots { display: flex; gap: 0.4rem; }
+.diagram__dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--border-strong); display: inline-block; }
+.diagram__dot.is-current { background: var(--accent); }
+
+/* ---- Step captions (the real, citation-bearing content) -------------------- */
+.diagram__steps {
+  margin-top: 1.75rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border);
+  min-height: 6rem; /* steady the layout as steps swap in/out */
+}
+.diagram__step h3 { font-size: var(--step-0); margin-bottom: 0.4rem; }
+.diagram__step p { margin: 0; max-width: none; }
+
+.diagram__disclaimer {
+  margin-top: 1.4rem;
+  padding-top: 1.1rem;
+  border-top: 1px dashed var(--border);
+  font-size: var(--step--1);
+  color: var(--muted);
+  max-width: none;
+}
+.diagram__disclaimer strong { color: var(--text); }
+
+/* =============================================================================
+   Company profile (#company)
+   ========================================================================== */
+.entity-list { margin: 0; display: grid; gap: 0.9rem; }
+.entity-list__row {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 0.25rem 0.9rem;
+  align-items: baseline;
+}
+.entity-list__row dt {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.entity-list__row dd { margin: 0; }
+.entity-list__row small { display: block; margin-top: 0.2rem; color: var(--faint); }
+
+@media (max-width: 32rem) {
+  .entity-list__row { grid-template-columns: 1fr; }
+}
+
+.chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.chip--excluded {
+  background: color-mix(in srgb, var(--danger) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--danger) 45%, transparent);
+  color: var(--danger-fg);
+}
+
+/* "What we could NOT verify" — deliberately the most visually distinct card
+   on the page: same tier-C amber used for per-company badges site-wide, so
+   the honesty callout reads as part of the same evidentiary system, not a
+   bolted-on disclaimer. */
+.callout--gap {
+  border: 1px solid var(--tier-c);
+  background: var(--tier-c-bg);
+  border-radius: var(--radius);
+  padding: clamp(1.1rem, 3vw, 1.6rem);
+  margin-top: 1.75rem;
+  box-shadow: var(--shadow);
+}
+.callout__label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 0.7rem;
+  font-size: var(--step-0);
+  color: var(--tier-c-fg);
+}
+.callout__label::before {
+  content: "";
+  flex: none;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--tier-c);
+}
+.callout__lede { color: var(--text); font-weight: 450; }
+.callout--gap ul {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.65rem;
+}
+.callout--gap li { max-width: none; }
+.callout__foot { font-size: var(--step--1); color: var(--muted); margin: 0; max-width: none; }
+
+.company-table-note { font-size: var(--step--1); color: var(--muted); margin-top: 0.6rem; max-width: none; }
+
+/* ---- Small screens ---------------------------------------------------------- */
+@media (max-width: 40rem) {
+  .diagram__controls { gap: 0.75rem; }
+}
