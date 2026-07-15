@@ -43,8 +43,7 @@
  <li><a class="nav__link" href="#market">Market</a></li>
  <li><a class="nav__link" href="#players">Players</a></li>
  <li><a class="nav__link" href="#cautionary">Cautionary</a></li>
- <li><a class="nav__link" href="#doubts">Doubts</a></li>
- <li><a class="nav__link" href="#economics">Economics</a></li>
+  <li><a class="nav__link" href="#economics">Economics</a></li>
  <li><a class="nav__link" href="#thesis">Thesis</a></li>
  <li><a class="nav__link" href="#sources">Sources</a></li>
  </ul>
@@ -2837,103 +2836,10 @@
 </p>
 </section>
 
- <!-- 9b. DOUBTS - unresolved red flags / open diligence questions ------- -->
- <section id="doubts" aria-labelledby="doubts-title" data-pdf-min="full">
-<div class="section__head">
- <span class="section__index">09 / Doubts</span>
- <h2 id="doubts-title">Open questions &amp; unresolved red flags</h2>
- <p class="standfirst">
- Skeptical diligence concerns raised in review &mdash; open questions, not verified
- findings. Sourced numbers and quotes are stated as fact; the inferences drawn from
- them (user-count inflation, bots, hidden labor) are flagged as hypotheses to test,
- not conclusions. None of this is proof of wrongdoing.
- </p>
-</div>
-
-<div class="grid">
- <div class="card">
- <h3 class="card__label">1 &middot; Displayed &ldquo;active players&rdquo; don&rsquo;t reconcile with scale</h3>
- <p>
- A single in-app snapshot showed roughly
- <span class="stat" data-fact-id="ws0-carnival-active-player-counts-discrepancy">8,900 &ldquo;active players&rdquo; across six games</span>,
- each with a live green-dot badge &mdash; about 4.5&times; a reported ~2,000-user base, and
- implausibly large next to the app&rsquo;s
- <span class="stat" data-fact-id="wsa-carnival-app-ios-metadata">951 lifetime US ratings</span>
- and mid-2025 launch. Unique concurrent humans cannot exceed the total user base, so the
- figures are unlikely to be unique live users. Toast separately markets
- <span class="stat" data-fact-id="ws0-toast-instant-liquidity-marketing">&ldquo;instant player liquidity&rdquo;</span>
- and a shared cross-operator &ldquo;player network,&rdquo; so the &ldquo;players&rdquo; one app shows
- may not be that app&rsquo;s own users. <strong>Open question:</strong> organic live users, a
- shared-pool tally, or a decorative counter?
- </p>
- </div>
-
- <div class="card">
- <h3 class="card__label">2 &middot; &ldquo;No bots&rdquo; is the load-bearing claim &mdash; and the one to verify</h3>
- <p>
- Carnival&rsquo;s listing promises
- <span class="stat" data-fact-id="ws0-carnival-no-bots-marketing">&ldquo;no bots&rdquo; and real live opponents</span>;
- the whole skill-not-gambling theory rests on it. The sector&rsquo;s precedents cut the wrong way:
- Papaya drew a
- <span class="stat" data-fact-id="wse-skillz-papaya-verdict">$420M</span>
- false-advertising verdict for using bots while claiming &ldquo;real players,&rdquo; and AviaGames&rsquo;
- <span class="stat" data-fact-id="wsc-skillz-v-aviagames-verdict-2024">$42.9M</span>
- loss turned on matching users against non-live opponents. Two Carnival reviews
- <span class="stat" data-fact-id="ws0-carnival-reviews-allege-bots">allege bot opponents</span>
- (unverified user claims). <strong>Open question:</strong> if a material share of opponents are
- bots or undisclosed house agents, both the legal theory and the &ldquo;no bots&rdquo; marketing fail.
- </p>
- </div>
-
- <div class="card">
- <h3 class="card__label">3 &middot; A tiny headcount can hide a large paid opponent pool</h3>
- <p>
- Public estimates put Toast at roughly
- <span class="stat" data-fact-id="wsa-toast-tracxn-headcount">a dozen employees</span>
- (a &ldquo;~19&rdquo; figure is unverified). A small formal headcount doesn&rsquo;t rule out a large
- off-books pool: the model reportedly leans on a
- <span class="stat" data-fact-id="ws0-toast-offshore-india-blackjack-team">paid offshore counterparty pool</span>
- (<span class="stat" data-fact-id="wsa-no-evidence-paid-india-player-pool">no public corroboration</span>),
- and such workers would be contractors, not counted as employees. The precedent worth holding is
- <span class="stat" data-fact-id="wse-builderai-precedent">Builder.ai</span>
- &mdash; a ~$1.5B-valued startup that collapsed in 2025 amid a ~75% revenue restatement, an SDNY
- subpoena, and &ldquo;AI-washing&rdquo; concerns that its marketed automation was largely delivered by a
- large outsourced workforce. <strong>The point is a business-practice one</strong> &mdash; verify unit
- economics, headcount-to-revenue, and what actually supplies the &ldquo;liquidity&rdquo; &mdash; not about
- any company&rsquo;s national origin.
- </p>
- </div>
-
- <div class="card">
- <h3 class="card__label">4 &middot; A &ldquo;live&rdquo; referral feed of strangers striking it rich</h3>
- <p>
- The referral surface runs a constantly-updating pop-up feed of usernames claiming payouts &mdash;
- <span class="stat" data-fact-id="ws0-referral-activity-feed-socialproof">&ldquo;[name] just earned $70 referring 60 people&rdquo;</span>
- and the like &mdash; cycling perpetually to push you to share. A never-ending real-time stream of
- unverifiable third-party earnings is a textbook social-proof dark pattern, and such feeds are
- commonly randomized rather than tied to real events. <strong>Open question:</strong> do these
- notifications reflect real users and real payouts, or are they manufactured &mdash; the same
- authenticity question as the &ldquo;active player&rdquo; counts.
- </p>
- </div>
-</div>
-
-<div class="callout callout--gap">
- <h3 class="callout__label">How to resolve these (not yet done)</h3>
- <p class="callout__lede">
- The efficient next step to move the bot / inflation question from suspicion to finding is a
- controlled play-test with network capture: do an opponent&rsquo;s moves arrive from a second
- device or from Toast&rsquo;s own servers; do opponents show human-variable latency and skill; do
- the &ldquo;active&rdquo; counts track time of day; and can withdrawals be traced to real counterparties.
- Until then, these remain open questions, not findings.
- </p>
-</div>
-</section>
-
  <!-- 10. ECONOMICS - unit economics & take rate ------------------------ -->
  <section id="economics" aria-labelledby="economics-title" data-pdf-min="medium">
 <div class="section__head">
- <span class="section__index">10 / Economics</span>
+ <span class="section__index">09 / Economics</span>
  <h2 id="economics-title">Unit economics</h2>
  <p class="standfirst">
  Toast's revenue is a rake on a peer-to-peer pot, not a house edge. It is the
@@ -3345,7 +3251,7 @@
  <!-- 11. THESIS - the recommendation ----------------------------------- -->
  <section id="thesis" aria-labelledby="thesis-title" data-pdf-min="small">
 <div class="section__head">
- <span class="section__index">11 / Thesis</span>
+ <span class="section__index">10 / Thesis</span>
  <h2 id="thesis-title">Investment conclusion</h2>
  <p class="standfirst">
  Three cases, one honest number range, and the 26 questions we'd put to the
@@ -4139,7 +4045,7 @@
  <!-- 12. SOURCES - methodology & citation legend ----------------------- -->
  <section id="sources" aria-labelledby="sources-title" data-pdf-min="small">
 <div class="section__head">
- <span class="section__index">12 / Sources &amp; method</span>
+ <span class="section__index">11 / Sources &amp; method</span>
  <h2 id="sources-title">Sources and methodology</h2>
  <p class="standfirst">
  Every number on this site carries a superscript source link; hover or
