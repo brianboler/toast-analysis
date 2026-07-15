@@ -1,16 +1,18 @@
 [
   {
     "id": "ws0-app-carnival-company-toast-games",
-    "claim": "Toast's consumer app is listed on app stores under the name 'Carnival'; 'Toast' is the name of the business itself. The product currently offers blackjack and an 'NBA-style' game.",
-    "tier": "C",
-    "sourceName": "Company representation (per company)",
-    "sourceUrl": "https://playtoast.com",
-    "accessed": "2026-07-13",
+    "claim": "Toast's consumer app is listed on the US App Store as 'Carnival Hustle: 21, Basketball' (seller Toast Studios, Inc.; 18+), a real-money, 1v1-versus-real-humans skill-gaming app. It offers a multi-game slate, not just 'blackjack and an NBA-style game': two blackjack-family games (21 Hustle and 21 Royale), Gin Rummy, Pinfall (a plinko-style arcade skill game), Basketball, plus Tilt, Crash Wars and Spinwheel. Toast also licenses these as peer-to-peer skill games to real-money-gaming operators (e.g., Sparket).",
+    "tier": "A",
+    "sourceName": "Apple App Store \u2014 'Carnival Hustle: 21, Basketball' (Toast Studios, Inc.)",
+    "sourceUrl": "https://apps.apple.com/us/app/carnival-21-hustle-blackjack/id6745267121",
+    "accessed": "2026-07-15",
     "workstream": "ws0",
-    "notes": "Company or pitch representation about Toast or its market. Tier C, not independently verified. See the company profile for what public sources could and could not corroborate.",
+    "notes": "Upgraded to tier A from the official US App Store listing (was 'blackjack and an NBA-style game', materially undercounting the slate). Portfolio/operator titles not yet confirmed live in the US app include Fling the Piggy, Pinfall Manic, Easy Bingo and Cricket PowerPlay.",
     "verified": true,
-    "verifiedBy": "verify-wsa",
-    "verifiedDate": "2026-07-14"
+    "verifiedBy": "session-2026-07-15",
+    "verifiedDate": "2026-07-15",
+    "quote": "Challenge real players in live 1v1 matches and earn real cash for every win",
+    "confidence": "high"
   },
   {
     "id": "ws0-casino-style-different-consumer",
@@ -348,7 +350,7 @@
   },
   {
     "id": "wsa-carnival-app-ios-metadata",
-    "claim": "The iOS app 'Carnival Hustle: 21,Basketball' (developer: Toast Studios, Inc.) was released 2025-07-08, is at version 7.3.0 as of the current-version-release-date 2026-07-06, and has a 4.60/5 average rating from 940 ratings.",
+    "claim": "The iOS app 'Carnival Hustle: 21,Basketball' (developer: Toast Studios, Inc.) was released 2025-07-08, is at version 7.3.0 as of the current-version-release-date 2026-07-06, and has a 4.59/5 average rating from 951 ratings.",
     "tier": "A",
     "sourceName": "iTunes Search API (Apple)",
     "sourceUrl": "https://itunes.apple.com/lookup?id=6745267121",
@@ -2148,7 +2150,7 @@
   },
   {
     "id": "wsc-market-map-toast-only-casino-realtime",
-    "claim": "Toast is NOT the only entrant combining real-money, real-time, peer-to-peer blackjack; the field splits by format and stakes. (1) The large consumer 'skill blackjack' category (Blackout Blackjack, 21 Blitz, 21 Jack, Blackjack Duel) is casual-stakes, ASYNCHRONOUS same-deck solitaire-blackjack hybrids, mostly Skillz-powered, not casino-rules live head-to-head. (2) A direct analogue exists off the original roster: bjb.gg ('Blackjack Battles') runs real-time, peer-to-peer, real-money casino-rules blackjack with an explicit 'no house edge', on crypto (AVAX) rails and with a bot fallback. (3) Thndr's 'Clinch' offers PvP skill-blackjack as B2B infrastructure over Bitcoin Lightning. (4) The casino-stakes real-time names in the researched roster (VGW, Stake.us) are house-banked sweepstakes, a different legal workaround. Net: the peer-to-peer-blackjack CONCEPT is not unique to Toast. Its remaining, still-uncontested differentiators are casino-LEVEL FIAT stakes (USD, ~$50-100+/hand) delivered as an iOS-native consumer app, plus its paid offshore human-counterparty liquidity model. The '2x2 empty quadrant' is more accurately read as thinly populated and sensitive to where the stakes/format lines are drawn, with crypto-native (bjb.gg) and B2B (Thndr) analogues already in the casino-rules real-time P2P cell.",
+    "claim": "Toast is NOT the only entrant combining real-money, real-time, peer-to-peer blackjack; the field splits by format and stakes. (1) The large consumer 'skill blackjack' category (Blackout Blackjack, 21 Blitz, 21 Jack, Blackjack Duel) is casual-stakes, ASYNCHRONOUS same-deck solitaire-blackjack hybrids, mostly Skillz-powered, not casino-rules live head-to-head. (2) An early / pre-launch entrant off the original roster, bjb.gg ('Blackjack Battles'), markets exactly this model \u2014 real-time, peer-to-peer, real-money casino-rules blackjack with an explicit 'no house edge', on crypto (AVAX) rails and with a bot fallback \u2014 evidence the space is beginning to draw entrants, though it is not confirmed to be operating at scale. (3) Thndr's 'Clinch' offers PvP skill-blackjack as B2B infrastructure over Bitcoin Lightning. (4) The casino-stakes real-time names in the researched roster (VGW, Stake.us) are house-banked sweepstakes, a different legal workaround. Net: the peer-to-peer-blackjack CONCEPT is not unique to Toast. Its remaining, still-uncontested differentiators are casino-LEVEL FIAT stakes (USD, ~$50-100+/hand) delivered as an iOS-native consumer app, plus its paid offshore human-counterparty liquidity model. The '2x2 empty quadrant' is more accurately read as thinly populated and sensitive to where the stakes/format lines are drawn, with early crypto-native (bjb.gg) and B2B (Thndr) entrants beginning to move into the casino-rules real-time P2P cell.",
     "tier": "D",
     "sourceName": "This workstream's synthesis across all fetched roster sources (see wsc-skillz-solitaire-cube-realtime-matching, wsc-triumph-realtime-live-multiplayer, wsc-prizepicks-arena-mechanics-async, wsc-stakeus-operator-easygo, wsc-papaya-games-portfolio, wsc-skillz-q2-2021-revenue-guidance)",
     "sourceUrl": "https://www.pocketgamer.biz/creativity-community-and-cash/",
@@ -5630,7 +5632,7 @@
     "id": "wsc-bjb-pvp-realmoney-blackjack",
     "tier": "C",
     "workstream": "wsc",
-    "claim": "bjb.gg ('Blackjack Battles') markets real-time, peer-to-peer, real-money blackjack: head-to-head 1v1 duels for a pot in AVAX cryptocurrency, explicitly 'no house edge' with a flat 10% platform fee ('We removed the casino'), and a bot fallback ('24/7 LFG AGENT PLAY') when no human opponent is available. It is the closest direct analogue to Toast's model, differing mainly in rails (crypto vs. USD) and distribution (web vs. iOS app).",
+    "claim": "bjb.gg ('Blackjack Battles') is an early / pre-launch entrant whose marketing site describes exactly Toast's model: real-time, peer-to-peer, real-money casino-rules blackjack for a pot in AVAX cryptocurrency, 'no house edge' (a flat 10% platform fee), with a bot fallback ('agent play') when no human opponent is available. It does not appear to be operating at scale and should be treated as a concept / early entrant rather than a live competitor; it is cited as evidence that peer-to-peer real-money blackjack is beginning to emerge beyond Toast, not as a running product.",
     "sourceName": "Blackjack Battles (bjb.gg) \u2014 marketing site",
     "sourceUrl": "https://bjb.gg/",
     "quote": "Go head-to-head against real players in PvP battles",
@@ -5639,7 +5641,7 @@
     "verified": true,
     "verifiedBy": "session-2026-07-15",
     "verifiedDate": "2026-07-15",
-    "notes": "Self-description from the product's marketing landing page; scale, legitimacy, actual stake sizes and whether it operates at volume are NOT independently verified. Surfaced as a counterexample to the 'empty quadrant' framing. Its bot ('agent') fallback mirrors the undisclosed-opponent integrity risk documented for Skillz/Papaya/AviaGames and parallels Toast's own paid offshore counterparty pool."
+    "notes": "Marketing/landing page for a not-yet-launched product; existence at scale, legitimacy, and real stake sizes are NOT verified and it may never ship. Cited only as a signal that the casino-rules real-time P2P blackjack idea is starting to attract entrants. Its advertised bot ('agent') fallback echoes the undisclosed-opponent integrity risk documented for Skillz/Papaya/AviaGames and parallels Toast's own paid offshore counterparty pool."
   },
   {
     "id": "wsc-thndr-clinch-pvp-blackjack",
@@ -5685,5 +5687,94 @@
     "verifiedBy": "session-2026-07-15",
     "verifiedDate": "2026-07-15",
     "notes": "Subdomain discovered via passive DNS / certificate-transparency enumeration during a security-footprint review; the live page title confirms a 'Gin Rummy' product under playtoast.com. Stakes/model unverified. Signals Toast's broader ambition is Indian-style real-money card games, with Carnival/blackjack as the US entry."
+  },
+  {
+    "id": "ws0-carnival-no-bots-marketing",
+    "tier": "A",
+    "workstream": "ws0",
+    "claim": "Toast markets Carnival as strictly human-vs-human with no bots: the App Store listing states matches are 'real-time head-to-head' with 'no bots, no waiting', and that players challenge real players in live 1v1 matches for real cash. This is the load-bearing, testable premise behind the skill-not-gambling theory; if opponents are in fact bots or an undisclosed paid pool, the human-opponent premise fails.",
+    "sourceName": "Apple App Store \u2014 'Carnival Hustle: 21, Basketball' (Toast Studios, Inc.)",
+    "sourceUrl": "https://apps.apple.com/us/app/carnival-21-hustle-blackjack/id6745267121",
+    "quote": "Real-time head-to-head matches \u2014 no bots, no waiting.",
+    "accessed": "2026-07-15",
+    "confidence": "high",
+    "verified": true,
+    "verifiedBy": "session-2026-07-15",
+    "verifiedDate": "2026-07-15",
+    "notes": "Marketing claim from the official app listing. Directly in tension with the paid-offshore-counterparty concern (see ws0-toast-offshore-india-blackjack-team, wsa-no-evidence-paid-india-player-pool): 'no bots' plus a paid human pool are hard to reconcile, and neither the bot-free claim nor the paid-pool claim is verified from the player side."
+  },
+  {
+    "id": "ws0-carnival-active-player-counts-discrepancy",
+    "tier": "D",
+    "workstream": "ws0",
+    "claim": "Carnival displays per-game 'active players' counts with a live green-dot indicator that do not reconcile with Toast's apparent scale. One in-app snapshot showed about 8,900 'active players' across six games (21 Hustle ~1.5k, Basketball ~1.5k, 21 Royale ~1.3k, Tilt ~1.8k, Pinfall ~1.3k, Pinfall Manic ~1.5k) \u2014 roughly 4.5x a reported ~2,000-user base, and implausibly large next to the app's ~951 lifetime US App Store ratings and its July 2025 launch. Unique concurrent humans cannot exceed the total registered base, so the figures are unlikely to be unique live users; the tight 1,300-1,800 clustering is consistent with a templated/decorative counter, a shared cross-operator 'player network' tally, or a cumulative (not concurrent) metric. Whether the counts represent organic live users is unresolved.",
+    "methodology": "Internal-consistency and plausibility check of a client-provided in-app snapshot against public scale signals (App Store rating count and launch date from the Apple listing). Sum of displayed per-game counts (~8,900) vs. a reported ~2,000-user base (client-provided, unverified) and ~951 lifetime US ratings. This is arithmetic/plausibility analysis, NOT proof of intent, fabrication, or bot use; it establishes only that the displayed counts are hard to reconcile with unique live users.",
+    "sourceName": "Analyst internal-consistency check (client in-app snapshot vs. App Store scale signals)",
+    "sourceUrl": "https://apps.apple.com/us/app/carnival-21-hustle-blackjack/id6745267121",
+    "accessed": "2026-07-15",
+    "confidence": "low",
+    "notes": "Open question, not a finding of fraud. The ~2,000-user and per-game counts are client-provided; the rating/launch data are from Apple. See ws0-toast-instant-liquidity-marketing and ws0-carnival-no-bots-marketing for the related marketing claims."
+  },
+  {
+    "id": "ws0-toast-instant-liquidity-marketing",
+    "tier": "A",
+    "workstream": "ws0",
+    "claim": "Toast markets 'instant player liquidity' to operators: playtoast.com says partners can go live with instant player liquidity in less than a day and touts the 'constant availability of opponents' across a shared 'player network' that operators plug into, while Toast also runs its own consumer app (Carnival). Every peer-to-peer game must solve the supply-of-opponents problem; how Toast guarantees instant liquidity (organic users, a seeded/subsidized pool, or otherwise) is not disclosed, and a shared cross-operator pool means the 'players' one app shows may not be that app's own users.",
+    "sourceName": "Toast (playtoast.com) \u2014 operator marketing",
+    "sourceUrl": "https://playtoast.com/",
+    "quote": "instant player liquidity in less than a day",
+    "accessed": "2026-07-15",
+    "confidence": "high",
+    "verified": true,
+    "verifiedBy": "session-2026-07-15",
+    "verifiedDate": "2026-07-15",
+    "notes": "Their own marketing. In tension with the 'no bots' consumer claim (ws0-carnival-no-bots-marketing): guaranteed instant liquidity for a real-money PvP game is hard to provide from organic users alone at low scale, which is the crux of the seeded-pool / bot question."
+  },
+  {
+    "id": "wse-builderai-precedent",
+    "tier": "D",
+    "workstream": "wse",
+    "claim": "Precedent (an analogy for diligence, NOT an allegation against Toast): Builder.ai, a Microsoft-, QIA- and SoftBank-backed startup once valued near $1.5B, collapsed into insolvency in 2025 after its reported revenue was restated down by roughly 75% and it drew an SDNY criminal subpoena, amid Bloomberg-reported allegations of round-tripped revenue with a partner firm (which that firm denies) and long-running 'AI-washing' concerns that its heavily marketed AI automation was in practice delivered by a large outsourced engineering workforce. It illustrates a general diligence pattern worth hard-verifying: where a company markets an automated or human-delivered product while the core work is actually performed by a large lower-cost contractor pool, or where growth/revenue depends on a few related-party transactions, verify unit economics, headcount-to-revenue, customer concentration, and the substance of the core-labor and growth claims.",
+    "methodology": "Cited as an analytical precedent, not as evidence about Toast. Facts drawn from Bloomberg, Rest of World and Sifted reporting on Builder.ai's 2025 collapse. The literal 'fake AI / engineers pretending to be AI' claim is disputed by credible technical reporting and is NOT asserted; the verified core is financial misrepresentation plus overstated-automation ('AI-washing') concerns. Framed strictly around business practice and accounting substance, not any company's or workforce's national origin.",
+    "sourceName": "Rest of World / Bloomberg / Sifted \u2014 Builder.ai collapse coverage (2025)",
+    "sourceUrl": "https://restofworld.org/2025/builderai-ai-explainer-bankrupt/",
+    "accessed": "2026-07-15",
+    "confidence": "medium",
+    "notes": "Use ~$60M (Bloomberg) for the VerSe reciprocal-billing figure, not the inflated $180M seen in low-quality posts. Keep language anchored to disclosure/accounting/labor-model substance, never nationality."
+  },
+  {
+    "id": "ws0-carnival-reviews-allege-bots",
+    "tier": "C",
+    "workstream": "ws0",
+    "claim": "Two public App Store reviews of Carnival allege non-genuine opponents: one 1-star review claims opponents are bots that always score one more than the user; another calls the game 'rigged.' These are unverified user allegations, not proof; the review corpus is otherwise dominated by short 5-star posts, several explicitly written to claim an in-app bonus, so the ~4.6-star average may be incentivized.",
+    "sourceName": "Apple App Store customer reviews \u2014 Carnival (id 6745267121)",
+    "sourceUrl": "https://apps.apple.com/us/app/carnival-21-hustle-blackjack/id6745267121",
+    "quote": "Fake bot opponents will always score 1 more than you",
+    "accessed": "2026-07-15",
+    "confidence": "low",
+    "notes": "Cite ONLY as a user allegation, never endorsed as true. Two negative reviews are weak evidence; included because they name the exact integrity concern (bots) that the Papaya/AviaGames cases turned on."
+  },
+  {
+    "id": "wsa-toast-tracxn-headcount",
+    "tier": "C",
+    "workstream": "wsa",
+    "claim": "A third-party estimate (Tracxn) puts Toast Studios at roughly 12 employees, HQ Bengaluru; a '~19 employees' figure is unverified/private. A small formal headcount does not rule out a large off-books contractor pool: if Toast pays an offshore human counterparty pool to seed opponents, those workers would be gig/contractors, not full-time employees, and would not appear in an employee count \u2014 so 'small headcount' and 'large human counterparty pool' are not mutually exclusive.",
+    "sourceName": "Tracxn \u2014 Toast Studios (third-party estimate)",
+    "sourceUrl": "https://tracxn.com/d/companies/toaststudios",
+    "accessed": "2026-07-15",
+    "confidence": "low",
+    "notes": "Third-party estimate, treat cautiously. Point is analytical: headcount neither confirms nor refutes the paid-pool hypothesis; do not assert the pool exists."
+  },
+  {
+    "id": "ws0-referral-activity-feed-socialproof",
+    "tier": "D",
+    "workstream": "ws0",
+    "claim": "Toast's referral/invite surface displays a constantly-updating live pop-up feed of usernames claiming referral earnings (e.g., a name 'just earned $70 referring 60 people', another 'made $200 referring 85 friends'), cycling perpetually to incentivize sharing. A never-ending real-time 'activity feed' of unverifiable third-party earnings is a well-documented social-proof dark pattern, and such feeds are frequently randomized/fabricated rather than reflecting real events. Whether Toast's feed reflects real users and real payouts is unverified, but it raises the same authenticity question as the app's 'active player' counters.",
+    "methodology": "Client observation of Toast's in-product referral page, interpreted against the documented 'fake activity notification' social-proof dark pattern common on growth/e-commerce surfaces. Not independently verified and no assertion is made that these specific notifications are fabricated; flagged as an open question consistent with the other authenticity concerns.",
+    "sourceName": "Analyst / client observation of Toast referral page (in-product)",
+    "sourceUrl": "https://playtoast.com/",
+    "accessed": "2026-07-15",
+    "confidence": "low",
+    "notes": "Open question, not a finding. Grouped with ws0-carnival-active-player-counts-discrepancy as a pattern of unverifiable in-app 'social proof' that all points one direction (encourage spend/sharing) and is easy to fabricate."
   }
 ]

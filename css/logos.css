@@ -205,7 +205,8 @@
 .logo[data-company="underdog"],
 .logo[data-company="vgw"],
 .logo[data-company="stakeus"],
-.logo[data-company="sleeper"] {
+.logo[data-company="sleeper"],
+.logo[data-company="dream11"] {
   --logo-bg: #ffffff;
   --logo-ink: #ffffff;               /* unused (monogram hidden) but kept sane */
   background-repeat: no-repeat;
@@ -233,7 +234,8 @@
 .logo[data-company="underdog"]::after,
 .logo[data-company="vgw"]::after,
 .logo[data-company="stakeus"]::after,
-.logo[data-company="sleeper"]::after { content: none; }
+.logo[data-company="sleeper"]::after,
+.logo[data-company="dream11"]::after { content: none; }
 
 .logo[data-company="skillz"]      { background-image: url("../assets/logos/skillz.png"); }
 .logo[data-company="papaya"]      { background-image: url("../assets/logos/papaya.png"); }
@@ -251,3 +253,4 @@
 .logo[data-company="vgw"]         { background-image: url("../assets/logos/vgw.png"); }
 .logo[data-company="stakeus"]     { background-image: url("../assets/logos/stakeus.png"); }
 .logo[data-company="sleeper"]     { background-image: url("../assets/logos/sleeper.png"); }
+.logo[data-company="dream11"]     { background-image: url("../assets/logos/dream11.png"); }

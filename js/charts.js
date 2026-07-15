@@ -133,7 +133,7 @@
     [/games ?24 ?x ?7/i, "games24x7"], [/toast|carnival/i, "toast"]
   ];
   var LOGO_FILE = { skillz:1, papaya:1, aviagames:1, triumph:1, worldwinner:1, voodoo:1, mpl:1,
-    winzo:1, zupee:1, draftkings:1, fanduel:1, prizepicks:1, underdog:1, vgw:1, stakeus:1, sleeper:1 };
+    winzo:1, zupee:1, draftkings:1, fanduel:1, prizepicks:1, underdog:1, vgw:1, stakeus:1, sleeper:1, dream11:1 };
   function logoSlug(name) {
     var n = String(name == null ? "" : name);
     for (var i = 0; i < LOGO_TESTS.length; i++) if (LOGO_TESTS[i][0].test(n)) return LOGO_TESTS[i][1];
@@ -325,7 +325,7 @@
       (cells[k] = cells[k] || []).push(c);
     });
 
-    var s = svgOpen(W, H, "Two-by-two market map. Vertical axis: matching model (real-time vs async). Horizontal axis: stakes (casual, mid, casino). Toast is the only peer-to-peer entrant in the casino-stakes × real-time cell; VGW and Stake.us share that cell but are house-banked sweepstakes casinos, a different legal workaround, marked with a dashed border. Off the researched roster, crypto-native (bjb.gg) and B2B (Thndr) products also run real-time peer-to-peer real-money blackjack.", 520);
+    var s = svgOpen(W, H, "Two-by-two market map. Vertical axis: matching model (real-time vs async). Horizontal axis: stakes (casual, mid, casino). Toast is the only peer-to-peer entrant in the casino-stakes × real-time cell; VGW and Stake.us share that cell but are house-banked sweepstakes casinos, a different legal workaround, marked with a dashed border. Off the researched roster, the space is starting to draw entrants: an early crypto project (bjb.gg) and B2B infrastructure (Thndr) are moving toward real-time peer-to-peer real-money blackjack.", 520);
     // hatch pattern for house-banked markers
     s += '<defs><pattern id="q-hatch" width="5" height="5" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">' +
       '<line class="q-hatch-l" x1="0" y1="0" x2="0" y2="5"/></pattern></defs>';
