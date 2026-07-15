@@ -260,3 +260,146 @@ em, i { font-style: italic; }
   :root[data-pdf="small"] [data-pdf-min="full"],
   :root[data-pdf="medium"] [data-pdf-min="full"] { display: none !important; }
 }
+
+/* =============================================================================
+   6. BRAND IMAGERY  —  real Toast marks + photographic hero masthead
+   The site keeps its own analyst identity (felt green, Fraunces/mono); Toast's
+   actual brand (electric blue #1a86ff, the "toast" wordmark, the "t" app mark)
+   enters as the SUBJECT being analysed, not as the site's skin. The hero is a
+   deliberately dark masthead in BOTH themes so the photo reads and text stays
+   AA-legible; it reverts to ink-on-white for print. New marks are decorative
+   (alt="") wherever adjacent text already names the brand.
+   ========================================================================== */
+:root { --toast-blue: #1a86ff; --toast-blue-bright: #4aa3ff; }
+
+/* ---- nav + footer marks ---------------------------------------------------- */
+.nav__mark { border-radius: 6px; }
+.footer__mark {
+  width: 18px; height: 18px; border-radius: 5px; flex: none;
+  align-self: center; margin-right: 0.15rem; opacity: 0.92;
+}
+
+/* ---- hero: full-bleed photographic masthead -------------------------------- */
+.hero--masthead {
+  position: relative;
+  background-color: #0a0c10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  padding-top: clamp(4.5rem, 10vw, 8rem);
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+  color: #f4f2ec;
+  /* Scoped light-on-dark tokens: every descendant that reads these gets the
+     masthead palette, regardless of the page's light/dark theme. */
+  --text: #f4f2ec;
+  --muted: #c3cbd6;
+  --faint: #93a0ad;
+  --border: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.24);
+  --surface: rgba(255, 255, 255, 0.06);
+}
+/* lift every real child above the media layer (media is positioned z:0, which
+   would otherwise paint over static content) */
+.hero--masthead > *:not(.hero__media) { position: relative; z-index: 1; }
+
+.hero__media {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 100vw;                 /* break out of the section's max-width */
+  transform: translateX(-50%);  /* body has overflow-x:hidden — no side-scroll */
+  z-index: 0;
+  background:
+    linear-gradient(103deg, rgba(8,10,14,0.95) 0%, rgba(8,10,14,0.80) 42%, rgba(8,10,14,0.55) 100%),
+    linear-gradient(to top, rgba(8,10,14,0.98) 3%, rgba(8,10,14,0.28) 55%, rgba(8,10,14,0.50) 100%),
+    url("../assets/toast-hero.jpg");
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  background-repeat: no-repeat;
+}
+
+/* brand lockup sitting above the report title: the real wordmark + the fact
+   that the App Store listing is "Carnival" */
+.hero__brand {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.95rem;
+  margin: 1.05rem 0 0.5rem;
+}
+.hero__wordmark {
+  height: clamp(2.1rem, 4.5vw, 3rem);
+  width: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 8px 26px -10px rgba(26,134,255,0.65), 0 0 0 1px rgba(255,255,255,0.08);
+}
+.hero__brand-note {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.hero__brand-note strong { color: var(--text); font-weight: 600; }
+
+/* ---- PDF export buttons — previously unstyled native controls --------------
+   Pill/ghost treatment resolved from tokens, so it reads correctly on the dark
+   hero (scoped tokens above) AND at the report-end copy on a normal surface. */
+.pdf-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: clamp(1.4rem, 4vw, 2.1rem);
+}
+.pdf-btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+.pdf-btn:hover { color: var(--accent-bright); border-color: var(--accent); }
+.pdf-btn:active { transform: translateY(1px); }
+.pdf-btn:focus-visible { outline: none; box-shadow: var(--ring); }
+
+/* ---- company section brand lockup ------------------------------------------ */
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0.1rem 0 1.1rem;
+}
+.brand-lockup__mark {
+  width: 44px; height: 44px; flex: none;
+  border-radius: 11px;
+  box-shadow: 0 6px 18px -8px rgba(26,134,255,0.55);
+}
+.brand-lockup__word {
+  height: 30px; width: auto;
+  border-radius: 6px;
+}
+
+@media (max-width: 40rem) {
+  .brand-lockup__word { height: 26px; }
+}
+
+/* ---- print: masthead reverts to ink-on-white ------------------------------- */
+@media print {
+  .hero__media { display: none !important; }
+  .hero--masthead {
+    background: #fff !important;
+    border-bottom: 1px solid var(--border) !important;
+    padding-top: 0 !important;
+    /* undo the scoped dark tokens so the print :root light palette applies */
+    --text: #14161a; --muted: #40454d; --faint: #5c626b;
+    --border: #cfcabf; --border-strong: #a9a397; --surface: #ffffff;
+    color: var(--text) !important;
+  }
+  .hero__wordmark, .brand-lockup__mark, .brand-lockup__word, .footer__mark {
+    box-shadow: none !important;
+  }
+}

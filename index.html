@@ -7,7 +7,9 @@
  <meta name="description" content="Internal research brief on Toast, a peer-to-peer real-money gaming startup, and its market. Not legal or investment advice.">
  <meta name="color-scheme" content="dark light">
  <meta name="robots" content="noindex, nofollow">
- <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+ <link rel="icon" type="image/png" href="assets/toast-logo.png">
+ <link rel="apple-touch-icon" href="assets/toast-logo.png">
+ <meta name="theme-color" content="#0a0c10">
  <!-- Preload the two self-hosted display/text faces so first paint is on-brand. -->
  <link rel="preload" href="assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
  <link rel="preload" href="assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
@@ -28,7 +30,7 @@
  <header class="nav">
  <div class="nav__inner">
  <a class="nav__brand" href="#hero" aria-label="Toast research — top">
- <img src="assets/favicon.svg" alt="">
+ <img class="nav__mark" src="assets/toast-logo.png" alt="" width="24" height="24">
  Toast<span>&nbsp;research</span>
  </a>
  <nav aria-label="Sections">
@@ -53,8 +55,13 @@
  <main id="top">
 
  <!-- 1. HERO - the thesis masthead ------------------------------------- -->
- <section id="hero" class="hero" aria-labelledby="hero-title" data-pdf-min="small">
+ <section id="hero" class="hero hero--masthead" aria-labelledby="hero-title" data-pdf-min="small">
+<div class="hero__media" aria-hidden="true"></div>
 <p class="mono">Internal research &middot; Investment committee &middot; July 2026</p>
+<div class="hero__brand">
+ <img class="hero__wordmark" src="assets/toast-wordmark.jpg" alt="Toast" width="1200" height="585">
+ <span class="hero__brand-note">playtoast.com &middot; App&nbsp;Store: <strong>Carnival</strong></span>
+</div>
 <h1 id="hero-title">Toast: Company &amp; Industry Analysis</h1>
 <p class="hero__lede">
  Peer-to-peer real-money gaming: market, competitors, regulation, and investment
@@ -411,6 +418,10 @@
  <section id="company" aria-labelledby="company-title" data-pdf-min="full">
 <div class="section__head">
  <span class="section__index">04 / Company</span>
+ <div class="brand-lockup">
+ <img class="brand-lockup__mark" src="assets/toast-logo.png" alt="" width="44" height="44">
+ <img class="brand-lockup__word" src="assets/toast-wordmark.jpg" alt="Toast" width="1200" height="585">
+ </div>
  <h2 id="company-title">Company overview</h2>
  <p class="standfirst">
  Two entities, one product, and one founding team with a shared background in Indian
@@ -4091,6 +4102,7 @@
  </main>
 
  <footer class="footer">
+ <img class="footer__mark" src="assets/toast-logo.png" alt="" width="18" height="18">
  <span>Internal research</span>
  <span class="footer__sep">&middot;</span>
  <span>Not legal or investment advice</span>

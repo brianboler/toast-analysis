@@ -94,9 +94,18 @@
    Ink colors are chosen per background for AA contrast (>= 4.5:1, verified).
    ------------------------------------------------------------------------- */
 
-/* toast — monogram */
-.logo[data-company="toast"] { --logo-bg: #35c07d; --logo-ink: #0a0a0a; }
-.logo[data-company="toast"]::after { content: "T"; }
+/* toast — the real brand mark (we hold the asset), so this one tile renders the
+   actual app icon rather than a CSS-drawn monogram. The flat blue-rounded-square
+   glyph matches the tile system exactly, so it reads as native among the drawn
+   marks. --logo-bg is set to Toast blue so any transparent corner blends. */
+.logo[data-company="toast"] {
+  --logo-bg: #1a86ff;
+  --logo-ink: #ffffff;
+  background-image: url("../assets/toast-logo.png");
+  background-size: cover;
+  background-position: center;
+}
+.logo[data-company="toast"]::after { content: none; }
 
 /* skillz — monogram */
 .logo[data-company="skillz"] { --logo-bg: #6c5ce7; --logo-ink: #ffffff; }
