@@ -71,6 +71,17 @@
 .q-mark:focus-visible { outline: none; }
 .q-mark:focus-visible circle, .q-mark:focus-visible path { stroke: var(--accent-bright); stroke-width: 2.5; }
 
+/* ---- quadrant logo chips (markers now render each company's real logo) ----- */
+.q-chip-bg { fill: #ffffff; stroke: rgba(0, 0, 0, 0.16); stroke-width: 1; }
+.q-chip-mono { fill: #ffffff; font-family: var(--font-text); font-weight: 800; letter-spacing: -0.03em; }
+.q-chip-inner { transition: transform 0.12s ease; transform-box: fill-box; transform-origin: center; }
+.q-mark.is-hot .q-chip-inner { transform: scale(1.14); }
+/* Toast = the headline entrant: accent ring. House-banked (VGW, Stake.us) keep
+   a distinguishing dashed warn-coloured border — a different legal workaround. */
+.q-toast .q-chip-bg { stroke: var(--accent); stroke-width: 2.5; }
+.q-house .q-chip-bg { stroke: var(--warn); stroke-width: 1.5; stroke-dasharray: 3 2; }
+.q-mark:focus-visible .q-chip-bg { stroke: var(--accent-bright); stroke-width: 2.5; }
+
 /* ---- Funding dot-timeline ------------------------------------------------- */
 .f-mark { cursor: pointer; }
 .f-field circle { fill: var(--tier-b); fill-opacity: 0.85; stroke: var(--surface); stroke-width: 1.5; transition: fill-opacity 0.12s ease; }
@@ -80,6 +91,14 @@
 .f-lbl-toast { fill: var(--accent-bright); font-weight: 700; }
 .f-mark:focus-visible { outline: none; }
 .f-mark:focus-visible circle { stroke: var(--accent-bright); stroke-width: 2.5; }
+
+/* funding dots are now amount-sized logo chips; the Toast-vs-field accent moves
+   from the dot fill to the chip's ring. */
+.f-chip .q-chip-bg { stroke-width: 1.5; }
+.f-field .q-chip-bg { stroke: var(--tier-b); }
+.f-toast .q-chip-bg { stroke: var(--accent); stroke-width: 2.5; }
+.f-mark.is-hot .q-chip-inner { transform: scale(1.14); }
+.f-mark:focus-visible .q-chip-bg { stroke: var(--accent-bright); stroke-width: 2.5; }
 
 /* ---- Legends -------------------------------------------------------------- */
 .chart-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; margin: 0.7rem 0 0; padding: 0; list-style: none;

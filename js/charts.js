@@ -119,6 +119,49 @@
       'style="width:100%;height:auto;' + (minW ? "min-width:" + minW + "px" : "") + '">';
   }
 
+  // ---- logo-chip helpers (shared by the quadrant + funding charts) ----------
+  // Resolve a free-text company name (naming differs across data files) to a
+  // logo slug, then to a self-hosted asset path. dream11/games24x7 have no
+  // reliable logo asset and fall back to a coloured monogram chip.
+  var LOGO_TESTS = [
+    [/skillz|firy/i, "skillz"], [/papaya/i, "papaya"], [/avia/i, "aviagames"],
+    [/triumph/i, "triumph"], [/worldwinner|game taco/i, "worldwinner"], [/voodoo|blitz/i, "voodoo"],
+    [/\bmpl\b|mobile premier/i, "mpl"], [/winzo/i, "winzo"], [/zupee/i, "zupee"],
+    [/dream ?11|dream sports/i, "dream11"], [/draftkings/i, "draftkings"], [/fanduel/i, "fanduel"],
+    [/prizepicks/i, "prizepicks"], [/underdog/i, "underdog"], [/sleeper/i, "sleeper"],
+    [/\bvgw\b|chumba|luckyland|global poker/i, "vgw"], [/stake/i, "stakeus"],
+    [/games ?24 ?x ?7/i, "games24x7"], [/toast|carnival/i, "toast"]
+  ];
+  var LOGO_FILE = { skillz:1, papaya:1, aviagames:1, triumph:1, worldwinner:1, voodoo:1, mpl:1,
+    winzo:1, zupee:1, draftkings:1, fanduel:1, prizepicks:1, underdog:1, vgw:1, stakeus:1, sleeper:1 };
+  function logoSlug(name) {
+    var n = String(name == null ? "" : name);
+    for (var i = 0; i < LOGO_TESTS.length; i++) if (LOGO_TESTS[i][0].test(n)) return LOGO_TESTS[i][1];
+    return null;
+  }
+  function logoHref(slug) {
+    if (slug === "toast") return "assets/toast-logo.png";
+    return LOGO_FILE[slug] ? "assets/logos/" + slug + ".png" : null;
+  }
+  // SVG for a single logo chip (rect + image), or a coloured monogram chip when
+  // no asset exists. x,y is the top-left; sz the side length.
+  function chipInner(x, y, sz, slug, name) {
+    var rx = (sz * 0.24).toFixed(1), pad = sz * 0.15;
+    var href = logoHref(slug);
+    if (href) {
+      return '<rect class="q-chip-bg" x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + sz.toFixed(1) +
+        '" height="' + sz.toFixed(1) + '" rx="' + rx + '"/>' +
+        '<image href="' + href + '" x="' + (x + pad).toFixed(1) + '" y="' + (y + pad).toFixed(1) +
+        '" width="' + (sz - 2 * pad).toFixed(1) + '" height="' + (sz - 2 * pad).toFixed(1) + '" preserveAspectRatio="xMidYMid meet"/>';
+    }
+    var mono = slug === "dream11" ? "11" : (slug === "games24x7" ? "24" : (String(name).replace(/[^A-Za-z0-9]/g, "").charAt(0) || "?").toUpperCase());
+    var fill = slug === "dream11" ? "#d13239" : (slug === "games24x7" ? "#d6336c" : "#3a3f47");
+    return '<rect class="q-chip-bg" x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + sz.toFixed(1) +
+      '" height="' + sz.toFixed(1) + '" rx="' + rx + '" style="fill:' + fill + '"/>' +
+      '<text class="q-chip-mono" x="' + (x + sz / 2).toFixed(1) + '" y="' + (y + sz / 2).toFixed(1) +
+      '" text-anchor="middle" dominant-baseline="central" style="font-size:' + (sz * 0.44).toFixed(1) + 'px">' + esc(mono) + "</text>";
+  }
+
   // ===========================================================================
   // 1. MARKET BARS — horizontal bars, colour = evidence tier, labels above bar
   // ===========================================================================
@@ -256,6 +299,18 @@
   // ===========================================================================
   // 3. QUADRANT — stakes (casual/mid/casino) × matching (async/realtime)
   // ===========================================================================
+  // company name (as it appears in companies.json) -> logo slug. Unmapped or
+  // asset-less companies fall back to a coloured monogram chip.
+  var QUAD_SLUG = {
+    "Skillz (Firy Inc.)": "skillz", "Papaya Gaming": "papaya", "AviaGames": "aviagames",
+    "Triumph Labs": "triumph", "WorldWinner / Game Taco": "worldwinner",
+    "Voodoo / Blitz - Win Cash": "voodoo", "MPL (Mobile Premier League)": "mpl",
+    "WinZO": "winzo", "Zupee": "zupee", "Dream11 (Dream Sports)": "dream11",
+    "DraftKings": "draftkings", "FanDuel": "fanduel", "PrizePicks": "prizepicks",
+    "Underdog": "underdog", "Sleeper": "sleeper",
+    "VGW (Chumba Casino, LuckyLand Slots, Global Poker)": "vgw",
+    "Stake.us": "stakeus", "Toast (Carnival)": "toast"
+  };
   function renderQuadrant(mount, companies) {
     var cols = ["casual", "mid", "casino"], colLabel = { casual: "Casual", mid: "Mid", casino: "Casino" };
     var rows = ["realtime", "async"], rowLabel = { realtime: "Real-time", async: "Async" };
@@ -311,26 +366,37 @@
         var perRow = Math.ceil(Math.sqrt(list.length));
         var innerW = cw - 22, innerH = ch - 26;
         var stepX = innerW / perRow, stepY = innerH / Math.ceil(list.length / perRow);
+        // one logo chip per company, sized to the cell's packing so dense
+        // cells (casual×async has 8) never overlap.
+        var sz = Math.max(18, Math.min(30, Math.min(stepX, stepY) - 8));
         list.forEach(function (co, k) {
           var gx = cx0 + 12 + (k % perRow) * stepX + stepX / 2;
           var gy = cy0 + 16 + Math.floor(k / perRow) * stepY + stepY / 2;
           var toast = /^Toast/.test(co.name);
           var house = co.houseBanked === true;
+          var slug = QUAD_SLUG[co.name];
           var payload = quadPayload(co);
           var st = ' style="--i:' + (qi++) + '"';
-          if (house) {
-            var d = 9;
-            s += '<g class="q-mark q-house"' + st + ' data-p="' + esc(payload) + '" tabindex="0" role="img" aria-label="' + esc(quadAria(co)) + '">' +
-              '<path d="M' + gx + ' ' + (gy - d) + ' L' + (gx + d) + ' ' + gy + ' L' + gx + ' ' + (gy + d) + ' L' + (gx - d) + ' ' + gy + ' Z"/>' +
-              '</g>';
-          } else if (toast) {
-            s += '<g class="q-mark q-toast"' + st + ' data-p="' + esc(payload) + '" tabindex="0" role="img" aria-label="' + esc(quadAria(co)) + '">' +
-              '<circle cx="' + gx + '" cy="' + gy + '" r="8.5"/>' +
-              '<text class="q-toast-lbl" x="' + gx + '" y="' + (gy - 13) + '" text-anchor="middle">Toast</text></g>';
+          var x = (gx - sz / 2).toFixed(1), y = (gy - sz / 2).toFixed(1);
+          var rx = (sz * 0.24).toFixed(1), pad = sz * 0.15;
+          var cls = "q-mark q-chip" + (toast ? " q-toast" : "") + (house ? " q-house" : "");
+          var inner;
+          if (slug && slug !== "dream11") {
+            var href = slug === "toast" ? "assets/toast-logo.png" : "assets/logos/" + slug + ".png";
+            inner = '<rect class="q-chip-bg" x="' + x + '" y="' + y + '" width="' + sz + '" height="' + sz + '" rx="' + rx + '"/>' +
+              '<image href="' + href + '" x="' + (gx - sz / 2 + pad).toFixed(1) + '" y="' + (gy - sz / 2 + pad).toFixed(1) +
+              '" width="' + (sz - 2 * pad).toFixed(1) + '" height="' + (sz - 2 * pad).toFixed(1) + '" preserveAspectRatio="xMidYMid meet"/>';
           } else {
-            s += '<g class="q-mark q-dot"' + st + ' data-p="' + esc(payload) + '" tabindex="0" role="img" aria-label="' + esc(quadAria(co)) + '">' +
-              '<circle cx="' + gx + '" cy="' + gy + '" r="6.5"/></g>';
+            // monogram fallback (dream11 has no reliable logo asset)
+            var mono = slug === "dream11" ? "11" : (co.name[0] || "?");
+            var fill = slug === "dream11" ? "#d13239" : "#3a3f47";
+            inner = '<rect class="q-chip-bg" x="' + x + '" y="' + y + '" width="' + sz + '" height="' + sz + '" rx="' + rx + '" style="fill:' + fill + '"/>' +
+              '<text class="q-chip-mono" x="' + gx + '" y="' + gy + '" text-anchor="middle" dominant-baseline="central" style="font-size:' + (sz * 0.46).toFixed(1) + 'px">' + esc(mono) + "</text>";
           }
+          s += '<g class="' + cls + '"' + st + ' data-p="' + esc(payload) + '" tabindex="0" role="img" aria-label="' + esc(quadAria(co)) + '">' +
+            '<g class="q-chip-inner">' + inner + "</g>" +
+            (toast ? '<text class="q-toast-lbl" x="' + gx + '" y="' + (gy - sz / 2 - 5).toFixed(1) + '" text-anchor="middle">Toast</text>' : "") +
+            "</g>";
         });
       });
     });
@@ -389,14 +455,29 @@
     });
 
     // collision de-clutter: stack same-month dots vertically around baseY
-    var byMonth = {};
-    rounds.forEach(function (r) { (byMonth[r.date] = byMonth[r.date] || []).push(r); });
-    var placed = [];
-    rounds.forEach(function (r) {
-      var group = byMonth[r.date];
-      var idx = group.indexOf(r);
-      var offset = (idx - (group.length - 1) / 2) * 30;
-      placed.push({ r: r, x: X(r.date), y: baseY + offset });
+    // place each round at its date; chip side scales with round size (keeps the
+    // amount encoding). Then greedily nudge overlapping chips apart vertically —
+    // this declutters exact-month AND near-month clusters (2021–22) alike, which
+    // the old same-month-only stacking left overlapping.
+    var placed = rounds.map(function (r) {
+      return { r: r, x: X(r.date), y: baseY, sz: Math.max(15, Math.min(24, R(r.amountUSD) * 1.15)) };
+    });
+    var yLo = padT + 14, yHi = padT + plotH - 14;
+    placed.slice().sort(function (a, b) { return a.x - b.x; }).forEach(function (p, i, arr) {
+      var seen = arr.slice(0, i);
+      function hits(y) {
+        for (var j = 0; j < seen.length; j++) {
+          var q = seen[j];
+          if (Math.abs(p.x - q.x) < (p.sz + q.sz) / 2 + 3 && Math.abs(y - q.y) < (p.sz + q.sz) / 2 + 3) return true;
+        }
+        return false;
+      }
+      var step = 0, dir = 1, tries = 0;
+      while (hits(p.y) && tries < 60) {
+        step++; dir = -dir;
+        p.y = Math.max(yLo, Math.min(yHi, baseY + dir * step * 7));
+        tries++;
+      }
     });
 
     // notable rounds get a direct label
@@ -404,15 +485,16 @@
       "PrizePicks|2025-09": "PrizePicks $1.6B", "Toast|2025-09": "Toast $1.6M" };
 
     placed.forEach(function (p, i) {
-      var r = p.r, toast = /^Toast/.test(r.company), rad = R(r.amountUSD);
-      s += '<g class="f-mark ' + (toast ? "f-toast" : "f-field") + '" style="--i:' + i + '" data-i="' + i + '" tabindex="0" role="img" aria-label="' +
-        esc(r.company + " " + r.round + ", " + monthLabel(r.date) + ", " + usd(r.amountUSD)) + '">';
-      s += '<circle cx="' + p.x + '" cy="' + p.y + '" r="' + rad.toFixed(1) + '"/></g>';
+      var r = p.r, toast = /^Toast/.test(r.company), sz = p.sz;
+      var slug = logoSlug(r.company);
+      s += '<g class="f-mark f-chip ' + (toast ? "f-toast" : "f-field") + '" style="--i:' + i + '" data-i="' + i + '" tabindex="0" role="img" aria-label="' +
+        esc(r.company + " " + r.round + ", " + monthLabel(r.date) + ", " + usd(r.amountUSD)) + '">' +
+        '<g class="q-chip-inner">' + chipInner(p.x - sz / 2, p.y - sz / 2, sz, slug, r.company) + "</g></g>";
       var key = r.company + "|" + r.date;
       if (labelSet[key]) {
-        var above = p.y - rad - 6 > padT + 6;
+        var above = p.y - sz / 2 - 6 > padT + 6;
         s += '<text class="f-lbl' + (toast ? " f-lbl-toast" : "") + '" x="' + p.x + '" y="' +
-          (above ? (p.y - rad - 6) : (p.y + rad + 12)) + '" text-anchor="middle">' + esc(labelSet[key]) + "</text>";
+          (above ? (p.y - sz / 2 - 6) : (p.y + sz / 2 + 12)) + '" text-anchor="middle">' + esc(labelSet[key]) + "</text>";
       }
     });
     s += "</svg>";
