@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "title": "Forecast & scenario model — bull / base / bear",
+    "label": "Scenario projection (tier D) — not a forecast of fact",
+    "disclaimer": "Scenario projection, not a forecast of fact; anchored to cited comps. Yearly cells are scenario outputs; only the labelled inputs (addressable states, per-capita spend, ARPPU band, take rate, exit multiples, comp cross-checks) trace to a cited fact.",
+    "methodology": "Each case extends the synthesis three-case framing into a Year 1-5 KPI build. ARPPU is a MONTHLY figure on the Skillz basis, so annual net revenue = paying users (PMAU, thousands) x ARPPU x 12. GMV = net revenue / take rate. EBITDA-ish = net revenue x (1 - S&M% - 40%), where 40% is a single simplifying charge for all other opex (payments, platform fees, G&A, tech; India counterparty labour is immaterial per wsf-toast-per-hand-model). Ramp curves (state rollout, user growth) are the scenario assumption: bull compounds into the empty casino x real-time quadrant with ARPPU breaking above the Skillz band; base is a niche operator with ARPPU stuck in the $59-70 band and Skillz-like CAC; bear takes a Year-3 enforcement / platform / India kill-shot that truncates the revenue path. Terminal net revenue reconciles to synthesis.md: bull ~$397M, base ~$148M, bear impaired.",
+    "kpiFormula": "netRevenue($M) = payingUsersK x ARPPU x 12 / 1000 ; GMV($M) = netRevenue / (takeRatePct/100) ; ebitda($M) = netRevenue x (1 - sAndMPctRevenue/100 - 0.40)",
+    "anchorFactIds": [
+      "wsd-addressable-states-estimate",
+      "wsb-igaming-revenue-per-capita",
+      "wsb-nonicasino-population-estimate",
+      "wsb-som-p2p-skill-gaming",
+      "wsf-skillz-implied-take-rate-trend",
+      "wsf-skillz-fy2023-results",
+      "wsf-skillz-fy2024-results",
+      "wsf-skillz-fy2025-results",
+      "wsb-skillz-revenue-2021",
+      "wsb-skillz-revenue-2024",
+      "wsf-dkng-igaming-revenue-density",
+      "wsg-what-multiples-imply",
+      "wsg-dkng-ev-revenue",
+      "wsg-firy-ev-revenue",
+      "wsg-flutter-junglee-impairment"
+    ],
+    "defaultCase": "base",
+    "units": {
+      "payingUsersK": "paying monthly active users, thousands (PMAU basis)",
+      "arppu": "average revenue per paying user, USD per month (Skillz basis)",
+      "takeRatePct": "% of GMV retained as net revenue (rake)",
+      "gmv": "gross marketplace volume, USD millions (entry fees / handle)",
+      "netRevenue": "net revenue, USD millions (= GMV x take rate)",
+      "sAndMPctRevenue": "sales & marketing as % of net revenue",
+      "ebitda": "EBITDA-ish contribution, USD millions"
+    }
+  },
+  "cases": {
+    "bull": {
+      "label": "Bull",
+      "colorVar": "--accent",
+      "kicker": "Empty-quadrant compounding",
+      "story": "Blackjack is defensible at the optimistic end of the range, platforms stay neutral, casino-style play lifts ARPPU above the casual-skill ceiling, and Toast is alone in its quadrant long enough to compound liquidity into a durable network.",
+      "addressableStates": 37,
+      "addressableStatesFactId": "wsd-addressable-states-estimate",
+      "arppuThesis": "ARPPU breaks above the Skillz $59-70 band as casino-stakes play monetises high-value US players (density echo of DraftKings iGaming at ~2.3x sportsbook, wsf-dkng-igaming-revenue-density).",
+      "years": [
+        { "year": 1, "statesLive": 6,  "payingUsersK": 18,  "arppu": 75,  "takeRatePct": 15, "gmv": 108,  "netRevenue": 16,  "sAndMPctRevenue": 95, "ebitda": -6 },
+        { "year": 2, "statesLive": 14, "payingUsersK": 55,  "arppu": 88,  "takeRatePct": 16, "gmv": 363,  "netRevenue": 58,  "sAndMPctRevenue": 82, "ebitda": -13 },
+        { "year": 3, "statesLive": 22, "payingUsersK": 120, "arppu": 98,  "takeRatePct": 17, "gmv": 830,  "netRevenue": 141, "sAndMPctRevenue": 68, "ebitda": -11 },
+        { "year": 4, "statesLive": 30, "payingUsersK": 205, "arppu": 107, "takeRatePct": 18, "gmv": 1462, "netRevenue": 263, "sAndMPctRevenue": 55, "ebitda": 13 },
+        { "year": 5, "statesLive": 37, "payingUsersK": 288, "arppu": 115, "takeRatePct": 18, "gmv": 2208, "netRevenue": 397, "sAndMPctRevenue": 45, "ebitda": 60 }
+      ],
+      "crossChecks": [
+        { "note": "Terminal net revenue ~$397M tops the $50-400M SOM band and ~= Skillz's all-time peak $384.1M", "factIds": ["wsb-som-p2p-skill-gaming", "wsb-skillz-revenue-2021"] },
+        { "note": "Terminal GMV ~$2.2B sits inside the implied $2.1-2.6B range (~= Skillz's 2021 peak GMV) at a 15-19% take rate", "factIds": ["wsf-skillz-implied-take-rate-trend"] }
+      ],
+      "exit": {
+        "exitYear": 5,
+        "exitRevenue": 397,
+        "evRevenueMultiple": 1.5,
+        "evRevenueMultipleFactId": "wsg-what-multiples-imply",
+        "enterpriseValue": 596,
+        "evLabel": "~$0.6B",
+        "basis": "Top of the defensible 0.5-1.5x illustrative band.",
+        "stretch": {
+          "multiple": 2.23,
+          "multipleFactId": "wsg-dkng-ev-revenue",
+          "enterpriseValue": 885,
+          "evLabel": "~$0.9B",
+          "label": "DraftKings-parity stretch",
+          "basis": "Explicitly above the defensible band: DKNG's 2.23x prices license-hardened multi-vertical scale on $6.29B revenue that a pre-seed single-product entrant has no analog to."
+        }
+      }
+    },
+    "base": {
+      "label": "Base",
+      "colorVar": "--tier-b",
+      "kicker": "Niche operator, ARPPU stuck",
+      "story": "The doctrine haircut is real, cold-start friction and CAC bite the way they bit Skillz, ARPPU never leaves the historical band, and Toast lands as a mid-single-digit-share niche operator rather than a category-definer.",
+      "addressableStates": 32,
+      "addressableStatesFactId": "wsd-addressable-states-estimate",
+      "arppuThesis": "ARPPU stays inside the flat $59-70 band Skillz never escaped (wsf-skillz-fy2023-results $70, wsf-skillz-fy2024-results $68.70); the dealer-vs-player mechanic does some incremental work but not enough to escape the niche.",
+      "years": [
+        { "year": 1, "statesLive": 5,  "payingUsersK": 12,  "arppu": 60, "takeRatePct": 14, "gmv": 62,  "netRevenue": 8.6,   "sAndMPctRevenue": 105, "ebitda": -4 },
+        { "year": 2, "statesLive": 11, "payingUsersK": 38,  "arppu": 62, "takeRatePct": 14, "gmv": 202, "netRevenue": 28.3,  "sAndMPctRevenue": 96,  "ebitda": -10 },
+        { "year": 3, "statesLive": 18, "payingUsersK": 82,  "arppu": 64, "takeRatePct": 15, "gmv": 420, "netRevenue": 63.0,  "sAndMPctRevenue": 89,  "ebitda": -18 },
+        { "year": 4, "statesLive": 25, "payingUsersK": 132, "arppu": 66, "takeRatePct": 15, "gmv": 697, "netRevenue": 104.5, "sAndMPctRevenue": 82,  "ebitda": -23 },
+        { "year": 5, "statesLive": 32, "payingUsersK": 181, "arppu": 68, "takeRatePct": 15, "gmv": 985, "netRevenue": 147.7, "sAndMPctRevenue": 76,  "ebitda": -24 }
+      ],
+      "crossChecks": [
+        { "note": "Terminal ~$148M revenue and ~181K PMAU land at roughly Skillz's post-collapse 2023 scale (179K PMAU); GMV ~$985M ~= Skillz 2023 GMV $963.6M", "factIds": ["wsf-skillz-fy2023-results"] },
+        { "note": "Above Skillz's $95.5M trough; near Papaya's press-estimated ~$150M", "factIds": ["wsb-skillz-revenue-2024"] }
+      ],
+      "exit": {
+        "exitYear": 5,
+        "exitRevenue": 148,
+        "evRevenueMultipleLow": 0.68,
+        "evRevenueMultipleHigh": 1.0,
+        "evRevenueMultipleLowFactId": "wsg-firy-ev-revenue",
+        "evRevenueMultipleHighFactId": "wsg-what-multiples-imply",
+        "enterpriseValueLow": 101,
+        "enterpriseValueHigh": 148,
+        "enterpriseValue": 124,
+        "evLabel": "$100-150M",
+        "basis": "At-to-above Skillz/Firy's current distressed 0.68x EV/Sales, up to ~1.0x."
+      }
+    },
+    "bear": {
+      "label": "Bear",
+      "colorVar": "--danger",
+      "kicker": "Enforcement / platform / India shock",
+      "story": "A single-product, pre-scale, iOS-only company meets any one of four precedented kill-shots (state-AG sham-P2P action, integrity/false-advertising exposure, an App-Store casino-games reinterpretation, or the India supply/AML shock). A Year-3 shock truncates the revenue path rather than trimming it.",
+      "addressableStates": 32,
+      "addressableStatesFactId": "wsd-addressable-states-estimate",
+      "shockYear": 3,
+      "arppuThesis": "Revenue builds through Year 2, then a kill-shot cuts PMAU and rake; the line settles at a rump that is a fraction of both its own peak and the base case.",
+      "years": [
+        { "year": 1, "statesLive": 5, "payingUsersK": 11, "arppu": 58, "takeRatePct": 14, "gmv": 55,  "netRevenue": 7.7,  "sAndMPctRevenue": 110, "ebitda": -4 },
+        { "year": 2, "statesLive": 9, "payingUsersK": 34, "arppu": 60, "takeRatePct": 14, "gmv": 175, "netRevenue": 24.5, "sAndMPctRevenue": 98,  "ebitda": -9 },
+        { "year": 3, "statesLive": 7, "payingUsersK": 24, "arppu": 56, "takeRatePct": 13, "gmv": 124, "netRevenue": 16.1, "sAndMPctRevenue": 135, "ebitda": -12 },
+        { "year": 4, "statesLive": 6, "payingUsersK": 22, "arppu": 54, "takeRatePct": 12, "gmv": 119, "netRevenue": 14.3, "sAndMPctRevenue": 145, "ebitda": -12 },
+        { "year": 5, "statesLive": 6, "payingUsersK": 20, "arppu": 53, "takeRatePct": 12, "gmv": 106, "netRevenue": 12.7, "sAndMPctRevenue": 140, "ebitda": -10 }
+      ],
+      "crossChecks": [
+        { "note": "Category precedent for a legally-triggered write-off: Flutter took a $556M impairment on Junglee Games when India's 2025 law forced it to stop real-money play", "factIds": ["wsg-flutter-junglee-impairment"] },
+        { "note": "Skillz/Firy's current distressed 0.68x EV/Sales is a CEILING for the downside multiple, not a floor", "factIds": ["wsg-firy-ev-revenue"] }
+      ],
+      "exit": {
+        "exitYear": 5,
+        "exitRevenue": 12.7,
+        "peakRevenue": 24.5,
+        "evRevenueMultiple": 0.4,
+        "evRevenueMultipleFactId": "wsg-what-multiples-imply",
+        "enterpriseValue": 5,
+        "evLabel": "~$5M, impaired",
+        "impairment": true,
+        "impairmentFactId": "wsg-flutter-junglee-impairment",
+        "basis": "Multiple compresses below 0.5x; equity impaired toward zero, invested capital largely at risk. Not a haircut to the base case, a step-change."
+      }
+    }
+  }
+}

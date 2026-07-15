@@ -13,8 +13,33 @@
   padding-top: clamp(1.5rem, 4vw, 2.25rem);
   border-top: 1px solid var(--border);
 }
-.hero__stat { display: flex; flex-direction: column; }
-.hero__stat .stat--big { --u: 0%; }
+/* Each stat is a centred column: the big number sits shrink-wrapped and
+   centred in its cell, and the citation marker is lifted OUT OF FLOW so it
+   never widens the number's box (which previously shoved a short number like
+   "8" left and let its [n] bleed into the next stat). */
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.hero__stat .stat--big {
+  --u: 0%;
+  position: relative;      /* positioning context for the out-of-flow cite */
+  align-self: center;      /* shrink-wrap to the number, then centre */
+}
+/* The appended .cite-wrap (a[n] + hover card) is given ZERO width so it adds
+   nothing to the number's box — the figure stays optically centred and the
+   [n] overflows a hair to the right as a true superscript, never bleeding into
+   the neighbouring stat. Crucially the wrap keeps `position: relative` (from
+   main.css) so the wide hover source-card still positions/edge-flips normally
+   (app.js layoutCiteCards) instead of overflowing the mobile viewport. */
+.hero__stat .stat--big > .cite-wrap {
+  display: inline-block;
+  width: 0;
+  vertical-align: top;
+  white-space: nowrap;
+}
 .hero__stat .stat__label {
   margin-top: 0.6rem;
   color: var(--muted);

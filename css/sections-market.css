@@ -38,9 +38,18 @@
 
 /* ---- Line chart (SKLZ) ---------------------------------------------------- */
 .c-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+/* gradient area under the line — accent fading to nothing at the baseline */
+.c-area { fill: url(#sklz-fill); }
+.c-area-top { stop-color: var(--accent); stop-opacity: 0.26; }
+.c-area-bot { stop-color: var(--accent); stop-opacity: 0; }
 .c-ann { fill: var(--text); font-size: 10.5px; font-weight: 600; }
 .c-ann-sub { fill: var(--muted); font-weight: 400; font-size: 9.5px; }
-.c-ann-dot { fill: var(--accent-bright); stroke: var(--bg); stroke-width: 1.5; }
+.c-ann-dot { fill: var(--surface); stroke: var(--accent); stroke-width: 1.5; }
+.c-ann-leader { stroke: var(--border-strong); stroke-width: 1; }
+/* emphasized latest print — solid accent dot with a soft halo + bold readout */
+.c-last { fill: var(--accent-bright); stroke: var(--bg); stroke-width: 2; }
+.c-last-halo { fill: none; stroke: var(--accent); stroke-width: 1.5; opacity: 0.55; }
+.c-ann-latest { fill: var(--accent-bright); font-weight: 700; font-size: 12px; font-variant-numeric: tabular-nums; }
 .c-cross { stroke: var(--border-strong); stroke-width: 1; stroke-dasharray: 3 3; }
 .c-cross-dot { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
 .c-hit { cursor: crosshair; }
@@ -50,7 +59,7 @@
 .tsm-leader { stroke: var(--border-strong); stroke-width: 1; stroke-dasharray: 2 2; }
 
 /* ---- Quadrant ------------------------------------------------------------- */
-.q-spot { fill: var(--accent-tint); }
+.q-spot { fill: var(--accent-tint); stroke: var(--accent-line); stroke-width: 1; }
 .q-hatch-l { stroke: var(--warn); stroke-width: 1.2; }
 .q-mark { cursor: pointer; }
 .q-mark circle, .q-mark path { transition: transform 0.12s ease; transform-box: fill-box; transform-origin: center; }
@@ -175,6 +184,43 @@
 .sub-kicker { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--accent-bright); display: block; margin-bottom: 0.5rem; }
 
+/* ---- Draw-on-reveal ------------------------------------------------------
+   Marks reveal when their [data-chart] mount gains .is-revealed (added by
+   motion.js OR charts.js's own fallback observer). Implemented with CSS
+   TRANSITIONS (not keyframe animations): the resting state is the FINAL
+   visible one, the pre-reveal rule sets the hidden start, and toggling the
+   ancestor class transitions between them. This resolves to the correct
+   computed value immediately, so a throttled/late tab can never leave a mark
+   stuck hidden. State-based, so render vs. reveal order doesn't matter;
+   forecast-charts.js can reuse the exact same gate. */
+
+/* SKLZ line draws itself in (pathLength=1 → normalized dash units) */
+.c-line { stroke-dasharray: 1; stroke-dashoffset: 0; transition: stroke-dashoffset 1.2s ease; }
+[data-chart]:not(.is-revealed) .c-line { stroke-dashoffset: 1; }
+
+/* area + annotations + latest readout fade in just behind the drawing line */
+.c-area { transition: opacity 0.7s ease 0.45s; }
+.c-ann, .c-ann-sub, .c-ann-dot, .c-ann-leader, .c-last, .c-ann-latest { transition: opacity 0.6s ease 0.8s; }
+.c-last-halo { transition: opacity 0.6s ease 0.8s; }
+[data-chart]:not(.is-revealed) .c-area,
+[data-chart]:not(.is-revealed) .c-ann,
+[data-chart]:not(.is-revealed) .c-ann-sub,
+[data-chart]:not(.is-revealed) .c-ann-dot,
+[data-chart]:not(.is-revealed) .c-ann-leader,
+[data-chart]:not(.is-revealed) .c-last,
+[data-chart]:not(.is-revealed) .c-last-halo,
+[data-chart]:not(.is-revealed) .c-ann-latest { opacity: 0; }
+
+/* bars grow from the axis, gently staggered (--i per bar, set in charts.js) */
+.c-bar { transform-box: fill-box; transform-origin: left center;
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) calc(var(--i, 0) * 55ms), opacity 0.15s ease; }
+[data-chart]:not(.is-revealed) .c-bar { transform: scaleX(0); }
+
+/* funding + quadrant dots fade in, staggered (--i per mark) */
+.f-mark, .q-mark { transition: opacity 0.45s ease calc(var(--i, 0) * 34ms); }
+[data-chart]:not(.is-revealed) .f-mark,
+[data-chart]:not(.is-revealed) .q-mark { opacity: 0; }
+
 /* ---- Responsive & motion -------------------------------------------------- */
 @media (max-width: 40rem) {
   .chart-cap { font-size: 0.82rem; }
@@ -182,7 +228,17 @@
   .thesis-line { padding: 1.05rem 1.1rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .c-bar, .q-mark circle, .q-mark path, .f-field circle { transition: none; }
+  .q-mark circle, .q-mark path, .f-field circle { transition: none; }
+  /* no draw/grow/fade transitions; marks jump straight to their final state
+     even if .is-revealed lands late */
+  .c-line, .c-area, .c-ann, .c-ann-sub, .c-ann-dot, .c-ann-leader,
+  .c-last, .c-last-halo, .c-ann-latest, .c-bar, .f-mark, .q-mark { transition: none !important; }
+  [data-chart] .c-line { stroke-dashoffset: 0 !important; }
+  [data-chart] .c-bar { transform: none !important; }
+  [data-chart] .c-area, [data-chart] .c-ann, [data-chart] .c-ann-sub,
+  [data-chart] .c-ann-dot, [data-chart] .c-ann-leader, [data-chart] .c-last,
+  [data-chart] .c-ann-latest, [data-chart] .f-mark, [data-chart] .q-mark { opacity: 1 !important; }
+  [data-chart] .c-last-halo { opacity: 0.55 !important; }
 }
 @media (prefers-contrast: more), (forced-colors: active) {
   .player-card--house { border-style: dashed; }

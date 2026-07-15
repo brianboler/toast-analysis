@@ -1,0 +1,262 @@
+/* =============================================================================
+   site/css/enhance.css  —  redesign polish layer
+   Loaded LAST (after main.css + every sections-*.css) so it can extend and, on
+   the few documented hooks, override them. Adds nothing to the visual identity
+   it inherits (dark-first, felt-green #35c07d, Fraunces + Inter, trading-desk
+   mono figures) — it only wires: scroll-reveal motion, tier-coloured cites,
+   emphasis utilities, responsive table reflow, and the print/PDF system.
+   Every colour resolves to an existing main.css token, so light/dark are free.
+
+   Companion scripts: js/motion.js (reveal engine), js/print.js (PDF export).
+   ========================================================================== */
+
+/* =============================================================================
+   1. SCROLL-REVEAL MOTION   (drives + is driven by js/motion.js)
+   Contract: data-reveal="up|fade|stagger" → motion.js adds .is-revealed and
+   fires a bubbling `reveal` event. The hidden pre-state is gated on
+   html.reveal-ready (added by motion.js) so content is ALWAYS visible if the
+   script never runs. Tasteful: short durations, small translate, gentle stagger.
+   ========================================================================== */
+.reveal-ready [data-reveal] { will-change: opacity, transform; }
+
+.reveal-ready [data-reveal="up"] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal-ready [data-reveal="fade"] {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.reveal-ready [data-reveal="up"].is-revealed,
+.reveal-ready [data-reveal="fade"].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* stagger: the container itself does not move; its direct children rise in
+   sequence. motion.js sets --i (0-based child index) on each child. */
+.reveal-ready [data-reveal="stagger"] > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+.reveal-ready [data-reveal="stagger"].is-revealed > * {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reduced motion: never hide, never animate — show immediately. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready [data-reveal],
+  .reveal-ready [data-reveal="stagger"] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto;
+  }
+}
+
+/* =============================================================================
+   2. TIER-COLOURED CITATIONS
+   app.js stamps data-tier="A|B|C|D" on every .cite marker. Tier now reads from
+   the marker's colour (+ the hover card's tier badge) instead of the removed
+   inline " per company" / " our estimate" words. All *-fg tokens are AA-tuned
+   in both themes; the hover wash uses the matching *-bg token.
+   ========================================================================== */
+.cite[data-tier="A"] { color: var(--tier-a-fg); }
+.cite[data-tier="B"] { color: var(--tier-b-fg); }
+.cite[data-tier="C"] { color: var(--tier-c-fg); }
+.cite[data-tier="D"] { color: var(--tier-d-fg); }
+.cite-wrap:hover .cite[data-tier="A"], .cite[data-tier="A"]:focus-visible { background: var(--tier-a-bg); }
+.cite-wrap:hover .cite[data-tier="B"], .cite[data-tier="B"]:focus-visible { background: var(--tier-b-bg); }
+.cite-wrap:hover .cite[data-tier="C"], .cite[data-tier="C"]:focus-visible { background: var(--tier-c-bg); }
+.cite-wrap:hover .cite[data-tier="D"], .cite[data-tier="D"]:focus-visible { background: var(--tier-d-bg); }
+
+/* =============================================================================
+   3. EMPHASIS UTILITIES  (for the content agent to make the page scannable)
+   .hl      — highlight a key stat/term with a subtle felt-green wash
+   .metric  — a large inline mono figure (tabular, tight)
+   ========================================================================== */
+.hl {
+  background: var(--accent-tint);
+  color: var(--text);
+  padding: 0.04em 0.3em;
+  margin: 0 -0.06em;
+  border-radius: 4px;
+  font-weight: 560;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.hl a { color: inherit; text-decoration-color: var(--accent); }
+
+.metric {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+.metric--up { color: var(--accent-bright); }
+.metric--down { color: var(--danger-fg); }
+
+/* keep <em> quietly distinct in a page whose emphasis is usually mono/colour */
+em, i { font-style: italic; }
+
+/* =============================================================================
+   4. RESPONSIVE TABLE REFLOW
+   Desktop: tables fit their column with tabular figures + NO visible scrollbar
+   where they fit; genuinely-wide scroll containers get a slim, branded bar
+   (last resort, per brief). Narrow: every wide data table (Skillz teardown,
+   bull/base/bear assumptions, forecast tables) reflows to labelled cards using
+   td[data-label] — the content agent adds data-label="Col" to each <td>.
+   The 51-row operator matrix is exempt (.lp-matrix-table) — it keeps its
+   internal scroll with a slim bar; a 51×7 card stack would be far worse UX.
+   ========================================================================== */
+
+/* slim, on-brand scrollbars for the few real horizontal-scroll containers */
+.chart-wrap, .table-wrap, .lp-matrix-wrap, .rake-flow-wrap, .lp-clock-wrap {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+.chart-wrap::-webkit-scrollbar,
+.table-wrap::-webkit-scrollbar,
+.lp-matrix-wrap::-webkit-scrollbar,
+.rake-flow-wrap::-webkit-scrollbar,
+.lp-clock-wrap::-webkit-scrollbar { height: 8px; width: 8px; }
+.chart-wrap::-webkit-scrollbar-thumb,
+.table-wrap::-webkit-scrollbar-thumb,
+.lp-matrix-wrap::-webkit-scrollbar-thumb,
+.rake-flow-wrap::-webkit-scrollbar-thumb,
+.lp-clock-wrap::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+}
+.chart-wrap::-webkit-scrollbar-track,
+.table-wrap::-webkit-scrollbar-track,
+.lp-matrix-wrap::-webkit-scrollbar-track,
+.rake-flow-wrap::-webkit-scrollbar-track,
+.lp-clock-wrap::-webkit-scrollbar-track { background: transparent; }
+
+/* opt-in last-resort wrapper the content agent can add around a too-wide table */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+
+@media (max-width: 46rem) {
+  /* reflow every data table EXCEPT the operator matrix + any explicit opt-out */
+  table.data:not(.lp-matrix-table):not(.no-reflow) { min-width: 0; }
+  table.data:not(.lp-matrix-table):not(.no-reflow),
+  table.data:not(.lp-matrix-table):not(.no-reflow) tbody,
+  table.data:not(.lp-matrix-table):not(.no-reflow) tr,
+  table.data:not(.lp-matrix-table):not(.no-reflow) td {
+    display: block;
+    width: auto;
+  }
+  /* header row is redundant once each cell carries its own data-label */
+  table.data:not(.lp-matrix-table):not(.no-reflow) thead {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
+  }
+  table.data:not(.lp-matrix-table):not(.no-reflow) tr {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    padding: 0.35rem 0.9rem;
+    margin: 0 0 0.7rem;
+  }
+  table.data:not(.lp-matrix-table):not(.no-reflow) td {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.25rem;
+    text-align: right;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  table.data:not(.lp-matrix-table):not(.no-reflow) tr td:last-child { border-bottom: 0; }
+  /* the label, drawn from the authoring contract's data-label attribute */
+  table.data:not(.lp-matrix-table):not(.no-reflow) td[data-label]::before {
+    content: attr(data-label);
+    flex: 0 1 auto;
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  /* a leading row-header (e.g. Skillz FY) becomes the card's heading */
+  table.data:not(.lp-matrix-table):not(.no-reflow) th[scope="row"] {
+    display: block;
+    padding: 0.4rem 0 0.5rem;
+    border-bottom: 1px solid var(--border-strong);
+    margin-bottom: 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+  }
+  table.data:not(.lp-matrix-table):not(.no-reflow) caption { padding-left: 0; }
+}
+
+/* =============================================================================
+   5. PRINT / PDF EXPORT   (driven by js/print.js)
+   Ink-on-white, content expanded, charts + their data tables + full
+   bibliography visible. Section include-levels honour :root[data-pdf=…]:
+     small ⊂ medium ⊂ full   (data-pdf-min tags the smallest level a block joins)
+   ========================================================================== */
+@media print {
+  /* flip every themed token to the light/ink-on-white palette */
+  :root {
+    color-scheme: light;
+    --bg: #ffffff; --bg-2: #ffffff; --surface: #ffffff; --surface-2: #f5f4f1;
+    --border: #cfcabf; --border-strong: #a9a397;
+    --text: #14161a; --muted: #40454d; --faint: #5c626b;
+    --accent: #0f7a4a; --accent-bright: #0c6b40; --accent-ink: #ffffff;
+    --accent-tint: #eaf6ef; --accent-line: #9fd3b8;
+    --warn: #8a5600; --warn-fg: #7a4c00; --danger: #b23a29; --danger-fg: #9e3121;
+    --tier-a: #0e7a48; --tier-a-fg: #0c6b40; --tier-a-bg: #eaf6ef;
+    --tier-b: #215d92; --tier-b-fg: #1c5182; --tier-b-bg: #e9f0f8;
+    --tier-c: #8a5600; --tier-c-fg: #7a4c00; --tier-c-bg: #f6ecd6;
+    --tier-d: #5a4593; --tier-d-fg: #4f3c83; --tier-d-bg: #ece7f5;
+    --tier-badge-ink: #ffffff;
+    --shadow: none;
+  }
+  html, body { background: #fff !important; color: var(--text) !important; }
+  body { overflow: visible !important; }
+
+  /* drop interactive-only chrome */
+  .nav, .progress, .skip-link, .pdf-btn, .diagram__controls,
+  .chart-tip, .lp-tooltip, .lp-map-tooltip, .lp-panel__close,
+  .cite, .cite-wrap { display: none !important; }
+
+  /* never let the reveal/draw pre-state hide printed content */
+  [data-reveal], [data-reveal] > * { opacity: 1 !important; transform: none !important; }
+  [data-chart] .c-line { stroke-dashoffset: 0 !important; }
+  [data-chart] .c-area, [data-chart] .f-mark, [data-chart] .q-mark,
+  [data-chart] .c-ann, [data-chart] .c-ann-dot, [data-chart] .c-val,
+  [data-chart] .bar-row, [data-chart] .c-cat { opacity: 1 !important; }
+
+  /* expand disclosures: charts' data tables, founder questions, etc. */
+  details { break-inside: avoid; }
+  details > summary { display: none !important; }
+  .chart-data, .chart-data[open] { display: block !important; }
+  .chart-wrap, .table-wrap, .lp-matrix-wrap { overflow: visible !important; max-height: none !important; }
+
+  section { break-inside: auto; page-break-inside: auto; border-top: 1px solid var(--border); }
+  .card, .player-card, .case-card, .verdict-card, .callout,
+  .lp-memo-list > li, .chart-fig, .blindspots li { break-inside: avoid; }
+  h2, h3, h4 { break-after: avoid; }
+  a { color: var(--text) !important; text-decoration: none; }
+  .bibliography { display: flex !important; }
+
+  /* Section include-levels. data-pdf is set by print.js immediately before
+     window.print() and cleared on afterprint, so these only bite during print.
+     small ⊂ medium ⊂ full. */
+  :root[data-pdf="small"] [data-pdf-min="medium"],
+  :root[data-pdf="small"] [data-pdf-min="full"],
+  :root[data-pdf="medium"] [data-pdf-min="full"] { display: none !important; }
+}

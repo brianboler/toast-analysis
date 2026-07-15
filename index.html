@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Toast — P2P real-money gaming: an investment research brief</title>
+  <title>Toast: Company &amp; Industry Analysis</title>
   <meta name="description" content="Internal research brief on Toast, a peer-to-peer real-money gaming startup, and its market. Not legal or investment advice.">
   <meta name="color-scheme" content="dark light">
   <meta name="robots" content="noindex, nofollow">
@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="css/sections-regulatory.css">
   <link rel="stylesheet" href="css/sections-market.css">
   <link rel="stylesheet" href="css/sections-thesis.css">
+  <link rel="stylesheet" href="css/logos.css">
+  <!-- enhance.css must load last: it extends/overrides on documented hooks -->
+  <link rel="stylesheet" href="css/enhance.css">
 </head>
 <body>
   <a class="skip-link" href="#tldr">Skip to summary</a>
@@ -49,20 +52,26 @@
 
   <main id="top">
 
-    <!-- 1. HERO — the thesis masthead ------------------------------------- -->
-    <section id="hero" class="hero" aria-labelledby="hero-title">
+    <!-- 1. HERO  -  the thesis masthead ------------------------------------- -->
+    <section id="hero" class="hero" aria-labelledby="hero-title" data-pdf-min="small">
 <p class="mono">Internal research &middot; Investment committee &middot; July 2026</p>
-<h1 id="hero-title">A casino you&rsquo;re technically not playing against.</h1>
+<h1 id="hero-title">Toast: Company &amp; Industry Analysis</h1>
 <p class="hero__lede">
-  Toast &mdash; listed on the App Store as <strong>Carnival</strong> &mdash; is a pre-seed
-  peer-to-peer real-money gaming startup that matches US players into live,
-  casino-stakes blackjack against a real opponent, betting that &ldquo;another
-  person, not the house&rdquo; keeps it a game of skill rather than gambling.
-  This is the diligence behind that bet: how big the market really is, who
-  else is chasing it, and where the wager turns into liability.
+  Peer-to-peer real-money gaming: market, competitors, regulation, and investment
+  analysis. Toast (App Store listing <strong>Carnival</strong>) is a
+  <span class="hl">pre-seed</span> startup that matches US players into live,
+  <span class="hl">casino-stakes blackjack</span> against a real opponent, on the
+  theory that facing another human keeps it a <em>game of skill</em> rather than
+  gambling.
 </p>
 
-<div class="hero__stats">
+<div class="pdf-controls" role="group" aria-label="Download this report as PDF">
+  <button type="button" class="pdf-btn" data-pdf="full">Full report (PDF)</button>
+  <button type="button" class="pdf-btn" data-pdf="medium">Summary (PDF)</button>
+  <button type="button" class="pdf-btn" data-pdf="small">Brief (PDF)</button>
+</div>
+
+<div class="hero__stats" data-reveal="stagger">
   <div class="hero__stat">
     <span
       class="stat stat--big stat--up"
@@ -109,14 +118,14 @@
 </div>
 </section>
 
-    <!-- 2. TL;DR — one-scroll executive summary --------------------------- -->
-    <section id="tldr" aria-labelledby="tldr-title">
+    <!-- 2. TL;DR  -  one-scroll executive summary --------------------------- -->
+    <section id="tldr" aria-labelledby="tldr-title" data-pdf-min="small">
 <div class="section__head">
   <span class="section__index">01 / Executive summary</span>
-  <h2 id="tldr-title">The whole argument in one scroll</h2>
+  <h2 id="tldr-title">Summary of findings</h2>
   <p class="standfirst">
-    Every load-bearing number in this brief, the case for and against, and the
-    single reason this stays a maybe.
+    The load-bearing numbers, the case for and against, and the single
+    unresolved question.
   </p>
 </div>
 
@@ -186,7 +195,7 @@
 </p>
 
 <p class="tldr__verdict">
-  <strong>The read:</strong> Toast is a bet that one specific combination
+  <strong>Assessment:</strong> Toast is a bet that one specific combination
   &mdash; casino-stakes, real-time, peer-to-peer blackjack &mdash; unlocks a
   genuinely empty quadrant no other researched competitor occupies. That bet
   holds only if three currently unproven things turn out true: that
@@ -200,11 +209,11 @@
 </p>
 </section>
 
-    <!-- 3. MANDATE — scope & the question we answer ----------------------- -->
-    <section id="mandate" aria-labelledby="mandate-title">
+    <!-- 3. MANDATE  -  scope & the question we answer ----------------------- -->
+    <section id="mandate" aria-labelledby="mandate-title" data-pdf-min="full">
 <div class="section__head">
   <span class="section__index">02 / Mandate</span>
-  <h2 id="mandate-title">What we set out to answer</h2>
+  <h2 id="mandate-title">Mandate and scope</h2>
   <p class="standfirst">
     This brief exists because Luke asked, on one intro call, whether a
     genuinely new gap in the market is real &mdash; and flagged, unprompted,
@@ -218,7 +227,7 @@
   claims until independently verified against public sources):
 </p>
 
-<div class="mandate__quotes">
+<div class="mandate__quotes" data-reveal="stagger">
   <figure class="mandate__quote">
     <blockquote>
       <p>&ldquo;<span data-fact-id="ws0-icasino-legal-under-10-states">I casino
@@ -280,11 +289,11 @@
 </p>
 </section>
 
-    <!-- 4. HOW IT WORKS — product mechanics & flow of funds --------------- -->
-    <section id="how-it-works" aria-labelledby="how-title">
+    <!-- 4. HOW IT WORKS  -  product mechanics & flow of funds --------------- -->
+    <section id="how-it-works" aria-labelledby="how-title" data-pdf-min="full">
 <div class="section__head">
   <span class="section__index">03 / Mechanics</span>
-  <h2 id="how-title">How Toast actually works</h2>
+  <h2 id="how-title">How the product works</h2>
   <p class="standfirst">
     A US player taps Play. In well under a second, Toast's own "matching engine"
     &mdash; the founder's term for it, relayed on the intro call &mdash; seats them
@@ -295,7 +304,7 @@
   </p>
 </div>
 
-<div class="diagram card" id="matching-diagram">
+<div class="diagram card" id="matching-diagram" data-reveal="up">
   <div class="diagram__svg-wrap">
     <svg class="diagram__svg" viewBox="0 0 800 520" role="img"
          aria-labelledby="diagram-svg-title diagram-svg-desc" focusable="false">
@@ -352,7 +361,7 @@
         <text class="lbl lbl--mono-sm" x="400" y="253" text-anchor="middle">Same dealer &middot; same cards</text>
       </g>
 
-      <!-- India panel — dim/unmatched until step 2 -->
+      <!-- India panel  -  dim/unmatched until step 2 -->
       <g class="panel panel--india dim-target" data-undim-at="2">
         <rect class="phone" x="595" y="108" width="130" height="215" rx="16"></rect>
         <rect class="screen" x="607" y="122" width="106" height="187" rx="8"></rect>
@@ -370,7 +379,7 @@
         </g>
       </g>
 
-      <!-- Direct player-vs-player line — the legal framing, from step 4 -->
+      <!-- Direct player-vs-player line  -  the legal framing, from step 4 -->
       <g class="p2p reveal" data-min="4">
         <path class="p2p-line" d="M140,323 C140,404 660,404 660,323"></path>
         <g class="p2p-badge">
@@ -379,7 +388,7 @@
         </g>
       </g>
 
-      <!-- Money flow — the economics, step 5 only -->
+      <!-- Money flow  -  the economics, step 5 only -->
       <g class="money reveal" data-min="5">
         <path class="money-line" d="M140,323 L140,430 L360,430"></path>
         <path class="money-line money-line--tierc" d="M660,323 L660,430 L440,430"></path>
@@ -476,11 +485,11 @@
 </div>
 </section>
 
-    <!-- 5. COMPANY — team, stage, traction, funding ----------------------- -->
-    <section id="company" aria-labelledby="company-title">
+    <!-- 5. COMPANY  -  team, stage, traction, funding ----------------------- -->
+    <section id="company" aria-labelledby="company-title" data-pdf-min="full">
 <div class="section__head">
   <span class="section__index">04 / Company</span>
-  <h2 id="company-title">The company behind it</h2>
+  <h2 id="company-title">Company overview</h2>
   <p class="standfirst">
     Two entities, one product, and one founding team with a shared background in Indian
     real-money gaming. Below is what's independently confirmed &mdash; entity, product,
@@ -531,7 +540,7 @@
   </div>
 
   <div class="card">
-    <h3 class="card__label">Where it can't operate &mdash; by its own terms</h3>
+    <h3 class="card__label">Excluded states, by its own terms</h3>
     <p>
       Carnival's own Terms of Use name
       <span class="stat" data-fact-id="wsa-excluded-states-carnival">5 excluded states</span>
@@ -571,14 +580,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>21 Hustle (Blackjack)</td><td>Yes</td><td>Yes</td></tr>
-        <tr><td>Gin Rummy</td><td>Yes</td><td>Yes</td></tr>
-        <tr><td>Pinfall</td><td>Yes</td><td>Yes</td></tr>
-        <tr><td>Basketball Hustle</td><td>Yes</td><td>Yes (folded into the app-store title as "21, Basketball")</td></tr>
-        <tr><td>Easy Bingo</td><td>Yes</td><td>Not confirmed live in-app</td></tr>
-        <tr><td>Cricket PowerPlay</td><td>Yes</td><td>Not confirmed live in-app</td></tr>
-        <tr><td>Fling the Piggy</td><td>Yes</td><td>Not confirmed live in-app</td></tr>
-        <tr><td>Pinfall Manic</td><td>Yes</td><td>Not confirmed live in-app</td></tr>
+        <tr><td data-label="Game">21 Hustle (Blackjack)</td><td data-label="On playtoast.com">Yes</td><td data-label="Live in Carnival">Yes</td></tr>
+        <tr><td data-label="Game">Gin Rummy</td><td data-label="On playtoast.com">Yes</td><td data-label="Live in Carnival">Yes</td></tr>
+        <tr><td data-label="Game">Pinfall</td><td data-label="On playtoast.com">Yes</td><td data-label="Live in Carnival">Yes</td></tr>
+        <tr><td data-label="Game">Basketball Hustle</td><td data-label="On playtoast.com">Yes</td><td data-label="Live in Carnival">Yes (folded into the app-store title as "21, Basketball")</td></tr>
+        <tr><td data-label="Game">Easy Bingo</td><td data-label="On playtoast.com">Yes</td><td data-label="Live in Carnival">Not confirmed live in-app</td></tr>
+        <tr><td data-label="Game">Cricket PowerPlay</td><td data-label="On playtoast.com">Yes</td><td data-label="Live in Carnival">Not confirmed live in-app</td></tr>
+        <tr><td data-label="Game">Fling the Piggy</td><td data-label="On playtoast.com">Yes</td><td data-label="Live in Carnival">Not confirmed live in-app</td></tr>
+        <tr><td data-label="Game">Pinfall Manic</td><td data-label="On playtoast.com">Yes</td><td data-label="Live in Carnival">Not confirmed live in-app</td></tr>
       </tbody>
     </table>
   </div>
@@ -594,7 +603,7 @@
 </div>
 
 <div class="callout callout--gap">
-  <h3 class="callout__label">What we could NOT verify</h3>
+  <h3 class="callout__label">What we could not verify</h3>
   <p class="callout__lede">
     Everything below is a claim from the intro call alone &mdash; tier C, company/call
     claims only. We searched job boards (LinkedIn Jobs, Naukri, Indeed India, Instahyre),
@@ -630,10 +639,10 @@
 </div>
 </section>
 
-    <!-- 6. LOOPHOLE — the legal / regulatory seam ------------------------- -->
-    <section id="loophole" aria-labelledby="loophole-title">
+    <!-- 6. LOOPHOLE  -  the legal / regulatory seam ------------------------- -->
+    <section id="loophole" aria-labelledby="loophole-title" data-pdf-min="medium">
 <!-- ===========================================================================
-     Task 20 fragment — inner HTML of <section id="loophole"> (05 / Loophole).
+     Task 20 fragment  -  inner HTML of <section id="loophole"> (05 / Loophole).
      Spliced by the controller; do not wrap in a <section> tag here.
      Companion files: css/sections-regulatory.css, js/map.js.
      Map classes are derived from data/states.json (canonical, VERIFIED):
@@ -646,7 +655,7 @@
      ======================================================================= -->
 <div class="section__head">
   <span class="section__index">05 / Loophole</span>
-  <h2 id="loophole-title">The seam it operates in</h2>
+  <h2 id="loophole-title">Regulatory and legal analysis</h2>
   <p class="standfirst">
     Toast&rsquo;s legality is not one question but fifty-one. Only
     <span class="stat" data-fact-id="wsd-icasino-eight-states-list">eight</span> jurisdictions have legal regulated
@@ -660,15 +669,15 @@
 
 <!-- ---- 5.1 Doctrine explainer ------------------------------------------ -->
 <div class="lp-block" id="lp-doctrines">
-  <h3>Three tests decide everything</h3>
+  <h3>The three legal tests</h3>
   <p>
     Whether an entry-fee, cash-prize game is &ldquo;gambling&rdquo; is decided state by
     state, under one of three tests. Which test a state uses matters more to
     Toast than anything in its pitch deck.
   </p>
-  <div class="grid lp-doctrine-grid">
+  <div class="grid lp-doctrine-grid" data-reveal="stagger">
     <div class="card lp-doctrine" data-cat="allowed">
-      <p class="card__label mono">Test 1 &middot; the friendly one</p>
+      <p class="card__label mono">Test 1 &middot; majority rule</p>
       <h4>Predominance</h4>
       <p>Is the outcome driven <em>more by skill than by chance</em>? The majority rule &mdash;
         <span class="stat" data-fact-id="wsd-doctrine-three-tests-states">more than 30 states</span>, including CA, GA, IL, MI, NC, OH and PA
@@ -677,7 +686,7 @@
         (<i>O&rsquo;Brien v. Scott</i>). Toast&rsquo;s P2P design is an argument <em>only here</em>.</p>
     </div>
     <div class="card lp-doctrine" data-cat="contested">
-      <p class="card__label mono">Test 2 &middot; the trap</p>
+      <p class="card__label mono">Test 2 &middot; stricter</p>
       <h4>Material element</h4>
       <p>Even a mostly-skill game is gambling if chance still matters. New York&rsquo;s
         Penal Law &sect;225.00 catches any game whose outcome
@@ -687,7 +696,7 @@
         <span class="stat" data-fact-id="wsd-skillz-material-element-8-states">8 states</span>. A card draw is very hard to argue below &ldquo;material.&rdquo;</p>
     </div>
     <div class="card lp-doctrine" data-cat="redzone">
-      <p class="card__label mono">Test 3 &middot; the wall</p>
+      <p class="card__label mono">Test 3 &middot; strictest</p>
       <h4>Any chance</h4>
       <p>A modicum of chance makes the game illegal. The strictest reading, applied by
         <span class="stat" data-fact-id="wsd-edelman-any-chance-states">Arizona, Arkansas, Iowa, Louisiana and Tennessee</span> &mdash;
@@ -733,7 +742,7 @@
         <span class="lp-swatch" data-cat="allowed" aria-hidden="true"></span>
         <span class="lp-legend__body"><strong>Skill-cash allowed in practice</strong>
           <span class="lp-legend__count">29 of 51</span>
-          <small>No blanket operator exclusion and no contested doctrine flag in the verified data — legality by revealed operator practice, not by holding.</small></span>
+          <small>No blanket operator exclusion and no contested doctrine flag appears in the verified data. Legality here is inferred from revealed operator practice, not from a holding.</small></span>
       </li>
       <li class="lp-legend__item">
         <span class="lp-swatch" data-cat="contested" aria-hidden="true"></span>
@@ -1078,7 +1087,7 @@
             <div><dt>Operator exclusions</dt><dd>3 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>No</dd></div>
           </dl>
-          <p class="lp-notes">ARS 13-3301(4) sweeps in contests &#x27;of chance or skill&#x27;; State v. American Holiday Ass&#x27;n (1986) carved out contests decided by entrants&#x27; own abilities. Triumph, Toast&#x27;s own Carnival, AND Papaya exclude AZ from redeemable-cash play (Papaya treats AZ as non-redeemable &#x27;Bonus Cash&#x27;, and prohibits it outright in its most restrictive terms) — excludedByOperators corrected 2-&gt;3 on 2026-07-14 after re-reading the Papaya T&amp;C; Skillz and AviaGames still serve it. AZ regulator active in 2025 C&amp;D wave.</p>
+          <p class="lp-notes">ARS 13-3301(4) sweeps in contests &#x27;of chance or skill&#x27;; State v. American Holiday Ass&#x27;n (1986) carved out contests decided by entrants&#x27; own abilities. Triumph, Toast&#x27;s own Carnival, AND Papaya exclude AZ from redeemable-cash play (Papaya treats AZ as non-redeemable &#x27;Bonus Cash&#x27;, and prohibits it outright in its most restrictive terms). The excludedByOperators count was corrected from 2 to 3 on 2026-07-14 after re-reading the Papaya T&amp;C; Skillz and AviaGames still serve it. AZ regulator active in 2025 C&amp;D wave.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-edelman-any-chance-states">Edelman (any chance)</span> <span class="stat lp-factref" data-fact-id="wsd-edelman-az-tn-ia-statutes">Edelman fn 105</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-supported-36-states">Triumph supported states</span> <span class="stat lp-factref" data-fact-id="wsd-carnival-consumer-tos-excluded-states">Carnival ToS</span> <span class="stat lp-factref" data-fact-id="wsd-papaya-tos-prohibited-states">Papaya ToS</span> <span class="stat lp-factref" data-fact-id="wsd-sweeps-crackdown-2025">2025 sweeps crackdown</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-AR" data-cat="redzone" data-name="Arkansas" hidden>
@@ -1091,7 +1100,7 @@
             <div><dt>Operator exclusions</dt><dd>3 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>No</dd></div>
           </dl>
-          <p class="lp-notes">Ark. Code 5-66-113 criminalizes betting on &#x27;any game of hazard or skill&#x27;. Excluded by Skillz, AviaGames, Triumph; core consensus red-zone state. Notably NOT excluded by Toast&#x27;s own Carnival T&amp;Cs despite the wager-on-skill statute — Carnival under-excludes vs peer consensus.</p>
+          <p class="lp-notes">Ark. Code 5-66-113 criminalizes betting on &#x27;any game of hazard or skill&#x27;. Excluded by Skillz, AviaGames, Triumph; core consensus red-zone state. Notably NOT excluded by Toast&#x27;s own Carnival T&amp;Cs despite the wager-on-skill statute. Carnival under-excludes versus peer consensus.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-ar-code-hazard-or-skill">Ark. Code §5-66-113</span> <span class="stat lp-factref" data-fact-id="wsd-edelman-any-chance-states">Edelman (any chance)</span> <span class="stat lp-factref" data-fact-id="wsd-skillz-tos-prohibited-states">Skillz ToS</span> <span class="stat lp-factref" data-fact-id="wsd-avia-tos-prohibited-states">AviaGames ToS</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-supported-36-states">Triumph supported states</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-CA" data-cat="allowed" data-name="California" hidden>
@@ -1104,7 +1113,7 @@
             <div><dt>Operator exclusions</dt><dd>0 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>No</dd></div>
           </dl>
-          <p class="lp-notes">Predominance state, all operators serve it — BUT Penal Code 330 names &#x27;twenty-one&#x27; among prohibited banking/percentage card games. Toast&#x27;s &#x27;no dealer or RNG edge&#x27; PvP design is an untested workaround theory. CA banned sweepstakes casinos (AB 831, 2025).</p>
+          <p class="lp-notes">Predominance state, and all operators serve it, but Penal Code 330 names &#x27;twenty-one&#x27; among prohibited banking/percentage card games. Toast&#x27;s &#x27;no dealer or RNG edge&#x27; PvP design is an untested workaround theory. CA banned sweepstakes casinos (AB 831, 2025).</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-doctrine-three-tests-states">CalGamingLaw survey</span> <span class="stat lp-factref" data-fact-id="wsd-ca-penal-330-twenty-one">Cal. Penal §330</span> <span class="stat lp-factref" data-fact-id="wsd-playtoast-21-hustle-no-dealer">Toast 21 Hustle</span> <span class="stat lp-factref" data-fact-id="wsd-sweeps-crackdown-2025">2025 sweeps crackdown</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-CO" data-cat="allowed" data-name="Colorado" hidden>
@@ -1130,7 +1139,7 @@
             <div><dt>Operator exclusions</dt><dd>2 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>Yes</dd></div>
           </dl>
-          <p class="lp-notes">Gambling = gain contingent &#x27;in whole or in part&#x27; on chance (excludes &#x27;legal contests of skill&#x27;). Skillz and Triumph exclude CT; AviaGames, Papaya and Carnival serve it — genuine operator split. Live regulated iCasino duopoly; banned sweeps casinos 2025.</p>
+          <p class="lp-notes">Gambling = gain contingent &#x27;in whole or in part&#x27; on chance (excludes &#x27;legal contests of skill&#x27;). Skillz and Triumph exclude CT; AviaGames, Papaya and Carnival serve it, a genuine operator split. Live regulated iCasino duopoly; banned sweeps casinos 2025.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-ct-gambling-definition">Conn. gambling definition</span> <span class="stat lp-factref" data-fact-id="wsd-skillz-tos-prohibited-states">Skillz ToS</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-supported-36-states">Triumph supported states</span> <span class="stat lp-factref" data-fact-id="wsd-avia-tos-prohibited-states">AviaGames ToS</span> <span class="stat lp-factref" data-fact-id="wsd-papaya-tos-prohibited-states">Papaya ToS</span> <span class="stat lp-factref" data-fact-id="wsd-icasino-eight-states-list">iCasino states list</span> <span class="stat lp-factref" data-fact-id="wsd-sweeps-crackdown-2025">2025 sweeps crackdown</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-DE" data-cat="redzone" data-name="Delaware" hidden>
@@ -1169,7 +1178,7 @@
             <div><dt>Operator exclusions</dt><dd>1 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>No</dd></div>
           </dl>
-          <p class="lp-notes">Fla. law prohibits wagering on contests of skill (participant/spectator line unsettled per Faircloth). Triumph excludes FL; Skillz/Avia/Papaya operate there at scale — high-population contested state.</p>
+          <p class="lp-notes">Fla. law prohibits wagering on contests of skill (participant/spectator line unsettled per Faircloth). Triumph excludes FL; Skillz/Avia/Papaya operate there at scale, making this a high-population contested state.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-walters-florida-skill-wagering">Walters (FL)</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-supported-36-states">Triumph supported states</span> <span class="stat lp-factref" data-fact-id="wsd-skillz-tos-prohibited-states">Skillz ToS</span> <span class="stat lp-factref" data-fact-id="wsd-avia-tos-prohibited-states">AviaGames ToS</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-GA" data-cat="allowed" data-name="Georgia" hidden>
@@ -1234,7 +1243,7 @@
             <div><dt>Operator exclusions</dt><dd>0 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>No</dd></div>
           </dl>
-          <p class="lp-notes">IC 35-45-5-1(l): a card game or electronic version &#x27;is a game of chance and may not be considered a bona fide contest of skill.&#x27; Skillz, AviaGames and Triumph all exclude card games here while serving non-card games. Cash blackjack is categorically unavailable — no matching-engine argument survives a per-se statute.</p>
+          <p class="lp-notes">IC 35-45-5-1(l): a card game or electronic version &#x27;is a game of chance and may not be considered a bona fide contest of skill.&#x27; Skillz, AviaGames and Triumph all exclude card games here while serving non-card games. Cash blackjack is categorically unavailable; no matching-engine argument survives a per-se statute.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-in-card-games-chance-statute">Ind. Code §35-45-5-1</span> <span class="stat lp-factref" data-fact-id="wsd-skillz-tos-card-exclusions">Skillz card carve-out</span> <span class="stat lp-factref" data-fact-id="wsd-avia-tos-card-exclusions">Avia card carve-out</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-card-game-exclusions">Triumph game exclusions</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-IA" data-cat="redzone" data-name="Iowa" hidden>
@@ -1247,7 +1256,7 @@
             <div><dt>Operator exclusions</dt><dd>2 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>No</dd></div>
           </dl>
-          <p class="lp-notes">Parker-Gordon (Iowa 1931): irrelevant whether game is predominantly chance or skill. Toast&#x27;s own Carnival T&amp;Cs exclude IA entirely AND Papaya lists Iowa as a fully Prohibited Jurisdiction for Cash Competitions (excludedByOperators corrected 1-&gt;2 on 2026-07-14 after re-reading the Papaya T&amp;C — the prior &#x27;Papaya serves IA&#x27; note was wrong); Triumph excludes all card games there; Skillz and AviaGames still serve IA without a published card carve-out — split practice.</p>
+          <p class="lp-notes">Parker-Gordon (Iowa 1931): irrelevant whether game is predominantly chance or skill. Toast&#x27;s own Carnival T&amp;Cs exclude IA entirely AND Papaya lists Iowa as a fully Prohibited Jurisdiction for Cash Competitions (excludedByOperators corrected 1-&gt;2 on 2026-07-14 after re-reading the Papaya T&amp;C; the prior &#x27;Papaya serves IA&#x27; note was wrong); Triumph excludes all card games there; Skillz and AviaGames still serve IA without a published card carve-out, reflecting split practice.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-edelman-any-chance-states">Edelman (any chance)</span> <span class="stat lp-factref" data-fact-id="wsd-edelman-az-tn-ia-statutes">Edelman fn 105</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-card-game-exclusions">Triumph game exclusions</span> <span class="stat lp-factref" data-fact-id="wsd-carnival-consumer-tos-excluded-states">Carnival ToS</span> <span class="stat lp-factref" data-fact-id="wsd-papaya-tos-prohibited-states">Papaya ToS</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-KS" data-cat="allowed" data-name="Kansas" hidden>
@@ -1299,7 +1308,7 @@
             <div><dt>Operator exclusions</dt><dd>1 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>Yes</dd></div>
           </dl>
-          <p class="lp-notes">17-A MRS 952: contest of chance if chance &#x27;can not be eliminated through the application of skill&#x27; — card draws fail this. Skillz, AviaGames AND Papaya all bar card games in Maine; Triumph exits entirely. excludedByOperators kept at 1 (only Triumph is a full-state exclusion; the others are card-game-only). LD 1164 (Jan 2026) makes ME the 8th iCasino state (tribal, launch ~2027).</p>
+          <p class="lp-notes">17-A MRS 952: contest of chance if chance &#x27;can not be eliminated through the application of skill&#x27;; card draws fail this test. Skillz, AviaGames AND Papaya all bar card games in Maine; Triumph exits entirely. excludedByOperators kept at 1 (only Triumph is a full-state exclusion; the others are card-game-only). LD 1164 (Jan 2026) makes ME the 8th iCasino state (tribal, launch ~2027).</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-me-contest-of-chance-definition">17-A M.R.S. §952</span> <span class="stat lp-factref" data-fact-id="wsd-skillz-tos-card-exclusions">Skillz card carve-out</span> <span class="stat lp-factref" data-fact-id="wsd-avia-tos-card-exclusions">Avia card carve-out</span> <span class="stat lp-factref" data-fact-id="wsd-papaya-tos-prohibited-states">Papaya ToS</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-supported-36-states">Triumph supported states</span> <span class="stat lp-factref" data-fact-id="wsd-maine-ld1164-became-law">ME LD 1164</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-MD" data-cat="allowed" data-name="Maryland" hidden>
@@ -1312,7 +1321,7 @@
             <div><dt>Operator exclusions</dt><dd>0 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>No</dd></div>
           </dl>
-          <p class="lp-notes">Ifrah: MD law focuses on whether a wager is placed, disregarding the skill-chance distinction. Yet no operator excludes MD — doctrine and practice diverge; risk is latent rather than enforced.</p>
+          <p class="lp-notes">Ifrah: MD law focuses on whether a wager is placed, disregarding the skill-chance distinction. Yet no operator excludes MD, so doctrine and practice diverge; risk is latent rather than enforced.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-ifrah-outlier-states">Ifrah (outlier states)</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-supported-36-states">Triumph supported states</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-MA" data-cat="allowed" data-name="Massachusetts" hidden>
@@ -1338,7 +1347,7 @@
             <div><dt>Operator exclusions</dt><dd>3 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>Yes</dd></div>
           </dl>
-          <p class="lp-notes">Most important enforcement precedent for Toast: MGCB&#x27;s Oct 2024 C&amp;D named Papaya&#x27;s 21 Cash (blackjack) as illegal unlicensed internet gaming; Papaya&#x27;s ToS now exclude MI, Triumph is out, and Toast&#x27;s own Carnival T&amp;Cs exclude MI too — but Skillz and AviaGames still serve it. Practitioner sources disagree on MI&#x27;s test (predominance per calgaminglaw; wager-focused per Ifrah). Live iCasino state with the most aggressive regulator.</p>
+          <p class="lp-notes">Most important enforcement precedent for Toast: MGCB&#x27;s Oct 2024 C&amp;D named Papaya&#x27;s 21 Cash (blackjack) as illegal unlicensed internet gaming; Papaya&#x27;s ToS now exclude MI, Triumph is out, and Toast&#x27;s own Carnival T&amp;Cs exclude MI too, but Skillz and AviaGames still serve it. Practitioner sources disagree on MI&#x27;s test (predominance per calgaminglaw; wager-focused per Ifrah). Live iCasino state with the most aggressive regulator.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-mgcb-papaya-cease-desist">MGCB C&amp;D</span> <span class="stat lp-factref" data-fact-id="wsd-ifrah-outlier-states">Ifrah (outlier states)</span> <span class="stat lp-factref" data-fact-id="wsd-doctrine-three-tests-states">CalGamingLaw survey</span> <span class="stat lp-factref" data-fact-id="wsd-papaya-tos-prohibited-states">Papaya ToS</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-supported-36-states">Triumph supported states</span> <span class="stat lp-factref" data-fact-id="wsd-carnival-consumer-tos-excluded-states">Carnival ToS</span> <span class="stat lp-factref" data-fact-id="wsd-icasino-eight-states-list">iCasino states list</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-MN" data-cat="allowed" data-name="Minnesota" hidden>
@@ -1390,7 +1399,7 @@
             <div><dt>Operator exclusions</dt><dd>1 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>No</dd></div>
           </dl>
-          <p class="lp-notes">Edelman: MT disallows all commercial online gambling regardless of skill (MCA 23-5-112). First state to ban sweepstakes casinos (SB 555, 2025). Skillz/Avia serve MT and Papaya serves it under its most recent cash terms, though Papaya prohibits MT for Solitaire Cash/Bingo Cash and in its most restrictive card-based version (count kept at 1 = Triumph, since current Papaya real-money terms omit MT) — a striking operator-vs-authority conflict.</p>
+          <p class="lp-notes">Edelman: MT disallows all commercial online gambling regardless of skill (MCA 23-5-112). First state to ban sweepstakes casinos (SB 555, 2025). Skillz/Avia serve MT and Papaya serves it under its most recent cash terms, though Papaya prohibits MT for Solitaire Cash/Bingo Cash and in its most restrictive card-based version (count kept at 1 = Triumph, since current Papaya real-money terms omit MT), a striking operator-vs-authority conflict.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-edelman-montana-louisiana-online-ban">Edelman (MT/LA)</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-supported-36-states">Triumph supported states</span> <span class="stat lp-factref" data-fact-id="wsd-sweeps-crackdown-2025">2025 sweeps crackdown</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-NE" data-cat="allowed" data-name="Nebraska" hidden>
@@ -1416,7 +1425,7 @@
             <div><dt>Operator exclusions</dt><dd>1 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>No</dd></div>
           </dl>
-          <p class="lp-notes">Online poker only; no iCasino. &#x27;Contested&#x27; rests on operator-split basis ALONE: only Triumph excludes NV while the other four list-publishing operators serve it; no state-specific statutory authority fetched. Comprehensive gaming-licensing state — unlicensed real-money gaming carries regulatory risk not fully mapped here.</p>
+          <p class="lp-notes">Online poker only; no iCasino. &#x27;Contested&#x27; rests on operator-split basis ALONE: only Triumph excludes NV while the other four list-publishing operators serve it; no state-specific statutory authority fetched. Comprehensive gaming-licensing state; unlicensed real-money gaming carries regulatory risk not fully mapped here.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-nevada-ipoker-only">NV poker-only</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-supported-36-states">Triumph supported states</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-NH" data-cat="allowed" data-name="New Hampshire" hidden>
@@ -1442,7 +1451,7 @@
             <div><dt>Operator exclusions</dt><dd>0 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>Yes</dd></div>
           </dl>
-          <p class="lp-notes">O&#x27;Brien v. Scott predominance. Largest mature iCasino market. Skillz excludes only Dominoes Gold in NJ. Banned sweeps casinos (A5447, 2025) — regulated-market states defend their turf.</p>
+          <p class="lp-notes">O&#x27;Brien v. Scott predominance. Largest mature iCasino market. Skillz excludes only Dominoes Gold in NJ. Banned sweeps casinos (A5447, 2025); regulated-market states defend their turf.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-edelman-nj-predominant-purpose">Edelman (NJ)</span> <span class="stat lp-factref" data-fact-id="wsd-skillz-tos-card-exclusions">Skillz card carve-out</span> <span class="stat lp-factref" data-fact-id="wsd-icasino-eight-states-list">iCasino states list</span> <span class="stat lp-factref" data-fact-id="wsd-sweeps-crackdown-2025">2025 sweeps crackdown</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-NM" data-cat="allowed" data-name="New Mexico" hidden>
@@ -1533,7 +1542,7 @@
             <div><dt>Operator exclusions</dt><dd>0 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>No</dd></div>
           </dl>
-          <p class="lp-notes">Triumph excludes all card games (and Bingo) in OR while Skillz/Avia serve cards there — card-specific caution signal for blackjack.</p>
+          <p class="lp-notes">Triumph excludes all card games (and Bingo) in OR while Skillz/Avia serve cards there, a card-specific caution signal for blackjack.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-card-game-exclusions">Triumph game exclusions</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-supported-36-states">Triumph supported states</span> <span class="stat lp-factref" data-fact-id="wsd-doctrine-majority-predominance">Klein Moynihan survey</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-PA" data-cat="icasino" data-name="Pennsylvania" hidden>
@@ -1546,7 +1555,7 @@
             <div><dt>Operator exclusions</dt><dd>0 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>Yes</dd></div>
           </dl>
-          <p class="lp-notes">Predominance state and the largest iCasino market. Triumph excludes card games in PA — likely deference to the regulated casino regime; Skillz/Avia serve cards there.</p>
+          <p class="lp-notes">Predominance state and the largest iCasino market. Triumph excludes card games in PA, likely out of deference to the regulated casino regime; Skillz/Avia serve cards there.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-doctrine-three-tests-states">CalGamingLaw survey</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-card-game-exclusions">Triumph game exclusions</span> <span class="stat lp-factref" data-fact-id="wsd-icasino-eight-states-list">iCasino states list</span> <span class="stat lp-factref" data-fact-id="wsd-icasino-revenue-2025">AGA 2025 revenue</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-RI" data-cat="icasino" data-name="Rhode Island" hidden>
@@ -1572,7 +1581,7 @@
             <div><dt>Operator exclusions</dt><dd>3 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>No</dd></div>
           </dl>
-          <p class="lp-notes">16-19-40 criminalizes betting at &#x27;any game with cards or dice&#x27;; SC Supreme Court: gambling turns on the wager, not skill; 2025 appellate ruling against Dragon&#x27;s Ascent skill game. AviaGames, Triumph AND Toast&#x27;s own Carnival exclude SC; Skillz still serves it, and Papaya&#x27;s current Cash terms serve SC although its most restrictive product version (eff. 11 Feb 2025) listed South Carolina as a Prohibited Jurisdiction — count kept at 3 (current Papaya terms serve SC); contested, leaning prohibited for card games.</p>
+          <p class="lp-notes">16-19-40 criminalizes betting at &#x27;any game with cards or dice&#x27;; SC Supreme Court: gambling turns on the wager, not skill; 2025 appellate ruling against Dragon&#x27;s Ascent skill game. AviaGames, Triumph AND Toast&#x27;s own Carnival exclude SC; Skillz still serves it, and Papaya&#x27;s current Cash terms serve SC although its most restrictive product version (eff. 11 Feb 2025) listed South Carolina as a Prohibited Jurisdiction (count kept at 3, since current Papaya terms serve SC); contested, leaning prohibited for card games.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-sc-cards-dice-statute">S.C. Code §16-19-40</span> <span class="stat lp-factref" data-fact-id="wsd-ifrah-outlier-states">Ifrah (outlier states)</span> <span class="stat lp-factref" data-fact-id="wsd-avia-tos-prohibited-states">AviaGames ToS</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-supported-36-states">Triumph supported states</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-card-game-exclusions">Triumph game exclusions</span> <span class="stat lp-factref" data-fact-id="wsd-carnival-consumer-tos-excluded-states">Carnival ToS</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-SD" data-cat="redzone" data-name="South Dakota" hidden>
@@ -1598,7 +1607,7 @@
             <div><dt>Operator exclusions</dt><dd>1 of 5</dd></div>
             <div><dt>Regulated iCasino</dt><dd>No</dd></div>
           </dl>
-          <p class="lp-notes">Tenn. Code 39-17-501: profit &#x27;to any degree contingent on chance&#x27; = gambling. Triumph excludes TN; Skillz/Avia/Papaya AND Carnival serve it — another state where Toast&#x27;s own T&amp;Cs under-exclude vs the any-chance statute.</p>
+          <p class="lp-notes">Tenn. Code 39-17-501: profit &#x27;to any degree contingent on chance&#x27; = gambling. Triumph excludes TN; Skillz/Avia/Papaya AND Carnival serve it, another state where Toast&#x27;s own T&amp;Cs under-exclude versus the any-chance statute.</p>
           <p class="lp-sources"><span class="lp-sources__label">Sources</span> <span class="stat lp-factref" data-fact-id="wsd-edelman-any-chance-states">Edelman (any chance)</span> <span class="stat lp-factref" data-fact-id="wsd-edelman-az-tn-ia-statutes">Edelman fn 105</span> <span class="stat lp-factref" data-fact-id="wsd-triumph-supported-36-states">Triumph supported states</span></p>
         </article>
         <article class="lp-state-detail" id="lp-state-TX" data-cat="allowed" data-name="Texas" hidden>
@@ -1714,7 +1723,7 @@
 <!-- ---- 5.3 Blackjack callout -------------------------------------------- -->
 <aside class="card lp-callout" id="lp-blackjack" aria-labelledby="lp-blackjack-title">
   <p class="card__label mono">The lead product, specifically</p>
-  <h3 id="lp-blackjack-title">Blackjack is not just another skill game</h3>
+  <h3 id="lp-blackjack-title">Why blackjack is a distinct legal risk</h3>
   <p>
     The research found <strong>no U.S. authority holding blackjack skill-predominant, in any
     format</strong> &mdash; gaming-law commentary instead uses it as the textbook game that fails
@@ -1743,7 +1752,7 @@
 
 <!-- ---- 5.4 Operator exclusion matrix ------------------------------------ -->
 <div class="lp-block" id="lp-matrix">
-  <h3>What the operators themselves won&rsquo;t touch</h3>
+  <h3>Where operators exclude cash play, in their own terms</h3>
   <p>
     A state exclusion list in an operator&rsquo;s own Terms is priced-in legal judgment &mdash;
     the industry&rsquo;s revealed preference. Five operators publish lists. Skillz markets
@@ -1837,7 +1846,7 @@
 
 <!-- ---- 5.5 Prosecutor's memo -------------------------------------------- -->
 <div class="lp-block" id="lp-memo">
-  <h3>A prosecutor&rsquo;s memo &mdash; five ways to attack the model</h3>
+  <h3>Five ways a prosecutor could attack the model</h3>
   <p class="lp-disclaimer" role="note">
     <span class="tier-badge tier-D">Tier D &middot; analysis</span>
     Summary of public sources for internal research; not legal advice.
@@ -1896,7 +1905,7 @@
         the fix is disclosure and UX discipline, not a different model.</p>
     </li>
     <li>
-      <h4>AML and money transmission &mdash; the non-gambling hook</h4>
+      <h4>AML and money transmission</h4>
       <p>Toast moves US player money in and India payout money out. A business transferring funds is an MSB
         <span class="stat" data-fact-id="wse-fincen-money-transmitter">&ldquo;regardless of the amount&rdquo;</span> with mandatory AML programs, and
         practitioner guidance puts fund-handling gaming platforms <span class="stat" data-fact-id="wse-gaming-msb-aml">squarely in AML scope</span>.
@@ -1917,7 +1926,7 @@
 
 <!-- ---- 5.6 The gray-zone clock ------------------------------------------ -->
 <div class="lp-block" id="lp-clock">
-  <h3>The gray-zone clock</h3>
+  <h3>Regulatory timeline</h3>
   <p>
     Workaround gaming models get a gray-zone grace period, then one of three endings:
     <strong>legalization</strong> (the DFS playbook), <strong>enforcement</strong> (online poker&rsquo;s
@@ -1940,7 +1949,7 @@
           <span class="lp-ev__date">Oct 2006</span>
           <span class="lp-ev__cat">regulation</span>
           <span class="lp-ev__title">UIGEA</span>
-          <p class="lp-ev__text">Congress criminalizes the <b>payment rails</b> of unlawful internet gambling — <span class="stat" data-fact-id="wse-uigea-2006">UIGEA enacted</span> — with no skill-game exemption.</p>
+          <p class="lp-ev__text">Congress criminalizes the <b>payment rails</b> of unlawful internet gambling (<span class="stat" data-fact-id="wse-uigea-2006">UIGEA enacted</span>), with no skill-game exemption.</p>
         </li>
         <li class="lp-ev lp-ev--enforcement">
           <span class="lp-ev__dot" aria-hidden="true"></span>
@@ -1948,7 +1957,7 @@
           <span class="lp-ev__cat">enforcement</span>
           <span class="lp-path-badge lp-path-badge--enf">GRAY → ENFORCEMENT (poker)</span>
           <span class="lp-ev__title">Black Friday</span>
-          <p class="lp-ev__text">DOJ unseals <i>U.S. v. Scheinberg</i>: PokerStars, Full Tilt and Absolute Poker indicted — <span class="stat" data-fact-id="wse-black-friday-2011">11 defendants</span>, plus bank-fraud and money-laundering counts.</p>
+          <p class="lp-ev__text">DOJ unseals <i>U.S. v. Scheinberg</i>: PokerStars, Full Tilt and Absolute Poker indicted, naming <span class="stat" data-fact-id="wse-black-friday-2011">11 defendants</span>, plus bank-fraud and money-laundering counts.</p>
         </li>
         <li class="lp-ev lp-ev--litigation">
           <span class="lp-ev__dot" aria-hidden="true"></span>
@@ -1963,7 +1972,7 @@
           <span class="lp-ev__cat">enforcement</span>
           <span class="lp-path-badge lp-path-badge--enf">DFS: THE GRAY PHASE ENDS</span>
           <span class="lp-ev__title">DFS C&amp;Ds</span>
-          <p class="lp-ev__text">NY AG orders DraftKings and FanDuel to <span class="stat" data-fact-id="wse-schneiderman-cease-desist">stop accepting NY wagers</span> — branding DFS a scheme to evade the law.</p>
+          <p class="lp-ev__text">NY AG orders DraftKings and FanDuel to <span class="stat" data-fact-id="wse-schneiderman-cease-desist">stop accepting NY wagers</span>, branding DFS a scheme to evade the law.</p>
         </li>
         <li class="lp-ev lp-ev--regulation">
           <span class="lp-ev__dot" aria-hidden="true"></span>
@@ -1971,14 +1980,14 @@
           <span class="lp-ev__cat">regulation</span>
           <span class="lp-path-badge lp-path-badge--reg">DFS: GRAY → LEGAL</span>
           <span class="lp-ev__title">DFS legalized</span>
-          <p class="lp-ev__text">Nine months later New York <span class="stat" data-fact-id="wse-ny-dfs-legalized-2016">legalizes DFS as a game of skill</span> — the gray→legal playbook completes.</p>
+          <p class="lp-ev__text">Nine months later New York <span class="stat" data-fact-id="wse-ny-dfs-legalized-2016">legalizes DFS as a game of skill</span>, completing the gray→legal playbook.</p>
         </li>
         <li class="lp-ev lp-ev--regulation">
           <span class="lp-ev__dot" aria-hidden="true"></span>
           <span class="lp-ev__date">Oct 2023</span>
           <span class="lp-ev__cat">regulation</span>
           <span class="lp-ev__title">India: 28% GST</span>
-          <p class="lp-ev__text">India taxes online real-money gaming deposits at <span class="stat" data-fact-id="wse-india-2023-gst">28%</span> of face value — skill or chance, no distinction.</p>
+          <p class="lp-ev__text">India taxes online real-money gaming deposits at <span class="stat" data-fact-id="wse-india-2023-gst">28%</span> of face value, making no distinction between skill and chance.</p>
         </li>
         <li class="lp-ev lp-ev--enforcement">
           <span class="lp-ev__dot" aria-hidden="true"></span>
@@ -1999,7 +2008,7 @@
           <span class="lp-ev__date">Feb 2024</span>
           <span class="lp-ev__cat">litigation</span>
           <span class="lp-ev__title">Avia verdict</span>
-          <p class="lp-ev__text">N.D. Cal. jury: willful infringement — <span class="stat" data-fact-id="wse-skillz-aviagames-verdict">$42.9M</span> to Skillz, treble-damages exposure.</p>
+          <p class="lp-ev__text">N.D. Cal. jury finds willful infringement: <span class="stat" data-fact-id="wse-skillz-aviagames-verdict">$42.9M</span> awarded to Skillz, with treble-damages exposure.</p>
         </li>
         <li class="lp-ev lp-ev--litigation">
           <span class="lp-ev__dot" aria-hidden="true"></span>
@@ -2028,7 +2037,7 @@
           <span class="lp-ev__date">Aug 2025</span>
           <span class="lp-ev__cat">regulation</span>
           <span class="lp-ev__title">India bans skill gaming</span>
-          <p class="lp-ev__text">India’s Online Gaming Act <span class="stat" data-fact-id="wse-india-2025-skill-erased">bans all “online money games”</span> — including games of skill — and criminalizes enabling or financing them.</p>
+          <p class="lp-ev__text">India’s Online Gaming Act <span class="stat" data-fact-id="wse-india-2025-skill-erased">bans all “online money games”</span> (including games of skill) and criminalizes enabling or financing them.</p>
         </li>
         <li class="lp-ev lp-ev--litigation">
           <span class="lp-ev__dot" aria-hidden="true"></span>
@@ -2043,7 +2052,7 @@
           <span class="lp-ev__cat">enforcement</span>
           <span class="lp-path-badge lp-path-badge--enf">SWEEPS: THE WAVE</span>
           <span class="lp-ev__title">Multi-state bans</span>
-          <p class="lp-ev__text">NY and CA bans join CT, MT and NJ; AZ and MI send <span class="stat" data-fact-id="wse-sweepstakes-multistate-2025">100+ C&amp;D letters</span> — the crackdown crystallizes.</p>
+          <p class="lp-ev__text">NY and CA bans join CT, MT and NJ; AZ and MI send <span class="stat" data-fact-id="wse-sweepstakes-multistate-2025">100+ C&amp;D letters</span>. The crackdown crystallizes.</p>
         </li>
         <li class="lp-ev lp-ev--litigation">
           <span class="lp-ev__dot" aria-hidden="true"></span>
@@ -2057,7 +2066,7 @@
           <span class="lp-ev__date">Apr 2026</span>
           <span class="lp-ev__cat">litigation</span>
           <span class="lp-ev__title">Papaya verdict</span>
-          <p class="lp-ev__text">S.D.N.Y. jury awards Skillz <span class="stat" data-fact-id="wse-skillz-papaya-verdict">$420M</span> — reportedly the largest Lanham Act award in US history.</p>
+          <p class="lp-ev__text">S.D.N.Y. jury awards Skillz <span class="stat" data-fact-id="wse-skillz-papaya-verdict">$420M</span>, reportedly the largest Lanham Act award in US history.</p>
         </li>
         <li class="lp-ev lp-ev--litigation">
           <span class="lp-ev__dot" aria-hidden="true"></span>
@@ -2071,7 +2080,7 @@
   </div>
 
   <div class="lp-india" id="lp-india">
-    <h4>India: the labor pool&rsquo;s own legal ground
+    <h4>India: the labor pool&rsquo;s legal exposure
       <span class="tier-badge tier-D">Tier D &middot; analysis</span></h4>
     <p>
       Toast&rsquo;s counterparty supply sits on collapsing ground. India first flattened its own
@@ -2095,19 +2104,19 @@
 </div>
 </section>
 
-    <!-- 7. MARKET — sizing + the state-by-state choropleth ---------------- -->
-    <section id="market" aria-labelledby="market-title">
+    <!-- 7. MARKET  -  sizing + the state-by-state choropleth ---------------- -->
+    <section id="market" aria-labelledby="market-title" data-pdf-min="medium">
 <!-- ===========================================================================
-     Task 21 fragment — inner HTML of <section id="market"> (06 / Market).
+     Task 21 fragment  -  inner HTML of <section id="market"> (06 / Market).
      Spliced by the controller; do not wrap in a <section> tag here.
      Companion files: css/sections-market.css, js/charts.js.
      Chart mounts carry a data-chart attribute; charts.js reads data/market.json and
      injects the SVG + a <details> data-table fallback. Task 20's choropleth
-     composes into #market separately — it is NOT included in this fragment.
+     composes into #market separately  -  it is NOT included in this fragment.
      ======================================================================= -->
 <div class="section__head">
   <span class="section__index">06 / Market</span>
-  <h2 id="market-title">How big, and where</h2>
+  <h2 id="market-title">Market size and geography</h2>
   <p class="standfirst">
     The demand is real and the fastest-growing in US gaming &mdash; US iGaming
     revenue hit <span class="stat" data-fact-id="wsb-aga-2025-igaming-revenue">$10.74B</span>
@@ -2151,7 +2160,7 @@
 <!-- ---- 6.2 The 40-state gap -------------------------------------------- -->
 <div class="sub-head">
   <span class="sub-kicker">The structural gap</span>
-  <h3>Forty-two states, three hundred million people, no legal iCasino</h3>
+  <h3>The coverage gap: ~42 states, no legal iCasino</h3>
   <p>
     Of a US population of
     <span class="stat" data-fact-id="wsb-us-population-2025">341.8M</span>,
@@ -2166,7 +2175,7 @@
     &ldquo;40+&rdquo; framing.
   </p>
 </div>
-<div class="gap-grid">
+<div class="gap-grid" data-reveal="stagger">
   <div class="gap-cell">
     <span class="gap-figure stat" data-fact-id="wsd-icasino-eight-states-list">8</span>
     <span class="gap-label">states with a legal online-casino product as of mid-2026 (seven live; Maine legalized, not yet launched).</span>
@@ -2188,7 +2197,7 @@
 <!-- ---- 6.3 TAM / SAM / SOM --------------------------------------------- -->
 <figure class="chart-fig">
   <figcaption class="chart-cap">
-    <span class="chart-title">TAM &sup; SAM &sup; SOM &mdash; a containment, not a forecast</span>
+    <span class="chart-title">TAM, SAM, SOM: a containment</span>
     A theoretical ceiling of
     <span class="stat" data-fact-id="wsb-tam-p2p-skill-gaming">$86B</span>
     contains a demand-proxy SAM of
@@ -2234,12 +2243,12 @@
 
 <!-- ---- 6.4 Analyst-estimate disagreement ------------------------------- -->
 <div class="sub-head">
-  <span class="sub-kicker">The disagreement is the finding</span>
-  <h3>Who publishes what &mdash; and what we could not verify</h3>
+  <span class="sub-kicker">Estimates vs. actuals</span>
+  <h3>Published estimates against verified actuals</h3>
   <p>
-    The brief asked for the analyst spread shown, not smoothed. Only rows whose
-    source pages were actually fetched carry numbers; the rest are named and
-    marked excluded rather than cited on an unverified basis.
+    Only rows whose source pages were fetched carry numbers. Unreachable
+    market-research estimates are omitted. The tables below show the
+    <span class="hl">fetched, cited</span> figures against the AGA actuals.
   </p>
 </div>
 
@@ -2256,28 +2265,10 @@
     </thead>
     <tbody>
       <tr>
-        <td>Data Bridge Market Research</td>
-        <td><span class="stat" data-fact-id="wsb-skill-gaming-mill-databridge">$43.10B (2025) &rarr; $123.81B by 2033, 14.10% CAGR</span></td>
-        <td>Jul 2026</td>
-        <td>Fetched &amp; quoted</td>
-      </tr>
-      <tr class="excluded">
-        <td>Grand View Research</td>
-        <td>&mdash;</td>
-        <td>&mdash;</td>
-        <td>Not fetched (HTTP 403) &mdash; excluded</td>
-      </tr>
-      <tr class="excluded">
-        <td>Fortune Business Insights</td>
-        <td>&mdash;</td>
-        <td>&mdash;</td>
-        <td>Not fetched (HTTP 403) &mdash; excluded</td>
-      </tr>
-      <tr class="excluded">
-        <td>MetaStat / Global Growth Insights / Research&nbsp;and&nbsp;Markets / USD Analytics</td>
-        <td>~$22B&ndash;$51B spread (search snippets only)</td>
-        <td>2025 base</td>
-        <td>Not verifiable on a fetched page &mdash; excluded</td>
+        <td data-label="Publisher">Data Bridge Market Research</td>
+        <td data-label="Estimate"><span class="stat" data-fact-id="wsb-skill-gaming-mill-databridge">$43.10B (2025) &rarr; $123.81B by 2033, 14.10% CAGR</span></td>
+        <td data-label="Date">Jul 2026</td>
+        <td data-label="Status">Fetched &amp; quoted</td>
       </tr>
     </tbody>
   </table>
@@ -2295,30 +2286,30 @@
     </thead>
     <tbody>
       <tr>
-        <td>Skillz CEO Andrew Paradise (investor day)</td>
-        <td><span class="stat" data-fact-id="wsb-skillz-tam-ceo-claim">&ldquo;over 1 billion competitive gamers&rdquo; TAM (2.9B gamers &times; ~40%)</span></td>
-        <td>Mar 2022</td>
+        <td data-label="Party">Skillz CEO Andrew Paradise (investor day)</td>
+        <td data-label="Estimate"><span class="stat" data-fact-id="wsb-skillz-tam-ceo-claim">&ldquo;over 1 billion competitive gamers&rdquo; TAM (2.9B gamers &times; ~40%)</span></td>
+        <td data-label="Date">Mar 2022</td>
       </tr>
       <tr>
-        <td>Goldman Sachs (via Casino.org)</td>
-        <td><span class="stat" data-fact-id="wsb-ekg-goldman-2021-forecast">US iGaming $1.5B &rarr; $14B by 2033; OSB ~$0.9B &rarr; $39B</span></td>
-        <td>2021</td>
+        <td data-label="Party">Goldman Sachs (via Casino.org)</td>
+        <td data-label="Estimate"><span class="stat" data-fact-id="wsb-ekg-goldman-2021-forecast">US iGaming $1.5B &rarr; $14B by 2033; OSB ~$0.9B &rarr; $39B</span></td>
+        <td data-label="Date">2021</td>
       </tr>
       <tr>
-        <td>Analyst coverage, DraftKings prediction markets</td>
-        <td><span class="stat" data-fact-id="wsb-draftkings-prediction-market-tam">prediction-market category ~$600B volume by 2028</span></td>
-        <td>2026</td>
+        <td data-label="Party">Analyst coverage, DraftKings prediction markets</td>
+        <td data-label="Estimate"><span class="stat" data-fact-id="wsb-draftkings-prediction-market-tam">prediction-market category ~$600B volume by 2028</span></td>
+        <td data-label="Date">2026</td>
       </tr>
       <tr class="excluded">
-        <td>DraftKings (own 10-K / investor-day TAM)</td>
-        <td>&ldquo;$20B (2020) &rarr; $55&ndash;80B by 2030&rdquo;</td>
-        <td>2026</td>
+        <td data-label="Party">DraftKings (own 10-K / investor-day TAM)</td>
+        <td data-label="Estimate">&ldquo;$20B (2020) &rarr; $55&ndash;80B by 2030&rdquo;</td>
+        <td data-label="Date">2026</td>
         <td class="excluded"></td>
       </tr>
       <tr>
-        <td><strong>AGA (actuals &mdash; reality check)</strong></td>
-        <td><span class="stat" data-fact-id="wsb-aga-2025-igaming-revenue">US iGaming actually did $10.74B in 2025 (+27.6%)</span></td>
-        <td>Feb 2026</td>
+        <td data-label="Party"><strong>AGA (actuals &mdash; reality check)</strong></td>
+        <td data-label="Estimate"><span class="stat" data-fact-id="wsb-aga-2025-igaming-revenue">US iGaming actually did $10.74B in 2025 (+27.6%)</span></td>
+        <td data-label="Date">Feb 2026</td>
       </tr>
     </tbody>
   </table>
@@ -2335,10 +2326,10 @@
 </p>
 </section>
 
-    <!-- 8. PLAYERS — competitive landscape -------------------------------- -->
-    <section id="players" aria-labelledby="players-title">
+    <!-- 8. PLAYERS  -  competitive landscape -------------------------------- -->
+    <section id="players" aria-labelledby="players-title" data-pdf-min="medium">
 <!-- ===========================================================================
-     Task 21 fragment — inner HTML of <section id="players"> (07 / Players).
+     Task 21 fragment  -  inner HTML of <section id="players"> (07 / Players).
      Spliced by the controller; do not wrap in a <section> tag here.
      Companion files: css/sections-market.css, js/charts.js.
      Chart mounts carry data-chart attributes (quadrant, funding);
@@ -2349,7 +2340,7 @@
      ======================================================================= -->
 <div class="section__head">
   <span class="section__index">07 / Players</span>
-  <h2 id="players-title">Who else is on the field</h2>
+  <h2 id="players-title">Competitive landscape</h2>
   <p class="standfirst">
     <span data-fact-id="wsc-market-map-toast-only-casino-realtime">No researched
     competitor sits in Toast&rsquo;s casino-stakes &times; real-time,
@@ -2364,7 +2355,7 @@
 <!-- ---- 7.1 The 2x2 market map ------------------------------------------ -->
 <figure class="chart-fig">
   <figcaption class="chart-cap">
-    <span class="chart-title">The market map: stakes &times; matching model</span>
+    <span class="chart-title">Market map: stakes and matching model</span>
     Vertical axis is the matching model (real-time vs. asynchronous); horizontal
     is stakes (casual &rarr; casino). The casino&nbsp;&times;&nbsp;real-time cell
     is the one the pitch claims &mdash;
@@ -2377,7 +2368,7 @@
     <div data-chart="quadrant"></div>
   </div>
   <ul class="chart-legend" aria-label="Market-map marker legend">
-    <li class="legend-item"><span class="legend-swatch sw-toast"></span>Toast &mdash; peer-to-peer, casino-stakes</li>
+    <li class="legend-item"><span class="legend-swatch sw-toast"></span><span class="logo logo--sm" data-company="toast" role="img" aria-label="Toast logo"></span>Toast &mdash; peer-to-peer, casino-stakes</li>
     <li class="legend-item"><span class="legend-swatch sw-field"></span>Peer-to-peer competitor</li>
     <li class="legend-item"><span class="legend-swatch sw-house"></span>House-banked sweepstakes &mdash; a different legal workaround, not P2P</li>
   </ul>
@@ -2386,24 +2377,28 @@
 <!-- ---- 7.2 Funding dot-timeline ---------------------------------------- -->
 <figure class="chart-fig">
   <figcaption class="chart-cap">
-    <span class="chart-title">Where the money went, 2020&ndash;2025</span>
+    <span class="chart-title">Funding history, 2020&ndash;2025</span>
     Each dot is a disclosed round; dot area is proportional to size. The scale
-    gap is the point: Toast&rsquo;s
+    gap is the point:
+    <span class="logo logo--sm" data-company="toast" role="img" aria-label="Toast logo"></span>Toast&rsquo;s
     <span class="stat" data-fact-id="wsa-funding-round">$1.6M</span> pre-seed
-    against PrizePicks&rsquo;
+    against
+    <span class="logo logo--sm" data-company="prizepicks" role="img" aria-label="PrizePicks logo"></span>PrizePicks&rsquo;
     <span class="stat" data-fact-id="wsc-prizepicks-allwyn-deal-2025">$1.6B</span>
-    Allwyn deal, Skillz&rsquo;s
+    Allwyn deal,
+    <span class="logo logo--sm" data-company="skillz" role="img" aria-label="Skillz logo"></span>Skillz&rsquo;s
     <span class="stat" data-fact-id="wsc-skillz-spac-merger-2020">$849M</span>
-    SPAC, and Dream11&rsquo;s
+    SPAC, and
+    <span class="logo logo--sm" data-company="dream11" role="img" aria-label="Dream11 logo"></span>Dream11&rsquo;s
     <span class="stat" data-fact-id="wsc-dreamsports-round-2021-11">$840M</span>
-    round &mdash; a thousand-fold spread on one axis.
+    round: a thousand-fold spread on one axis.
     <span class="chart-src">Source: data/funding.json. Hover or focus a dot for the round card.</span>
   </figcaption>
   <div class="chart-wrap">
     <div data-chart="funding"></div>
   </div>
   <ul class="chart-legend" aria-label="Funding timeline legend">
-    <li class="legend-item"><span class="legend-swatch sw-toast"></span>Toast</li>
+    <li class="legend-item"><span class="legend-swatch sw-toast"></span><span class="logo logo--sm" data-company="toast" role="img" aria-label="Toast logo"></span>Toast</li>
     <li class="legend-item"><span class="legend-swatch sw-field"></span>Field (all other operators)</li>
     <li class="legend-item legend-note">Dot area &prop; round size (sqrt-scaled so a $1.6M and a $1.6B round coexist).</li>
   </ul>
@@ -2412,19 +2407,18 @@
 <!-- ---- 7.3 Competitor cards -------------------------------------------- -->
 <div class="sub-head">
   <span class="sub-kicker">The roster</span>
-  <h3>Eighteen operators, one legal question each</h3>
+  <h3>Operator profiles</h3>
   <p>
-    Logo-free by design: name, founding, model, money raised, current status, and
-    one line on why each matters to the Toast thesis. House-banked names are
-    dashed; Toast is accented.
+    Name, founding, model, money raised, current status, and one line on why each
+    matters to the Toast thesis. House-banked names are dashed; Toast is accented.
   </p>
 </div>
 
-<div class="players-grid">
+<div class="players-grid" data-reveal="stagger">
 
   <!-- Toast -->
   <article class="player-card player-card--toast">
-    <h3 class="pc-name">Toast (Carnival)</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="toast" role="img" aria-label="Toast logo"></span>Toast (Carnival)</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsa-founding-year">2024</span></span>
       <span>New York, NY</span>
@@ -2446,7 +2440,7 @@
 
   <!-- VGW (house-banked) -->
   <article class="player-card player-card--house">
-    <h3 class="pc-name">VGW (Chumba, LuckyLand, Global Poker)</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="vgw" role="img" aria-label="VGW logo"></span>VGW (Chumba, LuckyLand, Global Poker)</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-vgw-founded-2010">2010</span></span>
       <span>Perth, AU</span>
@@ -2463,7 +2457,7 @@
 
   <!-- Stake.us (house-banked) -->
   <article class="player-card player-card--house">
-    <h3 class="pc-name">Stake.us</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="stakeus" role="img" aria-label="Stake.us logo"></span>Stake.us</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-stakeus-operator-easygo">2022</span></span>
       <span>EasyGo group</span>
@@ -2479,7 +2473,7 @@
 
   <!-- Skillz -->
   <article class="player-card">
-    <h3 class="pc-name">Skillz (Firy Inc.)</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="skillz" role="img" aria-label="Skillz logo"></span>Skillz (Firy Inc.)</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-skillz-founded-2012">2012</span></span>
       <span>Las Vegas, NV</span>
@@ -2503,7 +2497,7 @@
 
   <!-- Papaya -->
   <article class="player-card">
-    <h3 class="pc-name">Papaya Gaming</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="papaya" role="img" aria-label="Papaya Gaming logo"></span>Papaya Gaming</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-papaya-founded-tel-aviv">2016&ndash;19</span></span>
       <span>Tel Aviv, IL</span>
@@ -2523,7 +2517,7 @@
 
   <!-- AviaGames -->
   <article class="player-card">
-    <h3 class="pc-name">AviaGames</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="aviagames" role="img" aria-label="AviaGames logo"></span>AviaGames</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-aviagames-founded-2017">2017</span></span>
       <span>United States</span>
@@ -2540,7 +2534,7 @@
 
   <!-- Triumph Labs -->
   <article class="player-card">
-    <h3 class="pc-name">Triumph Labs</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="triumph" role="img" aria-label="Triumph Labs logo"></span>Triumph Labs</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-triumph-founded-2020">2020</span></span>
       <span>United States</span>
@@ -2558,7 +2552,7 @@
 
   <!-- WorldWinner / Game Taco -->
   <article class="player-card">
-    <h3 class="pc-name">WorldWinner / Game Taco</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="worldwinner" role="img" aria-label="WorldWinner logo"></span>WorldWinner / Game Taco</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-worldwinner-founded-1999">1999</span></span>
       <span>Boston, MA</span>
@@ -2575,7 +2569,7 @@
 
   <!-- Voodoo / Blitz -->
   <article class="player-card">
-    <h3 class="pc-name">Voodoo / Blitz - Win Cash</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="voodoo" role="img" aria-label="Voodoo logo"></span>Voodoo / Blitz - Win Cash</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-voodoo-founded-2013">2013</span></span>
       <span>Paris, FR</span>
@@ -2594,7 +2588,7 @@
 
   <!-- MPL -->
   <article class="player-card">
-    <h3 class="pc-name">MPL (Mobile Premier League)</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="mpl" role="img" aria-label="Mobile Premier League logo"></span>MPL (Mobile Premier League)</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-mpl-founded-2018">2018</span></span>
       <span>Bengaluru, IN</span>
@@ -2612,7 +2606,7 @@
 
   <!-- WinZO -->
   <article class="player-card">
-    <h3 class="pc-name">WinZO</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="winzo" role="img" aria-label="WinZO logo"></span>WinZO</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-winzo-founded-2018">2018</span></span>
       <span>New Delhi, IN</span>
@@ -2628,7 +2622,7 @@
 
   <!-- Zupee -->
   <article class="player-card">
-    <h3 class="pc-name">Zupee</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="zupee" role="img" aria-label="Zupee logo"></span>Zupee</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-zupee-founded-2018">2018</span></span>
       <span>India</span>
@@ -2643,7 +2637,7 @@
 
   <!-- Dream11 -->
   <article class="player-card">
-    <h3 class="pc-name">Dream11 (Dream Sports)</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="dream11" role="img" aria-label="Dream11 logo"></span>Dream11 (Dream Sports)</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-dream11-founded-2008">2008</span></span>
       <span>Mumbai, IN</span>
@@ -2661,7 +2655,7 @@
 
   <!-- DraftKings -->
   <article class="player-card">
-    <h3 class="pc-name">DraftKings</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="draftkings" role="img" aria-label="DraftKings logo"></span>DraftKings</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-draftkings-founded-2012">2012</span></span>
       <span>Boston, MA</span>
@@ -2679,7 +2673,7 @@
 
   <!-- FanDuel -->
   <article class="player-card">
-    <h3 class="pc-name">FanDuel</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="fanduel" role="img" aria-label="FanDuel logo"></span>FanDuel</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-fanduel-founded-2009">2009</span></span>
       <span>Edinburgh / Flutter</span>
@@ -2695,7 +2689,7 @@
 
   <!-- PrizePicks -->
   <article class="player-card">
-    <h3 class="pc-name">PrizePicks</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="prizepicks" role="img" aria-label="PrizePicks logo"></span>PrizePicks</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-prizepicks-founded-2015">2015</span></span>
       <span>Atlanta, GA</span>
@@ -2716,7 +2710,7 @@
 
   <!-- Underdog -->
   <article class="player-card">
-    <h3 class="pc-name">Underdog</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="underdog" role="img" aria-label="Underdog logo"></span>Underdog</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-underdog-founded-2020">2020</span></span>
       <span>Brooklyn, NY</span>
@@ -2732,7 +2726,7 @@
 
   <!-- Sleeper -->
   <article class="player-card">
-    <h3 class="pc-name">Sleeper</h3>
+    <h3 class="pc-name"><span class="logo logo--lg" data-company="sleeper" role="img" aria-label="Sleeper logo"></span>Sleeper</h3>
     <p class="pc-meta">
       <span>Founded <span class="stat" data-fact-id="wsc-sleeper-founded-2015">2015</span></span>
       <span>San Francisco, CA</span>
@@ -2750,10 +2744,10 @@
 </div>
 </section>
 
-    <!-- 9. CAUTIONARY — precedents that blew up --------------------------- -->
-    <section id="cautionary" aria-labelledby="cautionary-title">
+    <!-- 9. CAUTIONARY  -  precedents that blew up --------------------------- -->
+    <section id="cautionary" aria-labelledby="cautionary-title" data-pdf-min="full">
 <!-- ===========================================================================
-     Task 21 fragment — inner HTML of <section id="cautionary"> (08 / Cautionary).
+     Task 21 fragment  -  inner HTML of <section id="cautionary"> (08 / Cautionary).
      Spliced by the controller; do not wrap in a <section> tag here.
      Companion files: css/sections-market.css, js/charts.js.
      The SKLZ mount carries a data-chart attribute (sklz); charts.js reads data/market.json
@@ -2763,21 +2757,20 @@
      ======================================================================= -->
 <div class="section__head">
   <span class="section__index">08 / Cautionary tales</span>
-  <h2 id="cautionary-title">What happened to the ones before</h2>
+  <h2 id="cautionary-title">Precedents and cautionary cases</h2>
   <p class="standfirst">
     The category&rsquo;s only public pure-play is down more than
     <span class="stat" data-fact-id="wsg-sklz-ath-price">99%</span> from its peak,
-    and its three biggest names have each been hit by an integrity scandal &mdash;
-    not a market crash, not a tech failure, but a finding that the game was not
-    what players were told. That is the exact seam Toast&rsquo;s &ldquo;another
-    live human&rdquo; model runs along.
+    and its three biggest names have each been hit by an integrity scandal: a
+    finding that the game was not what players were told. That is the exact
+    seam Toast&rsquo;s &ldquo;another live human&rdquo; model runs along.
   </p>
 </div>
 
 <!-- ---- 8.1 The SKLZ / FIRY price collapse ------------------------------ -->
 <figure class="chart-fig">
   <figcaption class="chart-cap">
-    <span class="chart-title">Skillz / Firy (SKLZ&rarr;FIRY): the whole arc, on a log scale</span>
+    <span class="chart-title">Skillz / Firy share price (SKLZ&rarr;FIRY), log scale</span>
     Monthly closing price, <span class="stat" data-fact-id="wsg-sklz-reverse-split">split-adjusted for the June 2023 1-for-20 reverse
     split</span> (so no false cliff). From a listing near
     <span class="stat" data-fact-id="wsg-sklz-price-series-methodology">~$400</span>
@@ -2809,7 +2802,7 @@
 <!-- ---- 8.2 The two integrity verdicts ---------------------------------- -->
 <div class="sub-head">
   <span class="sub-kicker">The pattern, in two verdicts</span>
-  <h3>Both cases turned on one question: was your opponent real?</h3>
+  <h3>Two precedents on the same question: was the opponent real?</h3>
   <p>
     Neither company was killed by the market. Each was found to have deceived
     players about who &mdash; or what &mdash; they were playing against. That is
@@ -2818,11 +2811,11 @@
   </p>
 </div>
 
-<div class="verdict-grid">
+<div class="verdict-grid" data-reveal="stagger">
 
   <div class="verdict-card">
     <span class="verdict-kicker">AviaGames &middot; Pocket7Games</span>
-    <h3>The bot case that went criminal</h3>
+    <h3>AviaGames: from civil verdict to criminal probe</h3>
     <div class="verdict-figures">
       <div class="verdict-figure">
         <span class="vf-num stat" data-fact-id="wsc-skillz-v-aviagames-verdict-2024">$42.9M</span>
@@ -2850,7 +2843,7 @@
 
   <div class="verdict-card">
     <span class="verdict-kicker">Papaya Gaming</span>
-    <h3>The largest Lanham Act award in US history</h3>
+    <h3>Papaya: a $420M Lanham Act verdict</h3>
     <div class="verdict-figures">
       <div class="verdict-figure">
         <span class="vf-num stat" data-fact-id="wse-skillz-papaya-verdict">$420M</span>
@@ -2868,7 +2861,7 @@
       <span data-fact-id="wsc-papaya-class-action-settlement-2025">$15M consumer class-action settlement over the same undisclosed-bots allegations</span>,
       and Michigan regulators had already issued a
       <span data-fact-id="wsc-papaya-michigan-cease-desist-2024">cease-and-desist declaring its products illegal gambling under state law</span>.
-      Same defect as AviaGames: not the odds, but the honesty about the opponent.
+      Same defect as AviaGames: the honesty about the opponent was the problem.
     </p>
   </div>
 
@@ -2886,14 +2879,14 @@
 </p>
 </section>
 
-    <!-- 10. ECONOMICS — unit economics & take rate ------------------------ -->
-    <section id="economics" aria-labelledby="economics-title">
+    <!-- 10. ECONOMICS  -  unit economics & take rate ------------------------ -->
+    <section id="economics" aria-labelledby="economics-title" data-pdf-min="medium">
 <div class="section__head">
   <span class="section__index">09 / Economics</span>
-  <h2 id="economics-title">Does the unit math work</h2>
+  <h2 id="economics-title">Unit economics</h2>
   <p class="standfirst">
-    Toast's revenue is a rake on a peer-to-peer pot, not a house edge — the same
-    mechanic as poker or daily fantasy. Four questions decide whether that math
+    Toast's revenue is a rake on a peer-to-peer pot, not a house edge. It is the
+    same mechanic as poker or daily fantasy. Four questions decide whether that math
     compounds: how the rake actually works; what the category's only public
     pure-play looks like across a full decade; whether casino-style play really
     lifts lifetime value the way the pitch assumes; and whether two private
@@ -2903,10 +2896,10 @@
 </div>
 
 <div class="subsection">
-  <h3 class="subsection__title">How the rake actually works</h3>
+  <h3 class="subsection__title">How the rake works</h3>
   <p class="subsection__lede">
-    Skillz's S-1 — the only skill-gaming filing that defines the mechanic in
-    writing — describes
+    Skillz's S-1 (the only skill-gaming filing that defines the mechanic in
+    writing) describes
     <span class="stat" data-fact-id="wsf-skillz-take-rate-definition">Take Rate</span>
     as the share of entry fees the platform keeps after paying out the winner:
     structurally a rake on a shared prize pool, not a fixed statistical edge
@@ -2914,7 +2907,7 @@
     entry-fee mechanic. Skillz's own revenue-over-GMV math implies a take rate
     that rose from <span class="stat" data-fact-id="wsf-skillz-implied-take-rate-trend">14.5%</span>
     (2020) to <span class="stat" data-fact-id="wsf-skillz-implied-take-rate-trend">19.3%</span>
-    (2025) — above DFS's typical <span class="stat" data-fact-id="wsf-dfs-rake-benchmark">10–15%</span>
+    (2025), above DFS's typical <span class="stat" data-fact-id="wsf-dfs-rake-benchmark">10–15%</span>
     and well above online poker's <span class="stat" data-fact-id="wsf-poker-rake-benchmark">2–10%</span>
     of the pot, consistent with a platform that also has to fund its own
     acquisition spend out of that same rake.
@@ -2966,7 +2959,7 @@
   <p class="rake-flow-caption">
     Diagram illustrates the disclosed <span class="stat" data-fact-id="wsf-skillz-take-rate-definition">Take Rate</span>
     mechanic; the ~15–19% figure is Skillz's own implied range
-    <span class="tier-badge tier-D">D</span>, not a disclosed Toast number — Toast
+    <span class="tier-badge tier-D">D</span>, not a disclosed Toast number; Toast
     does not publish a take rate.
   </p>
 </div>
@@ -2978,7 +2971,7 @@
     <span class="stat" data-fact-id="wsf-firy-rebrand-2026">Firy Inc.</span>
     (NYSE: FIRY); the Skillz gaming platform now sits as one of three brands
     under the Firy holding structure. It remains the only public company that
-    discloses P2P skill-gaming financials in detail — every figure below is as
+    discloses P2P skill-gaming financials in detail. Every figure below is as
     originally reported in that year's own earnings release or 10-K (tier A
     unless flagged), and GMV/PMAU are unchanged across later restatements while
     revenue, S&amp;M and net loss have each been quietly revised by small
@@ -2987,7 +2980,7 @@
 
   <div class="chart-wrap">
     <table class="data">
-      <caption>Skillz / Firy — reported annual figures, FY2019–FY2025</caption>
+      <caption>Skillz / Firy: reported annual figures, FY2019–FY2025</caption>
       <thead>
         <tr>
           <th scope="col">FY</th>
@@ -3002,103 +2995,109 @@
       </thead>
       <tbody>
         <tr>
-          <td>2019†</td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-revenue-2019">~119.9</span></td>
-          <td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td>
+          <td data-label="FY">2019†</td>
+          <td class="num" data-label="Revenue ($M)"><span class="stat" data-fact-id="wsf-skillz-revenue-2019">~119.9</span></td>
+          <td class="num" data-label="GMV ($M)">N/A</td><td class="num" data-label="S&amp;M ($M)">N/A</td><td class="num" data-label="S&amp;M % of rev">N/A</td><td class="num" data-label="Net loss ($M)">N/A</td><td class="num" data-label="PMAU (000s)">N/A</td><td class="num" data-label="ARPPU ($)">N/A</td>
         </tr>
         <tr>
-          <td>2020</td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">230.1</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">1,592.0</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">251.9</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">109.5%</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">(145.5)</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">320</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">59.20</span></td>
+          <td data-label="FY">2020</td>
+          <td class="num" data-label="Revenue ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">230.1</span></td>
+          <td class="num" data-label="GMV ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">1,592.0</span></td>
+          <td class="num" data-label="S&amp;M ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">251.9</span></td>
+          <td class="num" data-label="S&amp;M % of rev"><span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">109.5%</span></td>
+          <td class="num" data-label="Net loss ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">(145.5)</span></td>
+          <td class="num" data-label="PMAU (000s)"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">320</span></td>
+          <td class="num" data-label="ARPPU ($)"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">59.20</span></td>
         </tr>
         <tr>
-          <td>2021 (peak)</td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">384.1</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">2,436.0</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">465.5</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">121.2%</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">(181.4)</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">510</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">62.40</span></td>
+          <td data-label="FY">2021 (peak)</td>
+          <td class="num" data-label="Revenue ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">384.1</span></td>
+          <td class="num" data-label="GMV ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">2,436.0</span></td>
+          <td class="num" data-label="S&amp;M ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">465.5</span></td>
+          <td class="num" data-label="S&amp;M % of rev"><span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">121.2%</span></td>
+          <td class="num" data-label="Net loss ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">(181.4)</span></td>
+          <td class="num" data-label="PMAU (000s)"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">510</span></td>
+          <td class="num" data-label="ARPPU ($)"><span class="stat" data-fact-id="wsf-skillz-fy2021-results">62.40</span></td>
         </tr>
         <tr>
-          <td>2022</td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">269.7</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">1,642.3</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">277.0</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">102.7%</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">(438.9)</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">386</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">59.70</span></td>
+          <td data-label="FY">2022</td>
+          <td class="num" data-label="Revenue ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">269.7</span></td>
+          <td class="num" data-label="GMV ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">1,642.3</span></td>
+          <td class="num" data-label="S&amp;M ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">277.0</span></td>
+          <td class="num" data-label="S&amp;M % of rev"><span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">102.7%</span></td>
+          <td class="num" data-label="Net loss ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">(438.9)</span></td>
+          <td class="num" data-label="PMAU (000s)"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">386</span></td>
+          <td class="num" data-label="ARPPU ($)"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">59.70</span></td>
         </tr>
         <tr>
-          <td>2023</td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">150.1</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">963.6</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">122.6</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">81.6%</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">(106.7)</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">179</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">70.00</span></td>
+          <td data-label="FY">2023</td>
+          <td class="num" data-label="Revenue ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">150.1</span></td>
+          <td class="num" data-label="GMV ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">963.6</span></td>
+          <td class="num" data-label="S&amp;M ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">122.6</span></td>
+          <td class="num" data-label="S&amp;M % of rev"><span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">81.6%</span></td>
+          <td class="num" data-label="Net loss ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">(106.7)</span></td>
+          <td class="num" data-label="PMAU (000s)"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">179</span></td>
+          <td class="num" data-label="ARPPU ($)"><span class="stat" data-fact-id="wsf-skillz-fy2023-results">70.00</span></td>
         </tr>
         <tr>
-          <td>2024 (trough)</td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2024-results">95.5</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2024-results">608.2</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2024-results">80.3</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">84.1%</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2024-results">(48.2)</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2024-results">118</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2024-results">68.70</span></td>
+          <td data-label="FY">2024 (trough)</td>
+          <td class="num" data-label="Revenue ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2024-results">95.5</span></td>
+          <td class="num" data-label="GMV ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2024-results">608.2</span></td>
+          <td class="num" data-label="S&amp;M ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2024-results">80.3</span></td>
+          <td class="num" data-label="S&amp;M % of rev"><span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">84.1%</span></td>
+          <td class="num" data-label="Net loss ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2024-results">(48.2)</span></td>
+          <td class="num" data-label="PMAU (000s)"><span class="stat" data-fact-id="wsf-skillz-fy2024-results">118</span></td>
+          <td class="num" data-label="ARPPU ($)"><span class="stat" data-fact-id="wsf-skillz-fy2024-results">68.70</span></td>
         </tr>
         <tr>
-          <td>2025</td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2025-results">104.5</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2025-results">541.9</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2025-results">71.1</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">68.1%</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2025-results">(70.4)</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2025-results">141</span></td>
-          <td class="num"><span class="stat" data-fact-id="wsf-skillz-fy2025-results">61.70</span></td>
+          <td data-label="FY">2025</td>
+          <td class="num" data-label="Revenue ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2025-results">104.5</span></td>
+          <td class="num" data-label="GMV ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2025-results">541.9</span></td>
+          <td class="num" data-label="S&amp;M ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2025-results">71.1</span></td>
+          <td class="num" data-label="S&amp;M % of rev"><span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">68.1%</span></td>
+          <td class="num" data-label="Net loss ($M)"><span class="stat" data-fact-id="wsf-skillz-fy2025-results">(70.4)</span></td>
+          <td class="num" data-label="PMAU (000s)"><span class="stat" data-fact-id="wsf-skillz-fy2025-results">141</span></td>
+          <td class="num" data-label="ARPPU ($)"><span class="stat" data-fact-id="wsf-skillz-fy2025-results">61.70</span></td>
         </tr>
       </tbody>
     </table>
   </div>
   <p class="rake-flow-caption">
     † 2019 is from a financial-data aggregator, not a primary filing directly
-    retrieved — directional only. S&amp;M % of revenue is our own computation
-    <span class="tier-badge tier-D">D</span>; Skillz has since
+    retrieved; directional only. <strong>S&amp;M % of revenue</strong> is a computed
+    ratio of two reported figures: the filed S&amp;M dollar amount divided by filed
+    revenue for each year, both tier A. Skillz has since
     <span data-fact-id="wsf-skillz-restated-figures">quietly restated small amounts
     of revenue, S&amp;M and net loss for the same fiscal years in later releases</span>,
     though GMV and PMAU repeat unchanged.
+  </p>
+  <p class="rake-flow-caption">
+    <strong>S&amp;M exceeded revenue in 2020&ndash;2022</strong> &mdash; the cash-burn
+    years, when sales-and-marketing spend ran above <span class="hl">100% of
+    revenue</span>, peaking at 121.2% in 2021.
   </p>
 
   <p>
     Reading the table: revenue round-tripped from ~$120M (2019) to a
     <span class="stat" data-fact-id="wsb-skillz-revenue-2021">$384.1M</span> 2021
     peak and back down to a <span class="stat" data-fact-id="wsb-skillz-revenue-2024">$95.5M</span>
-    2024 trough — below the 2019 starting point in real terms. S&amp;M
+    2024 trough, below the 2019 starting point in real terms. S&amp;M
     <em>exceeded total revenue</em> in 2020–2022, funded in part by promotional
     <span data-fact-id="wsf-skillz-bonus-cash-limited-time-sm-expense">"Bonus Cash" that flows
     through gross revenue as marketing expense</span>
-    rather than a revenue deduction — the company effectively paying itself with
+    rather than a revenue deduction: the company is effectively paying itself with
     its own promotional dollars. Most importantly: PMAU fell from
     <span class="stat" data-fact-id="wsf-skillz-fy2021-results">510K</span>
     at its 2021 peak to <span class="stat" data-fact-id="wsf-skillz-fy2024-results">118K</span>
-    in 2024 — a decline of roughly 77% <span class="tier-badge tier-D">D</span>
-    (our arithmetic) — while ARPPU never left a flat
+    in 2024, a decline of roughly 77% <span class="tier-badge tier-D">D</span>
+    (our arithmetic), while ARPPU never left a flat
     <span class="stat" data-fact-id="wsf-skillz-fy2023-results">$59</span>&ndash;<span class="stat" data-fact-id="wsf-skillz-fy2024-results">70</span>
     band the entire time. The growth-and-collapse was almost entirely a
     user-count story, not a monetization-per-user story. Skillz's revenue
     footnote also discloses
     <span class="stat" data-fact-id="wsf-skillz-customer-concentration-80pct">80%</span>
     customer/developer concentration, and Apple takes no cut of end-user cash
-    deposits on Skillz — only
+    deposits on Skillz, only
     <span data-fact-id="wsf-skillz-apple-payment-fee-policy">a fee on Apple-Pay-routed deposits</span>,
     the same rail Toast/Carnival would face
     (<span data-fact-id="wsa-carnival-no-apple-iap">Carnival takes no Apple IAP cut either</span>).
@@ -3106,12 +3105,12 @@
 </div>
 
 <div class="subsection">
-  <h3 class="subsection__title">The LTV argument — does casino-style play actually lift lifetime value</h3>
+  <h3 class="subsection__title">The LTV argument: does casino-style play lift lifetime value</h3>
   <p class="subsection__lede">
-    The underwriting bet is that skill-gaming's historically low LTV is a
-    <em>latency</em> problem, not a casino-style-games-don't-monetize-better
-    problem — once play is fast and casino-shaped, LTV should look more like a
-    casino or poker player than a casual-game player. The public evidence is
+    The underwriting bet is that skill-gaming's historically low LTV reflects a
+    <em>latency</em> problem rather than a failure of casino-style games to
+    monetize better. Once play is fast and casino-shaped, LTV should look more
+    like a casino or poker player than a casual-game player. The public evidence is
     genuinely mixed, so we present it as a ledger rather than a verdict.
   </p>
 
@@ -3126,15 +3125,14 @@
           while ARPPU stayed flat in a narrow
           <span class="stat" data-fact-id="wsf-skillz-fy2023-results">$59</span>&ndash;<span class="stat" data-fact-id="wsf-skillz-fy2024-results">70</span>
           band the whole time. If solving latency alone were enough to unlock
-          casino-style LTV, Skillz — which explicitly chased faster, more
-          skill-intensive titles as it scaled — should show rising ARPPU. It does not.
+          casino-style LTV, Skillz (which explicitly chased faster, more
+          skill-intensive titles as it scaled) should show rising ARPPU. It does not.
         </li>
         <li>
           No Skillz cohort-retention curve, LTV:CAC ratio, or payback-period
-          figure was found disclosed anywhere in the public record — a genuine
-          evidence gap, not a negative finding, but it means the best available
-          public data point is the aggregate PMAU/ARPPU history above, not a
-          cohort-level number.
+          figure was found disclosed anywhere in the public record. This is a
+          genuine evidence gap: the best available public data point is the
+          aggregate PMAU/ARPPU history above, not a cohort-level number.
         </li>
       </ul>
     </div>
@@ -3144,7 +3142,7 @@
         <li>
           DraftKings' licensed iGaming generates roughly
           <span class="stat" data-fact-id="wsf-dkng-igaming-revenue-density">2.3×</span>
-          the revenue per population-point of its own Sportsbook — direct
+          the revenue per population-point of its own Sportsbook, direct
           evidence that casino-style play monetizes a reached population at a
           multiple of the adjacent, proven sports-betting market.
         </li>
@@ -3155,8 +3153,8 @@
           games; mobile user-acquisition markets separately price casino-genre
           app installs at roughly
           <span class="stat" data-fact-id="wsf-ltv-cpi-casino-vs-casual">15×</span>
-          the CPI of casual apps — a CAC proxy, but indirect market-pricing
-          evidence that buyers underwrite casino-app users as far higher-LTV.
+          the CPI of casual apps, an indirect market-pricing signal that buyers
+          underwrite casino-app users as far higher-LTV.
         </li>
       </ul>
     </div>
@@ -3164,7 +3162,7 @@
   <p class="evidence-net">
     <strong>Net assessment:</strong> the thesis has real market-pricing support,
     but the one company that actually tried to fix the latency problem at scale
-    (Skillz) did not show rising per-user monetization as a result — which
+    (Skillz) did not show rising per-user monetization as a result. This
     argues that Toast's dealer-vs-player mechanic would need to be doing real
     incremental work, not just "a faster Skillz," for the bull case to hold.
   </p>
@@ -3172,18 +3170,18 @@
 
 <div class="subsection">
   <h3 class="subsection__title">
-    Toast's extra COGS line — the India-counterpart per-hand model
-    <span class="tier-badge tier-D">D · our estimate</span>
+    Toast's added COGS line: the India-counterpart per-hand model
+    <span class="tier-badge tier-D">Tier D</span>
   </h3>
   <p class="subsection__lede">
     The call described Toast paying an offshore pool of Indian blackjack
-    players — at two different rates in the same call:
+    players at two different rates in the same call:
     "<span data-fact-id="ws0-toast-offshore-india-blackjack-team">a few dollars… almost like an allowance</span>"
-    and "<span data-fact-id="ws0-india-pay-rate-dollar-per-hour">willing to play for a dollar an hour</span>" —
-    matched instantly against US players wagering
+    and "<span data-fact-id="ws0-india-pay-rate-dollar-per-hour">willing to play for a dollar an hour</span>".
+    These players were matched instantly against US players wagering
     <span class="stat" data-fact-id="ws0-stake-arbitrage-us-india-hands">$10 a hand</span>
     against <span class="stat" data-fact-id="ws0-stake-arbitrage-us-india-hands">$0.10</span>
-    for the India side. All three are unverified, tier-C company/call claims —
+    for the India side. All three are unverified, tier-C company/call claims;
     nothing in the public record confirms Toast's actual India labor cost,
     headcount, or contract structure. The model below uses the $1/hour figure
     per the call and treats "allowance" as an unreconciled alternative.
@@ -3198,11 +3196,11 @@
       (physical table to fast online 1-on-1 play); take-rate benchmark:
       <span class="stat" data-fact-id="wsf-dfs-rake-benchmark">10–15%</span> DFS,
       <span class="stat" data-fact-id="wsf-skillz-implied-take-rate-trend">14.5–19.3%</span>
-      Skillz-implied — we use 10–19%.
+      Skillz-implied. We use 10–19%.
     </p>
     <div class="chart-wrap">
       <table class="data">
-        <caption>Toast per-hand model — stress test of one cost line, not a company-wide unit-economics estimate</caption>
+        <caption>Toast per-hand model: stress test of one cost line, not a company-wide unit-economics estimate</caption>
         <thead>
           <tr>
             <th scope="col">Case</th>
@@ -3215,23 +3213,23 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>Low</td><td class="num">60</td><td class="num">10%</td><td class="num">$60</td><td class="num">$1</td><td class="num">$59</td><td class="num">1.7%</td></tr>
-          <tr><td>Mid</td><td class="num">100</td><td class="num">15%</td><td class="num">$150</td><td class="num">$1</td><td class="num">$149</td><td class="num">0.7%</td></tr>
-          <tr><td>High</td><td class="num">200</td><td class="num">19%</td><td class="num">$380</td><td class="num">$1</td><td class="num">$379</td><td class="num">0.3%</td></tr>
+          <tr><td data-label="Case">Low</td><td class="num" data-label="Hands/hr">60</td><td class="num" data-label="Take rate">10%</td><td class="num" data-label="Revenue/hr">$60</td><td class="num" data-label="India labor/hr">$1</td><td class="num" data-label="Net/hr">$59</td><td class="num" data-label="Labor % of rev">1.7%</td></tr>
+          <tr><td data-label="Case">Mid</td><td class="num" data-label="Hands/hr">100</td><td class="num" data-label="Take rate">15%</td><td class="num" data-label="Revenue/hr">$150</td><td class="num" data-label="India labor/hr">$1</td><td class="num" data-label="Net/hr">$149</td><td class="num" data-label="Labor % of rev">0.7%</td></tr>
+          <tr><td data-label="Case">High</td><td class="num" data-label="Hands/hr">200</td><td class="num" data-label="Take rate">19%</td><td class="num" data-label="Revenue/hr">$380</td><td class="num" data-label="India labor/hr">$1</td><td class="num" data-label="Net/hr">$379</td><td class="num" data-label="Labor % of rev">0.3%</td></tr>
         </tbody>
       </table>
     </div>
     <p style="margin:0.85rem 0 0">
       <strong>Sensitivity:</strong> even at a <strong>10× cost shock</strong>
       ($10/hour India labor, to cover overhead/management/recruiting a bare
-      wage wouldn't capture), the conclusion barely moves — low case net falls
+      wage wouldn't capture), the conclusion barely moves: low case net falls
       to $50/hr (labor = 16.7% of revenue), high case to $370/hr (2.6%).
     </p>
     <p style="margin:0.6rem 0 0">
       Full methodology: <span data-fact-id="wsf-toast-per-hand-model">the per-hand model</span>.
       Across the researched range, the India-counterpart wage is a small
-      fraction — roughly 0.3–1.7% of gross rake revenue in the base case, still
-      under 17% even under a 10× shock — of what a single matched US–India
+      fraction (roughly 0.3–1.7% of gross rake revenue in the base case, still
+      under 17% even under a 10× shock) of what a single matched US–India
       hand-stream generates. The India labor line is close to a rounding error
       next to the take-rate revenue it unlocks; the real economic lever is
       instant liquidity into the
@@ -3239,22 +3237,22 @@
       that don't allow legal iCasino, not minimizing counterparty cost. This
       model excludes US-side CAC, payment processing, platform fees, India-side
       overhead beyond base pay, fraud/chargeback losses, and actual
-      prize-pool/payout mechanics — all unknown from public sources.
+      prize-pool/payout mechanics, all unknown from public sources.
     </p>
   </div>
 </div>
 
 <div class="subsection">
-  <h3 class="subsection__title">Platform-gatekeeper risk — a policy interpretation, not a court order</h3>
+  <h3 class="subsection__title">Platform-gatekeeper risk</h3>
   <div class="callout">
-    <h4 class="callout__title">Two private companies can end this, with no appeal</h4>
+    <h4 class="callout__title">Two platforms can delist, with no appeal</h4>
     <p>
       Both Apple and Google draw a discretionary line between "real money
       gambling" (heavily gated) and other real-money contest formats. Whether a
       skill-classified, dealer-vs-player blackjack app reads as a "casino game"
       requiring a gambling license, or as an exempt "skill contest," is a
       <strong>review-team judgment call, not a bright line in the guideline
-      text</strong> — and Carnival is iOS-only with no web-distribution
+      text</strong>. Carnival is iOS-only with no web-distribution
       fallback comparable to Skillz's website-plus-app presence, so a delisting
       is close to an extinction event, not a growth setback.
     </p>
@@ -3279,11 +3277,11 @@
     </blockquote>
     <p style="margin-bottom:0">
       The word "casino games" is explicitly listed as an example requiring a
-      gambling license under Apple's 5.3.4 — a skill-classified blackjack app
+      gambling license under Apple's 5.3.4; a skill-classified blackjack app
       sits right on that boundary. Apple takes no cut of Carnival's cash
       deposits (<span data-fact-id="wsa-carnival-no-apple-iap">no IAP on cash deposits</span>),
       which is a margin advantage today but also exactly <em>why</em>
-      delisting — not fee extraction — is the lever Apple actually holds. This
+      delisting (not fee extraction) is the lever Apple actually holds. This
       is the platform-policy mirror of the state-gambling-doctrine risk
       elsewhere in this brief: Toast faces the same binary, discretionary risk
       from two private companies that it faces from state prosecutors, with
@@ -3293,15 +3291,15 @@
 </div>
 </section>
 
-    <!-- 11. THESIS — the recommendation ----------------------------------- -->
-    <section id="thesis" aria-labelledby="thesis-title">
+    <!-- 11. THESIS  -  the recommendation ----------------------------------- -->
+    <section id="thesis" aria-labelledby="thesis-title" data-pdf-min="small">
 <div class="section__head">
   <span class="section__index">10 / Thesis</span>
-  <h2 id="thesis-title">The call</h2>
+  <h2 id="thesis-title">Investment conclusion</h2>
   <p class="standfirst">
     Three cases, one honest number range, and the 26 questions we'd put to the
     founders before wiring anything. The bull case tops out at a defensible
-    <strong>~$0.6B</strong> <span class="tier-badge tier-D">derived</span> —
+    <strong>~$0.6B</strong> <span class="tier-badge tier-D">derived</span>,
     not the DraftKings-parity <strong>~$0.9B</strong> <span class="tier-badge tier-D">stretch</span>
     some pitches imply. The bear case is not a haircut to the base case; it is
     a step-change toward impairment if any one of four precedented kill-shots
@@ -3310,11 +3308,11 @@
 </div>
 
 <div class="subsection">
-  <h3 class="subsection__title">The thesis in one paragraph</h3>
+  <h3 class="subsection__title">Thesis summary</h3>
   <p>
-    Toast is a bet that one specific combination — casino table-game formats,
+    Toast is a bet that one specific combination (casino table-game formats,
     at casino stakes, matched in <strong>real time</strong>, wrapped in the
-    peer-to-peer "game-of-skill" legal theory — unlocks the
+    peer-to-peer "game-of-skill" legal theory) unlocks the
     ~<span class="stat" data-fact-id="wsd-addressable-states-estimate">32–37</span>
     states that plausibly have no legal iCasino product for cash blackjack
     specifically, out of the
@@ -3330,8 +3328,8 @@
     <span class="stat" data-fact-id="wsa-funding-round">$1.6M</span> Lightspeed
     pre-seed (<span data-fact-id="wsa-lightspeed-investment">Lightspeed portfolio page</span>),
     and per-hand economics show the offshore-India labor line is a rounding
-    error — roughly 0.3–1.7% of gross rake, robust to a 10× cost shock
-    (<span data-fact-id="wsf-toast-per-hand-model">per-hand model</span>) — so the
+    error, roughly 0.3–1.7% of gross rake and robust to a 10× cost shock
+    (<span data-fact-id="wsf-toast-per-hand-model">per-hand model</span>), so the
     real asset is <strong>instant liquidity</strong>, not labor arbitrage. The
     thesis holds only if three things that are currently unproven are true:
     that head-to-head blackjack survives state gambling doctrine (no US court
@@ -3342,9 +3340,9 @@
     <span class="stat" data-fact-id="wse-skillz-papaya-verdict">$420M</span>
     verdict and put AviaGames in front of a
     <span data-fact-id="wse-aviagames-doj-grand-jury">federal grand jury</span>; and
-    that the paid-India counterparty model — which has
+    that the paid-India counterparty model (which has
     <span data-fact-id="wsa-no-evidence-paid-india-player-pool">zero public corroboration</span>
-    anywhere — is both real and legally durable even as
+    anywhere) is both real and legally durable even as
     <span data-fact-id="wse-india-2025-bank-ad-ban">India's 2025 Act</span>
     criminalizes enabling money-game transactions. The upside is a genuinely
     empty quadrant; the downside is that the closest public pure-play, Skillz,
@@ -3356,12 +3354,12 @@
 
 <div class="subsection">
   <h3 class="subsection__title">Three cases</h3>
-  <div class="case-grid">
+  <div class="case-grid" data-reveal="stagger">
 
     <!-- ============================= BULL ============================= -->
     <article class="case-card case-card--bull">
-      <p class="case-card__kicker">Bull case &middot; tier D, arithmetic shown</p>
-      <h3>The empty-quadrant compounding case</h3>
+      <p class="case-card__kicker">Empty-quadrant compounding <span class="tier-badge tier-D">D</span></p>
+      <h3>Bull case</h3>
       <p class="case-card__story">
         Blackjack is legally defensible in the optimistic end of the
         addressable range, platforms leave it alone, casino-style play
@@ -3373,22 +3371,22 @@
         <table class="data">
           <caption>Bull-case assumptions</caption>
           <tbody>
-            <tr><th scope="row">Blackjack-addressable states (optimistic)</th><td><span class="stat" data-fact-id="wsd-addressable-states-estimate">37</span> of 51</td></tr>
-            <tr><th scope="row">Addressable population</th><td><span class="stat" data-fact-id="wsb-nonicasino-population-estimate">~230–300M</span> non-iCasino base less CA §330 (~<span class="stat" data-fact-id="wsb-population-noncasino-big-states-2025">39M</span>) and residual haircuts</td></tr>
-            <tr><th scope="row">Mature-market iGaming spend / capita</th><td><span class="stat" data-fact-id="wsb-igaming-revenue-per-capita">$288</span>/yr (PA+MI+NJ 2025)</td></tr>
-            <tr><th scope="row">Capture of per-capita (blackjack-only, unlicensed, early)</th><td>0.6% <span class="tier-badge tier-D">D</span></td></tr>
-            <tr><th scope="row">Implied annual revenue (rake)</th><td>230M &times; $288 &times; 0.6% &asymp; <strong>$397M</strong> <span class="tier-badge tier-D">derived</span></td></tr>
-            <tr><th scope="row">Cross-check vs. SOM band</th><td>tops the <span class="stat" data-fact-id="wsb-som-p2p-skill-gaming">$50–400M</span> SOM (&asymp; Skillz's all-time peak <span class="stat" data-fact-id="wsb-skillz-revenue-2021">$384.1M</span>)</td></tr>
-            <tr><th scope="row">Implied GMV at a 15–19% take rate</th><td>&asymp; $2.1–2.6B (&asymp; Skillz's <span class="stat" data-fact-id="wsf-skillz-implied-take-rate-trend">2021 peak GMV</span>)</td></tr>
-            <tr><th scope="row">EV / revenue multiple</th><td><span class="stat" data-fact-id="wsg-what-multiples-imply">1.5×</span> — top of the defensible 0.5–1.5× band</td></tr>
-            <tr><th scope="row"><strong>Outcome — enterprise value</strong></th><td><strong>$397M &times; 1.5× &asymp; ~$0.6B</strong> <span class="tier-badge tier-D">derived</span></td></tr>
+            <tr><th scope="row">Blackjack-addressable states (optimistic)</th><td data-label="Value"><span class="stat" data-fact-id="wsd-addressable-states-estimate">37</span> of 51</td></tr>
+            <tr><th scope="row">Addressable population</th><td data-label="Value"><span class="stat" data-fact-id="wsb-nonicasino-population-estimate">~230–300M</span> non-iCasino, less CA §330 (~<span class="stat" data-fact-id="wsb-population-noncasino-big-states-2025">39M</span>)</td></tr>
+            <tr><th scope="row">Mature-market iGaming spend / capita</th><td data-label="Value"><span class="stat" data-fact-id="wsb-igaming-revenue-per-capita">$288</span>/yr (PA+MI+NJ 2025)</td></tr>
+            <tr><th scope="row">Capture of per-capita</th><td data-label="Value">0.6% <span class="tier-badge tier-D">D</span></td></tr>
+            <tr><th scope="row">Implied annual revenue (rake)</th><td data-label="Value">&asymp; <strong class="hl">$397M</strong></td></tr>
+            <tr><th scope="row">Cross-check vs. SOM band</th><td data-label="Value">tops the <span class="stat" data-fact-id="wsb-som-p2p-skill-gaming">$50–400M</span> SOM (&asymp; Skillz's peak <span class="stat" data-fact-id="wsb-skillz-revenue-2021">$384.1M</span>)</td></tr>
+            <tr><th scope="row">Implied GMV at a 15–19% take rate</th><td data-label="Value">&asymp; $2.1–2.6B (&asymp; Skillz's <span class="stat" data-fact-id="wsf-skillz-implied-take-rate-trend">2021 peak GMV</span>)</td></tr>
+            <tr><th scope="row">EV / revenue multiple</th><td data-label="Value"><span class="stat" data-fact-id="wsg-what-multiples-imply">1.5×</span>, top of the defensible 0.5–1.5× band</td></tr>
+            <tr><th scope="row"><strong>Outcome: enterprise value</strong></th><td data-label="Value"><strong class="hl">$397M &times; 1.5× &asymp; ~$0.6B</strong></td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="stretch-box">
-        <span class="stretch-box__label">Stretch scenario — not the bull case</span>
-        <strong>DraftKings-parity stretch</strong> — explicitly above the
+        <span class="stretch-box__label">Stretch scenario, not the bull case</span>
+        <strong>DraftKings-parity stretch</strong>, explicitly above the
         defensible range above: at DraftKings' own
         <span class="stat" data-fact-id="wsg-dkng-ev-revenue">2.23×</span>
         EV/Sales, $397M &times; 2.23× &asymp; <strong>~$0.9B</strong>. We break
@@ -3396,16 +3394,16 @@
         heroic for a pre-seed, single-product, unlicensed company: DKNG's
         2.23× prices license-hardened, multi-vertical scale on
         <span class="stat" data-fact-id="wsg-dkng-ttm-revenue">$6.29B</span>
-        of TTM revenue — Toast has an analog to none of it.
+        of TTM revenue. Toast has an analog to none of it.
       </div>
 
       <p style="margin-top:1rem">
         The bull is anchored by the density evidence: DraftKings' licensed
         iGaming generates roughly
         <span class="stat" data-fact-id="wsf-dkng-igaming-revenue-density">2.3×</span>
-        the revenue per population-point of its sportsbook — proving
+        the revenue per population-point of its sportsbook. This proves
         casino-style play monetizes a reached population at a multiple of the
-        adjacent proven market — and iGaming was the fastest-growing US gaming
+        adjacent proven market, and iGaming was the fastest-growing US gaming
         segment in 2025 at
         <span class="stat" data-fact-id="wsb-aga-2025-igaming-revenue">+27.6% to $10.74B</span>.
         The moat is instant liquidity in an
@@ -3417,7 +3415,7 @@
       <details class="founder-bank__group" open>
         <summary>What must be true (8 falsifiable tests) <span class="count">bull case</span></summary>
         <ol>
-          <li><strong>Doctrine holds:</strong> symmetric-deal blackjack survives at least one predominance-test challenge in a large served state, despite zero US precedent holding blackjack skill-predominant and California naming <span class="stat" data-fact-id="wsd-ca-penal-330-twenty-one">"twenty-one"</span> by statute (<span data-fact-id="wsd-blackjack-any-chance-analysis">any-chance analysis</span>). <span class="falsified">Falsified by: a C&amp;D or adverse ruling — cf. Michigan's cease-and-desist against Papaya's own blackjack app, 21 Cash.</span></li>
+          <li><strong>Doctrine holds:</strong> symmetric-deal blackjack survives at least one predominance-test challenge in a large served state, despite zero US precedent holding blackjack skill-predominant and California naming <span class="stat" data-fact-id="wsd-ca-penal-330-twenty-one">"twenty-one"</span> by statute (<span data-fact-id="wsd-blackjack-any-chance-analysis">any-chance analysis</span>). <span class="falsified">Falsified by: a C&amp;D or adverse ruling (cf. Michigan's cease-and-desist against Papaya's own blackjack app, 21 Cash).</span></li>
           <li><strong>Platforms stay neutral:</strong> neither Apple nor Google reinterprets "casino games" to require a gambling license (<span data-fact-id="wsf-apple-guideline-534-real-money-gaming">Apple 5.3.4</span>). <span class="falsified">Falsified by: any delisting or forced license demand.</span></li>
           <li><strong>Rake is sustainable:</strong> Toast holds a <span class="stat" data-fact-id="wsf-skillz-implied-take-rate-trend">15–19%</span> take rate at casino stakes without Skillz's S&amp;M-exceeds-revenue dynamic (<span data-fact-id="wsf-skillz-sm-pct-revenue-trend">S&amp;M trend</span>). <span class="falsified">Falsified by: cohort economics showing CAC-funded GMV.</span></li>
           <li><strong>Casino play lifts ARPPU:</strong> paying-user value clears the flat <span class="stat" data-fact-id="wsf-skillz-fy2023-results">$59</span>&ndash;<span class="stat" data-fact-id="wsf-skillz-fy2024-results">70</span> band Skillz never escaped. <span class="falsified">Falsified by: disclosed ARPPU cohorts flat at casual-skill levels.</span></li>
@@ -3431,8 +3429,8 @@
 
     <!-- ============================= BASE ============================= -->
     <article class="case-card case-card--base">
-      <p class="case-card__kicker">Base case &middot; tier D, arithmetic shown</p>
-      <h3>The niche-operator case</h3>
+      <p class="case-card__kicker">Niche operator, ARPPU stuck in band <span class="tier-badge tier-D">D</span></p>
+      <h3>Base case</h3>
       <p class="case-card__story">
         The doctrine haircut is real, cold-start friction and CAC bite the way
         they bit Skillz, ARPPU does not break out of the historical band, and
@@ -3443,26 +3441,26 @@
         <table class="data">
           <caption>Base-case assumptions</caption>
           <tbody>
-            <tr><th scope="row">Blackjack-addressable states (conservative)</th><td><span class="stat" data-fact-id="wsd-addressable-states-estimate">32</span> of 51</td></tr>
-            <tr><th scope="row">Addressable population</th><td><span class="stat" data-fact-id="wsb-nonicasino-population-estimate">~190M</span> (deeper big-state haircut)</td></tr>
-            <tr><th scope="row">Per-capita mature iGaming spend</th><td><span class="stat" data-fact-id="wsb-igaming-revenue-per-capita">$288</span>/yr</td></tr>
-            <tr><th scope="row">Capture (platform friction, CAC, cold-start)</th><td>0.27% <span class="tier-badge tier-D">D</span></td></tr>
-            <tr><th scope="row">Implied annual revenue (rake)</th><td>190M &times; $288 &times; 0.27% &asymp; <strong>$148M</strong> <span class="tier-badge tier-D">derived</span></td></tr>
-            <tr><th scope="row">Cross-check</th><td>&asymp; Papaya's press-estimated <span class="stat" data-fact-id="wsb-papaya-revenue-estimate">~$150M</span>; above Skillz's <span class="stat" data-fact-id="wsb-skillz-revenue-2024">$95.5M</span> trough</td></tr>
-            <tr><th scope="row">EV / revenue multiple</th><td><span class="stat" data-fact-id="wsg-firy-ev-revenue">0.68</span>–1.0× (at/above Skillz's current distressed mark)</td></tr>
-            <tr><th scope="row"><strong>Outcome — enterprise value</strong></th><td><strong>$148M &times; 0.68–1.0× &asymp; ~$100–150M</strong> <span class="tier-badge tier-D">derived</span></td></tr>
+            <tr><th scope="row">Blackjack-addressable states (conservative)</th><td data-label="Value"><span class="stat" data-fact-id="wsd-addressable-states-estimate">32</span> of 51</td></tr>
+            <tr><th scope="row">Addressable population</th><td data-label="Value"><span class="stat" data-fact-id="wsb-nonicasino-population-estimate">~190M</span> (deeper big-state haircut)</td></tr>
+            <tr><th scope="row">Per-capita mature iGaming spend</th><td data-label="Value"><span class="stat" data-fact-id="wsb-igaming-revenue-per-capita">$288</span>/yr</td></tr>
+            <tr><th scope="row">Capture (friction, CAC, cold-start)</th><td data-label="Value">0.27% <span class="tier-badge tier-D">D</span></td></tr>
+            <tr><th scope="row">Implied annual revenue (rake)</th><td data-label="Value">&asymp; <strong class="hl">$148M</strong></td></tr>
+            <tr><th scope="row">Cross-check</th><td data-label="Value">&asymp; Papaya's press-estimated <span class="stat" data-fact-id="wsb-papaya-revenue-estimate">~$150M</span>; above Skillz's <span class="stat" data-fact-id="wsb-skillz-revenue-2024">$95.5M</span> trough</td></tr>
+            <tr><th scope="row">EV / revenue multiple</th><td data-label="Value"><span class="stat" data-fact-id="wsg-firy-ev-revenue">0.68</span>–1.0× (at/above Skillz's distressed mark)</td></tr>
+            <tr><th scope="row"><strong>Outcome: enterprise value</strong></th><td data-label="Value"><strong class="hl">$148M &times; 0.68–1.0× &asymp; ~$100–150M</strong></td></tr>
           </tbody>
         </table>
       </div>
       <p style="margin-top:1rem">
-        This case treats the sweepstakes-crackdown clock —
-        <span data-fact-id="wse-sweepstakes-multistate-2025">not the DFS-legalization clock</span> —
+        This case treats the sweepstakes-crackdown clock
+        (<span data-fact-id="wse-sweepstakes-multistate-2025">not the DFS-legalization clock</span>)
         as the governing regulatory scenario, and prices in the Skillz
         teardown's hardest lesson: PMAU rose and collapsed while ARPPU never
         left a flat <span class="stat" data-fact-id="wsf-skillz-fy2023-results">$59</span>&ndash;<span class="stat" data-fact-id="wsf-skillz-fy2024-results">70</span>
         band, and S&amp;M ran
         <span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">68–121%</span>
-        of revenue for six years — "faster games" alone did not fix per-user
+        of revenue for six years. "Faster games" alone did not fix per-user
         monetization for the incumbent that tried it.
       </p>
       <details class="founder-bank__group" open>
@@ -3471,19 +3469,19 @@
           <li>The 2025 sweepstakes-crackdown clock, not the older DFS-legalization clock, is the governing regulatory scenario (<span data-fact-id="wse-sweepstakes-multistate-2025">multistate 2025 sweepstakes actions</span>).</li>
           <li>ARPPU stays roughly where Skillz's always sat rather than breaking out to casino-comparable levels (<span data-fact-id="wsf-skillz-fy2023-results">FY2023</span>, <span data-fact-id="wsf-skillz-fy2024-results">FY2024 results</span>).</li>
           <li>Cold-start CAC bites the way it bit Skillz, even if Toast avoids Skillz's worst S&amp;M-over-revenue years (<span data-fact-id="wsf-skillz-sm-pct-revenue-trend">S&amp;M trend</span>).</li>
-          <li>Toast's dealer-vs-player mechanic does <em>some</em> incremental work over Skillz's casual titles — just not enough to escape the niche.</li>
+          <li>Toast's dealer-vs-player mechanic does <em>some</em> incremental work over Skillz's casual titles, just not enough to escape the niche.</li>
         </ol>
       </details>
     </article>
 
     <!-- ============================= BEAR ============================= -->
     <article class="case-card case-card--bear">
-      <p class="case-card__kicker">Bear case &middot; expected-loss framing</p>
-      <h3>The single-kill-shot case</h3>
+      <p class="case-card__kicker">Single kill-shot, impaired</p>
+      <h3>Bear case</h3>
       <p class="case-card__story">
         A single-product, pre-scale, iOS-only company meets any <em>one</em> of
         four precedented kill-shots, each close to binary. This is not a
-        haircut to the base case — it is a step-change toward impairment.
+        haircut to the base case. It is a step-change toward impairment.
       </p>
       <div class="chart-wrap">
         <table class="data">
@@ -3491,19 +3489,19 @@
           <tbody>
             <tr>
               <th scope="row">State AG "sham P2P" action, esp. in a served-but-hostile state (Carnival serves <span class="stat" data-fact-id="wsd-carnival-consumer-tos-excluded-states">AR, TN, CT, DE, SD</span>)</th>
-              <td>NY AG's 2015 DFS "scheme intended to evade the law" letter; 2025 sweepstakes wave (<span class="stat" data-fact-id="wse-ny-sweepstakes-26-platforms">26 NY platforms</span> stopped; <span data-fact-id="wse-ca-ab831-supplier-reach">CA AB 831</span> reaches suppliers, not just operators — <span data-fact-id="wse-sweepstakes-multistate-2025">multistate 2025 wave</span>)</td>
+              <td data-label="Precedent">NY AG's 2015 DFS "scheme intended to evade the law" letter; 2025 sweepstakes wave (<span class="stat" data-fact-id="wse-ny-sweepstakes-26-platforms">26 NY platforms</span> stopped; <span data-fact-id="wse-ca-ab831-supplier-reach">CA AB 831</span> reaches suppliers, not just operators; <span data-fact-id="wse-sweepstakes-multistate-2025">multistate 2025 wave</span>)</td>
             </tr>
             <tr>
               <th scope="row">Integrity / false-advertising exposure on counterparty disclosure</th>
-              <td>Papaya <span class="stat" data-fact-id="wse-skillz-papaya-verdict">$420M</span> Lanham verdict (+<span class="stat" data-fact-id="wsf-skillz-v-papaya-disgorgement-figures">$652–719M</span> advisory disgorgement) + <span class="stat" data-fact-id="wsc-papaya-class-action-settlement-2025">$15M</span> class settlement; AviaGames <span class="stat" data-fact-id="wse-skillz-aviagames-verdict">$42.9M</span> verdict + <span class="stat" data-fact-id="wse-skillz-aviagames-settlement">~$80M</span> settlement + <span data-fact-id="wse-aviagames-doj-grand-jury">federal grand jury</span></td>
+              <td data-label="Precedent">Papaya <span class="stat" data-fact-id="wse-skillz-papaya-verdict">$420M</span> Lanham verdict (+<span class="stat" data-fact-id="wsf-skillz-v-papaya-disgorgement-figures">$652–719M</span> advisory disgorgement) + <span class="stat" data-fact-id="wsc-papaya-class-action-settlement-2025">$15M</span> class settlement; AviaGames <span class="stat" data-fact-id="wse-skillz-aviagames-verdict">$42.9M</span> verdict + <span class="stat" data-fact-id="wse-skillz-aviagames-settlement">~$80M</span> settlement + <span data-fact-id="wse-aviagames-doj-grand-jury">federal grand jury</span></td>
             </tr>
             <tr>
               <th scope="row">Apple/Google reinterprets "casino games" → delist. iOS-only = extinction event, no appeal</th>
-              <td><span data-fact-id="wsf-apple-guideline-534-real-money-gaming">Apple Guideline 5.3.4</span> names "casino games" as license-required real-money gaming; Carnival has <span data-fact-id="wsa-carnival-no-apple-iap">no web-distribution fallback</span></td>
+              <td data-label="Precedent"><span data-fact-id="wsf-apple-guideline-534-real-money-gaming">Apple Guideline 5.3.4</span> names "casino games" as license-required real-money gaming; Carnival has <span data-fact-id="wsa-carnival-no-apple-iap">no web-distribution fallback</span></td>
             </tr>
             <tr>
               <th scope="row">India supply/AML shock cuts the counterparty pool and/or money flow</th>
-              <td><span data-fact-id="wse-india-2025-skill-erased">India's 2025 Act erased the skill/chance line</span>; <span data-fact-id="wse-india-2025-bank-ad-ban">criminalizes enabling money-game transactions</span>; MPL cut ~<span class="stat" data-fact-id="wsb-india-mpl-layoffs">60%</span> of its India staff; ED froze <span class="stat" data-fact-id="wsb-india-ed-freeze">₹523cr</span></td>
+              <td data-label="Precedent"><span data-fact-id="wse-india-2025-skill-erased">India's 2025 Act erased the skill/chance line</span>; <span data-fact-id="wse-india-2025-bank-ad-ban">criminalizes enabling money-game transactions</span>; MPL cut ~<span class="stat" data-fact-id="wsb-india-mpl-layoffs">60%</span> of its India staff; ED froze <span class="stat" data-fact-id="wsb-india-ed-freeze">₹523cr</span></td>
             </tr>
           </tbody>
         </table>
@@ -3519,8 +3517,8 @@
         rather than trimming it: an App Store delisting or a large-state AG
         action takes a ~$148M base-case revenue line toward a fraction of
         itself, and the multiple compresses below
-        <span class="stat" data-fact-id="wsg-what-multiples-imply">0.5×</span> —
-        a diligence posture should treat Skillz's current, already-distressed
+        <span class="stat" data-fact-id="wsg-what-multiples-imply">0.5×</span>.
+        A diligence posture should treat Skillz's current, already-distressed
         <span class="stat" data-fact-id="wsg-firy-ev-revenue">0.68×</span> as a
         <em>ceiling</em> for the downside, not a floor. The category's
         precedent for a legally-triggered total write-off is concrete: Flutter
@@ -3535,6 +3533,313 @@
   </div>
 </div>
 
+<!-- ===== FORECAST & SCENARIO MODEL (spliced from _forecast.html) ===== -->
+<style>
+  /* Forecast & scenario model: scoped styling, all theme-aware via main.css tokens.
+     Ships with this fragment so the charts render brand-consistent without a CSS edit. */
+  .fc-block { margin-top: clamp(1.6rem, 4vw, 2.4rem); }
+  .fc-frame { font-size: var(--step-0); color: var(--muted); max-width: 48rem; line-height: 1.55; }
+  .fc-frame b { color: var(--text); font-weight: 600; }
+
+  .fc-cases { display: grid; gap: clamp(1rem, 2.6vw, 1.5rem); margin: 1.5rem 0 0;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+  .fc-case { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 1.05rem 1.15rem 1.2rem; box-shadow: var(--shadow); border-top: 3px solid var(--border-strong); }
+  .fc-case--bull { border-top-color: var(--accent); }
+  .fc-case--base { border-top-color: var(--tier-b); }
+  .fc-case--bear { border-top-color: var(--danger); }
+  .fc-case__kicker { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase;
+    margin: 0 0 0.25rem; }
+  .fc-case--bull .fc-case__kicker { color: var(--accent-bright); }
+  .fc-case--base .fc-case__kicker { color: var(--tier-b-fg); }
+  .fc-case--bear .fc-case__kicker { color: var(--danger-fg); }
+  .fc-case__name { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; letter-spacing: -0.01em;
+    margin: 0 0 0.4rem; line-height: 1.15; }
+  .fc-case__story { margin: 0 0 0.9rem; font-size: 0.84rem; color: var(--muted); line-height: 1.5; max-width: none; }
+  .fc-case table.data { min-width: 22rem; }
+  .fc-case table.data th, .fc-case table.data td { padding: 0.4rem 0.55rem; }
+  .fc-case table.data td { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--text); }
+  .fc-case table.data tbody th { font-weight: 500; color: var(--muted); font-size: 0.78rem; }
+  .fc-row-rev td, .fc-row-rev th { border-top: 1px solid var(--border-strong); font-weight: 650; color: var(--text); }
+  .fc-exit { margin: 0.9rem 0 0; padding: 0.75rem 0.85rem; border-radius: var(--radius-sm);
+    background: var(--surface-2); border: 1px solid var(--border); font-size: 0.82rem; line-height: 1.5; color: var(--text); }
+  .fc-exit b { color: var(--text); }
+  .fc-exit .fc-ev { font-family: var(--font-mono); font-weight: 650; }
+  .fc-case--bull .fc-exit .fc-ev { color: var(--accent-bright); }
+  .fc-case--base .fc-exit .fc-ev { color: var(--tier-b-fg); }
+  .fc-case--bear .fc-exit .fc-ev { color: var(--danger-fg); }
+  .fc-exit .fc-stretch-note { display: block; margin-top: 0.35rem; color: var(--muted); font-size: 0.78rem; }
+  .fc-exit .fc-impair-note { display: block; margin-top: 0.35rem; color: var(--danger-fg); font-size: 0.78rem; }
+
+  /* charts */
+  .fc-fig { margin: clamp(1.6rem, 4vw, 2.4rem) 0 0; }
+  .fc-svg { display: block; font-family: var(--font-mono); overflow: visible; }
+  .fc-grid { stroke: var(--border); stroke-width: 1; }
+  .fc-axis-label { fill: var(--muted); font-size: 11px; }
+  .fc-axis-title { fill: var(--faint); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .fc-panel-title { fill: var(--text); font-family: var(--font-text); font-size: 11.5px; font-weight: 650; }
+  .fc-line { fill: none; stroke-width: 2.4; stroke-linejoin: round; stroke-linecap: round; }
+  .fc-bull { stroke: var(--accent); } .fc-base { stroke: var(--tier-b); } .fc-bear { stroke: var(--danger); }
+  .fc-bull-dot { fill: var(--accent); } .fc-base-dot { fill: var(--tier-b); } .fc-bear-dot { fill: var(--danger); }
+  .fc-term { stroke: var(--bg); stroke-width: 2; }
+  .fc-kpi-dot { stroke: var(--bg); stroke-width: 1; }
+  .fc-bull-fg { fill: var(--accent-bright); } .fc-base-fg { fill: var(--tier-b-fg); } .fc-bear-fg { fill: var(--danger-fg); }
+  .fc-term-lbl { font-size: 11.5px; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .fc-term-sub { fill: var(--muted); font-size: 9.5px; font-variant-numeric: tabular-nums; }
+  .fc-val { fill: var(--faint); font-size: 10px; font-variant-numeric: tabular-nums; }
+  .fc-kpi-end { font-size: 11px; font-weight: 650; font-variant-numeric: tabular-nums; }
+  .fc-bull-fill { fill: var(--accent); } .fc-base-fill { fill: var(--tier-b); } .fc-bear-fill { fill: var(--danger); }
+  .fc-hatch { fill: var(--accent); opacity: 0.42; }
+  .fc-impaired { opacity: 0.85; }
+  .fc-whisker { stroke: var(--tier-b-fg); stroke-width: 1.4; }
+  .fc-row-lab { fill: var(--text); font-family: var(--font-text); font-size: 11.5px; font-weight: 600; }
+  .fc-row-sub { fill: var(--muted); font-size: 9.5px; font-variant-numeric: tabular-nums; }
+  .fc-ev { font-size: 11.5px; font-weight: 650; font-variant-numeric: tabular-nums; }
+
+  /* legend + toggle */
+  .fc-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; margin: 0.7rem 0 0; padding: 0; list-style: none;
+    font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); }
+  .fc-legend-item { display: inline-flex; align-items: center; gap: 0.5ch; }
+  .fc-swatch { width: 0.8rem; height: 0.5rem; border-radius: 2px; flex: none; }
+  .fc-swatch.fc-bull { background: var(--accent); } .fc-swatch.fc-base { background: var(--tier-b); }
+  .fc-swatch.fc-bear { background: var(--danger); }
+  .fc-swatch.fc-hatch-key { background: var(--accent); opacity: 0.42; }
+  .fc-toggle { display: inline-flex; gap: 0.35rem; margin: 0 0 0.6rem; flex-wrap: wrap; }
+  .fc-toggle-btn { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase;
+    padding: 0.3rem 0.7rem; border-radius: 999px; cursor: pointer; background: var(--surface); color: var(--muted);
+    border: 1px solid var(--border); transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease; }
+  .fc-toggle-btn:hover { color: var(--text); }
+  .fc-toggle-btn.is-on.fc-bull { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+  .fc-toggle-btn.is-on.fc-base { color: #fff; background: var(--tier-b); border-color: var(--tier-b); }
+  .fc-toggle-btn.is-on.fc-bear { color: #fff; background: var(--danger); border-color: var(--danger); }
+  .fc-toggle-btn:focus-visible { outline: none; box-shadow: var(--ring); }
+
+  .fc-how { margin: clamp(1.4rem, 3.5vw, 2rem) 0 0; }
+  .fc-how > summary { cursor: pointer; font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent-bright);
+    letter-spacing: 0.04em; width: max-content; }
+  .fc-how > summary:hover { text-decoration: underline; }
+  .fc-how[open] > summary { margin-bottom: 0.7rem; }
+  .fc-how p { font-size: 0.86rem; color: var(--muted); line-height: 1.6; max-width: 48rem; }
+  .fc-how code { font-family: var(--font-mono); font-size: 0.82em; color: var(--text); background: var(--surface-2);
+    padding: 0.05rem 0.35rem; border-radius: 3px; }
+
+  @media (max-width: 40rem) {
+    .fc-case__story { font-size: 0.8rem; }
+    .fc-exit { font-size: 0.78rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fc-line, .fc-bar-rect, .fc-fade { transition: none !important; }
+  }
+</style>
+
+<div class="subsection fc-block" data-reveal="up">
+  <h3 class="subsection__title">Forecast &amp; scenario model</h3>
+
+  <p class="fc-frame">
+    A labelled <b>scenario projection</b>, anchored to the cited comps and
+    multiples: the three investment cases extended into a Year&nbsp;1 to
+    Year&nbsp;5 KPI and financial build. Every yearly figure is a scenario
+    output. Only the labelled inputs are cited facts: addressable states
+    (<span class="stat" data-fact-id="wsd-addressable-states-estimate">32&ndash;37</span>),
+    mature-market spend of
+    <span class="stat" data-fact-id="wsb-igaming-revenue-per-capita">$288</span>/capita,
+    the Skillz ARPPU band, the
+    <span class="stat" data-fact-id="wsf-skillz-implied-take-rate-trend">14.5&ndash;19.3%</span>
+    take rate, and the exit multiples.
+    <span class="tier-badge tier-D">D · scenario projection</span>
+  </p>
+
+  <!-- ================= per-case KPI / financial tables ================= -->
+  <div class="fc-cases" data-reveal="stagger">
+
+    <!-- ---------------------------- BULL ---------------------------- -->
+    <article class="fc-case fc-case--bull">
+      <p class="fc-case__kicker">Bull case</p>
+      <h4 class="fc-case__name">Compounds to ~$0.6B</h4>
+      <p class="fc-case__story">
+        Casino-stakes play lifts ARPPU above the Skillz band, platforms stay
+        neutral, and Toast compounds into the empty quadrant toward the
+        optimistic
+        <span class="stat" data-fact-id="wsd-addressable-states-estimate">37</span>-state ceiling.
+      </p>
+      <div class="chart-wrap">
+        <table class="data">
+          <caption>Bull &mdash; 5-year build (scenario, tier D)</caption>
+          <thead>
+            <tr><th scope="col">Metric</th><th scope="col" class="num">Y1</th><th scope="col" class="num">Y2</th><th scope="col" class="num">Y3</th><th scope="col" class="num">Y4</th><th scope="col" class="num">Y5</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">States live</th><td data-label="Y1">6</td><td data-label="Y2">14</td><td data-label="Y3">22</td><td data-label="Y4">30</td><td data-label="Y5">37</td></tr>
+            <tr><th scope="row">Paying users (K)</th><td data-label="Y1">18</td><td data-label="Y2">55</td><td data-label="Y3">120</td><td data-label="Y4">205</td><td data-label="Y5">288</td></tr>
+            <tr><th scope="row">ARPPU ($/mo)</th><td data-label="Y1">75</td><td data-label="Y2">88</td><td data-label="Y3">98</td><td data-label="Y4">107</td><td data-label="Y5">115</td></tr>
+            <tr><th scope="row">Take rate</th><td data-label="Y1">15%</td><td data-label="Y2">16%</td><td data-label="Y3">17%</td><td data-label="Y4">18%</td><td data-label="Y5">18%</td></tr>
+            <tr><th scope="row">GMV ($M)</th><td data-label="Y1">108</td><td data-label="Y2">363</td><td data-label="Y3">830</td><td data-label="Y4">1,462</td><td data-label="Y5">2,208</td></tr>
+            <tr class="fc-row-rev"><th scope="row">Net revenue ($M)</th><td data-label="Y1">16</td><td data-label="Y2">58</td><td data-label="Y3">141</td><td data-label="Y4">263</td><td data-label="Y5">397</td></tr>
+            <tr><th scope="row">S&amp;M (% rev)</th><td data-label="Y1">95%</td><td data-label="Y2">82%</td><td data-label="Y3">68%</td><td data-label="Y4">55%</td><td data-label="Y5">45%</td></tr>
+            <tr><th scope="row">EBITDA-ish ($M)</th><td data-label="Y1">&minus;6</td><td data-label="Y2">&minus;13</td><td data-label="Y3">&minus;11</td><td data-label="Y4">+13</td><td data-label="Y5">+60</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fc-exit">
+        <b>Exit (Y5):</b> net revenue $397M &times;
+        <span class="stat" data-fact-id="wsg-what-multiples-imply">1.5&times;</span>
+        = <span class="fc-ev">~$0.6B</span>. Terminal revenue tops the
+        <span class="stat" data-fact-id="wsb-som-p2p-skill-gaming">$50&ndash;400M</span>
+        SOM and sits at Skillz's all-time peak
+        <span class="stat" data-fact-id="wsb-skillz-revenue-2021">$384.1M</span>.
+        <span class="fc-stretch-note">DraftKings-parity stretch, above the
+        defensible band: &times;<span class="stat" data-fact-id="wsg-dkng-ev-revenue">2.23&times;</span>
+        = ~$0.9B.</span>
+      </p>
+    </article>
+
+    <!-- ---------------------------- BASE ---------------------------- -->
+    <article class="fc-case fc-case--base">
+      <p class="fc-case__kicker">Base case</p>
+      <h4 class="fc-case__name">Niche scale, ~$100&ndash;150M</h4>
+      <p class="fc-case__story">
+        CAC bites the way it bit Skillz and ARPPU never leaves the flat
+        <span class="stat" data-fact-id="wsf-skillz-fy2023-results">$59</span>&ndash;<span class="stat" data-fact-id="wsf-skillz-fy2024-results">70</span>
+        band, landing Toast at roughly Skillz's post-collapse scale across
+        <span class="stat" data-fact-id="wsd-addressable-states-estimate">32</span> states.
+      </p>
+      <div class="chart-wrap">
+        <table class="data">
+          <caption>Base &mdash; 5-year build (scenario, tier D)</caption>
+          <thead>
+            <tr><th scope="col">Metric</th><th scope="col" class="num">Y1</th><th scope="col" class="num">Y2</th><th scope="col" class="num">Y3</th><th scope="col" class="num">Y4</th><th scope="col" class="num">Y5</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">States live</th><td data-label="Y1">5</td><td data-label="Y2">11</td><td data-label="Y3">18</td><td data-label="Y4">25</td><td data-label="Y5">32</td></tr>
+            <tr><th scope="row">Paying users (K)</th><td data-label="Y1">12</td><td data-label="Y2">38</td><td data-label="Y3">82</td><td data-label="Y4">132</td><td data-label="Y5">181</td></tr>
+            <tr><th scope="row">ARPPU ($/mo)</th><td data-label="Y1">60</td><td data-label="Y2">62</td><td data-label="Y3">64</td><td data-label="Y4">66</td><td data-label="Y5">68</td></tr>
+            <tr><th scope="row">Take rate</th><td data-label="Y1">14%</td><td data-label="Y2">14%</td><td data-label="Y3">15%</td><td data-label="Y4">15%</td><td data-label="Y5">15%</td></tr>
+            <tr><th scope="row">GMV ($M)</th><td data-label="Y1">62</td><td data-label="Y2">202</td><td data-label="Y3">420</td><td data-label="Y4">697</td><td data-label="Y5">985</td></tr>
+            <tr class="fc-row-rev"><th scope="row">Net revenue ($M)</th><td data-label="Y1">8.6</td><td data-label="Y2">28</td><td data-label="Y3">63</td><td data-label="Y4">105</td><td data-label="Y5">148</td></tr>
+            <tr><th scope="row">S&amp;M (% rev)</th><td data-label="Y1">105%</td><td data-label="Y2">96%</td><td data-label="Y3">89%</td><td data-label="Y4">82%</td><td data-label="Y5">76%</td></tr>
+            <tr><th scope="row">EBITDA-ish ($M)</th><td data-label="Y1">&minus;4</td><td data-label="Y2">&minus;10</td><td data-label="Y3">&minus;18</td><td data-label="Y4">&minus;23</td><td data-label="Y5">&minus;24</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fc-exit">
+        <b>Exit (Y5):</b> net revenue $148M &times;
+        <span class="stat" data-fact-id="wsg-firy-ev-revenue">0.68</span>&ndash;<span class="stat" data-fact-id="wsg-what-multiples-imply">1.0&times;</span>
+        = <span class="fc-ev">$100&ndash;150M</span>. Terminal scale sits above
+        Skillz's <span class="stat" data-fact-id="wsb-skillz-revenue-2024">$95.5M</span>
+        trough, at roughly its 2023 PMAU and GMV.
+      </p>
+    </article>
+
+    <!-- ---------------------------- BEAR ---------------------------- -->
+    <article class="fc-case fc-case--bear">
+      <p class="fc-case__kicker">Bear case</p>
+      <h4 class="fc-case__name">Truncated, impaired</h4>
+      <p class="fc-case__story">
+        Revenue builds through Year&nbsp;2, then a Year-3 kill-shot (state-AG
+        action, integrity exposure, an App-Store reinterpretation, or the India
+        supply shock) truncates the path instead of trimming it.
+      </p>
+      <div class="chart-wrap">
+        <table class="data">
+          <caption>Bear &mdash; 5-year build (scenario, tier D)</caption>
+          <thead>
+            <tr><th scope="col">Metric</th><th scope="col" class="num">Y1</th><th scope="col" class="num">Y2</th><th scope="col" class="num">Y3</th><th scope="col" class="num">Y4</th><th scope="col" class="num">Y5</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">States live</th><td data-label="Y1">5</td><td data-label="Y2">9</td><td data-label="Y3">7</td><td data-label="Y4">6</td><td data-label="Y5">6</td></tr>
+            <tr><th scope="row">Paying users (K)</th><td data-label="Y1">11</td><td data-label="Y2">34</td><td data-label="Y3">24</td><td data-label="Y4">22</td><td data-label="Y5">20</td></tr>
+            <tr><th scope="row">ARPPU ($/mo)</th><td data-label="Y1">58</td><td data-label="Y2">60</td><td data-label="Y3">56</td><td data-label="Y4">54</td><td data-label="Y5">53</td></tr>
+            <tr><th scope="row">Take rate</th><td data-label="Y1">14%</td><td data-label="Y2">14%</td><td data-label="Y3">13%</td><td data-label="Y4">12%</td><td data-label="Y5">12%</td></tr>
+            <tr><th scope="row">GMV ($M)</th><td data-label="Y1">55</td><td data-label="Y2">175</td><td data-label="Y3">124</td><td data-label="Y4">119</td><td data-label="Y5">106</td></tr>
+            <tr class="fc-row-rev"><th scope="row">Net revenue ($M)</th><td data-label="Y1">7.7</td><td data-label="Y2">25</td><td data-label="Y3">16</td><td data-label="Y4">14</td><td data-label="Y5">13</td></tr>
+            <tr><th scope="row">S&amp;M (% rev)</th><td data-label="Y1">110%</td><td data-label="Y2">98%</td><td data-label="Y3">135%</td><td data-label="Y4">145%</td><td data-label="Y5">140%</td></tr>
+            <tr><th scope="row">EBITDA-ish ($M)</th><td data-label="Y1">&minus;4</td><td data-label="Y2">&minus;9</td><td data-label="Y3">&minus;12</td><td data-label="Y4">&minus;12</td><td data-label="Y5">&minus;10</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fc-exit">
+        <b>Exit (Y5):</b> a truncated ~$13M line &times; sub-0.5&times;
+        (&times;0.4) = <span class="fc-ev">~$5M</span>. The distressed Skillz
+        <span class="stat" data-fact-id="wsg-firy-ev-revenue">0.68&times;</span>
+        is a ceiling for the downside, not a floor.
+        <span class="fc-impair-note">Category precedent for a legally-triggered
+        write-off: Flutter's
+        <span class="stat" data-fact-id="wsg-flutter-junglee-impairment">$556M</span>
+        Junglee impairment. Equity impaired toward zero.</span>
+      </p>
+    </article>
+  </div>
+
+  <!-- ========================= charts ========================= -->
+  <figure class="fc-fig">
+    <figcaption class="chart-cap">
+      <span class="chart-title">Net-revenue trajectory, Year 1&ndash;5</span>
+      Three scenario paths with emphasized terminal points and exit-EV callouts.
+      The bull compounds; the base muddles into a niche; the bear peaks in
+      Year&nbsp;2 then a shock truncates it.
+      <span class="chart-src">Scenario projection (tier D) &middot; anchored to cited comps &middot; net revenue = paying users &times; ARPPU &times; 12</span>
+    </figcaption>
+    <div id="fc-revenue" class="fc-mount" role="group" aria-label="Five-year net-revenue trajectory for bull, base and bear scenario cases"></div>
+  </figure>
+
+  <figure class="fc-fig">
+    <figcaption class="chart-cap">
+      <span class="chart-title">KPI build &mdash; select a case</span>
+      Paying users, ARPPU, GMV and take rate across the five years. Defaults to
+      the base case; toggle to compare. The base story is that ARPPU stays inside
+      the Skillz
+      <span class="stat" data-fact-id="wsf-skillz-fy2024-results">$59&ndash;70</span>
+      band while user count carries the growth.
+      <span class="chart-src">Scenario projection (tier D)</span>
+    </figcaption>
+    <div id="fc-kpi" class="fc-mount" role="group" aria-label="KPI build small-multiples for the selected scenario case: paying users, ARPPU, GMV and take rate over five years"></div>
+  </figure>
+
+  <figure class="fc-fig">
+    <figcaption class="chart-cap">
+      <span class="chart-title">Valuation bridge &mdash; terminal revenue &times; multiple = EV</span>
+      Bull at the defensible
+      <span class="stat" data-fact-id="wsg-what-multiples-imply">1.5&times;</span>
+      (with the DraftKings-parity
+      <span class="stat" data-fact-id="wsg-dkng-ev-revenue">2.23&times;</span>
+      stretch broken out), base at
+      <span class="stat" data-fact-id="wsg-firy-ev-revenue">0.68</span>&ndash;1.0&times;,
+      and the impaired bear.
+      <span class="chart-src">Scenario projection (tier D) &middot; multiples per cited comps</span>
+    </figcaption>
+    <div id="fc-valuation" class="fc-mount" role="group" aria-label="Valuation bridge: terminal net revenue times an EV-to-revenue multiple equals enterprise value, for each scenario case"></div>
+  </figure>
+
+  <!-- ===================== how the model is built ===================== -->
+  <details class="fc-how">
+    <summary>How the model is built</summary>
+    <p>
+      Each case extends the three-case framing above into a Year&nbsp;1&ndash;5
+      build. ARPPU is a <b>monthly</b> figure on the Skillz basis, so annual net
+      revenue = <code>paying users (K) &times; ARPPU &times; 12</code>. GMV =
+      <code>net revenue &divide; take rate</code>. EBITDA-ish =
+      <code>net revenue &times; (1 &minus; S&amp;M% &minus; 40%)</code>, where the
+      40% is a single simplifying charge for all other opex (payments, platform
+      fees, G&amp;A, tech); the India counterparty labour line is immaterial to
+      unit economics
+      (<span data-fact-id="wsf-toast-per-hand-model">per-hand model</span>).
+    </p>
+    <p>
+      Ramp curves (state rollout, user growth) are the scenario assumption. The
+      bull compounds into the casino&nbsp;&times;&nbsp;real-time quadrant with
+      ARPPU breaking above the band, echoing DraftKings iGaming's
+      <span class="stat" data-fact-id="wsf-dkng-igaming-revenue-density">2.3&times;</span>
+      revenue density over sportsbook; the base is a niche operator with ARPPU
+      stuck in the
+      <span class="stat" data-fact-id="wsf-skillz-implied-take-rate-trend">14.5&ndash;19.3%</span>-rake,
+      $59&ndash;70-ARPPU Skillz reality; the bear takes a Year-3 enforcement,
+      platform or India shock. Terminal net revenue reconciles to the three-case
+      figures above: bull ~$397M, base ~$148M, bear impaired. Every number here
+      is a <b>scenario projection, not a forecast of fact</b>.
+    </p>
+  </details>
+</div>
+
 <div class="subsection">
   <h3 class="subsection__title">Key risks, ranked</h3>
   <div class="chart-wrap">
@@ -3545,24 +3850,24 @@
       </thead>
       <tbody>
         <tr>
-          <td class="rank">1</td>
-          <th scope="row">Regulatory (state gambling doctrine) — highest</th>
-          <td>The addressable market is <span class="stat" data-fact-id="wsd-addressable-states-estimate">32–37</span>
+          <td class="rank" data-label="#">1</td>
+          <th scope="row">Regulatory (state gambling doctrine): highest</th>
+          <td data-label="Why it matters">The addressable market is <span class="stat" data-fact-id="wsd-addressable-states-estimate">32–37</span>
             states, not the ~43 the pitch implies. Blackjack is a card game singled
-            out by statute (Indiana per se — <span data-fact-id="wsd-in-card-games-chance-statute">chance statute</span>;
-            Maine skill-elimination — <span data-fact-id="wsd-me-contest-of-chance-definition">contest-of-chance definition</span>;
+            out by statute (Indiana per se: <span data-fact-id="wsd-in-card-games-chance-statute">chance statute</span>;
+            Maine skill-elimination: <span data-fact-id="wsd-me-contest-of-chance-definition">contest-of-chance definition</span>;
             California names <span class="stat" data-fact-id="wsd-ca-penal-330-twenty-one">"twenty-one"</span>;
-            South Carolina cards/dice — <span data-fact-id="wsd-sc-cards-dice-statute">per-se statute</span>) and
+            South Carolina cards/dice: <span data-fact-id="wsd-sc-cards-dice-statute">per-se statute</span>) and
             there is <strong>no authority anywhere holding blackjack
             skill-predominant</strong> (<span data-fact-id="wsd-blackjack-any-chance-analysis">any-chance analysis</span>).
             The 2025 sweepstakes crackdown, not the 2016 DFS legalization, is the
             base-case clock (<span data-fact-id="wse-sweepstakes-multistate-2025">multistate 2025</span>).</td>
         </tr>
         <tr>
-          <td class="rank">2</td>
+          <td class="rank" data-label="#">2</td>
           <th scope="row">Integrity / perception ("paid opponent" vs. "bot opponent")</th>
-          <td>Toast's counterparties are real paid humans, which defeats the
-            literal Papaya/AviaGames "you used bots and lied" theory — but the
+          <td data-label="Why it matters">Toast's counterparties are real paid humans, which defeats the
+            literal Papaya/AviaGames "you used bots and lied" theory; the
             economic-substance question ("is the opponent independent, or
             house-supplied liquidity?") is exactly what a prosecutor asks
             (<span data-fact-id="wse-analysis-house-liquidity-theory">house-liquidity theory</span>,
@@ -3570,36 +3875,36 @@
             discipline around one sentence is the whole margin.</td>
         </tr>
         <tr>
-          <td class="rank">3</td>
+          <td class="rank" data-label="#">3</td>
           <th scope="row">Platform / channel</th>
-          <td>iOS-only, no web-distribution fallback; an App Store/Play policy
+          <td data-label="Why it matters">iOS-only, no web-distribution fallback; an App Store/Play policy
             <em>interpretation</em> change (not a text change) is close to an
             extinction event with no appeal
             (<span data-fact-id="wsf-apple-guideline-534-real-money-gaming">Apple 5.3.4</span>,
             <span data-fact-id="wsa-carnival-no-apple-iap">no IAP fallback</span>).</td>
         </tr>
         <tr>
-          <td class="rank">4</td>
+          <td class="rank" data-label="#">4</td>
           <th scope="row">Payments / AML</th>
-          <td>The US-in/India-out flow makes Toast a likely money-services
-            business with BSA/KYC/OFAC duties, plus India's FEMA regime — the
+          <td data-label="Why it matters">The US-in/India-out flow makes Toast a likely money-services
+            business with BSA/KYC/OFAC duties, plus India's FEMA regime: the
             one prosecutor argument (Black Friday template) with no clean
             structural fix, only a build-and-spend one
             (<span data-fact-id="wse-gaming-msb-aml">MSB exposure</span>,
             <span data-fact-id="wse-black-friday-charges">Black Friday precedent</span>).</td>
         </tr>
         <tr>
-          <td class="rank">5</td>
+          <td class="rank" data-label="#">5</td>
           <th scope="row">Liquidity cold-start</th>
-          <td>The paid pool exists <em>because</em> real-time casino P2P has no
+          <td data-label="Why it matters">The paid pool exists <em>because</em> real-time casino P2P has no
             organic liquidity early; if that pool is legally cut before
             US-vs-US density arrives, the core product breaks
             (<span data-fact-id="ws0-matching-engine-differentiator">matching-engine differentiator</span>).</td>
         </tr>
         <tr>
-          <td class="rank">6</td>
+          <td class="rank" data-label="#">6</td>
           <th scope="row">Key-man / India ops</th>
-          <td>Thesis leans on two ex-MPL founders
+          <td data-label="Why it matters">Thesis leans on two ex-MPL founders
             (<span data-fact-id="wsa-founders-mpl-background">MPL background</span>) and an India
             subsidiary sitting on collapsing legal ground
             (<span data-fact-id="wse-india-2025-skill-erased">skill/chance line erased</span>).</td>
@@ -3609,7 +3914,7 @@
   </div>
   <p style="margin-top:1rem">
     <strong>Cross-cutting (the unverifiable core):</strong> the paid-India-counterparty
-    model — the pitch's central and most sensitive claim — has
+    model (the pitch's central and most sensitive claim) has
     <span data-fact-id="wsa-no-evidence-paid-india-player-pool">no public corroboration, positive or
     negative</span>, despite a thorough negative search. The claim stays tier C
     ("per company/call"); the question bank below attacks it directly.
@@ -3617,11 +3922,11 @@
 </div>
 
 <div class="subsection">
-  <h3 class="subsection__title">Things we hadn't thought about</h3>
+  <h3 class="subsection__title">Additional considerations</h3>
   <ul class="blindspots">
     <li>
       <strong>India's own ban reaches the labor pool.</strong> The counterparty
-      supply is not a stable input —
+      supply is not a stable input:
       <span data-fact-id="wse-india-2025-skill-erased">India's 2025 Act erased the skill/chance distinction</span>
       and criminalizes <span data-fact-id="wse-india-2025-bank-ad-ban">enabling online money games or their
       financial transactions</span>
@@ -3633,9 +3938,9 @@
     <li>
       <strong>Card-network rules quietly favor the model.</strong> Skill-cash
       apps process under <span data-fact-id="wsf-mcc-5816-skill-games-virp-tier2">MCC 5816 ("games of
-      skill"), VIRP Tier 2</span> — materially less restrictive than gambling's
+      skill"), VIRP Tier 2</span>, materially less restrictive than gambling's
       <span data-fact-id="wsf-mcc-7995-gambling-highrisk">MCC 7995</span>. And Apple takes
-      <span data-fact-id="wsa-carnival-no-apple-iap">no IAP cut</span> on cash deposits — a margin
+      <span data-fact-id="wsa-carnival-no-apple-iap">no IAP cut</span> on cash deposits, a margin
       advantage, but also exactly why delisting, not fee extraction, is the
       lever Apple holds.
     </li>
@@ -3644,9 +3949,9 @@
       operators geo-block in their own terms is the industry's priced-in legal
       judgment. Carnival's list is short
       (<span class="stat" data-fact-id="wsd-carnival-consumer-tos-excluded-states">AZ, SC, MI, IA, LA</span>)
-      and under-excludes vs. peer consensus — it serves AR, TN, CT, DE, SD. The
+      and under-excludes vs. peer consensus: it serves AR, TN, CT, DE, SD. The
       diligence question is no longer "is there a list" but "why is Toast's
-      priced-in risk appetite larger than every peer except Papaya — the one
+      priced-in risk appetite larger than every peer except Papaya, the one
       that got the C&amp;D?"
     </li>
     <li>
@@ -3675,14 +3980,14 @@
       acquisition of a pure P2P skill-gaming company exists; the only
       precedents are a PE roll-up (Game Taco/WorldWinner) and Skillz's own
       <span data-fact-id="wsg-firy-segment-financials">internal pivot away from the category</span>
-      (into ad-tech) — a category whose leader diversified out rather than
+      (into ad-tech), a category whose leader diversified out rather than
       winning it.
     </li>
     <li>
       <strong>Name-collision is a live operational risk.</strong> A
       financial-news outlet already
       <span data-fact-id="wsa-media-name-collision-tost">misattributed Toast Studios' Sparket deal to
-      ticker TOST</span> (restaurant POS) — real, published disambiguation
+      ticker TOST</span> (restaurant POS), a real, published disambiguation
       risk.
     </li>
   </ul>
@@ -3710,17 +4015,17 @@
     <details open>
       <summary>Cohort economics <span class="count">4 questions</span></summary>
       <ol>
-        <li>DAU, PMAU, and ARPPU by monthly cohort for the last 12 months — is ARPPU above the flat <span class="stat" data-fact-id="wsf-skillz-fy2023-results">$59</span>&ndash;<span class="stat" data-fact-id="wsf-skillz-fy2024-results">70</span> band Skillz never escaped?</li>
-        <li>Blended and paid CAC by channel, and LTV:CAC / payback period by cohort. DraftKings needed a cross-sell base to get payback to <span class="stat" data-fact-id="wsf-dkng-cac-payback-investor-day">~2.3 years</span> — Toast has no such base.</li>
+        <li>DAU, PMAU, and ARPPU by monthly cohort for the last 12 months: is ARPPU above the flat <span class="stat" data-fact-id="wsf-skillz-fy2023-results">$59</span>&ndash;<span class="stat" data-fact-id="wsf-skillz-fy2024-results">70</span> band Skillz never escaped?</li>
+        <li>Blended and paid CAC by channel, and LTV:CAC / payback period by cohort. DraftKings needed a cross-sell base to get payback to <span class="stat" data-fact-id="wsf-dkng-cac-payback-investor-day">~2.3 years</span>; Toast has no such base.</li>
         <li>D1/D7/D30 retention by cohort, and how it moves with stake size.</li>
         <li>What is S&amp;M as a % of revenue, and is GMV growth organic or promo-funded? Skillz ran <span class="stat" data-fact-id="wsf-skillz-sm-pct-revenue-trend">68–121%</span> for six years.</li>
       </ol>
     </details>
 
     <details open>
-      <summary>Matching-engine reality — THE question <span class="count">4 questions</span></summary>
+      <summary>Matching-engine reality: the central question <span class="count">4 questions</span></summary>
       <ol>
-        <li>What percent of matches — by count and by wagered volume — are settled against the paid offshore pool vs. two independent US players? Show the trend as US liquidity has grown.</li>
+        <li>What percent of matches, by count and by wagered volume, are settled against the paid offshore pool vs. two independent US players? Show the trend as US liquidity has grown.</li>
         <li>At what hours/latency thresholds does the engine fall back to the paid pool, and what is the paid-pool utilization curve by hour?</li>
         <li>Exactly what is a US player told about their opponent, verbatim, at match time and in the Terms? Does any copy imply an independent, unpaid opponent (<span data-fact-id="wse-skillz-papaya-verdict">Papaya verdict</span>, <span data-fact-id="wsa-matched-real-human-claim">Carnival's own "real human opponent" claim</span>)?</li>
         <li>Are paid counterparties ever net winners against US players, and how is their play constrained? AviaGames' "<span data-fact-id="wse-aviagames-shark-robot">shark robot</span>" is the anti-pattern.</li>
@@ -3730,8 +4035,8 @@
     <details open>
       <summary>India entity, compensation &amp; compliance structure <span class="count">4 questions</span></summary>
       <ol>
-        <li>How is <span data-fact-id="wsa-india-legal-entity">Toast Studios Private Limited</span> related to the counterparty pool — are players its employees, its contractors, or a third party's?</li>
-        <li>How are counterparties paid — flat wage/allowance, per-hand, or tied to outcomes? Reconcile the "<span data-fact-id="ws0-india-pay-rate-dollar-per-hour">$1/hour</span>" vs "<span data-fact-id="ws0-toast-offshore-india-blackjack-team">few-dollars allowance</span>" descriptions.</li>
+        <li>How is <span data-fact-id="wsa-india-legal-entity">Toast Studios Private Limited</span> related to the counterparty pool: are players its employees, its contractors, or a third party's?</li>
+        <li>How are counterparties paid: flat wage/allowance, per-hand, or tied to outcomes? Reconcile the "<span data-fact-id="ws0-india-pay-rate-dollar-per-hour">$1/hour</span>" vs "<span data-fact-id="ws0-toast-offshore-india-blackjack-team">few-dollars allowance</span>" descriptions.</li>
         <li>Post the 2025 Online Gaming Act, what legal opinion supports continuing to run an India-based pool that participates in a foreign real-money app, given the Act criminalizes <span data-fact-id="wse-india-2025-bank-ad-ban">"enabling … financial transactions"</span>?</li>
         <li>How do cross-border payments to the pool comply with FEMA, and how are workers classified for Indian labor law?</li>
       </ol>
@@ -3742,7 +4047,7 @@
       <ol>
         <li>Which law firm(s) issued written skill-vs-chance opinions, for which states, and do any opinions specifically address <em>blackjack</em> (not skill games generically)? (<span data-fact-id="wsd-blackjack-any-chance-analysis">any-chance analysis</span>.)</li>
         <li>Is there a written opinion on California's <span class="stat" data-fact-id="wsd-ca-penal-330-twenty-one">"twenty-one"</span> statute and on the per-se-card states (Indiana, Maine)? (<span data-fact-id="wsd-in-card-games-chance-statute">Indiana chance statute</span>.)</li>
-        <li>Why does Carnival exclude only <span class="stat" data-fact-id="wsd-carnival-consumer-tos-excluded-states">5 states</span> (AZ, SC, MI, IA, LA) when peers also exclude AR, CT, DE, SD, TN — what opinion supports serving those?</li>
+        <li>Why does Carnival exclude only <span class="stat" data-fact-id="wsd-carnival-consumer-tos-excluded-states">5 states</span> (AZ, SC, MI, IA, LA) when peers also exclude AR, CT, DE, SD, TN? What opinion supports serving those?</li>
       </ol>
     </details>
 
@@ -3765,7 +4070,7 @@
     <details open>
       <summary>Roadmap games <span class="count">1 question</span></summary>
       <ol>
-        <li>Which games ship next and in what order — the pitch frames craps-style games as the follow-on (<span data-fact-id="ws0-matching-engine-differentiator">matching-engine differentiator</span>) — and is there a per-game written legal analysis before each launch? Dice games implicate South Carolina's cards-or-dice statute (<span data-fact-id="wsd-sc-cards-dice-statute">SC statute</span>) and sit even worse under any-chance doctrine (<span data-fact-id="wsd-blackjack-any-chance-analysis">any-chance analysis</span>) than blackjack.</li>
+        <li>Which games ship next and in what order (the pitch frames craps-style games as the follow-on, <span data-fact-id="ws0-matching-engine-differentiator">matching-engine differentiator</span>), and is there a per-game written legal analysis before each launch? Dice games implicate South Carolina's cards-or-dice statute (<span data-fact-id="wsd-sc-cards-dice-statute">SC statute</span>) and sit even worse under any-chance doctrine (<span data-fact-id="wsd-blackjack-any-chance-analysis">any-chance analysis</span>) than blackjack.</li>
       </ol>
     </details>
 
@@ -3780,38 +4085,44 @@
 </div>
 </section>
 
-    <!-- 12. SOURCES — methodology & citation legend ----------------------- -->
-    <section id="sources" aria-labelledby="sources-title">
+    <!-- 12. SOURCES  -  methodology & citation legend ----------------------- -->
+    <section id="sources" aria-labelledby="sources-title" data-pdf-min="small">
 <div class="section__head">
   <span class="section__index">11 / Sources &amp; method</span>
-  <h2 id="sources-title">Where every number comes from</h2>
+  <h2 id="sources-title">Sources and methodology</h2>
   <p class="standfirst">
-    Every number on this site carries a superscript source link — hover or
+    Every number on this site carries a superscript source link; hover or
     focus it for the exact claim, quote, and tier. This section explains the
     tier system, how the ledger behind it was built and adversarially checked,
     and lists every source in one place.
   </p>
 </div>
 
+<div class="pdf-controls" role="group" aria-label="Download this report as PDF">
+  <button type="button" class="pdf-btn" data-pdf="full">Full report (PDF)</button>
+  <button type="button" class="pdf-btn" data-pdf="medium">Summary (PDF)</button>
+  <button type="button" class="pdf-btn" data-pdf="small">Brief (PDF)</button>
+</div>
+
 <div class="subsection">
   <h3 class="subsection__title">Methodology</h3>
   <p>
     Every citation on this site resolves to one entry in a single fact ledger
-    (<code>data/facts.json</code>), and every entry carries a confidence tier —
-    <strong>A</strong> through <strong>D</strong> — that says how much weight
+    (<code>data/facts.json</code>), and every entry carries a confidence tier
+    (<strong>A</strong> through <strong>D</strong>) that says how much weight
     the number can bear.
   </p>
   <ul class="methodology-list">
-    <li><span class="tier-badge tier-A">Tier A</span> — Primary, verifiable evidence: SEC filings, first-party disclosures, statute text, or an on-record statement we fetched and read ourselves.</li>
-    <li><span class="tier-badge tier-B">Tier B</span> — Credible secondary reporting: reputable press, analyst coverage, or law-firm/industry commentary that we fetched and read ourselves.</li>
-    <li><span class="tier-badge tier-C is-percompany">Tier C</span> — A claim made by the company or on the founder call, not independently verified — rendered with a visible "per company" qualifier wherever it's cited.</li>
-    <li><span class="tier-badge tier-D">Tier D</span> — Our own estimate, arithmetic, or interpretation, built from tier A/B/C inputs but not itself a disclosed figure — rendered with a visible "our estimate" framing.</li>
+    <li><span class="tier-badge tier-A">Tier A</span>: Primary, verifiable evidence, including SEC filings, first-party disclosures, statute text, or an on-record statement we fetched and read ourselves.</li>
+    <li><span class="tier-badge tier-B">Tier B</span>: Credible secondary reporting, including reputable press, analyst coverage, or law-firm/industry commentary that we fetched and read ourselves.</li>
+    <li><span class="tier-badge tier-C is-percompany">Tier C</span>: A claim made by the company or on the founder call, not independently verified. It is rendered with a visible "per company" qualifier wherever it's cited.</li>
+    <li><span class="tier-badge tier-D">Tier D</span>: Our own estimate, arithmetic, or interpretation, built from tier A/B/C inputs but not itself a disclosed figure. It is rendered with a visible "our estimate" framing.</li>
   </ul>
   <p>
-    The ledger was built by seven independent research workstreams — company
+    The ledger was built by seven independent research workstreams: company
     &amp; funding, market sizing, competitors, state-by-state legality,
     enforcement precedent, unit economics &amp; platform policy, and
-    investment comparables — plus one workstream capturing claims made on the
+    investment comparables. One additional workstream captured claims made on the
     original scoping call. Every one of the resulting
     <strong>347 facts</strong> was then adversarially re-verified: re-fetched
     against its live source, quotes checked verbatim against the fetched page,
@@ -3823,16 +4134,16 @@
   </p>
 
   <div class="grid tier-legend-grid">
-    <div class="card card--flush"><span class="tier-badge tier-A">Tier A</span> <p style="margin:.6rem 0 0">Primary, verifiable — filings, first-party data, on-record statements.</p></div>
-    <div class="card card--flush"><span class="tier-badge tier-B">Tier B</span> <p style="margin:.6rem 0 0">Credible secondary — reputable press, analyst coverage.</p></div>
-    <div class="card card--flush"><span class="tier-badge tier-C is-percompany">Tier C</span> <p style="margin:.6rem 0 0">Estimated — modeled figures, ranges, industry proxies.</p></div>
-    <div class="card card--flush"><span class="tier-badge tier-D">Tier D</span> <p style="margin:.6rem 0 0">Weak — single-source, rumor, or unverified claim.</p></div>
+    <div class="card card--flush"><span class="tier-badge tier-A">Tier A</span> <p style="margin:.6rem 0 0">Primary, verifiable: filings, first-party data, on-record statements.</p></div>
+    <div class="card card--flush"><span class="tier-badge tier-B">Tier B</span> <p style="margin:.6rem 0 0">Credible secondary: reputable press, analyst coverage.</p></div>
+    <div class="card card--flush"><span class="tier-badge tier-C is-percompany">Tier C</span> <p style="margin:.6rem 0 0">Estimated: modeled figures, ranges, industry proxies.</p></div>
+    <div class="card card--flush"><span class="tier-badge tier-D">Tier D</span> <p style="margin:.6rem 0 0">Weak: single-source, rumor, or unverified claim.</p></div>
   </div>
 </div>
 
 <div class="subsection">
   <div class="fact-ledger-cta">
-    <span>Want the raw ledger — every claim, quote, tier, and source URL behind this brief?</span>
+    <span>Want the raw ledger: every claim, quote, tier, and source URL behind this brief?</span>
     <a href="data/facts.json" download>Download the fact ledger (JSON, 347 facts)</a>
   </div>
 </div>
@@ -3850,7 +4161,7 @@
   This is internal research prepared for investment-committee use. It is not
   legal advice, not investment advice, and has not been reviewed by or
   verified with Toast. Tier-C figures are unverified company or call claims;
-  tier-D figures are our own estimates and arithmetic — both are labeled
+  tier-D figures are our own estimates and arithmetic; both are labeled
   wherever they appear rather than presented as fact.
 </p>
 </section>
@@ -3871,5 +4182,8 @@
   <script type="module" src="js/diagram.js"></script>
   <script type="module" src="js/map.js"></script>
   <script type="module" src="js/charts.js"></script>
+  <script type="module" src="js/forecast-charts.js"></script>
+  <script type="module" src="js/motion.js"></script>
+  <script type="module" src="js/print.js"></script>
 </body>
 </html>

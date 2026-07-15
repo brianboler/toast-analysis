@@ -1,0 +1,21 @@
+[
+  { "slug": "toast",       "name": "Toast (Carnival)",       "brandColor": "#35c07d", "kind": "monogram" },
+  { "slug": "skillz",      "name": "Skillz / Firy",          "brandColor": "#6c5ce7", "kind": "monogram" },
+  { "slug": "papaya",      "name": "Papaya Gaming",          "brandColor": "#f4a53d", "kind": "monogram" },
+  { "slug": "aviagames",   "name": "AviaGames",              "brandColor": "#e0544e", "kind": "monogram" },
+  { "slug": "triumph",     "name": "Triumph Labs",           "brandColor": "#2d7ff9", "kind": "monogram" },
+  { "slug": "worldwinner", "name": "WorldWinner",            "brandColor": "#c0392b", "kind": "monogram" },
+  { "slug": "voodoo",      "name": "Voodoo / Blitz",         "brandColor": "#111111", "kind": "monogram" },
+  { "slug": "mpl",         "name": "Mobile Premier League",  "brandColor": "#ff5a00", "kind": "mark" },
+  { "slug": "winzo",       "name": "WinZO",                  "brandColor": "#ffb400", "kind": "monogram" },
+  { "slug": "zupee",       "name": "Zupee",                  "brandColor": "#7b2ff7", "kind": "monogram" },
+  { "slug": "dream11",     "name": "Dream11",                "brandColor": "#d13239", "kind": "mark" },
+  { "slug": "draftkings",  "name": "DraftKings",             "brandColor": "#53d337", "kind": "monogram" },
+  { "slug": "fanduel",     "name": "FanDuel",                "brandColor": "#1493ff", "kind": "monogram" },
+  { "slug": "prizepicks",  "name": "PrizePicks",             "brandColor": "#8a2be2", "kind": "monogram" },
+  { "slug": "underdog",    "name": "Underdog",               "brandColor": "#111111", "kind": "monogram" },
+  { "slug": "vgw",         "name": "VGW",                    "brandColor": "#e63946", "kind": "mark" },
+  { "slug": "stakeus",     "name": "Stake.us",               "brandColor": "#1fc7d4", "kind": "monogram" },
+  { "slug": "sleeper",     "name": "Sleeper",                "brandColor": "#b4ff39", "kind": "monogram" },
+  { "slug": "games24x7",   "name": "Games24x7",              "brandColor": "#d6336c", "kind": "mark" }
+]

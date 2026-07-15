@@ -10,8 +10,10 @@
 //     in first-appearance order across the page;
 //   - attaches a hover/keyboard-focus source-card (claim, tier badge, quote,
 //     accessed/as-of dates, source + archive links);
-//   - tags tier-C/D facts with a class so their visual "per company" / "our
-//     estimate" qualifier renders automatically;
+//   - stamps the cite marker with data-tier so its colour encodes evidence
+//     tier (enhance.css), and keeps a subtle tier-C/D colour tint on the
+//     figure itself (the old inline " per company"/" our estimate" word
+//     suffixes were removed);
 //   - builds the auto-generated bibliography inside `#sources`;
 //   - exposes `window.FACTS` (id -> fact) for charts.js and later tasks.
 //
@@ -79,6 +81,9 @@ async function init() {
     a.href = `#src-${f.id}`;
     a.textContent = `[${n}]`;
     a.setAttribute("aria-label", `Source: ${f.sourceName}`);
+    // Tier is encoded on the marker itself by colour (enhance.css keys off
+    // .cite[data-tier]) plus the hover card's tier badge — NOT by inline words.
+    if (f.tier) a.dataset.tier = f.tier;
 
     const card = hoverCard(f);
     wrap.appendChild(a);
@@ -90,11 +95,12 @@ async function init() {
 
     el.appendChild(wrap);
 
+    // Keep the subtle tier-C/D colour tint on the figure itself (main.css),
+    // but NOT the old inline " per company" / " our estimate" text suffixes —
+    // those were removed per design direction (tier reads from cite colour +
+    // hover card). The is-percompany / is-ourestimate classes are no longer set.
     if (f.tier === "C" || f.tier === "D") {
       el.classList.add(`tier-${f.tier}`);
-      // Symmetric provenance qualifiers, per the methodology legend: tier-C
-      // renders " per company", tier-D renders " our estimate".
-      el.classList.add(f.tier === "C" ? "is-percompany" : "is-ourestimate");
     }
   });
 

@@ -1,0 +1,171 @@
+/* =============================================================================
+   Brand-logo tiles — self-contained, zero external requests.
+   Every mark is rendered purely from CSS keyed on [data-company], so the
+   markup an author emits is a single empty span:
+
+     <span class="logo logo--lg" data-company="skillz" role="img"
+           aria-label="Skillz logo"></span>
+
+   No inner HTML, no inline <svg>, no background-image url() to an asset —
+   the initials come from ::after { content } and the fill color from a
+   per-company custom property. This is deliberate: it is the most robust
+   way to guarantee correct, crisp rendering across every browser/theme
+   without shipping or tracing any third-party trademarked artwork.
+
+   Sizing is em-based off the *inherited* font-size, so a tile scales with
+   whatever text context it sits in (per the parent site's contract):
+     .logo      ~1.6em  (default / body text)
+     .logo--lg  ~2.4em  (cards)
+     .logo--sm  ~1.15em (inline / legend)
+
+   Do not add selectors here other than `.logo` and its descendants/modifiers.
+   ========================================================================== */
+
+.logo {
+  /* box */
+  --logo-size: 1.6em;
+  --logo-fill: 0.53;       /* initials font-size as a fraction of --logo-size */
+  --logo-bg: #3a3f47;      /* neutral fallback for an unrecognized slug */
+  --logo-ink: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--logo-size);
+  height: var(--logo-size);
+  min-width: var(--logo-size);
+  min-height: var(--logo-size);
+  flex: none;
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle;
+  line-height: 1;
+  border-radius: 24%;
+  background: var(--logo-bg);
+  color: var(--logo-ink);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+}
+
+.logo::after {
+  content: "";
+  display: block;
+  font-family: var(--font-text, "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif);
+  font-weight: 800;
+  font-size: calc(var(--logo-size) * var(--logo-fill));
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  user-select: none;
+}
+
+/* ---- size modifiers -------------------------------------------------------- */
+.logo--lg { --logo-size: 2.4em; }
+.logo--sm { --logo-size: 1.15em; }
+
+/* ---- fill-ratio adjustments by initials length ----------------------------- */
+/* single-character marks read small at default fill; give them more presence */
+.logo[data-company="toast"],
+.logo[data-company="papaya"],
+.logo[data-company="voodoo"],
+.logo[data-company="zupee"],
+.logo[data-company="stakeus"] {
+  --logo-fill: 0.62;
+}
+
+/* three-character marks need to shrink to keep clear side padding */
+.logo[data-company="mpl"],
+.logo[data-company="vgw"] {
+  --logo-fill: 0.42;
+}
+.logo[data-company="mpl"]::after,
+.logo[data-company="vgw"]::after {
+  letter-spacing: -0.05em;
+}
+
+/* ---- per-company fills + initials -----------------------------------------
+   kind: mark      -> initials are a literal element of the real brand name/
+                       wordmark (an acronym that IS the brand's own name, or a
+                       numeral that is part of it), not an abbreviation we invented.
+   kind: monogram  -> initials are a clean, invented abbreviation of the name.
+   Ink colors are chosen per background for AA contrast (>= 4.5:1, verified).
+   ------------------------------------------------------------------------- */
+
+/* toast — monogram */
+.logo[data-company="toast"] { --logo-bg: #35c07d; --logo-ink: #0a0a0a; }
+.logo[data-company="toast"]::after { content: "T"; }
+
+/* skillz — monogram */
+.logo[data-company="skillz"] { --logo-bg: #6c5ce7; --logo-ink: #ffffff; }
+.logo[data-company="skillz"]::after { content: "SK"; }
+
+/* papaya — monogram */
+.logo[data-company="papaya"] { --logo-bg: #f4a53d; --logo-ink: #0a0a0a; }
+.logo[data-company="papaya"]::after { content: "P"; }
+
+/* aviagames — monogram */
+.logo[data-company="aviagames"] { --logo-bg: #e0544e; --logo-ink: #0a0a0a; }
+.logo[data-company="aviagames"]::after { content: "AG"; }
+
+/* triumph — monogram */
+.logo[data-company="triumph"] { --logo-bg: #2d7ff9; --logo-ink: #0a0a0a; }
+.logo[data-company="triumph"]::after { content: "TR"; }
+
+/* worldwinner — monogram */
+.logo[data-company="worldwinner"] { --logo-bg: #c0392b; --logo-ink: #ffffff; }
+.logo[data-company="worldwinner"]::after { content: "WW"; }
+
+/* voodoo — monogram */
+.logo[data-company="voodoo"] { --logo-bg: #111111; --logo-ink: #ffffff; }
+.logo[data-company="voodoo"]::after { content: "V"; }
+
+/* mpl — mark (MPL is the brand's actual name, not an invented abbreviation) */
+.logo[data-company="mpl"] { --logo-bg: #ff5a00; --logo-ink: #0a0a0a; }
+.logo[data-company="mpl"]::after { content: "MPL"; }
+
+/* winzo — monogram */
+.logo[data-company="winzo"] { --logo-bg: #ffb400; --logo-ink: #0a0a0a; }
+.logo[data-company="winzo"]::after { content: "WZ"; }
+
+/* zupee — monogram */
+.logo[data-company="zupee"] { --logo-bg: #7b2ff7; --logo-ink: #ffffff; }
+.logo[data-company="zupee"]::after { content: "Z"; }
+
+/* dream11 — mark ("11" is the numeral baked into the brand's own name) */
+.logo[data-company="dream11"] { --logo-bg: #d13239; --logo-ink: #ffffff; }
+.logo[data-company="dream11"]::after { content: "11"; }
+
+/* draftkings — monogram */
+.logo[data-company="draftkings"] { --logo-bg: #53d337; --logo-ink: #0a0a0a; }
+.logo[data-company="draftkings"]::after { content: "DK"; }
+
+/* fanduel — monogram */
+.logo[data-company="fanduel"] { --logo-bg: #1493ff; --logo-ink: #0a0a0a; }
+.logo[data-company="fanduel"]::after { content: "FD"; }
+
+/* prizepicks — monogram */
+.logo[data-company="prizepicks"] { --logo-bg: #8a2be2; --logo-ink: #ffffff; }
+.logo[data-company="prizepicks"]::after { content: "PP"; }
+
+/* underdog — monogram */
+.logo[data-company="underdog"] { --logo-bg: #111111; --logo-ink: #ffffff; }
+.logo[data-company="underdog"]::after { content: "UD"; }
+
+/* vgw — mark (VGW is the brand's actual name, not an invented abbreviation) */
+.logo[data-company="vgw"] { --logo-bg: #e63946; --logo-ink: #0a0a0a; }
+.logo[data-company="vgw"]::after { content: "VGW"; }
+
+/* stakeus — monogram */
+.logo[data-company="stakeus"] { --logo-bg: #1fc7d4; --logo-ink: #0a0a0a; }
+.logo[data-company="stakeus"]::after { content: "S"; }
+
+/* sleeper — monogram */
+.logo[data-company="sleeper"] { --logo-bg: #b4ff39; --logo-ink: #0a0a0a; }
+.logo[data-company="sleeper"]::after { content: "SL"; }
+
+/* games24x7 — mark ("24" is drawn directly from the brand's own name) */
+.logo[data-company="games24x7"] { --logo-bg: #d6336c; --logo-ink: #ffffff; }
+.logo[data-company="games24x7"]::after { content: "24"; }

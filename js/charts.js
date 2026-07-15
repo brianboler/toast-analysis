@@ -101,7 +101,11 @@
     h += "</tr></thead><tbody>";
     rows.forEach(function (r) {
       h += "<tr>";
-      r.forEach(function (c, i) { h += "<td" + (i ? " class=\"num\"" : "") + ">" + esc(c) + "</td>"; });
+      // data-label mirrors the column header so the table reflows to labelled
+      // cards on narrow screens (enhance.css td[data-label]::before).
+      r.forEach(function (c, i) {
+        h += "<td" + (i ? " class=\"num\"" : "") + " data-label=\"" + esc(headers[i]) + "\">" + esc(c) + "</td>";
+      });
       h += "</tr>";
     });
     h += "</tbody></table></div>";
@@ -160,8 +164,8 @@
         s += '<rect class="c-dpill" x="' + bx + '" y="' + (y + 2) + '" width="16" height="13" rx="3"/>' +
           '<text class="c-dpill-t" x="' + (bx + 8) + '" y="' + (y + 12) + '" text-anchor="middle">D</text>';
       }
-      // bar
-      s += '<rect class="c-bar bar-' + r.tier + '" x="' + padL + '" y="' + (y + gap - 4) + '" width="' + w +
+      // bar (--i drives the staggered grow-in; see sections-market.css)
+      s += '<rect class="c-bar bar-' + r.tier + '" style="--i:' + i + '" x="' + padL + '" y="' + (y + gap - 4) + '" width="' + w +
         '" height="' + barH + '" rx="3" data-i="' + i + '"><title>' + esc(r.label) + " — " + usd(r.valueUSD) +
         " (tier " + r.tier + ")</title></rect>";
       // value label — always to the right of the bar, readable on the surface
@@ -215,7 +219,7 @@
         '</text>';
       s += '<rect class="c-dpill" x="' + (padL + textAdvance(d.name + " — " + d.sub) ) + '" y="' + (y + 1) + '" width="16" height="13" rx="3"/>' +
         '<text class="c-dpill-t" x="' + (padL + textAdvance(d.name + " — " + d.sub) + 8) + '" y="' + (y + 11) + '" text-anchor="middle">D</text>';
-      s += '<rect class="c-bar bar-D tsm-bar" x="' + padL + '" y="' + (y + 22) + '" width="' + Math.max(2, d.w) +
+      s += '<rect class="c-bar bar-D tsm-bar" style="--i:' + i + '" x="' + padL + '" y="' + (y + 22) + '" width="' + Math.max(2, d.w) +
         '" height="18" rx="3"><title>' + esc(d.r.label) + " — " + usd(d.r.valueUSD) + "</title></rect>";
       s += '<text class="c-val" x="' + (padL + Math.max(2, d.w) + 7) + '" y="' + (y + 35) + '">' +
         usd(d.r.valueUSD) + (d.ratio ? '  ·  ' + d.ratio : "") + "</text>";
@@ -228,7 +232,7 @@
       '<text class="c-dpill-t" x="' + (padL + textAdvance("SOM — realistic 3–5yr obtainable") + 8) + '" y="' + (y2 + 11) + '" text-anchor="middle">D</text>';
     // draw a minimum-visible marker for the sliver, plus a faint "= this thin" note
     var somW = Math.max(3, xhi - xlo);
-    s += '<rect class="c-bar bar-D tsm-som" x="' + padL + '" y="' + (y2 + 22) + '" width="' + somW +
+    s += '<rect class="c-bar bar-D tsm-som" style="--i:2" x="' + padL + '" y="' + (y2 + 22) + '" width="' + somW +
       '" height="18" rx="2"><title>' + esc(somLo.label) + " to " + esc(somHi.label) + " — " +
       usd(somLo.valueUSD) + "–" + usd(somHi.valueUSD) + "</title></rect>";
     s += '<line class="tsm-leader" x1="' + (padL + somW) + '" y1="' + (y2 + 31) + '" x2="' + (padL + 150) + '" y2="' + (y2 + 31) + '"/>';
@@ -294,7 +298,8 @@
     s += '<text class="c-axis-title" x="' + (padL + plotW / 2) + '" y="' + (H - 8) + '" text-anchor="middle">Stakes →</text>';
     s += '<text class="c-axis-title" x="' + 14 + '" y="' + (padT + plotH / 2) + '" text-anchor="middle" transform="rotate(-90 14 ' + (padT + plotH / 2) + ')">Matching model</text>';
 
-    // dots packed per cell
+    // dots packed per cell (qi = running index → staggered fade-in)
+    var qi = 0;
     rows.forEach(function (r, ri2) {
       cols.forEach(function (c, ci2) {
         var list = cells[c + "|" + r] || [];
@@ -312,17 +317,18 @@
           var toast = /^Toast/.test(co.name);
           var house = co.houseBanked === true;
           var payload = quadPayload(co);
+          var st = ' style="--i:' + (qi++) + '"';
           if (house) {
             var d = 9;
-            s += '<g class="q-mark q-house" data-p="' + esc(payload) + '" tabindex="0" role="img" aria-label="' + esc(quadAria(co)) + '">' +
+            s += '<g class="q-mark q-house"' + st + ' data-p="' + esc(payload) + '" tabindex="0" role="img" aria-label="' + esc(quadAria(co)) + '">' +
               '<path d="M' + gx + ' ' + (gy - d) + ' L' + (gx + d) + ' ' + gy + ' L' + gx + ' ' + (gy + d) + ' L' + (gx - d) + ' ' + gy + ' Z"/>' +
               '</g>';
           } else if (toast) {
-            s += '<g class="q-mark q-toast" data-p="' + esc(payload) + '" tabindex="0" role="img" aria-label="' + esc(quadAria(co)) + '">' +
+            s += '<g class="q-mark q-toast"' + st + ' data-p="' + esc(payload) + '" tabindex="0" role="img" aria-label="' + esc(quadAria(co)) + '">' +
               '<circle cx="' + gx + '" cy="' + gy + '" r="8.5"/>' +
               '<text class="q-toast-lbl" x="' + gx + '" y="' + (gy - 13) + '" text-anchor="middle">Toast</text></g>';
           } else {
-            s += '<g class="q-mark q-dot" data-p="' + esc(payload) + '" tabindex="0" role="img" aria-label="' + esc(quadAria(co)) + '">' +
+            s += '<g class="q-mark q-dot"' + st + ' data-p="' + esc(payload) + '" tabindex="0" role="img" aria-label="' + esc(quadAria(co)) + '">' +
               '<circle cx="' + gx + '" cy="' + gy + '" r="6.5"/></g>';
           }
         });
@@ -399,7 +405,7 @@
 
     placed.forEach(function (p, i) {
       var r = p.r, toast = /^Toast/.test(r.company), rad = R(r.amountUSD);
-      s += '<g class="f-mark ' + (toast ? "f-toast" : "f-field") + '" data-i="' + i + '" tabindex="0" role="img" aria-label="' +
+      s += '<g class="f-mark ' + (toast ? "f-toast" : "f-field") + '" style="--i:' + i + '" data-i="' + i + '" tabindex="0" role="img" aria-label="' +
         esc(r.company + " " + r.round + ", " + monthLabel(r.date) + ", " + usd(r.amountUSD)) + '">';
       s += '<circle cx="' + p.x + '" cy="' + p.y + '" r="' + rad.toFixed(1) + '"/></g>';
       var key = r.company + "|" + r.date;
@@ -429,7 +435,7 @@
   // ===========================================================================
   function renderSklz(mount, market) {
     var series = market.sklzSeries;
-    var W = 700, padL = 46, padR = 14, padT = 20, padB = 28;
+    var W = 700, padL = 46, padR = 32, padT = 22, padB = 28;
     var H = 340, plotW = W - padL - padR, plotH = H - padT - padB;
     var ymin = 1, ymax = 1000; // log domain (covers $2.50 trough … $874 ATH)
     function Y(v) {
@@ -458,31 +464,53 @@
     });
     s += '<text class="c-axis-title c-axis-title--y" x="12" y="' + (padT + plotH / 2) + '" text-anchor="middle" transform="rotate(-90 12 ' + (padT + plotH / 2) + ')">Monthly close · log scale (USD)</text>';
 
-    // the line
+    // ---- gradient area fill under the line (emitted before the line so the
+    // stroke rides on top). Fades in on scroll-reveal (sections-market.css).
     var dpath = series.map(function (d, i) { return (i ? "L" : "M") + X(i).toFixed(1) + " " + Y(d.close).toFixed(1); }).join(" ");
-    s += '<path class="c-line" d="' + dpath + '"/>';
+    var floorY = padT + plotH;
+    var areaPath = "M" + X(0).toFixed(1) + " " + floorY.toFixed(1) + " " +
+      series.map(function (d, i) { return "L" + X(i).toFixed(1) + " " + Y(d.close).toFixed(1); }).join(" ") +
+      " L" + X(series.length - 1).toFixed(1) + " " + floorY.toFixed(1) + " Z";
+    s += '<defs><linearGradient id="sklz-fill" x1="0" y1="0" x2="0" y2="1">' +
+      '<stop class="c-area-top" offset="0"/><stop class="c-area-bot" offset="1"/></linearGradient></defs>';
+    s += '<path class="c-area" d="' + areaPath + '"/>';
 
-    // annotations: [index, label, dyText, factNote]
+    // the line — pathLength=1 lets the draw-in animation run in normalized units
+    s += '<path class="c-line" pathLength="1" d="' + dpath + '"/>';
+
+    // ---- annotations. Decluttered: four spread markers each with a short
+    // connector to its label; the crowded 2026 cluster is NOT triple-labelled —
+    // the latest point gets its own emphasized marker below. The full 68-point
+    // series stays in the <details> data table.
     function idx(date) { for (var i = 0; i < series.length; i++) if (series[i].date === date) return i; return -1; }
     var anns = [
       { i: idx("2020-12"), t: "Listing ~$400", sub: "(IPO $17.89 pre-split)", place: "below" },
       { i: idx("2021-02"), t: "ATH $874", sub: "Feb 5, 2021", place: "above" },
       { i: idx("2023-06"), t: "1-for-20 reverse split", sub: "no false cliff (adjusted)", place: "below" },
       { i: idx("2026-03"), t: "Trough $2.50", sub: "−99.7% from ATH", place: "below" },
-      { i: idx("2026-04"), t: "Papaya verdict", sub: "+doubles", place: "above" },
-      { i: idx("2026-07"), t: "$8.54", sub: "Jul 2026", place: "above" }
     ];
     anns.forEach(function (a) {
       if (a.i < 0) return;
-      var x = X(a.i), y = Y(series[a.i].close);
-      s += '<circle class="c-ann-dot" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="3.5"/>';
-      var ty = a.place === "above" ? y - 12 : y + 16;
-      var anchor = "middle", tx = x;
-      if (x < padL + 60) { anchor = "start"; tx = x - 2; }
-      else if (x > padL + plotW - 60) { anchor = "end"; tx = x + 2; }
-      s += '<text class="c-ann" x="' + tx + '" y="' + ty + '" text-anchor="' + anchor + '">' + esc(a.t) + "</text>";
-      s += '<text class="c-ann c-ann-sub" x="' + tx + '" y="' + (ty + (a.place === "above" ? -11 : 12)) + '" text-anchor="' + anchor + '">' + esc(a.sub) + "</text>";
+      var x = X(a.i), y = Y(series[a.i].close), above = a.place === "above";
+      var anchor = "middle";
+      if (x < padL + 64) anchor = "start";
+      else if (x > padL + plotW - 64) anchor = "end";
+      var ty = above ? y - 14 : y + 18;
+      var sy = above ? ty - 11 : ty + 11;
+      // short connector from the data point to its label
+      s += '<line class="c-ann-leader" x1="' + x.toFixed(1) + '" y1="' + (above ? y - 5 : y + 5).toFixed(1) +
+        '" x2="' + x.toFixed(1) + '" y2="' + (above ? ty + 3 : ty - 9).toFixed(1) + '"/>';
+      s += '<circle class="c-ann-dot" cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="3.2"/>';
+      s += '<text class="c-ann" x="' + x + '" y="' + ty + '" text-anchor="' + anchor + '">' + esc(a.t) + "</text>";
+      s += '<text class="c-ann c-ann-sub" x="' + x + '" y="' + sy + '" text-anchor="' + anchor + '">' + esc(a.sub) + "</text>";
     });
+
+    // ---- emphasized latest point ($8.54, Jul 2026): halo + solid dot + label
+    var li = series.length - 1, lx = X(li), ly = Y(series[li].close);
+    s += '<circle class="c-last-halo" cx="' + lx.toFixed(1) + '" cy="' + ly.toFixed(1) + '" r="9"/>';
+    s += '<circle class="c-last" cx="' + lx.toFixed(1) + '" cy="' + ly.toFixed(1) + '" r="4.5"/>';
+    s += '<text class="c-ann c-ann-sub" x="' + (lx + 3) + '" y="' + (ly - 25) + '" text-anchor="end">' + monthLabel(series[li].date) + "</text>";
+    s += '<text class="c-ann c-ann-latest" x="' + (lx + 3) + '" y="' + (ly - 13) + '" text-anchor="end">$' + series[li].close.toFixed(2) + "</text>";
 
     // crosshair + tooltip overlay
     s += '<line class="c-cross" x1="0" y1="' + padT + '" x2="0" y2="' + (padT + plotH) + '" style="display:none"/>';
@@ -575,6 +603,28 @@
   }
 
   // ---- dispatch / boot ------------------------------------------------------
+  // ---- draw-on-scroll ------------------------------------------------------
+  // Chart draw/fade animations are gated on `[data-chart].is-revealed` (see
+  // sections-market.css). motion.js adds that class + fires a `reveal` event on
+  // every [data-chart] mount; this self-observer is a belt-and-braces fallback
+  // so charts still animate on scroll-in even if motion.js isn't present.
+  // forecast-charts.js can hook the SAME contract: gate its CSS on
+  // `[data-chart].is-revealed`, or `mount.addEventListener('reveal', draw)`.
+  var revealIO = null;
+  function armReveal(mount) {
+    if (mount.classList.contains("is-revealed")) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !("IntersectionObserver" in window)) { mount.classList.add("is-revealed"); return; }
+    if (!revealIO) {
+      revealIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("is-revealed"); revealIO.unobserve(e.target); }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -6% 0px" });
+    }
+    revealIO.observe(mount);
+  }
+
   function renderOne(mount) {
     if (mount.getAttribute("data-rendered")) return;
     var kind = mount.getAttribute("data-chart");
@@ -586,6 +636,7 @@
       else if (kind === "sklz") renderSklz(mount, DATA.market);
       else return;
       mount.setAttribute("data-rendered", "1");
+      armReveal(mount);
     } catch (err) {
       console.error("charts.js: failed to render " + kind, err);
     }

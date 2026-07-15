@@ -47,6 +47,15 @@
 
 .diagram__svg .table { fill: var(--bg-2); stroke: var(--border-strong); stroke-width: 1.5; }
 .diagram__svg .dealer-head, .diagram__svg .dealer-body { fill: var(--surface-2); stroke: var(--border-strong); }
+/* Contain the dealer "person" icon inside the felt. As authored the head
+   (cy=118, r=14) straddles the table's top rim (~y=112 at centre) and reads as
+   poking out above the shape. Drop the head + torso a few user-units so the
+   croupier sits fully on the felt, above the cards, at every step and width
+   (the SVG scales uniformly via preserveAspectRatio, so this holds at all
+   sizes). Pure translate — no scale — so transform-origin is irrelevant, and
+   it is reduced-motion-safe (no animation, just a static offset). */
+.diagram__svg .dealer-head { transform: translateY(13px); }
+.diagram__svg .dealer-body { transform: translateY(7px); }
 
 .diagram__svg .matched-pill rect { fill: var(--tier-c-bg); stroke: var(--tier-c); }
 .diagram__svg .pill-lbl { font-family: var(--font-mono); font-weight: 700; font-size: 11px; fill: var(--tier-c-fg); }
