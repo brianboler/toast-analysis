@@ -390,7 +390,13 @@
   function renderOne(id) {
     var mount = byId(id);
     if (!mount) return;
-    if (id !== "fc-kpi" && mount.getAttribute("data-rendered")) return; // kpi re-renders on toggle
+    // Render each mount at most once from the observer/boot path. #fc-kpi is
+    // re-rendered on case-toggle by its buttons' own click handlers calling
+    // renderKpi() directly (see below) — it must NOT be exempted from this
+    // guard, or the MutationObserver below (which fires on renderKpi's own
+    // innerHTML write) re-enters boot() → renderKpi → … an infinite loop that
+    // freezes the page.
+    if (mount.getAttribute("data-rendered")) return;
     try {
       if (id === "fc-revenue") renderRevenue(mount, DATA);
       else if (id === "fc-kpi") renderKpi(mount, DATA);
@@ -404,7 +410,7 @@
     if (!DATA) return;
     IDS.forEach(function (id) {
       var m = byId(id);
-      if (m && (id === "fc-kpi" || !m.getAttribute("data-rendered"))) renderOne(id);
+      if (m && !m.getAttribute("data-rendered")) renderOne(id);
     });
   }
   function present() { return IDS.some(function (id) { return byId(id); }); }
