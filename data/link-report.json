@@ -1,7 +1,7 @@
 {
-  "checked": 197,
+  "checked": 196,
   "failed": 0,
-  "viaArchive": 6,
+  "viaArchive": 5,
   "viaProxy": 3,
   "results": [
     {
@@ -78,37 +78,6 @@
       "facts": [
         "wsa-android-app-model-difference",
         "wsa-android-developer-mismatch"
-      ]
-    },
-    {
-      "url": "https://app.fireflies.ai/view/01KXEFTYCK6GEFX2XPP3YFREE5",
-      "status": 200,
-      "ok": true,
-      "error": null,
-      "facts": [
-        "ws0-app-carnival-company-toast-games",
-        "ws0-casino-style-different-consumer",
-        "ws0-competitors-papaya-triumph-skillz",
-        "ws0-future-us-vs-us-vision",
-        "ws0-game-of-skill-vs-dealer-mechanism",
-        "ws0-historical-p2p-low-ltv-casual-games",
-        "ws0-icasino-40-states-blackjack-entry",
-        "ws0-icasino-legal-under-10-states",
-        "ws0-india-pay-rate-dollar-per-hour",
-        "ws0-latency-problem-limits-casino-style",
-        "ws0-matching-engine-differentiator",
-        "ws0-no-competitor-offshore-model",
-        "ws0-no-visible-opponent-live-human",
-        "ws0-positioning-draftkings-mgm-100-hands",
-        "ws0-prediction-market-analogy",
-        "ws0-prosecutor-regulatory-risk",
-        "ws0-site-games-list-playtoast",
-        "ws0-skillz-developer-platform-playbook",
-        "ws0-stake-arbitrage-us-india-hands",
-        "ws0-toast-builds-own-games-not-toolkit",
-        "ws0-toast-offshore-india-blackjack-team",
-        "ws0-triumph-casual-low-stakes",
-        "wsf-toast-per-hand-model"
       ]
     },
     {
@@ -717,8 +686,31 @@
       "ok": true,
       "error": null,
       "facts": [
+        "ws0-app-carnival-company-toast-games",
+        "ws0-casino-style-different-consumer",
+        "ws0-competitors-papaya-triumph-skillz",
+        "ws0-future-us-vs-us-vision",
+        "ws0-game-of-skill-vs-dealer-mechanism",
+        "ws0-historical-p2p-low-ltv-casual-games",
+        "ws0-icasino-40-states-blackjack-entry",
+        "ws0-icasino-legal-under-10-states",
+        "ws0-india-pay-rate-dollar-per-hour",
+        "ws0-latency-problem-limits-casino-style",
+        "ws0-matching-engine-differentiator",
+        "ws0-no-competitor-offshore-model",
+        "ws0-no-visible-opponent-live-human",
+        "ws0-positioning-draftkings-mgm-100-hands",
+        "ws0-prediction-market-analogy",
+        "ws0-prosecutor-regulatory-risk",
+        "ws0-site-games-list-playtoast",
+        "ws0-skillz-developer-platform-playbook",
+        "ws0-stake-arbitrage-us-india-hands",
+        "ws0-toast-builds-own-games-not-toolkit",
+        "ws0-toast-offshore-india-blackjack-team",
+        "ws0-triumph-casual-low-stakes",
         "wsa-partner-prior-gamersaloon-ember",
-        "wsa-toast-platform-games-catalog"
+        "wsa-toast-platform-games-catalog",
+        "wsf-toast-per-hand-model"
       ]
     },
     {
@@ -1495,8 +1487,6 @@
       "status": 200,
       "ok": true,
       "error": null,
-      "via": "archive",
-      "archiveUrlUsed": "http://web.archive.org/web/20260121060916/https://www.nysenate.gov/legislation/laws/PEN/225.00",
       "facts": [
         "wsd-ny-penal-225-material-degree"
       ]
