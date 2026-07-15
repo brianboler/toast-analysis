@@ -178,3 +178,76 @@
 /* games24x7 — mark ("24" is drawn directly from the brand's own name) */
 .logo[data-company="games24x7"] { --logo-bg: #d6336c; --logo-ink: #ffffff; }
 .logo[data-company="games24x7"]::after { content: "24"; }
+
+/* =============================================================================
+   REAL BRAND LOGOS (override the drawn monograms above)
+   Each company's actual mark — its favicon/app-icon, fetched once and stored
+   under assets/logos/<slug>.png, no runtime third-party request — rendered on a
+   uniform white chip. One shared rule keeps every chip the same rounded square
+   with the same interior padding, so a grid of differently-shaped logos still
+   reads as one consistent set. These selectors sit AFTER the monogram blocks,
+   so on equal specificity they win. Exceptions that keep the drawn monogram:
+   toast (its own blue app-icon fill, above), dream11 and games24x7 (no reliable
+   logo asset — "11" / "24" carry the brand).
+   ========================================================================== */
+.logo[data-company="skillz"],
+.logo[data-company="papaya"],
+.logo[data-company="aviagames"],
+.logo[data-company="triumph"],
+.logo[data-company="worldwinner"],
+.logo[data-company="voodoo"],
+.logo[data-company="mpl"],
+.logo[data-company="winzo"],
+.logo[data-company="zupee"],
+.logo[data-company="draftkings"],
+.logo[data-company="fanduel"],
+.logo[data-company="prizepicks"],
+.logo[data-company="underdog"],
+.logo[data-company="vgw"],
+.logo[data-company="stakeus"],
+.logo[data-company="sleeper"] {
+  --logo-bg: #ffffff;
+  --logo-ink: #ffffff;               /* unused (monogram hidden) but kept sane */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-origin: content-box;    /* honour the padding below */
+  /* padding proportional to the tile itself. A percentage here would resolve
+     against the containing block's width (ballooning inline .logo--sm tiles),
+     so key it off --logo-size instead. */
+  padding: calc(var(--logo-size) * 0.12);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.22);
+}
+.logo[data-company="skillz"]::after,
+.logo[data-company="papaya"]::after,
+.logo[data-company="aviagames"]::after,
+.logo[data-company="triumph"]::after,
+.logo[data-company="worldwinner"]::after,
+.logo[data-company="voodoo"]::after,
+.logo[data-company="mpl"]::after,
+.logo[data-company="winzo"]::after,
+.logo[data-company="zupee"]::after,
+.logo[data-company="draftkings"]::after,
+.logo[data-company="fanduel"]::after,
+.logo[data-company="prizepicks"]::after,
+.logo[data-company="underdog"]::after,
+.logo[data-company="vgw"]::after,
+.logo[data-company="stakeus"]::after,
+.logo[data-company="sleeper"]::after { content: none; }
+
+.logo[data-company="skillz"]      { background-image: url("../assets/logos/skillz.png"); }
+.logo[data-company="papaya"]      { background-image: url("../assets/logos/papaya.png"); }
+.logo[data-company="aviagames"]   { background-image: url("../assets/logos/aviagames.png"); }
+.logo[data-company="triumph"]     { background-image: url("../assets/logos/triumph.png"); }
+.logo[data-company="worldwinner"] { background-image: url("../assets/logos/worldwinner.png"); }
+.logo[data-company="voodoo"]      { background-image: url("../assets/logos/voodoo.png"); }
+.logo[data-company="mpl"]         { background-image: url("../assets/logos/mpl.png"); }
+.logo[data-company="winzo"]       { background-image: url("../assets/logos/winzo.png"); }
+.logo[data-company="zupee"]       { background-image: url("../assets/logos/zupee.png"); }
+.logo[data-company="draftkings"]  { background-image: url("../assets/logos/draftkings.png"); }
+.logo[data-company="fanduel"]     { background-image: url("../assets/logos/fanduel.png"); }
+.logo[data-company="prizepicks"]  { background-image: url("../assets/logos/prizepicks.png"); }
+.logo[data-company="underdog"]    { background-image: url("../assets/logos/underdog.png"); }
+.logo[data-company="vgw"]         { background-image: url("../assets/logos/vgw.png"); }
+.logo[data-company="stakeus"]     { background-image: url("../assets/logos/stakeus.png"); }
+.logo[data-company="sleeper"]     { background-image: url("../assets/logos/sleeper.png"); }
