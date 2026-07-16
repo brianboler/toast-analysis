@@ -5687,5 +5687,29 @@
     "verifiedBy": "session-2026-07-15",
     "verifiedDate": "2026-07-15",
     "notes": "Subdomain discovered via passive DNS / certificate-transparency enumeration during a security-footprint review; the live page title confirms a 'Gin Rummy' product under playtoast.com. Stakes/model unverified. Signals Toast's broader ambition is Indian-style real-money card games, with Carnival/blackjack as the US entry."
+  },
+  {
+    "id": "ws0-referral-feed-fabricated",
+    "tier": "D",
+    "workstream": "ws0",
+    "claim": "Carnival's in-app referral screen shows a live-styled feed of users 'cashing out' from referrals, but the feed is fabricated: the same roster of names and amounts repeats on every visit (a canned loop, not live events), and the displayed earnings do not scale with referral count \u2014 one entry shows 71 referrals earning $69 while another shows 4 referrals earning $60, which is impossible under any real per-referral payout. Six of eight observed amounts are also not multiples of the app's stated '$15 per deposit' reward (all eight are multiples of $3).",
+    "methodology": "In-app observation of eight referral pop-ups plus the observation that the identical roster repeats on each visit. Two independent tests: (1) earnings are non-monotonic in referral count \u2014 e.g., 71 referrals ($69) < 4 referrals ($60) and 38 referrals ($102) > 71 referrals ($69) \u2014 which is impossible for any genuine per-referral program regardless of the rate; (2) six of eight amounts ($48/$54/$63/$66/$102/$69) are not multiples of the stated $15 reward. Sample is small and observed in-app, not independently web-verifiable; treated as preliminary and under active review.",
+    "sourceName": "Analyst / in-app observation \u2014 Carnival referral screen",
+    "sourceUrl": "https://apps.apple.com/us/app/carnival-21-hustle-blackjack/id6745267121",
+    "accessed": "2026-07-16",
+    "confidence": "medium",
+    "notes": "Arithmetic (non-monotonicity + $15-rule) is high-confidence given the observed numbers; overall medium because it rests on a small in-app sample. Preliminary; the repeating-roster observation is the clearest single tell of a canned feed."
+  },
+  {
+    "id": "ws0-carnival-active-player-counts-discrepancy",
+    "tier": "D",
+    "workstream": "ws0",
+    "claim": "Carnival displays a live green-dot 'active players' count of roughly 1,100-1,900 for each of its six games (about 9,000 concurrent) around the clock \u2014 implausibly high against the app's public footprint of 10,000+ Android installs (Google Play) and about 951 iOS App Store ratings, since real concurrency is normally a small fraction of a user base rather than most of it at once, 24/7. Whether the counter reflects real live users is unresolved and under review.",
+    "methodology": "Plausibility check of the in-app counter against public scale signals: Google Play install range for com.freewin.jack21 (10,000+) and the Apple iTunes lookup API (951 US ratings). ~9,000 concurrent would require an implausible share of the entire base online simultaneously; the tight, flat 1,100-1,900 band across six games is consistent with a templated counter. In-app observation; a time-of-day sampling test to confirm remains pending.",
+    "sourceName": "Analyst / in-app observation vs. store scale signals",
+    "sourceUrl": "https://play.google.com/store/apps/details?id=com.freewin.jack21",
+    "accessed": "2026-07-16",
+    "confidence": "medium",
+    "notes": "Preliminary; pairs with ws0-referral-feed-fabricated as two in-app 'social proof' surfaces that do not reconcile with the app's real footprint."
   }
 ]
