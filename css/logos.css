@@ -186,9 +186,10 @@
    uniform white chip. One shared rule keeps every chip the same rounded square
    with the same interior padding, so a grid of differently-shaped logos still
    reads as one consistent set. These selectors sit AFTER the monogram blocks,
-   so on equal specificity they win. Exceptions that keep the drawn monogram:
-   toast (its own blue app-icon fill, above), dream11 and games24x7 (no reliable
-   logo asset — "11" / "24" carry the brand).
+   so on equal specificity they win. Special-cased below: toast and dream11 use
+   their own app-icon marks (rendered edge-to-edge, not on a white chip).
+   Exception that keeps the drawn monogram: games24x7 (no reliable logo asset —
+   "24" carries the brand).
    ========================================================================== */
 .logo[data-company="skillz"],
 .logo[data-company="papaya"],
@@ -253,4 +254,16 @@
 .logo[data-company="vgw"]         { background-image: url("../assets/logos/vgw.png"); }
 .logo[data-company="stakeus"]     { background-image: url("../assets/logos/stakeus.png"); }
 .logo[data-company="sleeper"]     { background-image: url("../assets/logos/sleeper.png"); }
-.logo[data-company="dream11"]     { background-image: url("../assets/logos/dream11.png"); }
+
+/* dream11 — real brand mark (the shield/"D" crest), rendered app-icon style:
+   edge-to-edge on its own dark ground like the toast tile, since the asset
+   carries its own background rather than sitting on a white chip. This block
+   sits after the shared white-chip rule above, so it wins on equal specificity. */
+.logo[data-company="dream11"] {
+  --logo-bg: #17121c;
+  background-image: url("../assets/logos/dream11.png");
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(0, 0, 0, 0.22);
+}
