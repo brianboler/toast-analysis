@@ -34,9 +34,10 @@ const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "
 async function init() {
   document.documentElement.classList.add("js");
 
-  // Nav scrollspy has no dependency on the ledger — wire it regardless of
-  // whether the fetch below succeeds.
+  // Nav scrollspy + mobile menu have no dependency on the ledger — wire them
+  // regardless of whether the fetch below succeeds.
   navProgress();
+  navMenu();
 
   let facts;
   try {
@@ -198,6 +199,48 @@ function navProgress() {
     { root: null, rootMargin: `-${navH + 8}px 0px -60% 0px`, threshold: 0 }
   );
   sections.forEach(s => io.observe(s));
+}
+
+// ---- Mobile nav: hamburger toggle for the section menu ----------------------
+// Below 52rem the horizontal pill row collapses behind a hamburger (see
+// enhance.css). This wires the toggle: open/close, close on navigate, Escape,
+// tap-outside, and a reset when the viewport grows back past the breakpoint.
+function navMenu() {
+  const btn = document.querySelector(".nav__toggle");
+  const menu = document.querySelector("#nav-menu");
+  if (!btn || !menu) return;
+
+  const isOpen = () => btn.getAttribute("aria-expanded") === "true";
+  const setOpen = open => {
+    menu.classList.toggle("is-open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  };
+
+  btn.addEventListener("click", () => setOpen(!isOpen()));
+
+  // Picking a destination collapses the menu.
+  menu.addEventListener("click", e => {
+    if (e.target.closest("a")) setOpen(false);
+  });
+
+  // Escape closes and returns focus to the toggle.
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && isOpen()) {
+      setOpen(false);
+      btn.focus();
+    }
+  });
+
+  // A tap anywhere outside the header closes it.
+  document.addEventListener("click", e => {
+    if (isOpen() && !e.target.closest(".nav")) setOpen(false);
+  });
+
+  // Growing past the mobile breakpoint restores the desktop row.
+  const mq = window.matchMedia("(max-width: 52rem)");
+  const onChange = () => { if (!mq.matches) setOpen(false); };
+  if (mq.addEventListener) mq.addEventListener("change", onChange);
+  else if (mq.addListener) mq.addListener(onChange);
 }
 
 init();

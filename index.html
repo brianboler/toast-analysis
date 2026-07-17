@@ -33,10 +33,13 @@
  <img class="nav__mark" src="assets/toast-logo.png" alt="" width="24" height="24">
  Toast<span>&nbsp;research</span>
  </a>
+ <button type="button" class="nav__toggle" aria-label="Open sections menu" aria-expanded="false" aria-controls="nav-menu">
+ <span class="nav__toggle-bars" aria-hidden="true"></span>
+ </button>
  <nav aria-label="Sections">
- <ul class="nav__links">
+ <ul class="nav__links" id="nav-menu">
  <li><a class="nav__link" href="#tldr">TL;DR</a></li>
- <li></li>
+ <li><a class="nav__link" href="#both-sides">Both sides</a></li>
  <li><a class="nav__link" href="#how-it-works">Mechanics</a></li>
  <li><a class="nav__link" href="#company">Company</a></li>
  <li><a class="nav__link" href="#loophole">Loophole</a></li>
@@ -220,6 +223,127 @@
  downside is that the category&rsquo;s only public pure play is down more
  than 99% from its peak, and every one of the sector&rsquo;s three biggest
  players has already hit an integrity scandal.
+</p>
+</section>
+
+ <!-- 2. BOTH SIDES - balanced case for and against --------------------- -->
+ <section id="both-sides" aria-labelledby="both-sides-title" data-pdf-min="small">
+<div class="section__head">
+ <span class="section__index">02 / The case for and against</span>
+ <h2 id="both-sides-title">The case for and against</h2>
+ <p class="standfirst">
+ A balanced read before the section-by-section detail: the strongest reasons
+ to take Toast seriously, set against the strongest reasons for caution. This
+ is a summary of the diligence, not investment advice.
+ </p>
+</div>
+
+<div class="ledger">
+ <article class="ledger-col ledger-col--for" data-reveal="up">
+ <h3 class="ledger-col__head"><span class="ledger-col__mark" aria-hidden="true">+</span> Reasons to take it seriously</h3>
+ <p class="ledger-col__sub">The bull case</p>
+ <ul class="ledger-list">
+ <li>
+ <b>A top-tier investor reportedly led the round.</b>
+ <span data-fact-id="wsa-lightspeed-investment">Lightspeed Venture Partners</span>
+ is named as lead on the pre-seed &mdash; a real signal that serious money
+ did diligence.
+ <span class="note">Caveat: the raise traces to a single company source (see the caution opposite).</span>
+ </li>
+ <li>
+ <b>Operators, not first-timers.</b> Both founders are
+ <span data-fact-id="wsa-founders-mpl-background">former Mobile Premier League
+ product leads</span>, and the CTO is a former Zupee engineer &mdash; direct
+ real-money skill-gaming experience.
+ </li>
+ <li>
+ <b>A real, shipping product.</b> Live on iOS and Android, actively updated,
+ with multiple games and a 4.59&#9733; rating from roughly 951 iOS reviews. This
+ is execution, not a pitch deck.
+ </li>
+ <li>
+ <b>A large, genuinely underserved market.</b> US iGaming revenue reached
+ <span class="stat" data-fact-id="wsb-aga-2025-igaming-revenue">$10.74B</span>
+ in 2025, the fastest-growing commercial-gaming segment, yet about
+ <span class="stat" data-fact-id="wsb-nonicasino-population-estimate">~300M</span>
+ people &mdash; ~88% of the US &mdash; have no legal online-casino option.
+ </li>
+ <li>
+ <b>A B2B path that spreads the risk.</b> Toast licenses its game stack and
+ player network to operators (Sparket, GamerSaloon), not only a consumer app &mdash;
+ a route that can scale away from pure consumer regulatory exposure.
+ </li>
+ <li>
+ <b>A thin, early niche.</b>
+ <span data-fact-id="wsc-market-map-toast-only-casino-realtime">Casino-stakes,
+ real-time, peer-to-peer card play delivered as a consumer app is a sparsely
+ populated position</span> today.
+ </li>
+ </ul>
+ </article>
+
+ <article class="ledger-col ledger-col--against" data-reveal="up">
+ <h3 class="ledger-col__head"><span class="ledger-col__mark" aria-hidden="true">&minus;</span> Reasons for caution</h3>
+ <p class="ledger-col__sub">The bear case</p>
+ <ul class="ledger-list">
+ <li>
+ <b>A user-facing metric is confirmed fabricated.</b> The in-app referral
+ &ldquo;live earnings&rdquo; feed is a
+ <span data-fact-id="ws0-referral-feed-fabricated">canned loop &mdash; the same
+ names and amounts repeat, and earnings do not scale with referral count</span>.
+ A willingness to deceive users is a governance signal, not just a bug.
+ </li>
+ <li>
+ <b>The player counts are almost certainly inflated.</b>
+ <span data-fact-id="ws0-carnival-active-player-counts-discrepancy">About 9,000
+ concurrent &ldquo;active players&rdquo;</span> against ~10,000 Android installs
+ and ~951 iOS ratings is not credible.
+ </li>
+ <li>
+ <b>The whole legal theory rests on one unresolved question.</b>
+ &ldquo;Skill, not gambling&rdquo; holds only if opponents are real humans;
+ whether real-money matches use bots is unresolved, and settleable only by an
+ on-device test. If it is bots, the theory weakens toward the AviaGames
+ &ldquo;acted as the house&rdquo; finding.
+ </li>
+ <li>
+ <b>Untested legal theory, heavy regulatory exposure.</b> No US court has held
+ blackjack skill-predominant;
+ <span data-fact-id="wsd-ca-penal-330-twenty-one">California&rsquo;s Penal Code
+ &sect;330 names &ldquo;twenty-one&rdquo;</span> by statute; Apple classifies the
+ app &ldquo;Gambling&rdquo;; and
+ <span data-fact-id="wse-india-2025-bank-ad-ban">India&rsquo;s 2025 Act
+ criminalizes enabling money-game transactions</span>.
+ </li>
+ <li>
+ <b>Claims are uncorroborated and inconsistent.</b> The
+ <span class="stat" data-fact-id="wsa-funding-round">$1.6M</span> raise is
+ single-origin (Tracxn lists the company &ldquo;Unfunded&rdquo;), and the pitch
+ cites &ldquo;$500M ARR&rdquo; against &ldquo;$72M&rdquo; on the company&rsquo;s own site.
+ </li>
+ <li>
+ <b>The comparables are cautionary.</b> The category&rsquo;s only public
+ pure-play, Skillz, is
+ <span class="stat" data-fact-id="wsg-sklz-ath-price">&gt;99%</span>
+ off its peak, and each of the sector&rsquo;s biggest players has hit an
+ integrity scandal &mdash; including Skillz&rsquo;s
+ <span class="stat" data-fact-id="wse-skillz-papaya-verdict">$420M</span>
+ verdict against Papaya.
+ </li>
+ </ul>
+ </article>
+</div>
+
+<p class="ledger-balance">
+ <strong>The honest balance.</strong> Two issues are dealbreaker-class: a
+ demonstrated willingness to fabricate a user-facing metric (the referral feed,
+ confirmed) and the unresolved bot question the legal theory depends on. Several
+ scarier-sounding leads did <em>not</em> hold up on inspection &mdash; the
+ US-plus-India structure is a standard &ldquo;Delaware flip,&rdquo; the
+ &ldquo;Math.random opponent&rdquo; belongs to practice mode rather than the cash
+ match, and a large paid human pool is economically impossible on a $1.6M raise.
+ The section-by-section evidence is in <a href="#metrics">Metrics</a>, and the
+ full valuation in <a href="#thesis">Thesis</a>.
 </p>
 </section>
 
@@ -2841,23 +2965,79 @@
  <section id="metrics" aria-labelledby="metrics-title" data-pdf-min="full">
 <div class="section__head">
  <span class="section__index">09 / Metrics</span>
- <h2 id="metrics-title">Social proof that doesn&rsquo;t add up<a href="#metrics-note" style="text-decoration:none">*</a></h2>
+ <h2 id="metrics-title">The in-app metrics don&rsquo;t add up</h2>
  <p class="standfirst">
- Two of the app&rsquo;s in-app &ldquo;social proof&rdquo; surfaces fail on arithmetic.
+ Two of Carnival&rsquo;s in-app &ldquo;social proof&rdquo; surfaces fail on arithmetic. Both are shown below
+ from first-hand captures of the live app: a fabricated &ldquo;live earnings&rdquo; feed, and a
+ round-the-clock player count that the app&rsquo;s real footprint cannot support.
  </p>
 </div>
 
-<p>
- Carnival&rsquo;s referral screen streams a feed of users supposedly cashing out from referrals, presented as
- live. But <span data-fact-id="ws0-referral-feed-fabricated">the same roster of names and amounts repeats on
- every visit, and the displayed earnings do not scale with referral count</span> &mdash; one entry shows
- <strong>71 referrals earning $69</strong> while another shows <strong>4 referrals earning $60</strong>, which
- is impossible under any real per-referral payout, and six of eight observed amounts are not multiples of the
- app&rsquo;s stated &ldquo;$15 per deposit&rdquo; reward. Separately, the six games each display
+<div class="evidence" data-reveal="up">
+ <figure class="evidence__media evidence__media--phone">
+ <video controls loop muted playsinline preload="metadata" poster="assets/evidence/referral-feed-poster.jpg" width="480" height="1044">
+ <source src="assets/evidence/referral-feed.mp4" type="video/mp4">
+ Your browser cannot play this capture; it shows Carnival&rsquo;s referral screen cycling a fixed roster of &ldquo;earned $X with Y referrals&rdquo; pop-ups.
+ </video>
+ <figcaption><b>Capture 1.</b> Carnival&rsquo;s referral screen. The &ldquo;&hellip;earned&nbsp;$X with&nbsp;Y referrals&rdquo; pop-ups cycle a fixed roster on every visit.</figcaption>
+ </figure>
+ <div class="evidence__text">
+ <span class="evidence__flag">Fabricated feed</span>
+ <h3 class="subsection__title">A &ldquo;live earnings&rdquo; feed that is really a canned loop</h3>
+ <p class="subsection__lede">
+ The screen presents a stream of users supposedly cashing out from referrals, as if live. But
+ <span data-fact-id="ws0-referral-feed-fabricated">the same roster of names and amounts repeats on every
+ visit, and the displayed earnings do not increase with referral count</span>. Sorted by referral count, the
+ dollars move the wrong way, which no real per-referral payout can do at any rate:
+ </p>
+ <div class="chart-wrap">
+ <table class="data">
+ <caption>Eight pop-ups captured in-app, sorted by referral count. Earnings should rise with referrals.</caption>
+ <thead>
+ <tr><th scope="col">Handle</th><th scope="col">Earnings</th><th scope="col">Referrals</th><th scope="col">Multiple of $15?</th><th scope="col">$ / referral</th></tr>
+ </thead>
+ <tbody>
+ <tr><td data-label="Handle">legit ny</td><td data-label="Earnings">$60</td><td data-label="Referrals">4</td><td data-label="Multiple of $15?">yes</td><td data-label="$ / referral">$15.00</td></tr>
+ <tr><td data-label="Handle">Drika</td><td data-label="Earnings">$45</td><td data-label="Referrals">15</td><td data-label="Multiple of $15?">=3&times;15</td><td data-label="$ / referral">$3.00</td></tr>
+ <tr><td data-label="Handle">Krissy lee</td><td data-label="Earnings">$48</td><td data-label="Referrals">17</td><td data-label="Multiple of $15?" class="nonmono">no</td><td data-label="$ / referral">$2.82</td></tr>
+ <tr><td data-label="Handle">Queen boss</td><td data-label="Earnings">$54</td><td data-label="Referrals">19</td><td data-label="Multiple of $15?" class="nonmono">no</td><td data-label="$ / referral">$2.84</td></tr>
+ <tr><td data-label="Handle">NimbleRune29849g</td><td data-label="Earnings">$63</td><td data-label="Referrals">21</td><td data-label="Multiple of $15?" class="nonmono">no</td><td data-label="$ / referral">$3.00</td></tr>
+ <tr><td data-label="Handle">Drawn</td><td data-label="Earnings">$66</td><td data-label="Referrals">22</td><td data-label="Multiple of $15?" class="nonmono">no</td><td data-label="$ / referral">$3.00</td></tr>
+ <tr><td data-label="Handle">Angela</td><td data-label="Earnings">$102</td><td data-label="Referrals">38</td><td data-label="Multiple of $15?" class="nonmono">no</td><td data-label="$ / referral">$2.68</td></tr>
+ <tr><td data-label="Handle">Diamond</td><td data-label="Earnings">$69</td><td data-label="Referrals">71</td><td data-label="Multiple of $15?" class="nonmono">no</td><td data-label="$ / referral">$0.97</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <p>
+ <strong>38 referrals return $102, but 71 referrals return only $69.</strong> Six of the eight amounts also
+ violate the app&rsquo;s own stated &ldquo;$15 per deposit&rdquo; rule, and all eight land on a $3 step &mdash;
+ the fingerprint of a number generator, not a payout ledger.
+ </p>
+ </div>
+</div>
+
+<div class="evidence evidence--reverse" data-reveal="up">
+ <figure class="evidence__media evidence__media--phone">
+ <img src="assets/evidence/player-counts.jpg" alt="Carnival's 'All Games' screen showing six games each with an 'active players' badge: 1.9k, 1.1k, 1.5k, 1.4k, 1.5k, and 1.8k." width="560" height="1217" loading="lazy">
+ <figcaption><b>Capture 2.</b> The &ldquo;All Games&rdquo; screen. Six games, each with a live badge of roughly 1.1k&ndash;1.9k &ldquo;active players.&rdquo;</figcaption>
+ </figure>
+ <div class="evidence__text">
+ <span class="evidence__flag">Implausible counts</span>
+ <h3 class="subsection__title">Round-the-clock player counts the footprint can&rsquo;t support</h3>
+ <p class="subsection__lede">
+ The six games each show
  <span data-fact-id="ws0-carnival-active-player-counts-discrepancy">roughly 1,100&ndash;1,900 &ldquo;active
- players&rdquo; around the clock (about 9,000 concurrent)</span> &mdash; against a public footprint of ~10,000+
- Android installs and ~951 iOS ratings, an implausibly high concurrency.
-</p>
+ players&rdquo; around the clock, about 9,000 concurrent</span> &mdash; against a public footprint of only
+ ~10,000+ Android installs and ~951 iOS ratings.
+ </p>
+ <p>
+ Real concurrency is normally a low single-digit percentage of a user base. Roughly 9,000 simultaneous live
+ players would need most of the entire download base in a match at the same instant, sustained overnight. The
+ tight, uniform band across all six games &mdash; no unpopular game near zero &mdash; reads like a templated
+ counter rather than organic demand.
+ </p>
+ </div>
+</div>
 
 <p>
  Fabricated &ldquo;live&rdquo; activity is exactly the conduct that sank a direct comparator. On
@@ -2870,7 +3050,7 @@
  Whether the misrepresentation is a fake opponent or a fake cash-out, it is the same false-advertising theory.
 </p>
 
-<p id="metrics-note"><small><strong>*</strong>&nbsp;Preliminary. These in-app metrics are under active review by the author; findings will be updated as the investigation continues.</small></p>
+<p id="metrics-note"><small>Based on first-hand captures of the live app, July&nbsp;2026. The referral-feed fabrication is demonstrable from the arithmetic above; the player counts are assessed as implausible against the public footprint, and a time-of-day sampling would confirm whether they are flat.</small></p>
 </section>
 
  <!-- 10. ECONOMICS - unit economics & take rate ------------------------ -->

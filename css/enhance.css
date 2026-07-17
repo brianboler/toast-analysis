@@ -403,3 +403,209 @@ em, i { font-style: italic; }
     box-shadow: none !important;
   }
 }
+
+/* ===== "The case for and against" — balance ledger (section 02) ============= */
+/* Two facing columns: the strongest reasons to take Toast seriously, set
+   against the strongest reasons for caution. Deliberately lighter than the
+   deep bull/base/bear case-cards in the Thesis section — this is the up-front
+   at-a-glance read that sits directly beneath the executive summary. */
+.ledger {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 3vw, 1.75rem);
+  margin-top: clamp(1.5rem, 4vw, 2.25rem);
+}
+@media (max-width: 46rem) { .ledger { grid-template-columns: 1fr; } }
+
+.ledger-col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: clamp(1.1rem, 3vw, 1.5rem);
+  box-shadow: var(--shadow);
+}
+.ledger-col--for { border-top-color: var(--accent); }
+.ledger-col--against { border-top-color: var(--danger); }
+
+.ledger-col__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-1);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.ledger-col__mark {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.05em;
+  line-height: 1;
+}
+.ledger-col--for .ledger-col__mark { color: var(--accent-bright); }
+.ledger-col--against .ledger-col__mark { color: var(--danger-fg); }
+.ledger-col__sub {
+  margin: 0 0 0.9rem;
+  color: var(--faint);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ledger-list { list-style: none; margin: 0; padding: 0; }
+.ledger-list > li {
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border);
+  font-size: var(--step-0);
+  line-height: 1.5;
+}
+.ledger-list > li:first-child { border-top: 0; padding-top: 0.15rem; }
+.ledger-list b { color: var(--text); font-weight: 600; }
+.ledger-list .note { display: block; margin-top: 0.15rem; color: var(--muted); font-size: var(--step--1); }
+
+.ledger-balance {
+  margin: clamp(1.25rem, 3vw, 1.75rem) 0 0;
+  padding: clamp(1rem, 3vw, 1.3rem) clamp(1.1rem, 3vw, 1.4rem);
+  max-width: none;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--warn);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+}
+.ledger-balance strong { color: var(--text); }
+.ledger-balance a { color: var(--accent-bright); }
+
+/* ===== Mobile navigation: hamburger toggle + dropdown table of contents ===== */
+/* Desktop keeps the horizontal pill row. Below 52rem the pills collapse behind
+   a hamburger that opens a full-width vertical TOC of every section. */
+.nav__toggle {
+  display: none;                    /* desktop default — hidden */
+  flex: none;
+  margin-left: auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  cursor: pointer;
+}
+.nav__toggle:hover { background: var(--surface); }
+.nav__toggle-bars,
+.nav__toggle-bars::before,
+.nav__toggle-bars::after {
+  content: "";
+  display: block;
+  width: 1.15rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.nav__toggle-bars { position: relative; }
+.nav__toggle-bars::before { position: absolute; top: -6px; left: 0; }
+.nav__toggle-bars::after  { position: absolute; top:  6px; left: 0; }
+.nav__toggle[aria-expanded="true"] .nav__toggle-bars { background: transparent; }
+.nav__toggle[aria-expanded="true"] .nav__toggle-bars::before { transform: translateY(6px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] .nav__toggle-bars::after  { transform: translateY(-6px) rotate(-45deg); }
+
+@media (max-width: 52rem) {
+  .nav__toggle { display: inline-flex; }
+  .nav__links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;                  /* collapsed until toggled */
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.1rem;
+    margin: 0;
+    padding: 0.4rem;
+    max-height: calc(100dvh - var(--nav-h));
+    overflow-y: auto;
+    background: color-mix(in srgb, var(--bg) 96%, transparent);
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .nav__links.is-open { display: flex; }
+  .nav__links > li { width: 100%; }
+  .nav__links > li:empty { display: none; }   /* the historical spacer <li> */
+  .nav__link {
+    display: block;
+    padding: 0.72rem 0.85rem;
+    font-size: 0.78rem;
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* ===== Evidence blocks: first-hand in-app captures (Metrics section) ======== */
+/* A phone-shaped media panel (screenshot or screen recording) beside the
+   analysis. The media is the primary evidence, so it leads on wide screens. */
+.evidence {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) 1fr;
+  gap: clamp(1.2rem, 4vw, 2.4rem);
+  align-items: start;
+  margin: clamp(1.6rem, 4vw, 2.6rem) 0;
+}
+.evidence--reverse { grid-template-columns: 1fr minmax(0, 15rem); }
+.evidence--reverse .evidence__media { order: 2; }
+.evidence__media { margin: 0; }
+.evidence__media--phone {
+  position: relative;
+  max-width: 15rem;
+}
+.evidence__media--phone video,
+.evidence__media--phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow);
+  background: #000;
+}
+.evidence__media figcaption {
+  margin-top: 0.6rem;
+  color: var(--faint);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+.evidence__media figcaption b { color: var(--muted); }
+.evidence__text > :first-child { margin-top: 0; }
+.evidence__text .data { min-width: 0; }
+.evidence__flag {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--danger-fg);
+  background: color-mix(in srgb, var(--danger) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--danger) 40%, transparent);
+}
+.evidence .nonmono { color: var(--danger-fg); font-weight: 600; }
+
+@media (max-width: 46rem) {
+  .evidence,
+  .evidence--reverse { grid-template-columns: 1fr; }
+  .evidence--reverse .evidence__media { order: 0; }
+  .evidence__media--phone { max-width: 17rem; margin-inline: auto; }
+  .evidence__media figcaption { text-align: center; }
+}
