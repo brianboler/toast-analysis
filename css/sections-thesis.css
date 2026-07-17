@@ -127,12 +127,15 @@
 
 /* ---- Thesis case cards (Bull / Base / Bear) ---------------------------- */
 .case-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
-  gap: clamp(1rem, 3vw, 1.6rem);
+  /* Stacked, full-width cards: each case gets the whole measure so its tables
+     and prose never overflow or clip (was a 3-up auto-fit grid that squeezed
+     the 26rem outcome tables and hid text). */
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.1rem, 3vw, 1.8rem);
   margin: 1.5rem 0 2rem;
-  align-items: start;
 }
+.case-card table.data { min-width: 0; width: 100%; }
 .case-card {
   background: var(--surface);
   border: 1px solid var(--border);

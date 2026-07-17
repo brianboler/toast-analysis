@@ -295,6 +295,11 @@ em, i { font-style: italic; }
   --border: rgba(255, 255, 255, 0.14);
   --border-strong: rgba(255, 255, 255, 0.24);
   --surface: rgba(255, 255, 255, 0.06);
+  /* accent tokens too, so highlight washes (.hl) and links stay dark-appropriate
+     even when the page theme is light (the masthead is always dark). */
+  --accent-tint: rgba(53, 192, 125, 0.22);
+  --accent-bright: #6fe3a8;
+  --accent-line: rgba(53, 192, 125, 0.45);
 }
 /* lift every real child above the media layer (media is positioned z:0, which
    would otherwise paint over static content) */
@@ -804,9 +809,168 @@ em, i { font-style: italic; }
 .toc__title { font-size: 0.95rem; font-weight: 600; line-height: 1.2; }
 .toc__desc { font-size: 0.78rem; color: var(--muted); line-height: 1.35; }
 
+/* ===== Leadership / management cards + career timeline ===================== */
+.mgmt-flag {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin: 0 0 clamp(1.5rem, 4vw, 2.2rem);
+  padding: clamp(1rem, 3vw, 1.3rem);
+  background: color-mix(in srgb, var(--danger) 9%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--danger) 38%, transparent);
+  border-left: 3px solid var(--danger);
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+}
+.mgmt-flag b { color: var(--text); }
+.mgmt-flag__icon { flex: none; color: var(--danger-fg); font-size: 1.1rem; line-height: 1.4; }
+
+.mgmt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: clamp(1rem, 3vw, 1.5rem); }
+.mgmt-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(1.1rem, 3vw, 1.4rem);
+  box-shadow: var(--shadow);
+}
+.mgmt-card--gone { border-top: 3px solid var(--danger); }
+.mgmt-card__head { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem; }
+.mgmt-avatar {
+  flex: none;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: var(--bg-2);
+  border: 1px solid var(--border-strong);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--accent-bright);
+}
+.mgmt-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mgmt-name { margin: 0; font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; }
+.mgmt-role { margin: 0.2rem 0 0; font-size: 0.85rem; color: var(--muted); }
+.mgmt-status {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.16rem 0.5rem;
+  border-radius: 999px;
+}
+.mgmt-status--gone { color: var(--danger-fg); background: color-mix(in srgb, var(--danger) 14%, transparent); border: 1px solid color-mix(in srgb, var(--danger) 34%, transparent); }
+.mgmt-status--current { color: var(--accent-bright); background: var(--accent-tint); border: 1px solid var(--accent-line); }
+
+.mgmt-timeline { list-style: none; margin: 0; padding: 0; }
+.mgmt-timeline li { position: relative; padding: 0 0 0.85rem 1.15rem; font-size: 0.88rem; line-height: 1.45; }
+.mgmt-timeline li::before { content: ""; position: absolute; left: 0.16rem; top: 0.45rem; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--border-strong); }
+.mgmt-timeline li::after { content: ""; position: absolute; left: 0.39rem; top: 0.95rem; bottom: -0.05rem; width: 1px; background: var(--border); }
+.mgmt-timeline li:last-child::after { display: none; }
+.mgmt-timeline li.is-now::before { background: var(--accent); box-shadow: 0 0 0 3px var(--accent-tint); }
+.mgmt-timeline li.is-exit::before { background: var(--danger); box-shadow: 0 0 0 3px color-mix(in srgb, var(--danger) 18%, transparent); }
+.mgmt-when { display: block; font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.02em; color: var(--faint); }
+.mgmt-timeline b { color: var(--text); }
+.mgmt-timeline .exit-tag { color: var(--danger-fg); font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.mgmt-src { margin-top: clamp(1.2rem, 3vw, 1.6rem); font-size: 0.78rem; color: var(--faint); }
+
+/* ===== Manual light / dark theme (toggle in nav) =========================== */
+/* :root[data-theme] beats the prefers-color-scheme media query on specificity,
+   so a saved choice always wins over the OS default. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d0f12; --bg-2: #101318; --surface: #16191f; --surface-2: #1c2027;
+  --border: #262b33; --border-strong: #333a44;
+  --text: #e8e6e1; --muted: #9aa0a8; --faint: #868c94;
+  --accent: #35c07d; --accent-bright: #46d18d; --accent-ink: #06110b; --accent-tint: #10241a; --accent-line: #1f5e42;
+  --warn: #e0a83c; --warn-fg: #e8b453; --danger: #d4604f; --danger-fg: #e2705f;
+  --tier-a: #35c07d; --tier-a-fg: #3ad389; --tier-a-bg: #14251d;
+  --tier-b: #5b9dd9; --tier-b-fg: #6fb3ec; --tier-b-bg: #152231;
+  --tier-c: #e0a83c; --tier-c-fg: #e8b453; --tier-c-bg: #2a2213;
+  --tier-d: #a08bd0; --tier-d-fg: #b9a6e6; --tier-d-bg: #201d2e;
+  --tier-badge-ink: #0d0f12;
+  --shadow: 0 1px 0 rgba(255,255,255,0.02), 0 18px 40px -24px rgba(0,0,0,0.7);
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #faf9f6; --bg-2: #f2f0ea; --surface: #ffffff; --surface-2: #f6f4ef;
+  --border: #e4e0d7; --border-strong: #d3cec3;
+  --text: #17191d; --muted: #5c6470; --faint: #6b7079;
+  --accent: #128a54; --accent-bright: #0f7a4a; --accent-ink: #ffffff; --accent-tint: #e6f4ec; --accent-line: #b7e0cb;
+  --warn: #b07d1e; --warn-fg: #8a5600; --danger: #c34a37; --danger-fg: #b23a29;
+  --tier-a: #128a54; --tier-a-fg: #0e7a48; --tier-a-bg: #e6f4ec;
+  --tier-b: #2f6fa8; --tier-b-fg: #215d92; --tier-b-bg: #e6eff8;
+  --tier-c: #a06a12; --tier-c-fg: #8a5600; --tier-c-bg: #f6ecd8;
+  --tier-d: #6a54a3; --tier-d-fg: #5a4593; --tier-d-bg: #eee9f6;
+  --tier-badge-ink: #ffffff;
+  --shadow: 0 1px 2px rgba(20,22,28,0.04), 0 20px 40px -28px rgba(20,22,28,0.28);
+}
+.theme-toggle {
+  flex: none;
+  width: 2.2rem; height: 2.2rem;
+  display: inline-grid; place-items: center;
+  margin-left: 0.4rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  cursor: pointer;
+}
+.theme-toggle:hover { background: var(--surface); }
+.theme-toggle svg { width: 1.05rem; height: 1.05rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+
+/* ===== Dynamic hero: a slow-drifting accent glow over the masthead ========== */
+.hero__media::before {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 38% at 22% 28%, rgba(53,192,125,0.20), transparent 70%),
+    radial-gradient(32% 34% at 82% 64%, rgba(53,192,125,0.13), transparent 72%);
+  animation: heroGlow 20s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+@keyframes heroGlow {
+  0%   { transform: translate3d(0, 0, 0) scale(1);      opacity: 0.75; }
+  50%  { transform: translate3d(2.5%, -2%, 0) scale(1.1); opacity: 1; }
+  100% { transform: translate3d(-2%, 2.5%, 0) scale(1.05); opacity: 0.7; }
+}
+@media (prefers-reduced-motion: reduce) { .hero__media::before { animation: none; } }
+
 /* ===== Print: professional, concise document styling (cascades last) ======= */
 @page { margin: 1.7cm 1.8cm; }
 @media print {
+  /* Force backgrounds/fills to render so logos (CSS background-images), tier
+     badges, and highlight fills actually appear in the PDF instead of dropping
+     out. print-color-adjust is inherited, so setting it on :root cascades. */
+  :root { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  /* Force the light document palette in print even when the reader has the dark
+     theme toggled on. :root[data-theme] matches whatever value the toggle set and
+     sits after the theme blocks, so it wins the cascade and paper stays ink-on-white. */
+  :root, :root[data-theme] {
+    color-scheme: light;
+    --bg: #ffffff; --bg-2: #ffffff; --surface: #ffffff; --surface-2: #f5f4f1;
+    --border: #cfcabf; --border-strong: #a9a397;
+    --text: #14161a; --muted: #40454d; --faint: #5c626b;
+    --accent: #0f7a4a; --accent-bright: #0c6b40; --accent-ink: #ffffff; --accent-tint: #eaf6ef; --accent-line: #9fd3b8;
+    --warn: #8a5600; --warn-fg: #7a4c00; --danger: #b23a29; --danger-fg: #9e3121;
+    --tier-a: #0e7a48; --tier-a-fg: #0c6b40; --tier-a-bg: #eaf6ef;
+    --tier-b: #215d92; --tier-b-fg: #1c5182; --tier-b-bg: #e9f0f8;
+    --tier-c: #8a5600; --tier-c-fg: #7a4c00; --tier-c-bg: #f6ecd6;
+    --tier-d: #5a4593; --tier-d-fg: #4f3c83; --tier-d-bg: #ece7f5;
+    --tier-badge-ink: #ffffff;
+    --shadow: none;
+  }
+
   /* Denser, document-grade typography. */
   html { font-size: 12.5px; }
   body { font-size: 10.5pt; line-height: 1.42; }
@@ -822,15 +986,17 @@ em, i { font-style: italic; }
   section:first-of-type { padding-top: 0 !important; }
   .subsection { margin-top: 1rem !important; }
 
-  /* Concise: drop screen-only bulk that bloats a printed report. The substance
-     (prose, tables, the source list with its bases) stays. */
+  /* Concise: drop screen-only bulk that can't print anyway (videos) and the
+     decorative diagram. Keep informative screenshots (e.g. the player-count
+     capture) — only the video figures are dropped. */
   .toc-section,
   .source-key,
   .clip-figure,
-  .evidence__media,
   .diagram__svg-wrap,
+  .evidence__media:has(video),
   video { display: none !important; }
   .evidence, .evidence--reverse { display: block !important; }
+  .evidence__media--phone img { max-width: 11rem; margin: 0.4rem 0; }
   .ledger, .cols { display: block !important; }
   .ledger-col, .item, .card, .player-card { break-inside: avoid; margin-bottom: 0.5rem; }
 

@@ -38,6 +38,7 @@ async function init() {
   // regardless of whether the fetch below succeeds.
   navProgress();
   navMenu();
+  themeToggle();
 
   let facts;
   try {
@@ -203,6 +204,31 @@ function navProgress() {
     { root: null, rootMargin: `-${navH + 8}px 0px -60% 0px`, threshold: 0 }
   );
   sections.forEach(s => io.observe(s));
+}
+
+// ---- Light / dark theme toggle ----------------------------------------------
+// Resolves an explicit saved choice, else the OS preference, and writes it to
+// documentElement[data-theme] so the CSS override blocks (enhance.css) apply.
+function themeToggle() {
+  const root = document.documentElement;
+  const btn = document.querySelector(".theme-toggle");
+  let saved = null;
+  try { saved = localStorage.getItem("theme"); } catch (e) {}
+  const system =
+    window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+
+  const apply = t => {
+    root.setAttribute("data-theme", t);
+    if (btn) btn.setAttribute("aria-label", t === "light" ? "Switch to dark theme" : "Switch to light theme");
+  };
+  apply(saved === "light" || saved === "dark" ? saved : system);
+
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+    apply(next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+  });
 }
 
 // ---- Mobile nav: hamburger toggle for the section menu ----------------------

@@ -42,6 +42,7 @@
  <li><a class="nav__link" href="#both-sides">Both sides</a></li>
  <li><a class="nav__link" href="#how-it-works">Mechanics</a></li>
  <li><a class="nav__link" href="#company">Company</a></li>
+ <li><a class="nav__link" href="#leadership">Leadership</a></li>
  <li><a class="nav__link" href="#loophole">Loophole</a></li>
  <li><a class="nav__link" href="#market">Market</a></li>
  <li><a class="nav__link" href="#players">Players</a></li>
@@ -52,6 +53,10 @@
  <li><a class="nav__link" href="#sources">Sources</a></li>
  </ul>
  </nav>
+ <button type="button" class="theme-toggle" aria-label="Switch colour theme" title="Toggle light / dark">
+ <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+ <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+ </button>
  </div>
  <div class="progress" aria-hidden="true"><div class="progress__bar"></div></div>
  </header>
@@ -131,13 +136,13 @@
 
  <!-- 1.5 CONTENTS - collapsible icon table of contents ------------------ -->
  <section id="contents" class="toc-section" data-pdf-min="full" aria-label="Table of contents">
-<details class="toc">
+<details class="toc" open>
  <summary class="toc__summary">
  <span class="toc__summary-main">
  <svg class="toc__summary-icon" viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="13" y2="17"/></svg>
  Contents
  </span>
- <span class="toc__summary-hint">12 sections</span>
+ <span class="toc__summary-hint">13 sections</span>
  <svg class="toc__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
  </summary>
  <ul class="toc__grid">
@@ -145,14 +150,15 @@
  <li><a class="toc__item" href="#both-sides"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="4" x2="12" y2="20"/><line x1="6" y1="7" x2="18" y2="7"/><path d="M6 7l-3 6a3 3 0 0 0 6 0z"/><path d="M18 7l-3 6a3 3 0 0 0 6 0z"/></svg></span><span class="toc__body"><span class="toc__num">02</span><b class="toc__title">The case for and against</b><span class="toc__desc">Bull and bear, side by side</span></span></a></li>
  <li><a class="toc__item" href="#how-it-works"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="12" height="14" rx="2"/><path d="M8 4h9a2 2 0 0 1 2 2v11"/></svg></span><span class="toc__body"><span class="toc__num">03</span><b class="toc__title">Mechanics</b><span class="toc__desc">How a hand actually works</span></span></a></li>
  <li><a class="toc__item" href="#company"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 21V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v16"/><line x1="3" y1="21" x2="21" y2="21"/><line x1="10" y1="9" x2="14" y2="9"/><line x1="10" y1="13" x2="14" y2="13"/></svg></span><span class="toc__body"><span class="toc__num">04</span><b class="toc__title">Company</b><span class="toc__desc">Team, stage, funding, and what we couldn&rsquo;t verify</span></span></a></li>
- <li><a class="toc__item" href="#loophole"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><line x1="9" y1="4" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="20"/></svg></span><span class="toc__body"><span class="toc__num">05</span><b class="toc__title">Loophole</b><span class="toc__desc">The state-by-state legal map</span></span></a></li>
- <li><a class="toc__item" href="#market"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="11" width="3" height="9"/><rect x="11" y="6" width="3" height="14"/><rect x="16" y="14" width="3" height="6"/></svg></span><span class="toc__body"><span class="toc__num">06</span><b class="toc__title">Market</b><span class="toc__desc">Size, growth, and the addressable gap</span></span></a></li>
- <li><a class="toc__item" href="#players"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 5.5a3 3 0 0 1 0 5.8"/><path d="M18.5 20a5.5 5.5 0 0 0-3-4.9"/></svg></span><span class="toc__body"><span class="toc__num">07</span><b class="toc__title">Players</b><span class="toc__desc">Competitors and comparables</span></span></a></li>
- <li><a class="toc__item" href="#cautionary"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l9 16H3z"/><line x1="12" y1="10" x2="12" y2="15"/><line x1="12" y1="17.6" x2="12" y2="17.7"/></svg></span><span class="toc__body"><span class="toc__num">08</span><b class="toc__title">Cautionary tales</b><span class="toc__desc">Papaya, AviaGames, Skillz</span></span></a></li>
- <li><a class="toc__item" href="#metrics"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2.5 7 4-15 2.5 8H21"/></svg></span><span class="toc__body"><span class="toc__num">09</span><b class="toc__title">Metrics</b><span class="toc__desc">The in-app numbers that don&rsquo;t add up</span></span></a></li>
- <li><a class="toc__item" href="#economics"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v10"/><path d="M14.6 9.2C14.2 8.4 13.2 8 12 8c-1.6 0-2.6.8-2.6 1.9 0 1.1 1 1.6 2.6 1.9s2.6.9 2.6 2c0 1.1-1 2-2.6 2-1.3 0-2.3-.5-2.7-1.3"/></svg></span><span class="toc__body"><span class="toc__num">10</span><b class="toc__title">Economics</b><span class="toc__desc">Rake, unit economics, and platform risk</span></span></a></li>
- <li><a class="toc__item" href="#thesis"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/></svg></span><span class="toc__body"><span class="toc__num">11</span><b class="toc__title">Thesis</b><span class="toc__desc">Bull, base, bear, and the forecast</span></span></a></li>
- <li><a class="toc__item" href="#sources"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 15l6-6"/><path d="M11 7l1-1a3.5 3.5 0 0 1 5 5l-1 1"/><path d="M13 17l-1 1a3.5 3.5 0 0 1-5-5l1-1"/></svg></span><span class="toc__body"><span class="toc__num">12</span><b class="toc__title">Sources &amp; method</b><span class="toc__desc">The ledger, tiers, and every source</span></span></a></li>
+ <li><a class="toc__item" href="#leadership"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><line x1="16.5" y1="9" x2="21" y2="9"/><line x1="16.5" y1="13" x2="21" y2="13"/></svg></span><span class="toc__body"><span class="toc__num">05</span><b class="toc__title">Leadership</b><span class="toc__desc">The team, and the CTO who has left</span></span></a></li>
+ <li><a class="toc__item" href="#loophole"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><line x1="9" y1="4" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="20"/></svg></span><span class="toc__body"><span class="toc__num">06</span><b class="toc__title">Loophole</b><span class="toc__desc">The state-by-state legal map</span></span></a></li>
+ <li><a class="toc__item" href="#market"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><line x1="4" y1="20" x2="20" y2="20"/><rect x="6" y="11" width="3" height="9"/><rect x="11" y="6" width="3" height="14"/><rect x="16" y="14" width="3" height="6"/></svg></span><span class="toc__body"><span class="toc__num">07</span><b class="toc__title">Market</b><span class="toc__desc">Size, growth, and the addressable gap</span></span></a></li>
+ <li><a class="toc__item" href="#players"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 5.5a3 3 0 0 1 0 5.8"/><path d="M18.5 20a5.5 5.5 0 0 0-3-4.9"/></svg></span><span class="toc__body"><span class="toc__num">08</span><b class="toc__title">Players</b><span class="toc__desc">Competitors and comparables</span></span></a></li>
+ <li><a class="toc__item" href="#cautionary"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4l9 16H3z"/><line x1="12" y1="10" x2="12" y2="15"/><line x1="12" y1="17.6" x2="12" y2="17.7"/></svg></span><span class="toc__body"><span class="toc__num">09</span><b class="toc__title">Cautionary tales</b><span class="toc__desc">Papaya, AviaGames, Skillz</span></span></a></li>
+ <li><a class="toc__item" href="#metrics"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2.5 7 4-15 2.5 8H21"/></svg></span><span class="toc__body"><span class="toc__num">10</span><b class="toc__title">Metrics</b><span class="toc__desc">The in-app numbers that don&rsquo;t add up</span></span></a></li>
+ <li><a class="toc__item" href="#economics"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v10"/><path d="M14.6 9.2C14.2 8.4 13.2 8 12 8c-1.6 0-2.6.8-2.6 1.9 0 1.1 1 1.6 2.6 1.9s2.6.9 2.6 2c0 1.1-1 2-2.6 2-1.3 0-2.3-.5-2.7-1.3"/></svg></span><span class="toc__body"><span class="toc__num">11</span><b class="toc__title">Economics</b><span class="toc__desc">Rake, unit economics, and platform risk</span></span></a></li>
+ <li><a class="toc__item" href="#thesis"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/></svg></span><span class="toc__body"><span class="toc__num">12</span><b class="toc__title">Thesis</b><span class="toc__desc">Bull, base, bear, and the forecast</span></span></a></li>
+ <li><a class="toc__item" href="#sources"><span class="toc__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 15l6-6"/><path d="M11 7l1-1a3.5 3.5 0 0 1 5 5l-1 1"/><path d="M13 17l-1 1a3.5 3.5 0 0 1-5-5l1-1"/></svg></span><span class="toc__body"><span class="toc__num">13</span><b class="toc__title">Sources &amp; method</b><span class="toc__desc">The ledger, tiers, and every source</span></span></a></li>
  </ul>
 </details>
 </section>
@@ -375,18 +381,6 @@
  </ul>
  </article>
 </div>
-
-<p class="ledger-balance">
- <strong>The honest balance.</strong> Two issues are dealbreaker-class: a
- demonstrated willingness to fabricate a user-facing metric (the referral feed,
- confirmed) and the unresolved bot question the legal theory depends on. Several
- scarier-sounding leads did <em>not</em> hold up on inspection &mdash; the
- US-plus-India structure is a standard &ldquo;Delaware flip,&rdquo; the
- &ldquo;Math.random opponent&rdquo; belongs to practice mode rather than the cash
- match, and a large paid human pool is economically impossible on a $1.6M raise.
- The section-by-section evidence is in <a href="#metrics">Metrics</a>, and the
- full valuation in <a href="#thesis">Thesis</a>.
-</p>
 </section>
 
  <!-- 3. MANDATE - scope & the question we answer ----------------------- -->
@@ -765,6 +759,87 @@
 </div>
 </section>
 
+
+ <!-- 5.5 LEADERSHIP - management team & CTO departure ------------------- -->
+ <section id="leadership" aria-labelledby="leadership-title" data-pdf-min="medium">
+<div class="section__head">
+ <span class="section__index">05 / Leadership</span>
+ <h2 id="leadership-title">The management team</h2>
+ <p class="standfirst">
+ The founders&rsquo; backgrounds and the current state of the leadership bench. One
+ item stands out: the executive the company still presents as its CTO has left.
+ </p>
+</div>
+
+<div class="mgmt-flag">
+ <span class="mgmt-flag__icon" aria-hidden="true">&#9888;</span>
+ <span>
+ <b>The CTO on the company&rsquo;s site has already left.</b> playtoast.com/about still
+ presents <b>Avinash Srivastava</b> as Toast&rsquo;s current CTO, but his own LinkedIn
+ lists the role as &ldquo;Ex&nbsp;CTO&nbsp;&mdash;&nbsp;toast&rdquo;
+ (May&nbsp;2024&nbsp;&ndash;&nbsp;Jun&nbsp;2026); since May&nbsp;2026 he has been CTO at
+ <b>Astro Arun Pandit</b>, an astrology / &ldquo;spiritual tech&rdquo; company. The full
+ evidence &mdash; the site&rsquo;s team page, the dead profile links, and the LinkedIn
+ timeline &mdash; is in the internal diligence dossier.
+ </span>
+</div>
+
+<div class="mgmt-grid" data-reveal="stagger">
+ <article class="mgmt-card">
+ <div class="mgmt-card__head">
+ <span class="mgmt-avatar" aria-hidden="true">AA</span>
+ <div>
+ <h3 class="mgmt-name">Aman Agarwal</h3>
+ <p class="mgmt-role">Co-founder</p>
+ <span class="mgmt-status mgmt-status--current">At Toast</span>
+ </div>
+ </div>
+ <ol class="mgmt-timeline">
+ <li class="is-now"><span class="mgmt-when">2024 &ndash; present</span> <b>Toast Studios</b> &mdash; co-founder</li>
+ <li><span class="mgmt-when">earlier</span> <b>Mobile Premier League</b> &mdash; product lead (one of India&rsquo;s largest real-money-gaming companies)</li>
+ </ol>
+ <p class="mgmt-note">Company credits him with &ldquo;3 patents filed in skill-gaming mechanics&rdquo; (per company; unverified).</p>
+ </article>
+
+ <article class="mgmt-card">
+ <div class="mgmt-card__head">
+ <span class="mgmt-avatar" aria-hidden="true">JN</span>
+ <div>
+ <h3 class="mgmt-name">Jatin Narang</h3>
+ <p class="mgmt-role">Co-founder</p>
+ <span class="mgmt-status mgmt-status--current">At Toast</span>
+ </div>
+ </div>
+ <ol class="mgmt-timeline">
+ <li class="is-now"><span class="mgmt-when">2024 &ndash; present</span> <b>Toast Studios</b> &mdash; co-founder</li>
+ <li><span class="mgmt-when">earlier</span> <b>Mobile Premier League</b> &mdash; product lead (LinkedIn-corroborated)</li>
+ </ol>
+ <p class="mgmt-note">Company credits him with having &ldquo;scaled skill gaming to $72M&rdquo; (per company; unverified).</p>
+ </article>
+
+ <article class="mgmt-card mgmt-card--gone">
+ <div class="mgmt-card__head">
+ <span class="mgmt-avatar"><img src="assets/team-cto.jpg" alt="Avinash Srivastava" width="240" height="240" loading="lazy"></span>
+ <div>
+ <h3 class="mgmt-name">Avinash Srivastava</h3>
+ <p class="mgmt-role">Listed as CTO on the site</p>
+ <span class="mgmt-status mgmt-status--gone">Left Jun 2026</span>
+ </div>
+ </div>
+ <ol class="mgmt-timeline">
+ <li class="is-now"><span class="mgmt-when">May 2026 &ndash; present</span> <b>Astro Arun Pandit</b> &mdash; CTO (&ldquo;spiritual tech&rdquo;)</li>
+ <li class="is-exit"><span class="mgmt-when">May 2024 &ndash; Jun 2026</span> <b>Toast</b> &mdash; CTO <span class="exit-tag">&mdash; departed</span></li>
+ <li><span class="mgmt-when">Dec 2020 &ndash; May 2024</span> <b>Zupee</b> &mdash; founding engineering leader (scaled $1M &rarr; ~$500M ARR, per his profile)</li>
+ <li><span class="mgmt-when">Jan 2016 &ndash; Dec 2020</span> <b>Sprinklr</b> &mdash; engineering leader</li>
+ </ol>
+ <p class="mgmt-note">His exit is why the &ldquo;$500M ARR&rdquo; the pitch cites traces to <b>Zupee</b>, his prior company &mdash; not to Toast.</p>
+ </article>
+</div>
+
+<p class="mgmt-src">Sources: playtoast.com/about (team, captured Jul&nbsp;2026) and Avinash Srivastava on LinkedIn (headline + experience). The company did not publish founder photographs; monogram tiles stand in their place. Full captures are in the internal dossier.</p>
+</section>
+
+
  <!-- 6. LOOPHOLE - the legal / regulatory seam ------------------------- -->
  <section id="loophole" aria-labelledby="loophole-title" data-pdf-min="medium">
 <!-- ===========================================================================
@@ -780,7 +855,7 @@
  js/map.js (runtime) and in the data-cat attributes baked below (fallback).
  ======================================================================= -->
 <div class="section__head">
- <span class="section__index">05 / Loophole</span>
+ <span class="section__index">06 / Loophole</span>
  <h2 id="loophole-title">Regulatory and legal analysis</h2>
  <p class="standfirst">
  Toast&rsquo;s legality is not one question but fifty-one. Only
@@ -2241,7 +2316,7 @@
  composes into #market separately - it is NOT included in this fragment.
  ======================================================================= -->
 <div class="section__head">
- <span class="section__index">06 / Market</span>
+ <span class="section__index">07 / Market</span>
  <h2 id="market-title">Market size and geography</h2>
  <p class="standfirst">
  The demand is real and the fastest-growing in US gaming &mdash; US iGaming
@@ -2465,7 +2540,7 @@
  + a distinct legend entry here.
  ======================================================================= -->
 <div class="section__head">
- <span class="section__index">07 / Players</span>
+ <span class="section__index">08 / Players</span>
  <h2 id="players-title">Competitive landscape</h2>
  <p class="standfirst">
  <span data-fact-id="wsc-market-map-toast-only-casino-realtime">Among the
@@ -2889,7 +2964,7 @@
  (wsg-sklz-price-series-methodology) per the data canon.
  ======================================================================= -->
 <div class="section__head">
- <span class="section__index">08 / Cautionary tales</span>
+ <span class="section__index">09 / Cautionary tales</span>
  <h2 id="cautionary-title">Precedents and cautionary cases</h2>
  <p class="standfirst">
  The category&rsquo;s only public pure-play is down more than
@@ -3015,7 +3090,7 @@
  <!-- 8b. METRICS - fabricated in-app social proof --------------------- -->
  <section id="metrics" aria-labelledby="metrics-title" data-pdf-min="medium">
 <div class="section__head">
- <span class="section__index">09 / Metrics</span>
+ <span class="section__index">10 / Metrics</span>
  <h2 id="metrics-title">The in-app metrics don&rsquo;t add up</h2>
  <p class="standfirst">
  Two of Carnival&rsquo;s in-app &ldquo;social proof&rdquo; surfaces fail on arithmetic. Both are shown below
@@ -3107,7 +3182,7 @@
  <!-- 10. ECONOMICS - unit economics & take rate ------------------------ -->
  <section id="economics" aria-labelledby="economics-title" data-pdf-min="medium">
 <div class="section__head">
- <span class="section__index">10 / Economics</span>
+ <span class="section__index">11 / Economics</span>
  <h2 id="economics-title">Unit economics</h2>
  <p class="standfirst">
  Toast's revenue is a rake on a peer-to-peer pot, not a house edge. It is the
@@ -3519,7 +3594,7 @@
  <!-- 11. THESIS - the recommendation ----------------------------------- -->
  <section id="thesis" aria-labelledby="thesis-title" data-pdf-min="medium">
 <div class="section__head">
- <span class="section__index">11 / Thesis</span>
+ <span class="section__index">12 / Thesis</span>
  <h2 id="thesis-title">Investment conclusion</h2>
  <p class="standfirst">
  Three cases, one honest number range, and the 26 questions we'd put to the
@@ -4313,7 +4388,7 @@
  <!-- 12. SOURCES - methodology & citation legend ----------------------- -->
  <section id="sources" aria-labelledby="sources-title" data-pdf-min="full">
 <div class="section__head">
- <span class="section__index">12 / Sources &amp; method</span>
+ <span class="section__index">13 / Sources &amp; method</span>
  <h2 id="sources-title">Sources and methodology</h2>
  <p class="standfirst">
  Every number on this site carries a superscript source link; hover or
