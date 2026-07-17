@@ -26,7 +26,7 @@
 // underlying text/number with no [n] marker, a console warning is logged,
 // and nothing throws.
 
-const TIER_LABEL = { A: "Primary source", B: "Reputable secondary", C: "Company claim", D: "Our estimate" };
+const TIER_LABEL = { A: "Primary source", B: "Reputable secondary", C: "Company claim", D: "Estimate" };
 const TIER_VAR = { A: "a", B: "b", C: "c", D: "d" }; // whitelist: never interpolate f.tier straight into CSS
 
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -137,10 +137,14 @@ function bibliography(facts) {
     const li = document.createElement("li");
     li.id = `src-${f.id}`;
     const tierVar = TIER_VAR[f.tier] || "d";
+    const basis =
+      f.tier === "D" && f.methodology
+        ? `<span class="src-basis"><b>Basis:</b> ${esc(f.methodology)}</span>`
+        : "";
     li.innerHTML = `<a href="${encodeURI(f.sourceUrl)}" target="_blank" rel="noopener">${esc(f.sourceName)}</a>
       &mdash; ${esc(f.claim)}
       <span class="tier-badge" style="background:var(--tier-${tierVar})">${esc(f.tier)}</span>
-      <small>accessed ${esc(f.accessed)}</small>`;
+      <small>accessed ${esc(f.accessed)}</small>${basis}`;
     ol.appendChild(li);
   });
 }

@@ -683,3 +683,163 @@ em, i { font-style: italic; }
 .source-key__dot[data-tier="B"] { background: var(--tier-b); }
 .source-key__dot[data-tier="C"] { background: var(--tier-c); }
 .source-key__dot[data-tier="D"] { background: var(--tier-d); }
+
+/* Source-list "Basis:" line — the derivation shown under every tier-D estimate */
+.src-basis { display: block; margin-top: 0.3rem; color: var(--muted); font-size: 0.92em; line-height: 1.5; }
+.src-basis b { color: var(--tier-d-fg); font-weight: 600; }
+
+/* ===== Emphasised gameplay clip (Mechanics) ================================= */
+.clip-figure--feature {
+  max-width: 30rem;
+  margin-inline: auto;
+  padding: clamp(1.1rem, 3.5vw, 1.6rem);
+  background: var(--accent-tint);
+  border: 1px solid var(--accent-line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.clip-figure__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0 0 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+}
+.clip-figure__eyebrow::before,
+.clip-figure__eyebrow::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  max-width: 3rem;
+  background: var(--accent-line);
+}
+.clip-figure--feature video {
+  max-width: 15.5rem;
+  margin: 0 auto;
+  box-shadow: 0 0 0 1px var(--accent-line), 0 22px 50px -22px rgba(0, 0, 0, 0.75);
+}
+.clip-figure--feature figcaption { text-align: center; margin-top: 0.85rem; }
+
+/* ===== Collapsible table of contents (icon grid, condensed by default) ====== */
+.toc-section { padding-top: clamp(1.4rem, 4vw, 2rem); padding-bottom: 0; border-top: 0; }
+.toc {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.toc__summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.toc__summary::-webkit-details-marker { display: none; }
+.toc__summary:hover { background: var(--surface-2); }
+.toc__summary-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-1);
+  letter-spacing: -0.01em;
+}
+.toc__summary-icon { width: 1.15rem; height: 1.15rem; color: var(--accent-bright); flex: none; }
+.toc__summary-hint {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.toc__chevron { width: 1.1rem; height: 1.1rem; margin-left: auto; color: var(--muted); flex: none; transition: transform 0.25s ease; }
+.toc[open] .toc__chevron { transform: rotate(180deg); }
+.toc[open] .toc__summary { border-bottom: 1px solid var(--border); }
+.toc__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+  gap: 0.2rem;
+}
+.toc__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text);
+}
+.toc__item:hover { background: var(--surface-2); }
+.toc__ico {
+  flex: none;
+  width: 2.1rem;
+  height: 2.1rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-sm);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  color: var(--accent-bright);
+}
+.toc__summary-icon,
+.toc__ico svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.toc__ico svg { width: 1.1rem; height: 1.1rem; }
+.toc__body { display: flex; flex-direction: column; gap: 0.05rem; min-width: 0; }
+.toc__num { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; color: var(--faint); }
+.toc__title { font-size: 0.95rem; font-weight: 600; line-height: 1.2; }
+.toc__desc { font-size: 0.78rem; color: var(--muted); line-height: 1.35; }
+
+/* ===== Print: professional, concise document styling (cascades last) ======= */
+@page { margin: 1.7cm 1.8cm; }
+@media print {
+  /* Denser, document-grade typography. */
+  html { font-size: 12.5px; }
+  body { font-size: 10.5pt; line-height: 1.42; }
+  p { margin: 0 0 0.55em; max-width: none; }
+  h1 { font-size: 21pt; line-height: 1.05; margin: 0 0 0.15em; }
+  h2 { font-size: 14pt; margin: 0.25em 0 0.3em; }
+  h3 { font-size: 11.5pt; margin: 0.4em 0 0.25em; }
+  .standfirst { font-size: 10.5pt; }
+  .section__index { font-size: 7.5pt; }
+
+  /* Tighter section rhythm — much less whitespace between blocks. */
+  section { padding-top: 0.85rem !important; padding-bottom: 0.85rem !important; }
+  section:first-of-type { padding-top: 0 !important; }
+  .subsection { margin-top: 1rem !important; }
+
+  /* Concise: drop screen-only bulk that bloats a printed report. The substance
+     (prose, tables, the source list with its bases) stays. */
+  .toc-section,
+  .source-key,
+  .clip-figure,
+  .evidence__media,
+  .diagram__svg-wrap,
+  video { display: none !important; }
+  .evidence, .evidence--reverse { display: block !important; }
+  .ledger, .cols { display: block !important; }
+  .ledger-col, .item, .card, .player-card { break-inside: avoid; margin-bottom: 0.5rem; }
+
+  /* Compact data tables + shrink the oversized hero figures. */
+  table.data { font-size: 8pt; }
+  table.data th, table.data td { padding: 0.16rem 0.4rem; }
+  .stat--big { font-size: 15pt !important; }
+  .hero__stats { gap: 0.5rem 1rem; }
+
+  /* Keep the tier-D basis lines (the rationale) but tighten them. */
+  .src-basis { font-size: 0.88em; margin-top: 0.15rem; }
+}
