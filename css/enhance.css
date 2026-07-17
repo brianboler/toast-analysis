@@ -344,6 +344,8 @@ em, i { font-style: italic; }
   color: var(--muted);
 }
 .hero__brand-note strong { color: var(--text); font-weight: 600; }
+.hero__store-link { color: var(--accent-bright); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+.hero__store-link:hover { color: #8ef0bd; }
 
 /* ---- PDF export buttons — previously unstyled native controls --------------
    Pill/ghost treatment resolved from tokens, so it reads correctly on the dark
